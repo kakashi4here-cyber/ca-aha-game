@@ -176,7 +176,7 @@ const TOPICS=[
 ];
 
 // ====== BACKEND: Google sign-in + database (Supabase). Paste your own values. ======
-const SUPABASE_URL="PASTE_PROJECT_URL", SUPABASE_KEY="PASTE_ANON_KEY";
+const SUPABASE_URL="https://flxggvdvibasmjgsieiz.supabase.co", SUPABASE_KEY="sb_publishable_I92ETeALpNYAdsf-G3MmnQ_G0s1_YZ9";
 const CONFIGURED=SUPABASE_URL.startsWith("https");
 const sb=(CONFIGURED&&window.supabase)?window.supabase.createClient(SUPABASE_URL,SUPABASE_KEY):null;
 let USER=null,PREVIEW=false,HIST=[];
