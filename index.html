@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>CA Aha! – Learn Accounting in 30 Seconds</title>
+<style>
+:root{--bg:#0b1020;--card:#151c33;--card2:#1c2545;--text:#eef1ff;--mute:#9aa4c7;--teal:#2dd4bf;--blue:#5b8cff;--coral:#ff7a7a;--yellow:#ffd166;--green:#7be08a}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--text);font-family:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;min-height:100vh;display:flex;justify-content:center}
+#app{width:100%;max-width:460px;padding:20px 18px 40px}
+.top{display:flex;justify-content:space-between;align-items:center;font-size:13px;color:var(--mute);letter-spacing:.08em;text-transform:uppercase}
+.top b{color:var(--teal)}
+.bar{height:6px;background:var(--card);border-radius:9px;margin:12px 0 22px;overflow:hidden}
+.bar i{display:block;height:100%;background:linear-gradient(90deg,var(--teal),var(--blue));transition:width .4s}
+.card{background:var(--card);border-radius:20px;padding:22px;margin-bottom:16px}
+.tag{font-size:12px;letter-spacing:.12em;color:var(--teal);font-weight:700;text-transform:uppercase}
+h1{font-size:30px;line-height:1.15;margin:10px 0}
+h2{font-size:22px;line-height:1.25;margin:8px 0 4px}
+p{color:var(--mute);line-height:1.5;margin:8px 0}
+.big{font-size:56px;text-align:center;margin:6px 0}
+.amt{display:inline-block;background:var(--yellow);color:#1a1a1a;font-weight:800;border-radius:99px;padding:4px 14px}
+button{font:inherit;cursor:pointer;border:0;border-radius:14px;padding:14px 18px;color:var(--text);background:var(--card2);width:100%;margin-top:10px;transition:transform .1s}
+button:active{transform:scale(.97)}
+button.go{background:var(--teal);color:#06231f;font-weight:800}
+button:disabled{opacity:.4;cursor:not-allowed}
+.acct{background:var(--card2);border-radius:16px;padding:14px;margin-top:12px}
+.acct .n{font-weight:700;margin-bottom:8px;display:flex;justify-content:space-between}
+.acct .n span{color:var(--mute);font-weight:400}
+.row{display:flex;gap:10px}
+.row button{margin:0;padding:12px}
+.sel.dr{background:var(--blue)}
+.sel.cr{background:var(--coral);color:#2b0a0a}
+.ok{outline:2px solid var(--green)}
+.bad{outline:2px solid var(--coral)}
+.fb{padding:14px;border-radius:14px;margin-top:12px;font-weight:600}
+.fb.good{background:#10351f;color:var(--green)}
+.fb.no{background:#3a1717;color:var(--coral)}
+.flow{display:flex;align-items:center;justify-content:center;gap:10px;margin:14px 0}
+.chip{padding:12px 14px;border-radius:14px;font-weight:800;text-align:center;font-size:14px}
+.chip.up{background:#0f3b37;color:var(--teal)}
+.chip.dn{background:#3b2020;color:var(--coral)}
+.stats{display:flex;gap:10px}
+.stats div{flex:1;background:var(--card2);border-radius:14px;padding:12px;text-align:center}
+.stats b{display:block;font-size:24px;color:var(--yellow)}
+</style>
+</head>
+<body>
+<div id="app"></div>
+<script>
+// ---------- 1. CONTENT: add new concepts here, no other code changes needed ----------
+const LEVELS = [
+  { emoji:"✏️", title:"Stationery for cash", amount:500,
+    story:"You buy stationery for ₹500 and pay in cash.",
+    accounts:[
+      {name:"Stationery expense", effect:"up", side:"dr"},
+      {name:"Cash", effect:"down", side:"cr"}],
+    takeaway:"Two effects, one balanced entry: expense goes up (Dr), cash goes down (Cr).",
+    q:"After this purchase, what happens to your cash?", opts:["Goes up","Goes down","No change"], a:1 },
+  { emoji:"🛍️", title:"Selling goods for cash", amount:1000,
+    story:"You sell goods to a customer for ₹1,000 and receive cash.",
+    accounts:[
+      {name:"Cash", effect:"up", side:"dr"},
+      {name:"Sales income", effect:"up", side:"cr"}],
+    takeaway:"Cash comes in (Dr) and income is earned (Cr).",
+    q:"Which account is credited?", opts:["Cash","Sales income","Stationery"], a:1 },
+  { emoji:"📦", title:"Buying goods on credit", amount:2000,
+    story:"You buy goods worth ₹2,000 from a supplier and promise to pay later.",
+    accounts:[
+      {name:"Purchases", effect:"up", side:"dr"},
+      {name:"Creditor (supplier)", effect:"up", side:"cr"}],
+    takeaway:"Purchases go up (Dr). You now owe the supplier, so creditors go up (Cr).",
+    q:"No cash was paid. What is the 'credit' side showing?", opts:["Cash reduced","Money you owe","Money you earned"], a:1 },
+  { emoji:"🏠", title:"Paying rent", amount:3000,
+    story:"You pay ₹3,000 shop rent in cash.",
+    accounts:[
+      {name:"Rent expense", effect:"up", side:"dr"},
+      {name:"Cash", effect:"down", side:"cr"}],
+    takeaway:"Just like stationery: expense up (Dr), cash down (Cr).",
+    q:"Rent is a/an …", opts:["Expense","Income","Asset"], a:0 },
+  { emoji:"💼", title:"Owner invests money", amount:10000,
+    story:"The owner puts ₹10,000 of their own money into the business.",
+    accounts:[
+      {name:"Cash", effect:"up", side:"dr"},
+      {name:"Capital", effect:"up", side:"cr"}],
+    takeaway:"Cash comes in (Dr). The business owes the owner, so capital goes up (Cr).",
+    q:"Which account goes up besides cash?", opts:["Capital","Rent","Sales"], a:0 }
+];
+
+// ---------- 2. STATE ----------
+const KEY="ca-aha-best";
+let S={i:-1, step:"intro", score:0, streak:0, picks:{}, tries:0, answered:false};
+const $=document.getElementById("app");
+const fmt=n=>"₹"+n.toLocaleString("en-IN");
+const best=()=>{try{return +localStorage.getItem(KEY)||0}catch(e){return 0}};
+const saveBest=v=>{try{if(v>best())localStorage.setItem(KEY,v)}catch(e){}};
+
+// ---------- 3. SCREENS ----------
+function head(){
+  const pct=S.i<0?0:(S.i/LEVELS.length*100);
+  return `<div class="top"><b>CA Aha!</b><span>Score ${S.score} · 🔥 ${S.streak}</span></div><div class="bar"><i style="width:${pct}%"></i></div>`;
+}
+function intro(){
+  $.innerHTML=head()+`<div class="card"><div class="tag">A visual-first learning concept</div>
+  <h1>From scroll time to “aha!” moments.</h1>
+  <p>One transaction. Two effects. Read the story, build the entry, lock it in with a quick recall.</p>
+  <p>Best score: <b style="color:var(--yellow)">${best()}</b></p>
+  <button class="go" onclick="start()">Start learning</button></div>`;
+}
+function start(){S={i:0,step:"story",score:0,streak:0,picks:{},tries:0,answered:false};render()}
+function story(){
+  const L=LEVELS[S.i];
+  $.innerHTML=head()+`<div class="card"><div class="tag">Level ${S.i+1} · Story</div>
+  <div class="big">${L.emoji}</div><h2>${L.title}</h2>
+  <p style="font-size:17px;color:var(--text)">${L.story}</p><span class="amt">${fmt(L.amount)}</span>
+  <p>What changed in the business? Think about two effects.</p>
+  <button class="go" onclick="S.step='build';render()">Show me the entry →</button></div>`;
+}
+function build(){
+  const L=LEVELS[S.i];
+  const rows=L.accounts.map((a,k)=>{
+    const p=S.picks[k]; const done=S.answered;
+    const cls=s=>"sel "+s+(p===s?"":"")+"";
+    const mark=done?(p===a.side?" ok":" bad"):"";
+    return `<div class="acct${mark}"><div class="n">${a.name}<span>${a.effect==="up"?"↑ goes up":"↓ goes down"}</span></div>
+    <div class="row">
+      <button class="${p==="dr"?"sel dr":""}" ${done?"disabled":""} onclick="pick(${k},'dr')">Debit (Dr)</button>
+      <button class="${p==="cr"?"sel cr":""}" ${done?"disabled":""} onclick="pick(${k},'cr')">Credit (Cr)</button>
+    </div></div>`}).join("");
+  const ready=Object.keys(S.picks).length===L.accounts.length;
+  let fb="",btn=`<button class="go" ${ready?"":"disabled"} onclick="check()">Check my entry</button>`;
+  if(S.answered){
+    fb=`<div class="fb good">✅ ${L.takeaway}</div>`;
+    btn=`<button class="go" onclick="S.step='recall';S.answered=false;render()">Quick recall →</button>`;
+  } else if(S.tries>0){
+    fb=`<div class="fb no">Not quite. Rethink which side each account is on, then try again.</div>`;
+  }
+  $.innerHTML=head()+`<div class="card"><div class="tag">Level ${S.i+1} · Visual</div>
+  <h2>Build the entry for ${fmt(L.amount)}</h2><p>Tap Dr or Cr for each account.</p>${rows}${fb}${btn}</div>`;
+}
+function recall(){
+  const L=LEVELS[S.i];
+  const o=L.opts.map((t,k)=>`<button ${S.answered?"disabled":""} class="${S.answered?(k===L.a?"ok":(S.picked===k?"bad":"")):""}" onclick="answer(${k})">${String.fromCharCode(65+k)}. ${t}</button>`).join("");
+  let fb="",btn="";
+  if(S.answered){
+    const right=S.picked===L.a;
+    fb=`<div class="fb ${right?"good":"no"}">${right?"🎯 Correct! +10":"Not this time. The right answer is highlighted."}</div>`;
+    btn=`<button class="go" onclick="next()">${S.i===LEVELS.length-1?"See my result":"Next level →"}</button>`;
+  }
+  $.innerHTML=head()+`<div class="card"><div class="tag">Level ${S.i+1} · Quick recall</div><h2>${L.q}</h2>${o}${fb}${btn}</div>`;
+}
+function end(){
+  saveBest(S.score);
+  const max=LEVELS.length*20;
+  $.innerHTML=head()+`<div class="card"><div class="tag">Result</div><h1>${S.score>=max*0.8?"Aha! You’ve got it 🎉":"Good start. Try again!"}</h1>
+  <div class="stats"><div><b>${S.score}</b>Score / ${max}</div><div><b>${best()}</b>Best</div></div>
+  <button class="go" onclick="start()">Play again</button></div>`;
+}
+
+// ---------- 4. ACTIONS ----------
+function pick(k,side){S.picks[k]=side;render()}
+function check(){
+  const L=LEVELS[S.i];
+  const right=L.accounts.every((a,k)=>S.picks[k]===a.side);
+  S.tries++;
+  if(right){S.score+=S.tries===1?10:5;S.answered=true}
+  else{S.streak=0;S.picks={}}
+  render();
+}
+function answer(k){
+  const L=LEVELS[S.i];
+  S.picked=k;S.answered=true;
+  if(k===L.a){S.score+=10;S.streak++}else S.streak=0;
+  render();
+}
+function next(){
+  if(S.i===LEVELS.length-1){S.step="end";return render()}
+  S={...S,i:S.i+1,step:"story",picks:{},tries:0,answered:false,picked:null};
+  render();
+}
+function render(){({intro,story,build,recall,end})[S.step]();window.scrollTo(0,0)}
+render();
+</script>
+</body>
+</html>
