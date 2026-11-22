@@ -238,6 +238,79 @@ details.card summary{cursor:pointer}
 .faq details[open] .ans{animation:fadein .35s ease}
 @keyframes fadein{from{opacity:0;transform:translateY(-6px)}to{opacity:1;transform:none}}
 @media (prefers-reduced-motion:reduce){.fin,.faq details[open] .ans{animation:none}}
+
+/* ---- v3 additions ---- */
+.tnav i{display:none;font-style:normal}
+.tnav .sm{display:none}
+.pvb{width:auto;margin:0;padding:9px 18px;border-radius:99px;font-weight:700;background:#fff;color:#5b2ba8;box-shadow:0 0 0 2px #cdbdf2 inset;text-align:center}
+.hr{gap:10px}
+.hr .chip2{position:relative}
+.chip2::after{content:attr(data-tip);position:absolute;top:calc(100% + 8px);right:0;background:#2a1a55;color:#fff;font-size:12px;font-weight:600;padding:5px 10px;border-radius:8px;white-space:nowrap;opacity:0;pointer-events:none;transition:opacity .15s;z-index:36}
+.chip2:hover::after,.chip2.holding::after{opacity:1}
+#pmenu .ph2{display:flex;align-items:center;gap:12px;margin-bottom:8px}
+#pmenu .av{width:46px;height:46px;font-size:20px}
+#pmenu .pn{font-size:12px;letter-spacing:.1em;color:#8a84a6;font-weight:700;text-transform:uppercase}
+#pmenu .pu{font-weight:800;font-size:18px;color:#2a1a55}
+#pmenu .pr b{text-align:right;word-break:break-all}
+.hint{display:block;color:var(--mute);font-size:12.5px;margin-top:6px;line-height:1.4}
+.obc{max-height:92vh;overflow:auto}
+.obc select.inp{appearance:auto}
+.lockrow{display:flex;justify-content:space-between;gap:12px;padding:10px 0;border-bottom:1px solid #efeaf9;font-size:14px}
+.lockrow span{color:var(--mute)}
+.ldr{display:flex;flex-direction:column;align-items:center;gap:14px;padding:90px 20px;text-align:center;color:var(--mute);font-weight:600}
+.ldlogo{height:92px;width:auto;animation:ldfloat 1.5s ease-in-out infinite;filter:drop-shadow(0 10px 18px rgba(91,43,168,.28))}
+@keyframes ldfloat{0%,100%{transform:translateY(0) scale(1) rotate(0)}30%{transform:translateY(-16px) scale(1.07) rotate(-4deg)}60%{transform:translateY(0) scale(1) rotate(4deg)}}
+.dots{display:flex;gap:7px}
+.dots i{width:10px;height:10px;border-radius:50%;background:linear-gradient(135deg,#5b2ba8,#7d4fd6);animation:dotb 1s ease-in-out infinite}
+.dots i:nth-child(2){animation-delay:.15s}.dots i:nth-child(3){animation-delay:.3s}
+@keyframes dotb{0%,80%,100%{transform:scale(.6);opacity:.4}40%{transform:scale(1.1);opacity:1}}
+#toast{position:fixed;left:50%;bottom:120px;transform:translateX(-50%) translateY(20px);background:#2a1a55;color:#fff;padding:11px 20px;border-radius:99px;font-size:14px;font-weight:600;opacity:0;pointer-events:none;transition:.25s;z-index:60;max-width:90vw;text-align:center}
+#toast.on{opacity:1;transform:translateX(-50%)}
+.pvb2{display:flex;align-items:center;justify-content:space-between;gap:14px;flex-wrap:wrap;background:#fff1c2;color:#6b4d00;border-radius:18px;padding:14px 18px;margin-bottom:22px;line-height:1.45}
+.pvb2 button{width:auto;margin:0;padding:9px 20px}
+.warn{background:#fff4e5;border:1px solid #f5c58a}
+.done{display:flex;gap:14px;align-items:flex-start;background:#e4f5d8;color:#1d6b2e;border-radius:16px;padding:18px;line-height:1.5;margin-top:10px}
+.done span{font-size:28px;line-height:1}
+.medal{font-size:28px;line-height:1;flex:none}
+/* Gyan XP */
+.xpcard{background:#fff;color:#2a1a55;border-radius:24px;padding:22px;box-shadow:0 2px 12px rgba(60,30,120,.1)}
+.xph{display:flex;justify-content:space-between;align-items:center;gap:14px}
+.xpk{font-size:12px;letter-spacing:.12em;color:#6a6484;font-weight:700}
+.xpnum{font-size:44px;font-weight:800;color:#c98a00;line-height:1.1;margin:6px 0 2px}
+.xpnum span{font-size:22px}
+.xps{color:#6a6484;font-size:14px}
+.xptrophy,.xptr{flex:none;width:68px;height:68px;border-radius:20px;background:#fff1c2;display:flex;align-items:center;justify-content:center;font-size:34px}
+.xptr.sm{width:60px;height:60px;font-size:30px}
+.xpt{font-weight:800;font-size:17px;margin:20px 0 6px}
+.xprow{display:flex;justify-content:space-between;gap:12px;padding:12px 0;border-top:1px solid #efeaf9;font-size:15px}
+.xprow b{color:#b97800}
+.xpnote{font-size:12px;color:#6a6484;margin:12px 0 0!important}
+.sxp{background:radial-gradient(120% 80% at 85% 0%,#7d4fd6 0%,#3a1c7a 55%,#22104d 100%);color:#fff;position:relative;overflow:hidden}
+.sxp .lab{color:#ffd66b}
+.sxp h2{color:#fff;font-size:34px}
+.sxp p{color:#e4dcff}
+.sxp .rv{position:relative}
+.sxp .xpcard{box-shadow:0 22px 60px rgba(0,0,0,.4),0 0 0 1px rgba(255,255,255,.5)}
+.sxp .xpnote{color:#6a6484}
+.xpgold{background:linear-gradient(90deg,#ffe08a,#ffb938,#ffe08a);background-size:200% 100%;-webkit-background-clip:text;background-clip:text;color:transparent;animation:shine 3s linear infinite}
+@keyframes shine{to{background-position:-200% 0}}
+.xpglow{position:absolute;width:280px;height:280px;border-radius:50%;background:radial-gradient(circle,rgba(255,214,107,.45),transparent 70%);top:-70px;right:-80px;animation:pulse 4s ease-in-out infinite;pointer-events:none}
+.xpstage{position:relative;margin:28px 0 24px}
+.fl{position:absolute;z-index:2;background:#fff;color:#5b2ba8;font-weight:800;font-size:13px;padding:7px 13px;border-radius:99px;box-shadow:0 10px 26px rgba(0,0,0,.35);animation:flt 3.4s ease-in-out infinite}
+.f1{top:-18px;right:8px}.f2{top:44%;left:-8px;animation-delay:.8s}.f3{bottom:-16px;right:20px;animation-delay:1.5s}
+@keyframes flt{50%{transform:translateY(-10px)}}
+.xptrophy{animation:bob 2.4s ease-in-out infinite}
+@media (prefers-reduced-motion:reduce){.xpgold,.xpglow,.fl,.xptrophy,.ldlogo,.dots i{animation:none}}
+/* mobile floating bottom bar */
+@media (max-width:899px){
+ body.indash .tnav{position:fixed;left:12px;right:12px;bottom:calc(12px + env(safe-area-inset-bottom,0px));top:auto;order:unset;flex:none;margin:0;padding:8px;border:0;background:#fff;border-radius:28px;box-shadow:0 10px 34px rgba(60,30,120,.32);z-index:28;justify-content:space-between;gap:4px;overflow:visible}
+ body.indash .tnav button{flex:1;display:flex;flex-direction:column;align-items:center;gap:3px;padding:8px 2px 7px;font-size:11px;border-radius:20px;min-width:0}
+ .tnav i{display:block;font-size:20px;line-height:1}
+ .tnav .lg{display:none}
+ .tnav .sm{display:block}
+ #dmain{padding-bottom:130px}
+ .lv{max-width:96px}
+}
 </style>
 </head>
 <body>
@@ -250,19 +323,28 @@ details.card summary{cursor:pointer}
 
 <div id="ob" hidden>
  <div class="obc" role="dialog" aria-modal="true" aria-labelledby="obt">
-  <h2 id="obt">Tell us about yourself</h2>
-  <p>This sets up your practice area. You can change it later from Edit profile.</p>
-  <label>Your level</label><div class="chips" id="oblvl"></div>
+  <h2 id="obt">Set up your profile</h2>
+  <p id="obsub">A few quick details to personalise your practice area.</p>
+  <div id="obfull">
+   <label for="obun">Choose a username</label>
+   <input id="obun" class="inp" maxlength="20" placeholder="e.g. gyan_ninja" autocomplete="off" autocapitalize="none" spellcheck="false">
+   <span class="hint">3-20 letters, numbers or _. Please don't use your real name: this keeps you anonymous on leaderboards. You can't change it later.</span>
+   <label>Your level</label><div class="chips" id="oblvl"></div>
+  </div>
+  <div id="oblock" hidden></div>
   <div id="obgrpw" hidden><label>Which group?</label><div class="chips wrap" id="obgrp"></div></div>
-  <label for="obph">Phone number</label>
-  <input id="obph" class="inp" type="tel" inputmode="numeric" maxlength="14" placeholder="10-digit mobile number" autocomplete="tel">
+  <label for="obat">Your attempt</label>
+  <select id="obat" class="inp"></select>
+  <div id="obphw"><label for="obph">Phone number</label>
+  <input id="obph" class="inp" type="tel" inputmode="numeric" maxlength="14" placeholder="10-digit mobile number" autocomplete="tel"></div>
   <div id="obmsg"></div>
   <button class="go" id="obsave" onclick="saveProfile()">Save and continue</button>
   <button class="ghost" id="obcancel" onclick="closeOb()" hidden>Cancel</button>
  </div>
 </div>
 
-<div id="boot">Loading…</div>
+<div id="boot"><div class="ldr"><img class="ldlogo" id="bootlogo" alt=""><div class="dots"><i></i><i></i><i></i></div><p>Getting ChartedGyan ready…</p></div></div>
+<script>try{document.getElementById("bootlogo").src=document.querySelector(".logo img").src}catch(e){}</script>
 <main id="landing" hidden>
  <section class="hero">
   <svg class="scene" viewBox="0 0 400 460" preserveAspectRatio="xMidYMax slice" aria-hidden="true">
@@ -277,7 +359,7 @@ details.card summary{cursor:pointer}
 <g class="bar5" fill="url(#bar)"><rect x="96" y="380" width="32" height="40" rx="5"/><rect x="140" y="350" width="32" height="70" rx="5"/><rect x="184" y="320" width="32" height="100" rx="5"/><rect x="228" y="285" width="32" height="135" rx="5"/><rect x="272" y="245" width="32" height="175" rx="5"/></g>
 <path class="arrow" d="M112 366 L156 336 L200 306 L244 271 L288 231" fill="none" stroke="#f5b83d" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
 <polygon points="300,218 274,226 292,246" fill="#f5b83d"/>
-<g class="coin"><ellipse cx="66" cy="414" rx="26" ry="8" fill="#ffc233" stroke="#d98a00"/><ellipse cx="66" cy="405" rx="26" ry="8" fill="#ffc233" stroke="#d98a00"/><ellipse cx="66" cy="396" rx="26" ry="8" fill="#ffd45e" stroke="#d98a00"/><text x="66" y="400" text-anchor="middle" font-size="12" font-weight="700" fill="#b45309">₹</text></g>
+<g class="coin"><ellipse cx="66" cy="414" rx="26" ry="8" fill="#ffc233" stroke="#d98a00"/><ellipse cx="66" cy="405" rx="26" ry="8" fill="#ffc233" stroke="#d98a00"/><ellipse cx="66" cy="396" rx="26" ry="8" fill="#ffd45e" stroke="#d98a00"/><text x="66" y="400" text-anchor="middle" font-size="12" font-weight="700" fill="#b45309">XP</text></g>
 <g><rect x="316" y="360" width="38" height="52" rx="7" fill="#fff"/><rect x="321" y="366" width="28" height="11" rx="3" fill="#e4dcf8"/><g fill="#7d4fd6"><circle cx="326" cy="388" r="3"/><circle cx="335" cy="388" r="3"/><circle cx="344" cy="388" r="3"/><circle cx="326" cy="398" r="3"/><circle cx="335" cy="398" r="3"/><circle cx="344" cy="398" r="3"/></g></g></svg>
   <div class="eyebrow">Welcome to ChartedGyan</div>
   <h1>Turn your scrolling time into “aha!” moments.</h1>
@@ -292,6 +374,13 @@ details.card summary{cursor:pointer}
  <section class="sec s3"><div class="rv"><div class="lab">Stay consistent</div><h2>Daily practice</h2><p>A small set of questions every day to build a habit that lasts till exam day.</p>
   <div class="streak"><i>🔥</i><i>🔥</i><i>🔥</i><i>🔥</i><i>⭐</i></div></div></section>
  
+<section class="sec sxp"><div class="rv"><div class="xpglow"></div>
+  <div class="lab">New · Gyan XP</div><h2>Study. Earn <span class="xpgold">Gyan XP</span>. Level up.</h2>
+  <p>Gyan XP is your learning currency. Every case study, test and streak adds to your wallet, so the habit of learning finally feels rewarding.</p>
+  <div class="xpstage"><span class="fl f1">⚡ +10 XP</span><span class="fl f2">🔥 7-day streak</span><span class="fl f3">⭐ +15 XP</span>
+   <div class="xpcard"><div class="xph"><div><div class="xpk">YOUR LEARNING WALLET</div><div class="xpnum"><b data-to="2450">0</b> <span>XP</span></div><div class="xps">Keep learning. Keep earning.</div></div><div class="xptrophy">🏆</div></div>
+   <div class="xpt">How students earn XP</div><div class="xprow"><span>Complete Daily Case Study</span><b>+20</b></div><div class="xprow"><span>Complete a topic test</span><b>+10</b></div><div class="xprow"><span>Score 80%+ in a test</span><b>+15</b></div><div class="xprow"><span>Complete a PYQ paper</span><b>+50</b></div><div class="xprow"><span>Complete a weekly target</span><b>+100</b></div><div class="xprow"><span>Maintain a 7-day streak</span><b>+75</b></div><p class="xpnote">Illustrative XP values, not final rules.</p></div></div>
+  <button class="go" style="width:auto" onclick="showAuth()">Start earning XP</button></div></section>
  <section class="sec s4"><div class="rv"><div class="lab">Exam practice</div><h2>Past papers, MTPs and RTPs</h2><p>Attempt papers in exam style with a timer, then review every answer with a clear explanation.</p>
   <button class="go" style="width:auto" onclick="showPractice()">Start practising</button>
   <div class="mock"><div class="tabs"><span class="on">PYQs</span><span>MTPs</span><span>RTPs</span></div>
@@ -307,6 +396,7 @@ details.card summary{cursor:pointer}
   <details name="faq"><summary>Why should I choose ChartedGyan as my learning companion?</summary><div class="ans">ChartedGyan boosts your learning and revision by transforming theory-heavy courses like CA, CS, and CMA into fun, interactive, and engaging experiences. It makes concepts easier to revise, improves retention, and turns learning into something you actually look forward to.</div></details>
   <details name="faq"><summary>Where did the idea of ChartedGyan come from?</summary><div class="ans">ChartedGyan was born from the idea of bridging the gap between the struggles of traditional learning and effortless performance. We aim to make learning simpler, revision easier, and preparation more engaging.</div></details>
   <details name="faq"><summary>What will I get at ChartedGyan?</summary><div class="ans"><p>At ChartedGyan, you’ll get an interactive learning and practice experience built around your CA preparation. From chapter-wise and topic-specific questions to Daily Case Studies, Past Year Papers, MTPs and RTPs, you’ll have multiple ways to strengthen your preparation.</p><p>You can also explore concepts through practical explanations, conceptual games, flashcards, keywords and formulas. With features like Keyword of the Day, daily challenges, leaderboards, activity tracking, doubts, SWOT analysis and free resources, ChartedGyan aims to make your preparation more engaging, consistent and effective.</p></div></details>
+  <details name="faq"><summary>What is Gyan XP?</summary><div class="ans"><p>Gyan XP is ChartedGyan’s learning currency. You earn XP for study habits that matter, such as finishing the Daily Case Study, completing topic tests, scoring 80% or more, attempting past papers, hitting weekly targets and keeping a 7-day streak.</p><p>Your XP collects in your learning wallet and counts towards the leaderboard. The values shown on the site are illustrative, and the final earning rules will be announced soon.</p></div></details>
  </div></section>
  <footer class="foot">Made with ♥ · ChartedGyan © 2026 · <a href="privacy.html" style="color:#5b2ba8">Privacy Policy</a></footer>
 </main>
@@ -329,6 +419,7 @@ details.card summary{cursor:pointer}
  <main id="dmain"></main>
 </div>
 
+<div id="toast"></div>
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.45.4/dist/umd/supabase.min.js"></script>
 <script>
 const TOPICS=[
@@ -364,7 +455,7 @@ const TOPICS=[
 const SUPABASE_URL="https://flxggvdvibasmjgsieiz.supabase.co", SUPABASE_KEY="sb_publishable_I92ETeALpNYAdsf-G3MmnQ_G0s1_YZ9";
 const CONFIGURED=SUPABASE_URL.startsWith("https");
 const sb=(CONFIGURED&&window.supabase)?window.supabase.createClient(SUPABASE_URL,SUPABASE_KEY):null;
-let USER=null,PREVIEW=false,HIST=[],PROFILE=null,OB={level:"",grp:""},DBWARN=false;
+let USER=null,PREVIEW=false,HIST=[],PROFILE=null,PARTIAL=null,OB={level:"",grp:"",edit:false},DBWARN=false,DBERR="",LOCK=false;
 
 const $=id=>document.getElementById(id),app=$("app"),landing=$("landing"),authv=$("auth");
 const esc=s=>String(s).replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
@@ -373,31 +464,57 @@ const firstName=()=>USER?((USER.user_metadata&&(USER.user_metadata.full_name||US
 const loggedIn=()=>!!USER||PREVIEW;
 
 // ---- views (all on this same page) ----
-function view(n,nopush){$("boot").hidden=true;landing.hidden=n!=="landing";authv.hidden=n!=="auth";app.hidden=n!=="app";window.scrollTo(0,0);$("pmenu").hidden=true;paintHeader()}
-const initial=()=>(firstName()||"S").charAt(0).toUpperCase();
+function view(n){$("boot").hidden=true;landing.hidden=n!=="landing";authv.hidden=n!=="auth";app.hidden=n!=="app";window.scrollTo(0,0);$("pmenu").hidden=true;paintHeader()}
+const logoSrc=()=>{try{return document.querySelector(".logo img").src}catch(e){return ""}};
+const loaderHTML=m=>`<div class="ldr"><img class="ldlogo" src="${logoSrc()}" alt=""><div class="dots"><i></i><i></i><i></i></div><p>${m||"Loading…"}</p></div>`;
+const displayName=()=>LOCK?"Student":(PROFILE&&PROFILE.username?PROFILE.username:firstName());
+const initial=()=>(displayName()||"S").charAt(0).toUpperCase();
+function toast(m){const t=$("toast");t.textContent=m;t.classList.add("on");clearTimeout(toast.t);toast.t=setTimeout(()=>t.classList.remove("on"),2300)}
 function paintHeader(){
-  const inDash=!app.hidden;
-  document.body.classList.toggle("indash",inDash&&!!PROFILE);
-  if(!loggedIn())$("hr").innerHTML=`<button class="login" onclick="showAuth()">Login</button>`;
-  else if(inDash)$("hr").innerHTML=PROFILE?`<button id="pbtn" class="chip2" onclick="toggleProfile(event)" aria-label="Profile"><span class="av">${esc(initial())}</span><span class="lv">${esc(levelText())}</span><span>▾</span></button>`:"";
+  const inDash=!app.hidden,dash=inDash&&(!!PROFILE||LOCK);
+  document.body.classList.toggle("indash",dash);
+  if(!loggedIn())$("hr").innerHTML=LOCK?`<button class="login" onclick="showAuth()">Login</button>`:`<button class="pvb" onclick="showPreview()">Preview</button><button class="login" onclick="showAuth()">Login</button>`;
+  else if(inDash)$("hr").innerHTML=PROFILE?`<button id="pbtn" class="chip2" data-tip="View profile" oncontextmenu="return false" onclick="toggleProfile(event)" aria-label="View profile"><span class="av">${esc(initial())}</span><span class="lv">${esc(levelText())}</span><span>▾</span></button>`:"";
   else $("hr").innerHTML="";
-  if(inDash&&PROFILE)renderSide();else $("tnav").innerHTML="";
+  if(dash)renderSide();else $("tnav").innerHTML="";
+  const b=$("pbtn");
+  if(b){let t;b.addEventListener("touchstart",()=>{t=setTimeout(()=>{b.classList.add("holding");setTimeout(()=>b.classList.remove("holding"),1800)},450)},{passive:true});["touchend","touchmove","touchcancel"].forEach(ev=>b.addEventListener(ev,()=>clearTimeout(t),{passive:true}))}
 }
 function toggleProfile(e){
   if(e)e.stopPropagation();
+  const pb=$("pbtn");if(pb&&pb.classList.contains("holding"))return;
   const m=$("pmenu");
   if(!m.hidden){m.hidden=true;return}
+  if(!PROFILE)return;
   const email=USER&&USER.email?USER.email:"";
-  m.innerHTML=`<div class="pn">${esc(firstName())}</div><div style="color:var(--mute);font-size:13px;margin-bottom:8px">${esc(email||(PREVIEW?"Preview mode":""))}</div>
-  <div class="pr"><span>Level</span><b>${esc(LABEL[D.level])}</b></div>
-  ${D.level==="Inter"?`<div class="pr"><span>Group</span><b>${esc(GL[D.group||"Both"])}</b></div>`:""}
-  <div class="pr"><span>Phone</span><b>${esc(PROFILE&&PROFILE.phone?PROFILE.phone:"–")}</b></div>
-  <button onclick="openProfile(true)">Edit profile</button><button class="go" onclick="logout()">Logout</button>`;
+  const plan=PROFILE.plan||"Basic";
+  const rows=[["Username","@"+(PROFILE.username||"")],["Level",LABEL[D.level]],D.level==="Inter"?["Group",GL[D.group||"Both"]]:null,["Attempt",PROFILE.attempt||"–"],["Plan",plan+(plan==="Basic"?" (free)":"")],["Email",email||"–"],["Phone",PROFILE.phone||"–"]].filter(Boolean);
+  m.innerHTML=`<div class="pn">View profile</div><div class="ph2"><span class="av">${esc(initial())}</span><div class="pu">@${esc(PROFILE.username||"")}</div></div>`
+   +rows.map(r=>`<div class="pr"><span>${r[0]}</span><b>${esc(r[1])}</b></div>`).join("")
+   +`<button onclick="openProfile(true)">Edit profile</button><button class="go" onclick="logout()">Logout</button>`;
   m.hidden=false;
 }
 document.addEventListener("click",e=>{const m=$("pmenu");if(m&&!m.hidden&&!e.target.closest("#pmenu"))m.hidden=true});
-function showLanding(){if(loggedIn()){if(PROFILE)show("home");return}view("landing");try{history.replaceState({cg:1,pre:"landing"},"")}catch(e){}}
+// preview (no login, buttons switched off)
+function showPreview(fromPop){
+  LOCK=true;D.level="Foundation";D.group="";F=null;D.psub=0;
+  view("app");
+  if(!fromPop){try{history.pushState({cg:1,app:1,v:"home",pv:1},"")}catch(e){}}
+  show("home",null,true);
+}
+const pvBanner=()=>`<div class="pvb2 pvkeep"><span>👀 <b>Preview only.</b> Buttons are switched off here. Login with Google to unlock everything.</span><button class="go pvkeep" onclick="showAuth()">Login</button></div>`;
+document.addEventListener("click",e=>{
+  if(!LOCK)return;
+  const el=e.target.closest("#dmain button,#dmain a,#dmain summary,#dmain .tile,#dmain .rowb");
+  if(el&&!el.closest(".pvkeep")){e.preventDefault();e.stopPropagation();e.stopImmediatePropagation();toast("Preview only. Login to unlock this.")}
+},true);
+function showLanding(){
+  if(LOCK){LOCK=false;view("landing");return}
+  if(loggedIn()){if(PROFILE)show("home");return}
+  view("landing");try{history.replaceState({cg:1,pre:"landing"},"")}catch(e){}
+}
 function showAuth(){
+  LOCK=false;
   try{history.pushState({cg:1,pre:"auth"},"")}catch(e){}
   $("amsg").textContent="";
   $("preview").hidden=CONFIGURED;
@@ -406,7 +523,7 @@ function showAuth(){
 }
 async function showPractice(){
   if(!loggedIn()){showAuth();return}
-  view("app");dmain.innerHTML=`<p class="lead">Loading…</p>`;
+  view("app");dmain.innerHTML=loaderHTML("Opening your dashboard…");
   await loadProfile();
   if(!PROFILE){openProfile(false);return}
   enterDash();
@@ -425,57 +542,100 @@ window.addEventListener("popstate",e=>{
     else{try{history.pushState({cg:1,app:1,v:D.view==="run"?"home":D.view},"")}catch(x){}}
     return;
   }
+  if(loggedIn())return;
+  if(LOCK&&st&&st.app){if(app.hidden)view("app");show(st.v,null,true);return}
+  LOCK=false;
   if(st&&st.pre==="auth")view("auth");else view("landing");
 });
 const GROUPS=[["G1","Group 1"],["G2","Group 2"],["Both","Both groups"]];
 const GL={G1:"Group 1",G2:"Group 2",Both:"Both groups"};
 const pkey=()=>"cg-profile-"+(USER?USER.id:"preview");
+const profFull=x=>!!(x&&x.username&&x.attempt&&LEVELS.includes(x.level));
 async function loadProfile(){
   const uid=USER?USER.id:"preview";
   if(PROFILE&&PROFILE._uid===uid)return;
-  PROFILE=null;let p=null,dbOk=false;
+  PROFILE=null;PARTIAL=null;DBERR="";let p=null,dbOk=false;
   if(sb&&USER){
-    try{const {data,error}=await sb.from("profiles").select("level,grp,phone").eq("id",USER.id).maybeSingle();
-      if(!error){dbOk=true;if(data&&data.level)p=data}}catch(e){}
+    try{
+      const {data,error}=await sb.from("profiles").select("username,level,grp,attempt,plan,phone").eq("id",USER.id).maybeSingle();
+      if(!error){dbOk=true;p=data||null}else{DBWARN=true;DBERR=error.message}
+    }catch(e){}
   }
-  if(!p&&!dbOk)p=ls.get(pkey(),null);
-  if(p&&LEVELS.includes(p.level)){p._uid=uid;PROFILE=p}
+  const loc=ls.get(pkey(),null);
+  if(!dbOk&&!p)p=loc;
+  if(profFull(p)){p._uid=uid;if(!p.plan)p.plan="Basic";PROFILE=p;return}
+  if(dbOk&&profFull(loc)){
+    try{
+      const r=await sb.from("profiles").upsert({id:USER.id,username:loc.username,level:loc.level,grp:loc.grp||null,attempt:loc.attempt,phone:loc.phone}).select("plan");
+      if(!r.error){loc.plan=(r.data&&r.data[0]&&r.data[0].plan)||"Basic";loc._uid=uid;PROFILE=loc;DBWARN=false;return}
+      DBWARN=true;DBERR=r.error.message;
+    }catch(e){}
+  }
+  PARTIAL=Object.assign({},p||loc||{});
 }
 function applyProfile(){
   D.level=PROFILE.level;D.group=PROFILE.level==="Inter"?(PROFILE.grp||"Both"):"";
   D.psub=0;F=null;
 }
+function attemptOptions(cur){
+  const now=new Date(),out=[],M=[[0,"Jan"],[4,"May"],[8,"Sep"]];
+  for(let y=now.getFullYear();out.length<6;y++)for(const [m,n] of M){if(y===now.getFullYear()&&m<now.getMonth())continue;if(out.length<6)out.push(n+" "+y)}
+  out.push("Not decided yet");
+  if(cur&&!out.includes(cur))out.unshift(cur);
+  return out;
+}
 function openProfile(edit){
-  OB={level:PROFILE?PROFILE.level:"",grp:PROFILE&&PROFILE.grp?PROFILE.grp:""};
-  $("obph").value=PROFILE&&PROFILE.phone?PROFILE.phone:"";
-  $("pmenu").hidden=true;$("obmsg").textContent="";$("obcancel").hidden=!edit;$("obsave").disabled=false;
-  renderOb();$("ob").hidden=false;toggleNav(false);
+  const b=PROFILE||PARTIAL||{};
+  OB={edit:!!edit&&!!PROFILE,level:b.level||"",grp:b.grp||""};
+  $("obun").value=b.username||"";$("obph").value=b.phone||"";
+  $("obat").innerHTML=`<option value="">Select your attempt</option>`+attemptOptions(b.attempt).map(a=>`<option ${a===b.attempt?"selected":""}>${esc(a)}</option>`).join("");
+  $("obt").textContent=OB.edit?"Edit profile":"Set up your profile";
+  $("obsub").textContent=OB.edit?"You can change your group and attempt. Other details are locked.":"A few quick details to personalise your practice area.";
+  $("obfull").hidden=OB.edit;$("obphw").hidden=OB.edit;$("oblock").hidden=!OB.edit;
+  if(OB.edit)$("oblock").innerHTML=[["Username","@"+PROFILE.username],["Level",LABEL[PROFILE.level]],["Phone",PROFILE.phone||"–"]].map(r=>`<div class="lockrow"><span>${r[0]} 🔒</span><b>${esc(r[1])}</b></div>`).join("");
+  $("pmenu").hidden=true;$("obmsg").textContent="";$("obcancel").hidden=!OB.edit;$("obsave").disabled=false;
+  renderOb();$("ob").hidden=false;
 }
 function closeOb(){$("ob").hidden=true}
 function renderOb(){
+  const lvl=OB.edit?PROFILE.level:OB.level;
   $("oblvl").innerHTML=LEVELS.map(l=>`<button class="${OB.level===l?"on":""}" onclick="OB.level='${l}';renderOb()" style="text-align:center">${LABEL[l]}</button>`).join("");
-  $("obgrpw").hidden=OB.level!=="Inter";
+  $("obgrpw").hidden=lvl!=="Inter";
   $("obgrp").innerHTML=GROUPS.map(g=>`<button class="${OB.grp===g[0]?"on":""}" onclick="OB.grp='${g[0]}';renderOb()" style="text-align:center">${g[1]}</button>`).join("");
 }
 async function saveProfile(){
-  const m=$("obmsg");m.textContent="";
-  if(!OB.level){m.textContent="Please choose your level.";return}
-  if(OB.level==="Inter"&&!OB.grp){m.textContent="Please choose Group 1, Group 2 or Both.";return}
-  const ph=($("obph").value||"").replace(/[\s\-+]/g,"").replace(/^(91|0)(?=\d{10}$)/,"");
-  if(!/^[6-9]\d{9}$/.test(ph)){m.textContent="Please enter a valid 10-digit mobile number.";return}
-  const p={level:OB.level,grp:OB.level==="Inter"?OB.grp:null,phone:ph};
-  $("obsave").disabled=true;DBWARN=false;
-  if(sb&&USER){
-    try{const {error}=await sb.from("profiles").upsert({id:USER.id,level:p.level,grp:p.grp,phone:p.phone,updated_at:new Date().toISOString()});if(error)DBWARN=true}catch(e){DBWARN=true}
+  const m=$("obmsg");m.textContent="";const edit=OB.edit;
+  let un,ph;
+  if(!edit){
+    un=($("obun").value||"").trim().toLowerCase();
+    if(!/^[a-z0-9_]{3,20}$/.test(un)){m.textContent="Username must be 3-20 characters: letters, numbers or _.";return}
+    if(!OB.level){m.textContent="Please choose your level.";return}
   }
-  ls.set(pkey(),p);p._uid=USER?USER.id:"preview";PROFILE=p;
-  closeOb();enterDash();
-}
-async function login(){
-  if(!sb){$("amsg").textContent="Google login is not connected yet. Add your Supabase keys, then try again.";return}
-  try{localStorage.setItem("cg-after","practice")}catch(e){}
-  const {error}=await sb.auth.signInWithOAuth({provider:"google",options:{redirectTo:location.origin+location.pathname}});
-  if(error)$("amsg").textContent="Could not start Google login. Please try again.";
+  const level=edit?PROFILE.level:OB.level;
+  if(level==="Inter"&&!OB.grp){m.textContent="Please choose Group 1, Group 2 or Both.";return}
+  const at=$("obat").value;if(!at){m.textContent="Please choose your attempt.";return}
+  if(!edit){
+    ph=($("obph").value||"").replace(/[\s\-+]/g,"").replace(/^(91|0)(?=\d{10}$)/,"");
+    if(!/^[6-9]\d{9}$/.test(ph)){m.textContent="Please enter a valid 10-digit mobile number.";return}
+  }
+  const p={username:edit?PROFILE.username:un,level,grp:level==="Inter"?OB.grp:null,attempt:at,phone:edit?PROFILE.phone:ph,plan:(PROFILE&&PROFILE.plan)||"Basic"};
+  $("obsave").disabled=true;DBWARN=false;DBERR="";
+  if(sb&&USER){
+    try{
+      let r;
+      const full={id:USER.id,username:p.username,level:p.level,grp:p.grp,attempt:p.attempt,phone:p.phone};
+      if(edit){
+        r=await sb.from("profiles").update({grp:p.grp,attempt:p.attempt}).eq("id",USER.id).select("plan");
+        if(!r.error&&(!r.data||!r.data.length))r=await sb.from("profiles").upsert(full).select("plan");
+      }else r=await sb.from("profiles").upsert(full).select("plan");
+      if(r.error){
+        if(r.error.code==="23505"){m.textContent="That username is taken. Please try another one.";$("obsave").disabled=false;return}
+        DBWARN=true;DBERR=r.error.message;
+      }else if(r.data&&r.data[0]&&r.data[0].plan)p.plan=r.data[0].plan;
+    }catch(e){DBWARN=true;DBERR=String(e.message||e)}
+  }
+  ls.set(pkey(),p);p._uid=USER?USER.id:"preview";PROFILE=p;PARTIAL=null;closeOb();
+  if(edit){applyProfile();paintHeader();refresh()}else enterDash();
 }
 function startPreview(){PREVIEW=true;paintHeader();showPractice()}
 async function logout(){
@@ -591,9 +751,9 @@ const dl=()=>DATA[D.level];
 const SAMPLE=`<span class="badge">SAMPLE</span>`;
 const tile=(ic,lb,v)=>`<button class="tile" onclick="show('${v}')"><span class="ic">${ic}</span><span>${lb}</span></button>`;
 const sh=t=>`<div class="sh">${t}</div>`;
-const TABS=[["home","Dashboard","🏠"],["practice","Practice","📝"],["concept","Concept","💡"],["papers","PYQs/RTP/MTP","📜"],["analysis","Analysis","📈"]];
-const GRP={home:"home",doubts:"home",res:"home",practice:"practice",concept:"concept",flash:"concept",kw:"concept",fm:"concept",kotd:"concept",papers:"papers",pyq:"papers",mtp:"papers",rtp:"papers",analysis:"analysis",activity:"analysis",swot:"analysis",board:"analysis"};
-const PARENT={pyq:"papers",mtp:"papers",rtp:"papers",flash:"concept",kw:"concept",fm:"concept",kotd:"concept",activity:"analysis",swot:"analysis",board:"analysis"};
+const TABS=[["home","Dashboard","🏠","Home"],["practice","Practice","📝","Practice"],["concept","Concept","💡","Concept"],["papers","PYQs/RTP/MTP","📜","Papers"],["analysis","Analysis","📈","Analysis"]];
+const GRP={home:"home",doubts:"home",res:"home",practice:"practice",concept:"concept",flash:"concept",kw:"concept",fm:"concept",kotd:"concept",calci:"concept",papers:"papers",pyq:"papers",mtp:"papers",rtp:"papers",analysis:"analysis",activity:"analysis",swot:"analysis",board:"analysis"};
+const PARENT={pyq:"papers",mtp:"papers",rtp:"papers",flash:"concept",kw:"concept",fm:"concept",kotd:"concept",calci:"concept",activity:"analysis",swot:"analysis",board:"analysis"};
 const PNAME={papers:"PYQs/RTP/MTP",concept:"Concept",analysis:"Analysis",home:"Dashboard"};
 const BK=()=>{const p=PARENT[D.view]||"home";return `<button class="back" onclick="show('${p}')">← ${PNAME[p]}</button>`};
 const activeTab=()=>GRP[D.view==="run"&&R?R.back:D.view]||"home";
@@ -607,7 +767,7 @@ function nameOf(id){
 // ----- navigation -----
 function renderSide(){
   const act=activeTab();
-  $("tnav").innerHTML=TABS.map(t=>`<button class="${t[0]===act?"on":""}" onclick="show('${t[0]}')">${t[1]}</button>`).join("");
+  $("tnav").innerHTML=TABS.map(t=>`<button class="${t[0]===act?"on":""}" onclick="show('${t[0]}')"><i>${t[2]}</i><span class="lg">${t[1]}</span><span class="sm">${t[3]}</span></button>`).join("");
 }
 function toggleNav(f){D.navOpen=typeof f==="boolean"?f:!D.navOpen;side.classList.toggle("open",D.navOpen);scrim.classList.toggle("on",D.navOpen)}
 function show(v,x,nopush){
@@ -618,34 +778,57 @@ function show(v,x,nopush){
 }
 function refresh(top){
   timers.forEach(clearTimeout);timers=[];
-  dmain.innerHTML=V[D.view]();
+  dmain.innerHTML=(LOCK?pvBanner():"")+V[D.view]();
   if(top)window.scrollTo(0,0);
   if(D.view==="run")afterRun();
 }
 
 // ----- home -----
+const XPR=[["Complete Daily Case Study","+20"],["Complete a topic test","+10"],["Score 80%+ in a test","+15"],["Complete a PYQ paper","+50"],["Complete a weekly target","+100"],["Maintain a 7-day streak","+75"]];
+function xpWallet(){
+  return `<div class="xpcard"><div class="xph"><div><div class="xpk">YOUR LEARNING WALLET</div><div class="xpnum">0 <span>XP</span></div><div class="xps">Keep learning. Keep earning.</div></div><div class="xptr">🏆</div></div>
+  <div class="xpt">How you earn Gyan XP</div>${XPR.map(r=>`<div class="xprow"><span>${r[0]}</span><b>${r[1]}</b></div>`).join("")}<p class="xpnote">Illustrative XP values, not final rules.</p></div>`;
+}
 function vHome(){
   const c=dl().cases[dayIdx()%dl().cases.length];
-  return `<div class="tag">${esc(levelText())}</div><h1 class="dh">Welcome, ${esc(firstName())}.</h1>${DBWARN?`<div class="card"><p style="margin:0">Your details are saved on this device only, because the profiles table is not set up in the database yet.</p></div>`:""}
-  <div class="card"><div class="ph"><div style="flex:1;min-width:190px"><b style="font-size:18px">Today’s Progress</b><div class="bar" style="margin:12px 0"><i style="width:0%"></i></div><div>You’ve earned <b>0</b> of <b>100</b> points today</div></div>
-  <div class="mini2"><div><span style="font-size:28px">🔥</span><b>0</b><small>day streak</small></div><div><span class="coin">₹</span><b>0</b><small>reward balance preview</small></div></div></div>
+  const warn=DBWARN?`<div class="card warn"><b>Your profile is saved on this device only.</b><p style="margin:8px 0 0">It could not be saved to the database${DBERR?` (${esc(DBERR)})`:""}. Please run <b>profiles_v2.sql</b> in the Supabase SQL Editor, then open the site again.</p></div>`:"";
+  return `<div class="tag">${esc(levelText())}</div><h1 class="dh">Welcome, ${esc(displayName())}.</h1>${warn}
+  <div class="card"><div class="ph"><div style="flex:1;min-width:190px"><b style="font-size:18px">Today’s Progress</b><div class="bar" style="margin:14px 0"><i style="width:0%"></i></div><div>You’ve earned <b>0</b> of <b>100</b> XP today</div></div>
+  <div class="mini2"><div><span style="font-size:28px">🔥</span><b>0</b><small>day streak</small></div><div><span style="font-size:28px">⚡</span><b>0</b><small>Gyan XP</small></div></div></div>
   <p class="note2">Illustrative dashboard preview, not live account data.</p></div>
-  <div class="card cm"><span class="coin big">₹</span><div><b style="font-size:24px">12,480</b> ${SAMPLE}<br><span style="color:var(--mute)">points collected by the ChartedGyan community</span><br><a href="#" onclick="show('board');return false">View leaderboard ↗</a></div></div>
+  ${xpWallet()}
+  <div class="card cm" style="margin-top:20px"><span class="xptr sm">🏆</span><div><b style="font-size:24px">12,480 XP</b> ${SAMPLE}<br><span style="color:var(--mute)">earned by the ChartedGyan community</span><br><a href="#" onclick="show('board');return false">View leaderboard ↗</a></div></div>
   ${sh("DAILY CASE STUDIES")}<div class="card"><div class="row3"><span>📅 <b>${todayLabel()}</b>: ${esc(c.title)}</span><button class="go sm" onclick="openCase('${c.id}')">Attempt →</button></div><a href="#" onclick="show('practice');return false">View all case studies →</a></div>
   ${sh("EXAM PRACTICE")}<div class="grid">${tile("📜","Past Year Papers","pyq")}${tile("📝","MTPs","mtp")}${tile("🎯","RTPs","rtp")}${tile("🧪","Practice","practice")}</div>
-  ${sh("CONCEPTUAL GAMES")}<div class="grid">${tile("🃏","Flashcards","flash")}${tile("🔑","Keywords","kw")}${tile("ƒₓ","Formulas","fm")}</div>
+  ${sh("CONCEPTUAL GAMES")}<div class="grid">${tile("🃏","Flashcards","flash")}${tile("🔑","Keywords","kw")}${tile("ƒₓ","Formulas","fm")}${tile("🧮","Calci Tricks","calci")}</div>
   ${sh("OVERVIEW")}<div class="grid">${tile("📈","Activity","activity")}${tile("🙋","Doubts","doubts")}${tile("📊","SWOT Analysis","swot")}${tile("📚","Free Resources","res")}</div>
   ${sh("KEYWORD OF THE DAY")}${vKotd(true)}`;
 }
-
-// ----- case studies -----
+const CALCI={
+Foundation:[
+ {t:"Percentage in one go",k:"200 × 15 SHIFT ( =",d:"The % sign sits above the ( key. Use SHIFT + ( instead of dividing by 100 yourself.",e:"15% of ₹200 = 30."},
+ {t:"Add or remove GST fast",k:"Price × 1.18 =   |   Total ÷ 1.18 =",d:"Multiply by 1 + rate to add GST, and divide by the same number to take it out.",e:"₹1,180 ÷ 1.18 = ₹1,000 before GST."},
+ {t:"Compound interest with the Ans key",k:"10000 =  then  Ans × 1.1 =  then  =  =",d:"Type the starting amount, then Ans × (1 + rate). Each extra press of = adds one more year.",e:"Year 1: 11,000. Year 2: 12,100. Year 3: 13,310."},
+ {t:"Reuse a formula with CALC",k:"A × B × C ÷ 100  →  CALC",d:"Type the formula once using ALPHA variables, press CALC, enter the values, then press CALC again for new numbers.",e:"Simple interest: P × R × T ÷ 100 for many questions without retyping."},
+ {t:"Mean and standard deviation",k:"MODE → STAT → 1-VAR → enter values → AC → SHIFT 1 → Var",d:"Enter every observation with =, press AC, then open Var from the STAT menu to read the mean (x̄) and σx.",e:"Data 4, 6, 8, 10 gives mean 7."}],
+Inter:[
+ {t:"Solve simultaneous equations (EQN)",k:"MODE → EQN → anX + bnY = cn",d:"Useful for reciprocal service department costs. Rewrite each equation as aX + bY = c and enter the coefficients.",e:"A − 0.1B = 30,000 and −0.2A + B = 24,000 give A ≈ 33,061 and B ≈ 30,612."},
+ {t:"Present value factor",k:"1.1 x^ (−) 3 =",d:"A negative power gives 1 ÷ (1 + r)ⁿ directly.",e:"PV factor at 10% for 3 years = 0.7513."},
+ {t:"Annuity factor in one line",k:"( 1 − 1.1 x^ (−) 3 ) ÷ 0.1 =",d:"Cumulative PV factor = (1 − (1 + r)⁻ⁿ) ÷ r.",e:"10% for 3 years = 2.4869."},
+ {t:"Reducing balance with the Ans key",k:"100000 =  then  Ans × 0.85 =  then  =",d:"Each extra press of = applies one more year of depreciation.",e:"15% WDV: 85,000 then 72,250."},
+ {t:"Store a value in memory",k:"( 50 − 30 ) SHIFT RCL ALPHA A  then  80000 ÷ ALPHA A =",d:"Save contribution per unit in A and reuse it without retyping.",e:"Contribution ₹20, fixed cost ₹80,000 gives break-even 4,000 units."}]
+};
+function vCalci(){
+  return `${BK()}<h1 class="dh">Calci Tricks</h1><p class="lead">Calculator shortcuts that save time in the exam. Key names are for the Casio fx-991ES Plus, and other models may differ. ${SAMPLE}</p>`
+  +CALCI[D.level].map(t=>`<details class="card"><summary><b>${t.t}</b></summary><p style="color:var(--text);margin-top:12px">${t.d}</p><div class="formula">${t.k}</div><p style="margin-top:12px"><i>Example:</i> ${t.e}</p></details>`).join("");
+}
 function casesBody(){
   return `<p class="lead">Read a short real-life situation, then answer questions on it. ${SAMPLE} Real case studies are added when the data is ready.</p>`
   +dl().cases.map(c=>`<div class="card"><div class="tag">${c.tag}</div><h2>${c.title}</h2><p>${c.qs.length} questions</p><button class="go" onclick="openCase('${c.id}')">Attempt →</button></div>`).join("");
 }
 function vPractice(){return `<h1 class="dh">Practice</h1>${sh("DAILY CASE STUDIES")}${casesBody()}${sh("TOPIC TESTS")}${topicsBody()}`}
 const hub=(t,l,a)=>`<h1 class="dh">${t}</h1><p class="lead">${l}</p><div class="grid">${a.map(x=>tile(x[0],x[1],x[2])).join("")}</div>`;
-const vConcept=()=>hub("Concept","Revise ideas with cards, keywords and formulas.",[["🃏","Flashcards","flash"],["🔑","Keywords","kw"],["ƒₓ","Formulas","fm"],["💡","Keyword of the Day","kotd"]]);
+const vConcept=()=>hub("Concept","Revise ideas with cards, keywords and formulas.",[["🃏","Flashcards","flash"],["🔑","Keywords","kw"],["ƒₓ","Formulas","fm"],["💡","Keyword of the Day","kotd"],["🧮","Calci Tricks","calci"]]);
 const vPapersHub=()=>hub("PYQs / RTP / MTP","Attempt exam-style papers with a timer.",[["📜","Past Year Papers","pyq"],["📝","MTPs","mtp"],["🎯","RTPs","rtp"]]);
 const vAnalysis=()=>hub("Analysis","See how you are doing and where to improve.",[["📈","Activity","activity"],["📊","SWOT Analysis","swot"],["🏆","Leaderboard","board"]]);
 function openCase(id){const c=dl().cases.find(c=>c.id===id);startRun({id:"case:"+id,title:c.title,story:c.story,qs:c.qs,back:"practice",backLabel:"Practice"})}
@@ -809,21 +992,30 @@ function vRes(){
 }
 function vKotd(inHome){
   const K=dl().kw[dayIdx()%dl().kw.length],key="cg-kotd-"+todayKey()+D.level,mine=ls.get(key,""),W=dl().win;
-  const coins=["","s","b"];
+  const medals=["🥇","🥈","🥉"];
+  const body=mine
+   ?`<b>🏅 Daily Challenge</b><div class="done"><span>✅</span><div><b>Your response is submitted.</b><br>Great effort! Now get back to your study and practice. Come back tomorrow to see the winners.</div></div>`
+   :`<b>🏅 Daily Challenge</b><textarea id="kt" class="inp" rows="3" style="margin-top:12px" placeholder="Write your own sentence or real-life situation using “${K.w}”…"></textarea>
+  <button class="go" id="ktb" onclick="saveKotd()">Submit my entry</button><p class="note2">You can submit only once a day, and an entry can’t be edited after submission.</p>`;
   return (inHome?"":`${BK()}<h1 class="dh">Keyword of the Day</h1>`)
-  +`<div class="card"><h2 style="margin-top:0">${K.w}</h2><p style="color:var(--text)">${K.m}</p><p><i>Example:</i> ${K.ex}</p><hr class="hr2">
-  <b>🏅 Daily Challenge</b><textarea id="kt" class="inp" rows="3" placeholder="Write your own sentence or real-life situation using “${K.w}”…">${esc(mine)}</textarea>
-  <button class="go" onclick="saveKotd()">${mine?"Update my entry":"Submit my entry"}</button><p class="note2">${mine?"✓ Your entry is saved on this device. ":""}In this version entries are saved on this device only.</p></div>
-  <div class="card"><b>Yesterday’s winners: <u>${W.kw}</u></b> ${SAMPLE}${W.items.map((w,i)=>`<div class="win"><span class="coin ${coins[i]}">₹</span><div><b>${w[0]}</b><br>${w[1]}</div></div>`).join("")}</div>`;
+  +`<div class="card"><h2 style="margin-top:0">${K.w}</h2><p style="color:var(--text)">${K.m}</p><p><i>Example:</i> ${K.ex}</p><hr class="hr2">${body}</div>
+  <div class="card"><b>Yesterday’s winners: <u>${W.kw}</u></b> ${SAMPLE}${W.items.map((w,i)=>`<div class="win"><span class="medal">${medals[i]}</span><div><b>${w[0]}</b><br>${w[1]}</div></div>`).join("")}</div>`;
 }
-function saveKotd(){const t=$("kt").value.trim();if(!t)return;ls.set("cg-kotd-"+todayKey()+D.level,t);refresh()}
+async function saveKotd(){
+  const el=$("kt");if(!el)return;const t=el.value.trim();if(!t){toast("Please write your entry first.");return}
+  const b=$("ktb");if(b)b.disabled=true;
+  const K=dl().kw[dayIdx()%dl().kw.length];
+  ls.set("cg-kotd-"+todayKey()+D.level,t);
+  if(sb&&USER){try{await sb.from("kotd_entries").insert({user_id:USER.id,day:todayKey(),level:D.level,keyword:K.w,entry:t})}catch(e){}}
+  refresh();
+}
 function vBoard(){
-  return `${BK()}<h1 class="dh">Leaderboard</h1><p class="lead">Community points. ${SAMPLE} The real leaderboard starts once the points rules are final.</p>`
-  +BOARD.map((b,i)=>`<div class="card"><div class="row3"><span><b>${i+1}.</b> ${b[0]}</span><b>${b[1].toLocaleString("en-IN")} pts</b></div></div>`).join("")
-  +`<div class="card you"><div class="row3"><span><b>You</b> · ${esc(firstName())}</span><b>0 pts</b></div></div>`;
+  return `${BK()}<h1 class="dh">Leaderboard</h1><p class="lead">Community Gyan XP. ${SAMPLE} The real leaderboard starts once the XP rules are final.</p>`
+  +BOARD.map((b,i)=>`<div class="card"><div class="row3"><span><b>${i+1}.</b> ${b[0]}</span><b>${b[1].toLocaleString("en-IN")} XP</b></div></div>`).join("")
+  +`<div class="card you"><div class="row3"><span><b>You</b> · ${esc(displayName())}</span><b>0 XP</b></div></div>`;
 }
 
-const V={home:vHome,practice:vPractice,concept:vConcept,papers:vPapersHub,analysis:vAnalysis,pyq:()=>vPapers("pyq"),mtp:()=>vPapers("mtp"),rtp:()=>vPapers("rtp"),run:vRun,flash:vFlash,kw:vKw,fm:vFm,doubts:vDoubts,activity:vActivity,swot:vSwot,res:vRes,kotd:()=>vKotd(false),board:vBoard};
+const V={home:vHome,practice:vPractice,calci:vCalci,concept:vConcept,papers:vPapersHub,analysis:vAnalysis,pyq:()=>vPapers("pyq"),mtp:()=>vPapers("mtp"),rtp:()=>vPapers("rtp"),run:vRun,flash:vFlash,kw:vKw,fm:vFm,doubts:vDoubts,activity:vActivity,swot:vSwot,res:vRes,kotd:()=>vKotd(false),board:vBoard};
 
 // ----- database -----
 async function saveAttempt(){
@@ -841,6 +1033,9 @@ async function loadHistory(){
 // scroll reveal
 const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add("in");io.unobserve(e.target)}}),{threshold:.15});
 document.querySelectorAll(".rv").forEach(el=>io.observe(el));
+const xo=new IntersectionObserver(es=>es.forEach(e=>{if(!e.isIntersecting)return;const el=e.target,to=+el.dataset.to,st=performance.now();
+  (function f(t){const k=Math.min(1,(t-st)/1600);el.textContent=Math.round(to*(1-Math.pow(1-k,3))).toLocaleString("en-IN");if(k<1)requestAnimationFrame(f)})(st);xo.unobserve(el)}),{threshold:.4});
+document.querySelectorAll("[data-to]").forEach(el=>xo.observe(el));
 initAuth();
 
 </script>
