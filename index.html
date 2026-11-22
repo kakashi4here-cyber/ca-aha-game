@@ -311,6 +311,14 @@ details.card summary{cursor:pointer}
  #dmain{padding-bottom:130px}
  .lv{max-width:96px}
 }
+.sh{font-size:15px;letter-spacing:.1em;color:#6b6489;font-weight:800;margin:46px 4px 16px}
+#dmain .grid{gap:16px}
+.orow{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:12px 0;border-top:1px solid #efeaf9;font-weight:600}
+.olink{display:inline-block;color:#5b2ba8;font-weight:700;text-decoration:none;background:#f1ebfd;padding:7px 14px;border-radius:99px;margin-left:6px}
+.xpset{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-top:16px;padding-top:14px;border-top:1px solid #efeaf9}
+.xpset b{font-size:14px}.xpset .step{display:flex;align-items:center;gap:8px}
+.xpset .step button{width:38px;height:38px;margin:0;padding:0;border-radius:12px;font-size:20px}
+.xpset .step span{min-width:64px;text-align:center;font-weight:800;font-size:18px;color:#5b2ba8}
 </style>
 </head>
 <body>
@@ -732,6 +740,8 @@ function subs(){
   return D.group==="G1"?SUBJECTS.G1:D.group==="G2"?SUBJECTS.G2:[...SUBJECTS.G1,...SUBJECTS.G2];
 }
 const levelText=()=>LABEL[D.level]+(D.level==="Inter"?" · "+GL[D.group||"Both"]:"");
+const ICAI_INTER={"Jan 2026": {"Advanced Accounting": [["Question paper + suggested answers", "https://resource.cdn.icai.org/91199bos-aps4356-sa-int-p1.pdf"]], "Corporate & Other Laws": [["Question paper + suggested answers", "https://resource.cdn.icai.org/91200bos-aps4356-sa-int-p2.pdf"]], "Taxation": [["Question paper + suggested answers", "https://resource.cdn.icai.org/91201bos-aps4356-sa-int-p3.pdf"]], "Cost & Management Accounting": [["Question paper + suggested answers", "https://resource.cdn.icai.org/91202bos-aps4356-sa-int-p4.pdf"]], "Auditing & Ethics": [["Question paper + suggested answers", "https://resource.cdn.icai.org/91203bos-aps4356-sa-int-p5.pdf"]], "Financial Management & Strategic Management": [["Question paper + suggested answers", "https://resource.cdn.icai.org/91204bos-aps4356-sa-int-p6.pdf"]]}, "May 2025": {"Advanced Accounting": [["Question paper + suggested answers", "https://resource.cdn.icai.org/86851bos-sa-int-may2025-g1-p1.pdf"]], "Corporate & Other Laws": [["Question paper + suggested answers", "https://resource.cdn.icai.org/86852bos-sa-int-may2025-g1-p2.pdf"]], "Taxation": [["Part A", "https://resource.cdn.icai.org/87255bos-sa-int-may2025-g1-p3a.pdf"], ["Part B", "https://resource.cdn.icai.org/87256bos-sa-int-may2025-g1-p3b.pdf"]], "Cost & Management Accounting": [["Question paper + suggested answers", "https://resource.cdn.icai.org/86854bos-sa-int-may2025-g2-p4.pdf"]], "Auditing & Ethics": [["Question paper + suggested answers", "https://resource.cdn.icai.org/86855bos-sa-int-may2025-g2-p5.pdf"]], "Financial Management & Strategic Management": [["Part A", "https://resource.cdn.icai.org/87257bos-sa-int-may2025-g2-p6a.pdf"], ["Part B", "https://resource.cdn.icai.org/87258bos-sa-int-may2025-g2-p6b.pdf"]]}, "Jan 2025": {"Advanced Accounting": [["Question paper + suggested answers", "https://resource.cdn.icai.org/84875bos68360-p1.pdf"]], "Corporate & Other Laws": [["Question paper + suggested answers", "https://resource.cdn.icai.org/84876bos68360-p2.pdf"]], "Taxation": [["Question paper + suggested answers", "https://resource.cdn.icai.org/84877bos68360-p3.pdf"]], "Cost & Management Accounting": [["Question paper + suggested answers", "https://resource.cdn.icai.org/84878bos68360-p4.pdf"]], "Auditing & Ethics": [["Question paper + suggested answers", "https://resource.cdn.icai.org/84879bos68360-p5.pdf"]], "Financial Management & Strategic Management": [["Question paper + suggested answers", "https://resource.cdn.icai.org/84880bos68360-p6.pdf"]]}, "Sep 2024": {"Advanced Accounting": [["Question paper + suggested answers", "https://resource.cdn.icai.org/83078bos67152-1.pdf"]], "Corporate & Other Laws": [["Question paper + suggested answers", "https://resource.cdn.icai.org/83073bos67152-2.pdf"]], "Taxation": [["Question paper + suggested answers", "https://resource.cdn.icai.org/83074bos67152-3.pdf"]], "Cost & Management Accounting": [["Question paper + suggested answers", "https://resource.cdn.icai.org/83075bos67152-4.pdf"]], "Auditing & Ethics": [["Question paper + suggested answers", "https://resource.cdn.icai.org/83076bos67152-5.pdf"]], "Financial Management & Strategic Management": [["Question paper + suggested answers", "https://resource.cdn.icai.org/83077bos67152-6.pdf"]]}, "May 2024": {"Advanced Accounting": [["Question paper + suggested answers", "https://resource.cdn.icai.org/81496bos65715-p1.pdf"]], "Corporate & Other Laws": [["Question paper + suggested answers", "https://resource.cdn.icai.org/81497bos65715-p2.pdf"]], "Taxation": [["Question paper + suggested answers", "https://resource.cdn.icai.org/81498bos65715-p3.pdf"]], "Cost & Management Accounting": [["Question paper + suggested answers", "https://resource.cdn.icai.org/81499bos65715-p4.pdf"]], "Auditing & Ethics": [["Question paper + suggested answers", "https://resource.cdn.icai.org/81500bos65715-p5.pdf"]], "Financial Management & Strategic Management": [["Question paper + suggested answers", "https://resource.cdn.icai.org/81501bos65715-p6.pdf"]]}};
+const BOS_URL="https://boslive.icai.org";
 const PAPERS={pyq:["May 2025","Nov 2024","May 2024"],mtp:["Series 1","Series 2"],rtp:["May 2026","Nov 2025"]};
 const PTITLE={pyq:"Past Year Papers",mtp:"MTPs",rtp:"RTPs"};
 const PQS={
@@ -784,6 +794,9 @@ function refresh(top){
 }
 
 // ----- home -----
+const XPMIN=100;
+const xpTarget=()=>{const v=parseInt(ls.get("cg-xptarget",XPMIN),10);return isFinite(v)&&v>=XPMIN?v:XPMIN};
+function setXpTarget(d){const v=Math.max(XPMIN,xpTarget()+d);ls.set("cg-xptarget",v);try{if(sb&&USER)sb.from("profiles").update({xp_target:v}).eq("id",USER.id).then(()=>{},()=>{})}catch(e){}refresh()}
 const XPR=[["Complete Daily Case Study","+20"],["Complete a topic test","+10"],["Score 80%+ in a test","+15"],["Complete a PYQ paper","+50"],["Complete a weekly target","+100"],["Maintain a 7-day streak","+75"]];
 function xpWallet(){
   return `<div class="xpcard"><div class="xph"><div><div class="xpk">YOUR LEARNING WALLET</div><div class="xpnum">0 <span>XP</span></div><div class="xps">Keep learning. Keep earning.</div></div><div class="xptr">🏆</div></div>
@@ -793,7 +806,8 @@ function vHome(){
   const c=dl().cases[dayIdx()%dl().cases.length];
   const warn=DBWARN?`<div class="card warn"><b>Your profile is saved on this device only.</b><p style="margin:8px 0 0">It could not be saved to the database${DBERR?` (${esc(DBERR)})`:""}. Please run <b>profiles_v2.sql</b> in the Supabase SQL Editor, then open the site again.</p></div>`:"";
   return `<div class="tag">${esc(levelText())}</div><h1 class="dh">Welcome, ${esc(displayName())}.</h1>${warn}
-  <div class="card"><div class="ph"><div style="flex:1;min-width:190px"><b style="font-size:18px">Today’s Progress</b><div class="bar" style="margin:14px 0"><i style="width:0%"></i></div><div>You’ve earned <b>0</b> of <b>100</b> XP today</div></div>
+  <div class="card"><div class="ph"><div style="flex:1;min-width:190px"><b style="font-size:18px">Today’s Progress</b><div class="bar" style="margin:14px 0"><i style="width:0%"></i></div><div>You’ve earned <b>0</b> of <b>${xpTarget()}</b> XP today</div>
+  <div class="xpset"><b>My daily XP target</b><div class="step"><button onclick="setXpTarget(-50)" aria-label="Decrease target">−</button><span>${xpTarget()}</span><button onclick="setXpTarget(50)" aria-label="Increase target">+</button></div><small style="color:var(--mute)">Minimum ${XPMIN} XP</small></div></div>
   <div class="mini2"><div><span style="font-size:28px">🔥</span><b>0</b><small>day streak</small></div><div><span style="font-size:28px">⚡</span><b>0</b><small>Gyan XP</small></div></div></div>
   <p class="note2">Illustrative dashboard preview, not live account data.</p></div>
   ${xpWallet()}
@@ -839,7 +853,19 @@ function vPapers(kind){
   return `${BK()}<h1 class="dh">${PTITLE[kind]}</h1>
   <div class="card"><p style="margin:0">${SAMPLE} These are sample papers with 3 questions each. Real papers are added when the data is ready.</p></div>
   <div class="chips wrap">${sub.map((s,i)=>`<button class="${i===f?"on":""}" onclick="D.psub=${i};refresh()">${s}</button>`).join("")}</div>
+  ${officialCard(kind,sub[f])}
+  <div class="sh">PRACTICE SAMPLE PAPERS</div>
   ${PAPERS[kind].map(l=>`<div class="card"><div class="row3"><div><b>${PTITLE[kind].replace(/s$/,"")} · ${l}</b><br><span style="color:var(--mute)">${sub[f]} · ${PQS[D.level].length} questions</span></div><button class="go sm" onclick="openPaper('${kind}','${l}')">Attempt →</button></div></div>`).join("")}`;
+}
+function officialCard(kind,subj){
+  const ext='target="_blank" rel="noopener noreferrer"';
+  let h=`<div class="sh">OFFICIAL ICAI PAPERS</div>`;
+  if(kind==="pyq"&&D.level==="Inter"){
+    h+=`<div class="card"><b>${esc(subj)}</b><p style="color:var(--mute);margin:6px 0 4px">Question papers with ICAI suggested answers, as published by ICAI.</p>`+Object.keys(ICAI_INTER).map(ses=>{const ls2=ICAI_INTER[ses][subj];if(!ls2)return"";return `<div class="orow"><span>${ses}</span><span>${ls2.map(x=>`<a class="olink" href="${x[1]}" ${ext}>${ls2.length>1?x[0]:"Open PDF"} ↗</a>`).join("")}</span></div>`}).join("")+`<p class="note2">Files open on ICAI’s own website. Always cross-check with the latest ICAI Study Material.</p></div>`;
+  }else{
+    h+=`<div class="card"><p style="margin:0 0 12px">${kind==="pyq"?"Foundation past papers":kind==="mtp"?"Mock Test Papers (MTPs)":"Revision Test Papers (RTPs)"} are published by the ICAI Board of Studies. We are adding verified direct links subject by subject.</p><a class="olink" href="${BOS_URL}" ${ext}>Open ICAI Board of Studies portal ↗</a></div>`;
+  }
+  return h;
 }
 function openPaper(kind,l){startRun({id:kind+":"+(D.level+l+D.psub).replace(/\s/g,""),title:`${PTITLE[kind]} · ${l} · ${subs()[Math.min(D.psub||0,subs().length-1)]}`,qs:PQS[D.level],mode:"paper",back:kind,backLabel:PTITLE[kind]})}
 
