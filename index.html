@@ -394,7 +394,7 @@ body.obwiz .hint{max-width:420px;margin:8px auto 24px;text-align:left}
 body.obwiz #obmsg{margin:0 0 14px}
 
 /* ---- v5: royal-purple only + laptop layout (AfterBoards-style sidebar) ---- */
-#dtop,#dban{display:none}
+#dtop{display:none}
 #pmenu{position:fixed;right:16px;top:calc(62px + env(safe-area-inset-top,0px));z-index:70}
 @media (min-width:900px){
  body.indash{--sw:248px}
@@ -402,9 +402,6 @@ body.obwiz #obmsg{margin:0 0 14px}
  body.indash .site{display:none}
  body.indash #side{display:flex!important;flex-direction:column;transform:none;top:0;left:0;bottom:0;width:var(--sw);padding:0;background:#fff;border-right:1px solid var(--bd);box-shadow:none;z-index:40;transition:width .2s}
  body.indash #app #dtop{display:flex;position:fixed;top:0;left:var(--sw);right:0;height:60px;align-items:center;justify-content:center;background:#fff;border-bottom:1px solid var(--bd);z-index:30;transition:left .2s}
- body.indash #app #dban{display:flex;position:fixed;top:60px;left:var(--sw);right:0;height:38px;align-items:center;justify-content:center;background:#f4effc;border-bottom:1px solid var(--bd);color:#4b2c8f;font-weight:600;font-size:14px;letter-spacing:.02em;z-index:29;transition:left .2s}
- #dban button{position:absolute;right:18px;width:auto;margin:0;padding:4px 8px;background:none;color:#6a6484;font-size:13px}
- body.indash.nobn #dban{display:none!important}
  #dtitle{font-weight:700;font-size:16px;color:var(--ink)}
  .dright{position:absolute;right:20px;display:flex;align-items:center;gap:16px}
  .dic{position:relative;width:auto;margin:0;padding:6px;background:none;color:#4b4470;display:flex;border-radius:50%}
@@ -414,7 +411,7 @@ body.obwiz #obmsg{margin:0 0 14px}
  .dlogo{width:40px;height:40px;margin:0;padding:3px;border-radius:50%;border:1px solid var(--bd);background:#fff;display:flex;align-items:center;justify-content:center}
  .dlogo:hover{border-color:#7d4fd6}
  .dlogo img{width:100%;height:100%;object-fit:contain}
- body.indash #dmain{margin:0 0 0 var(--sw);max-width:none;padding:128px max(40px,calc((100% - 920px)/2)) 80px;transition:margin .2s}
+ body.indash #dmain{margin:0 0 0 var(--sw);max-width:none;padding:84px max(40px,calc((100% - 920px)/2)) 80px;transition:margin .2s}
  .sbh{display:flex;align-items:center;justify-content:space-between;gap:8px;padding:14px 14px 10px;height:60px}
  .sbb{display:flex;align-items:center;gap:8px;font-size:19px;font-weight:600;letter-spacing:-.02em;white-space:nowrap;overflow:hidden}
  .sbb img{height:34px;width:auto;flex:none}
@@ -435,6 +432,87 @@ body.obwiz #obmsg{margin:0 0 14px}
  .sbx b{display:block;font-size:14px;color:#2a1a55}.sbx small{color:var(--mute);font-size:12px}
  body.sbc .sbu{justify-content:center}
 }
+
+/* ---- v6: refined sizing, balanced colour ---- */
+html,body{font-size:14px}
+body{background:linear-gradient(180deg,#f6f3fc 0,#f3effa 100%) fixed;line-height:1.5}
+.dh{font-size:22px;font-weight:700;margin:2px 0 4px}
+h1{font-size:24px}h2{font-size:17px;margin:4px 0 10px}
+.lead{font-size:14px;margin:0 0 16px}
+.sh{font-size:11.5px;font-weight:700;letter-spacing:.09em;margin:24px 2px 10px;color:#6a6484}
+.sh::before{content:"";display:inline-block;width:3px;height:11px;background:#7d4fd6;border-radius:2px;margin-right:8px;vertical-align:-1px}
+.card,.rowb,.tile,.tlist,.chap{box-shadow:0 1px 2px rgba(60,30,120,.05)!important;border-radius:12px}
+.card{padding:16px 18px;margin-bottom:12px}
+.card h2{margin:2px 0 8px}.card p{margin:0 0 10px}
+.card button{margin-top:8px}
+.card button.go,button.go.sm,.obgo{width:auto;display:inline-block;border-radius:9px;padding:9px 20px;font-size:14px;font-weight:600}
+.card textarea.inp{margin-bottom:6px}
+.bar{height:6px}
+.grid{grid-template-columns:repeat(auto-fill,minmax(200px,1fr))!important;gap:10px}
+.tile{flex-direction:row;justify-content:flex-start;gap:12px;padding:12px 14px;text-align:left;font-size:14px;font-weight:600;border-radius:12px}
+.tile .ic{width:38px;height:38px;border-radius:10px;background:#f1ecfb;display:flex;align-items:center;justify-content:center;font-size:19px;flex:none}
+.tile:hover .ic{background:#e6dcf8}
+.rowb{padding:12px 16px;margin-bottom:8px}
+.stats>div{border-radius:10px;padding:10px 4px}.stats b{font-size:19px}
+.chap .chn{font-size:14.5px}.unit{font-size:14px;padding:12px 16px}.chh{padding:13px 16px}
+.tlh{font-size:15px;padding:12px 16px}.trow{padding:12px 16px}.tn b{font-size:14.5px}
+.ptabs button,.ptop button{font-size:14px;padding:9px 12px}
+.pbtn{padding:6px 16px;font-size:13px}
+.xpcard{padding:16px 18px;border-radius:12px}.xpnum{font-size:32px}
+.win{padding:12px 0}
+/* hero */
+.hx{background:linear-gradient(135deg,#3f1d85 0,#5b2ba8 55%,#7d4fd6 100%);color:#fff;border-radius:16px;padding:22px 24px;margin-bottom:16px;position:relative;overflow:hidden;box-shadow:0 8px 24px rgba(91,43,168,.22)}
+.hx::after{content:"";position:absolute;right:-40px;top:-60px;width:220px;height:220px;border-radius:50%;background:rgba(255,255,255,.08)}
+.hx::before{content:"";position:absolute;right:90px;bottom:-90px;width:180px;height:180px;border-radius:50%;background:rgba(255,255,255,.06)}
+.hx>*{position:relative;z-index:1}
+.hxv{font-size:11.5px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#d9c9f7}
+.hx h1{font-size:24px;margin:4px 0 2px;color:#fff;font-weight:700;letter-spacing:-.02em}
+.hxm{font-size:14px;color:#e6dbfa;margin-bottom:16px}
+.hxp{max-width:520px}
+.hxr{display:flex;justify-content:space-between;font-size:13px;color:#e6dbfa;margin-bottom:6px}.hxr b{color:#fff}
+.hxb{height:7px;border-radius:99px;background:rgba(255,255,255,.22);overflow:hidden}
+.hxb i{display:block;height:100%;background:linear-gradient(90deg,#f5e6a8,#fff);border-radius:99px;transition:width .4s}
+.hxs{display:flex;gap:10px;margin-top:16px;flex-wrap:wrap}
+.hxc{width:auto;margin:0;display:flex;align-items:center;gap:8px;background:rgba(255,255,255,.13);border:1px solid rgba(255,255,255,.2);border-radius:10px;padding:8px 14px;color:#fff;text-align:left}
+button.hxc{cursor:pointer}button.hxc:hover{background:rgba(255,255,255,.2)}
+.hxc span{font-size:18px}.hxc b{font-size:20px;color:#fff}.hxc small{font-size:12px;color:#e6dbfa}
+.motto{display:none}
+@media(max-width:899px){.hxm{margin-bottom:14px}}
+/* sidebar polish */
+@media (min-width:900px){
+ body.indash #side .ni{font-size:14px;padding:9px 12px;border-radius:9px;gap:11px}
+ body.indash #side .ni span{font-size:17px;width:20px}
+ .sbb{font-size:18px}
+ #dtitle{font-size:15px;font-weight:600;color:#5b2ba8;letter-spacing:.01em}
+ body.indash #app #dtop{height:56px}
+ .sk{margin:2px 0 8px 22px;padding-left:10px;border-left:2px solid #ece6fb}
+ body.sbc .sk{display:none}
+ body.indash #side .si{display:flex;align-items:center;gap:9px;width:100%;margin:1px 0;padding:7px 10px;border-radius:8px;font-size:13px;font-weight:500;color:#5a5478;background:none;text-align:left}
+ body.indash #side .si span{font-size:14px;width:18px;text-align:center}
+ body.indash #side .si:hover{background:#f7f4fd}
+ body.indash #side .si.on{color:#5b2ba8;font-weight:700;background:#f1ecfb}
+}
+.dstreak{width:auto;margin:0;padding:5px 10px;border-radius:99px;background:#f4effc;color:#4b2c8f}
+.dstreak:hover{background:#ebe2fa}
+/* streak calendar */
+#strk{position:fixed;right:16px;top:calc(62px + env(safe-area-inset-top,0px));width:316px;max-width:calc(100vw - 24px);background:#fff;border-radius:14px;padding:16px;box-shadow:0 12px 40px rgba(40,20,90,.25);z-index:70;border:1px solid var(--bd)}
+@media(min-width:900px){#strk{right:130px}}
+.sk1{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:12px}.sk1 b{font-size:15px}.sk1 span{font-size:12.5px;color:var(--mute)}
+.sk2{display:flex;justify-content:space-between;align-items:center;margin-bottom:8px}.sk2 b{font-size:14px}
+.sk2 button{width:28px;height:28px;margin:0;padding:0;text-align:center;border-radius:8px;background:#f4effc;color:#5b2ba8;font-size:16px;line-height:1}
+.cg{display:grid;grid-template-columns:repeat(7,1fr);gap:4px}
+.cg em{font-style:normal;font-size:11px;color:#8a84a6;text-align:center;padding:2px 0;font-weight:600}
+.cd{aspect-ratio:1;border-radius:7px;display:flex;align-items:center;justify-content:center;font-size:12.5px;font-weight:600;background:#f6f3fb;color:#6a6484}
+.cd.l1{background:#e4daf5;color:#3c2380}.cd.l2{background:#c4aeec;color:#2f1a6b}.cd.l3{background:#9a72dc;color:#fff}.cd.l4{background:#6d3fc4;color:#fff}.cd.l5{background:#3f1d85;color:#fff}
+.cd.td{outline:2px solid #5b2ba8;outline-offset:1px}
+.lg2{display:flex;align-items:center;gap:4px;justify-content:flex-end;margin:10px 0 2px;font-size:11px;color:#8a84a6}.lg2 i{width:14px;height:14px;aspect-ratio:auto;border-radius:4px;display:inline-block}
+.tgt{display:flex;justify-content:space-between;align-items:center;margin-top:12px;padding-top:12px;border-top:1px solid #efeaf9}
+.tgt b{font-size:13.5px}.tgt small{display:block;color:var(--mute);font-size:11.5px}
+.stp{display:flex;align-items:center;gap:8px}.stp b{min-width:36px;text-align:center;font-size:15px}
+.stp button{width:30px;height:30px;margin:0;padding:0;text-align:center;border-radius:8px;background:#f1ecfb;color:#5b2ba8;font-weight:700;font-size:16px}
+
+.pvb2{padding:10px 14px!important;border-radius:10px!important;font-size:13px;gap:12px}
+.pvb2 button.go{width:auto;margin:0!important;padding:7px 16px!important;border-radius:8px}
 </style>
 </head>
 <body>
@@ -544,8 +622,8 @@ body.obwiz #obmsg{margin:0 0 14px}
 </section>
 
 <div id="app" hidden>
- <div id="dtop"><div id="dtitle"></div><div class="dright"><button class="dic" id="dbell" onclick="toast('No new notifications')" aria-label="Notifications"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8a6 6 0 10-12 0c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.7 21a2 2 0 01-3.4 0"/></svg><i class="dot"></i></button><span class="dstreak" title="Day streak">🔥 <b>0</b></span><button class="dlogo" id="dlogo" onclick="PROFILE?toggleProfile(event):showAuth()" aria-label="Profile"><img alt=""></button></div></div>
- <div id="dban"><span>Be relentless</span><button onclick="document.body.classList.add('nobn')" aria-label="Close banner">✕</button></div>
+ <div id="strk" hidden></div>
+ <div id="dtop"><div id="dtitle"></div><div class="dright"><button class="dic" id="dbell" onclick="toast('No new notifications')" aria-label="Notifications"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8a6 6 0 10-12 0c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.7 21a2 2 0 01-3.4 0"/></svg><i class="dot"></i></button><button class="dstreak" id="dstreak" onclick="openStreak(event)" title="Streak calendar">🔥 <b>0</b></button><button class="dlogo" id="dlogo" onclick="PROFILE?toggleProfile(event):showAuth()" aria-label="Profile"><img alt=""></button></div></div>
  <div id="scrim" onclick="toggleNav(false)"></div>
  <aside id="side"></aside>
  <main id="dmain"></main>
@@ -924,9 +1002,9 @@ const SAMPLE=`<span class="badge">SAMPLE</span>`;
 const tile=(ic,lb,v)=>`<button class="tile" onclick="show('${v}')"><span class="ic">${ic}</span><span>${lb}</span></button>`;
 const sh=t=>`<div class="sh">${t}</div>`;
 const TABS=[["home","Dashboard","🏠","Home"],["practice","Practice","📝","Practice"],["concept","Concept","💡","Concept"],["papers","PYQs/RTP/MTP","📜","Papers"],["analysis","Analysis","📈","Analysis"]];
-const GRP={home:"home",doubts:"home",res:"home",practice:"practice",concept:"concept",flash:"concept",kw:"concept",fm:"concept",kotd:"concept",calci:"concept",syllabus:"analysis",papers:"papers",pyq:"papers",mtp:"papers",rtp:"papers",analysis:"analysis",activity:"analysis",swot:"analysis",board:"analysis"};
-const PARENT={pyq:"papers",mtp:"papers",rtp:"papers",flash:"concept",kw:"concept",fm:"concept",kotd:"concept",calci:"concept",syllabus:"analysis",activity:"analysis",swot:"analysis",board:"analysis"};
-const PNAME={papers:"PYQs/RTP/MTP",concept:"Concept",analysis:"Analysis",home:"Dashboard"};
+const GRP={home:"home",doubts:"analysis",res:"analysis",practice:"practice",topics:"practice",cases:"practice",concept:"concept",flash:"concept",kw:"concept",fm:"concept",kotd:"concept",calci:"concept",syllabus:"analysis",papers:"papers",pyq:"papers",mtp:"papers",rtp:"papers",analysis:"analysis",activity:"analysis",swot:"analysis",board:"analysis"};
+const PARENT={topics:"practice",cases:"practice",doubts:"analysis",res:"analysis",pyq:"papers",mtp:"papers",rtp:"papers",flash:"concept",kw:"concept",fm:"concept",kotd:"concept",calci:"concept",syllabus:"analysis",activity:"analysis",swot:"analysis",board:"analysis"};
+const PNAME={practice:"Practice",papers:"PYQs/RTP/MTP",concept:"Concept",analysis:"Analysis",home:"Dashboard"};
 const BK=()=>{const p=PARENT[D.view]||"home";return `<button class="back" onclick="show('${p}')">← ${PNAME[p]}</button>`};
 const activeTab=()=>GRP[D.view==="run"&&R?R.back:D.view]||"home";
 function nameOf(id){
@@ -937,13 +1015,14 @@ function nameOf(id){
 }
 
 // ----- navigation -----
+const SIDEKIDS={practice:[["📅","Daily Case Studies","cases"],["📝","Topic Tests","topics"]],concept:[["🃏","Flashcards","flash"],["🔑","Keywords","kw"],["ƒₓ","Formulas","fm"],["💡","Keyword of the Day","kotd"],["🧮","Calci Tricks","calci"]],papers:[["📜","Past Year Papers","pyq"],["📝","MTPs","mtp"],["🎯","RTPs","rtp"]],analysis:[["✅","Syllabus Completion","syllabus"],["📈","Activity","activity"],["🙋","Doubts","doubts"],["📊","SWOT Analysis","swot"],["📚","Free Resources","res"],["🏆","Leaderboard","board"]]};
 function renderSide(){
   const act=activeTab();
   try{
     const lg=document.querySelector(".logo img").src,t=TABS.find(t=>t[0]===act)||TABS[0];
-    $("dtitle").textContent=t[1];document.querySelector("#dlogo img").src=lg;
+    $("dtitle").textContent=MOTTO;$("dstreak").querySelector("b").textContent=streakN();document.querySelector("#dlogo img").src=lg;
     $("side").innerHTML=`<div class="sbh"><span class="sbb"><img src="${lg}" alt=""><span class="sbn">Charted<b class="gy">Gyan</b></span></span><button class="sbt" onclick="toggleSb()" aria-label="Collapse sidebar">‹</button></div>`
-     +`<div class="sbl">`+TABS.map(x=>`<button class="ni ${x[0]===act?"on":""}" onclick="show('${x[0]}')" title="${x[1]}"><span>${x[2]}</span><em>${x[1]}</em></button>`).join("")+`</div>`
+     +`<div class="sbl">`+TABS.map(x=>`<button class="ni ${x[0]===act?"on":""}" onclick="show('${x[0]}')" title="${x[1]}"><span>${x[2]}</span><em>${x[1]}</em></button>`+(x[0]===act&&SIDEKIDS[x[0]]?`<div class="sk">${SIDEKIDS[x[0]].map(k=>`<button class="si ${D.view===k[2]?"on":""}" onclick="show('${k[2]}')"><span>${k[0]}</span>${k[1]}</button>`).join("")}</div>`:"")).join("")+`</div>`
      +`<div class="sbf">${PROFILE?`<div class="sbu"><span class="av">${esc(initial())}</span><div class="sbx"><b>@${esc(PROFILE.username||"")}</b><small>${esc(PROFILE.plan||"Basic")} plan</small></div></div>`:`<button class="ni" onclick="showAuth()"><span>🔑</span><em>Login</em></button>`}</div>`;
   }catch(e){}
   $("tnav").innerHTML=TABS.map(t=>`<button class="${t[0]===act?"on":""}" onclick="show('${t[0]}')"><i>${t[2]}</i><span class="lg">${t[1]}</span><span class="sm">${t[3]}</span></button>`).join("");
@@ -953,7 +1032,7 @@ if(ls.get("cg-sbc",false))document.body.classList.add("sbc");
 document.body.appendChild($("pmenu"));
 function toggleNav(f){D.navOpen=typeof f==="boolean"?f:!D.navOpen;side.classList.toggle("open",D.navOpen);scrim.classList.toggle("on",D.navOpen)}
 function show(v,x,nopush){
-  clearInterval(tick);D.view=v;if(x)Object.assign(D,x);$("pmenu").hidden=true;
+  clearInterval(tick);D.view=v;if(x)Object.assign(D,x);$("pmenu").hidden=true;$("strk").hidden=true;
   if(!nopush){try{history.pushState({cg:1,app:1,v:v},"")}catch(e){}}
   if(v!=="run")ls.set("cg-view-"+(USER?USER.id:"preview"),v);
   renderSide();refresh(true);
@@ -965,29 +1044,64 @@ function refresh(top){
   if(D.view==="run")afterRun();
 }
 
+// ----- XP log, streak, motto -----
+const MOTTOS=["Be relentless","Stay hungry","Keep going","Show up daily","Earn it","One more rep","Own the day","No shortcuts","Stay consistent","Make it count","Think big","Never settle"];
+const MOTTO=MOTTOS[Math.floor(Math.random()*MOTTOS.length)];
+const lk=d=>{d=d||new Date();return d.getFullYear()+"-"+String(d.getMonth()+1).padStart(2,"0")+"-"+String(d.getDate()).padStart(2,"0")};
+const xpKey=()=>"cg-xplog-"+(USER?USER.id:"preview");
+const xpLog=()=>ls.get(xpKey(),{});
+const xpOn=k=>xpLog()[k]||0;
+const xpToday=()=>xpOn(lk());
+const xpTotal=()=>Object.values(xpLog()).reduce((a,b)=>a+b,0);
+function streakN(){const d=new Date();if(!xpOn(lk(d)))d.setDate(d.getDate()-1);let n=0;while(xpOn(lk(d))>0){n++;d.setDate(d.getDate()-1)}return n}
+function awardXp(){
+  if(LOCK||!R)return;
+  const aw=ls.get("cg-xpawd",{}),id=lk()+"|"+R.id;if(aw[id])return;
+  const x=(R.id.startsWith("case:")?20:R.mode==="paper"?50:10)+(R.qs.length&&R.score/R.qs.length>=.8?15:0);
+  aw[id]=1;ls.set("cg-xpawd",aw);
+  const L=xpLog();L[lk()]=(L[lk()]||0)+x;ls.set(xpKey(),L);
+  toast("+"+x+" XP earned");renderSide();
+}
+const xpLvl=x=>x<=0?0:x<20?1:x<50?2:x<100?3:x<200?4:5;
+let SM=null;
+function openStreak(e){
+  if(e)e.stopPropagation();const m=$("strk");
+  if(!m.hidden){m.hidden=true;return}
+  $("pmenu").hidden=true;const n=new Date();SM={y:n.getFullYear(),m:n.getMonth()};paintStreak();m.hidden=false;
+}
+function stepMonth(d){SM.m+=d;if(SM.m<0){SM.m=11;SM.y--}if(SM.m>11){SM.m=0;SM.y++}paintStreak()}
+function bumpTarget(d){setXpTarget(d);paintStreak()}
+function paintStreak(){
+  const first=new Date(SM.y,SM.m,1).getDay(),days=new Date(SM.y,SM.m+1,0).getDate(),tk=lk();
+  let cells="";for(let i=0;i<first;i++)cells+=`<i></i>`;
+  for(let d=1;d<=days;d++){const k=SM.y+"-"+String(SM.m+1).padStart(2,"0")+"-"+String(d).padStart(2,"0"),x=xpOn(k);cells+=`<div class="cd l${xpLvl(x)} ${k===tk?"td":""}" title="${x} XP">${d}</div>`}
+  $("strk").innerHTML=`<div class="sk1"><b>🔥 ${streakN()} day streak</b><span>${xpToday()} / ${xpTarget()} XP today</span></div>
+  <div class="sk2"><button onclick="stepMonth(-1)" aria-label="Previous month">‹</button><b>${new Date(SM.y,SM.m,1).toLocaleDateString("en-IN",{month:"long",year:"numeric"})}</b><button onclick="stepMonth(1)" aria-label="Next month">›</button></div>
+  <div class="cg">${["S","M","T","W","T","F","S"].map(x=>`<em>${x}</em>`).join("")}${cells}</div>
+  <div class="lg2"><span>Less</span><i class="cd l1"></i><i class="cd l2"></i><i class="cd l3"></i><i class="cd l4"></i><i class="cd l5"></i><span>More XP</span></div>
+  <div class="tgt"><div><b>Daily XP target</b><small>Minimum ${XPMIN} XP</small></div><div class="stp"><button onclick="bumpTarget(-50)" aria-label="Decrease target">−</button><b>${xpTarget()}</b><button onclick="bumpTarget(50)" aria-label="Increase target">+</button></div></div>`;
+}
+document.addEventListener("click",e=>{const m=$("strk");if(m&&!m.hidden&&!e.target.closest("#strk"))m.hidden=true});
+
 // ----- home -----
 const XPMIN=100;
 const xpTarget=()=>{const v=parseInt(ls.get("cg-xptarget",XPMIN),10);return isFinite(v)&&v>=XPMIN?v:XPMIN};
 function setXpTarget(d){const v=Math.max(XPMIN,xpTarget()+d);ls.set("cg-xptarget",v);try{if(sb&&USER)sb.from("profiles").update({xp_target:v}).eq("id",USER.id).then(()=>{},()=>{})}catch(e){}refresh()}
 const XPR=[["Complete Daily Case Study","+20"],["Complete a topic test","+10"],["Score 80%+ in a test","+15"],["Complete a PYQ paper","+50"],["Complete a weekly target","+100"],["Maintain a 7-day streak","+75"]];
 function xpWallet(){
-  return `<div class="xpcard"><div class="xph"><div><div class="xpk">YOUR LEARNING WALLET</div><div class="xpnum">0 <span>XP</span></div><div class="xps">Keep learning. Keep earning.</div></div><div class="xptr">🏆</div></div>
+  return `<div class="xpcard"><div class="xph"><div><div class="xpk">YOUR LEARNING WALLET</div><div class="xpnum">${xpTotal()} <span>XP</span></div><div class="xps">Keep learning. Keep earning.</div></div><div class="xptr">🏆</div></div>
   <div class="xpt">How you earn Gyan XP</div>${XPR.map(r=>`<div class="xprow"><span>${r[0]}</span><b>${r[1]}</b></div>`).join("")}<p class="xpnote">Illustrative XP values, not final rules.</p></div>`;
 }
 function vHome(){
   const c=dl().cases[dayIdx()%dl().cases.length];
   const warn=DBWARN?`<div class="card warn"><b>Your profile is saved on this device only.</b><p style="margin:8px 0 0">It could not be saved to the database${DBERR?` (${esc(DBERR)})`:""}. Please run <b>profiles_v2.sql</b> in the Supabase SQL Editor, then open the site again.</p></div>`:"";
-  return `<div class="tag">${esc(levelText())}</div><h1 class="dh">Welcome, ${esc(displayName())}.</h1>${warn}
-  <div class="card"><div class="ph"><div style="flex:1;min-width:190px"><b style="font-size:18px">Today’s Progress</b><div class="bar" style="margin:14px 0"><i style="width:0%"></i></div><div>You’ve earned <b>0</b> of <b>${xpTarget()}</b> XP today</div>
-  <div class="xpset"><b>My daily XP target</b><div class="step"><button onclick="setXpTarget(-50)" aria-label="Decrease target">−</button><span>${xpTarget()}</span><button onclick="setXpTarget(50)" aria-label="Increase target">+</button></div><small style="color:var(--mute)">Minimum ${XPMIN} XP</small></div></div>
-  <div class="mini2"><div><span style="font-size:28px">🔥</span><b>0</b><small>day streak</small></div><div><span style="font-size:28px">⚡</span><b>0</b><small>Gyan XP</small></div></div></div>
-  <p class="note2">Illustrative dashboard preview, not live account data.</p></div>
+  const tp=Math.min(100,Math.round(xpToday()*100/xpTarget()));
+  return `${warn}<div class="hx"><div class="hxv">${esc(levelText())}</div><h1>Welcome, ${esc(displayName())}.</h1><div class="hxm">✨ ${MOTTO}</div>
+  <div class="hxp"><div class="hxr"><span>Today’s progress</span><b>${xpToday()} / ${xpTarget()} XP</b></div><div class="hxb"><i style="width:${tp}%"></i></div></div>
+  <div class="hxs"><button class="hxc" onclick="openStreak(event)"><span>🔥</span><b>${streakN()}</b><small>day streak · open calendar</small></button><div class="hxc"><span>⚡</span><b>${xpTotal()}</b><small>Gyan XP</small></div></div></div>
   ${xpWallet()}
-  <div class="card cm" style="margin-top:20px"><span class="xptr sm">🏆</span><div><b style="font-size:24px">12,480 XP</b> ${SAMPLE}<br><span style="color:var(--mute)">earned by the ChartedGyan community</span><br><a href="#" onclick="show('board');return false">View leaderboard ↗</a></div></div>
-  ${sh("DAILY CASE STUDIES")}<div class="card"><div class="row3"><span>📅 <b>${todayLabel()}</b>: ${esc(c.title)}</span><button class="go sm" onclick="openCase('${c.id}')">Attempt →</button></div><a href="#" onclick="show('practice');return false">View all case studies →</a></div>
-  ${sh("EXAM PRACTICE")}<div class="grid">${tile("📜","Past Year Papers","pyq")}${tile("📝","MTPs","mtp")}${tile("🎯","RTPs","rtp")}${tile("🧪","Practice","practice")}</div>
-  ${sh("CONCEPTUAL GAMES")}<div class="grid">${tile("🃏","Flashcards","flash")}${tile("🔑","Keywords","kw")}${tile("ƒₓ","Formulas","fm")}${tile("🧮","Calci Tricks","calci")}</div>
-  ${sh("OVERVIEW")}<div class="grid">${tile("✅","Syllabus Completion","syllabus")}${tile("📈","Activity","activity")}${tile("🙋","Doubts","doubts")}${tile("📊","SWOT Analysis","swot")}${tile("📚","Free Resources","res")}</div>
+  <div class="card cm"><span class="xptr sm">🏆</span><div><b style="font-size:24px">12,480 XP</b> ${SAMPLE}<br><span style="color:var(--mute)">earned by the ChartedGyan community</span><br><a href="#" onclick="show('board');return false">View leaderboard ↗</a></div></div>
+  ${sh("DAILY CASE STUDIES")}<div class="card"><div class="row3"><span>📅 <b>${todayLabel()}</b>: ${esc(c.title)}</span><button class="go sm" onclick="openCase('${c.id}')">Attempt →</button></div><a href="#" onclick="show('cases');return false">View all case studies →</a></div>
   ${sh("KEYWORD OF THE DAY")}${vKotd(true)}`;
 }
 const CALCI={
@@ -1012,12 +1126,14 @@ function casesBody(){
   return `<p class="lead">Read a short real-life situation, then answer questions on it. ${SAMPLE} Real case studies are added when the data is ready.</p>`
   +dl().cases.map(c=>`<div class="card"><div class="tag">${c.tag}</div><h2>${c.title}</h2><p>${c.qs.length} questions</p><button class="go" onclick="openCase('${c.id}')">Attempt →</button></div>`).join("");
 }
-function vPractice(){return `<h1 class="dh">Practice</h1><div class="ptop"><button class="${D.pmode!=="case"?"on":""}" onclick="D.pmode='topic';refresh()">Topic Tests</button><button class="${D.pmode==="case"?"on":""}" onclick="D.pmode='case';refresh()">Case Studies</button></div>${D.pmode==="case"?casesBody():topicsBody()}`}
+function vPractice(){return hub("Practice","Pick how you want to practise today.",[["📅","Daily Case Studies","cases"],["📝","Topic Tests","topics"]])}
+function vTopics(){return `${BK()}<h1 class="dh">Topic Tests</h1>${topicsBody()}`}
+function vCases(){return `${BK()}<h1 class="dh">Daily Case Studies</h1>${casesBody()}`}
 const hub=(t,l,a)=>`<h1 class="dh">${t}</h1><p class="lead">${l}</p><div class="grid">${a.map(x=>tile(x[0],x[1],x[2])).join("")}</div>`;
 const vConcept=()=>hub("Concept","Revise ideas with cards, keywords and formulas.",[["🃏","Flashcards","flash"],["🔑","Keywords","kw"],["ƒₓ","Formulas","fm"],["💡","Keyword of the Day","kotd"],["🧮","Calci Tricks","calci"]]);
 const vPapersHub=()=>hub("PYQs / RTP / MTP","Attempt exam-style papers with a timer.",[["📜","Past Year Papers","pyq"],["📝","MTPs","mtp"],["🎯","RTPs","rtp"]]);
-const vAnalysis=()=>hub("Analysis","See how you are doing and where to improve.",[["📈","Activity","activity"],["📊","SWOT Analysis","swot"],["🏆","Leaderboard","board"],["✅","Syllabus Completion","syllabus"]]);
-function openCase(id){const c=dl().cases.find(c=>c.id===id);startRun({id:"case:"+id,title:c.title,story:c.story,qs:c.qs,back:"practice",backLabel:"Practice"})}
+const vAnalysis=()=>hub("Analysis","See how you are doing and where to improve.",[["✅","Syllabus Completion","syllabus"],["📈","Activity","activity"],["🙋","Doubts","doubts"],["📊","SWOT Analysis","swot"],["📚","Free Resources","res"],["🏆","Leaderboard","board"]]);
+function openCase(id){const c=dl().cases.find(c=>c.id===id);startRun({id:"case:"+id,title:c.title,story:c.story,qs:c.qs,back:"cases",backLabel:"Daily Case Studies"})}
 
 // ----- papers -----
 function vPapers(kind){
@@ -1101,7 +1217,7 @@ function topicsBody(){
   return `<div class="ptabs">${S.map((x,i)=>`<button class="${i===f?"on":""}" onclick="D.ptab=${i};refresh()">${esc(x)}</button>`).join("")}</div>`
   +`<div class="tlist"><div class="tlh">${esc(sj)}</div>`+(ts.length?ts.map(t=>`<div class="trow"><div class="tn"><b>${t.name}</b><small>${t.qs.length} question${t.qs.length>1?"s":""}${t.qs.some(q=>q.scene)?" · animated answer":""}</small></div>${dots(1)}<button class="pbtn" onclick="openTopic('${t.id}')">Practice</button></div>`).join(""):`<div class="trow"><div class="tn"><small>Topics coming soon.</small></div></div>`)+`</div>`;
 }
-function openTopic(id){const t=TOPICS.find(t=>t.id===id);startRun({id:t.id,title:t.name,qs:t.qs,back:"practice",backLabel:"Practice"})}
+function openTopic(id){const t=TOPICS.find(t=>t.id===id);startRun({id:t.id,title:t.name,qs:t.qs,back:"topics",backLabel:"Topic Tests"})}
 
 // ----- runner (quiz mode with instant feedback, paper mode with palette + timer) -----
 function startRun(o){R={...o,i:0,score:0,picked:null,ans:[],done:false,t0:Date.now()};show("run")}
@@ -1134,7 +1250,7 @@ function pj(k){R.i=k;refresh(true)}
 function finishRun(){
   clearInterval(tick);
   if(R.mode==="paper")R.score=R.qs.filter((q,k)=>R.ans[k]===q.a).length;
-  R.done=true;saveAttempt();refresh(true);
+  R.done=true;saveAttempt();awardXp();refresh(true);
 }
 function vResult(){
   const n=R.qs.length;
@@ -1265,7 +1381,7 @@ function vBoard(){
   +`<div class="card you"><div class="row3"><span><b>You</b> · ${esc(displayName())}</span><b>0 XP</b></div></div>`;
 }
 
-const V={home:vHome,practice:vPractice,calci:vCalci,syllabus:vSyllabus,concept:vConcept,papers:vPapersHub,analysis:vAnalysis,pyq:()=>vPapers("pyq"),mtp:()=>vPapers("mtp"),rtp:()=>vPapers("rtp"),run:vRun,flash:vFlash,kw:vKw,fm:vFm,doubts:vDoubts,activity:vActivity,swot:vSwot,res:vRes,kotd:()=>vKotd(false),board:vBoard};
+const V={home:vHome,practice:vPractice,topics:vTopics,cases:vCases,calci:vCalci,syllabus:vSyllabus,concept:vConcept,papers:vPapersHub,analysis:vAnalysis,pyq:()=>vPapers("pyq"),mtp:()=>vPapers("mtp"),rtp:()=>vPapers("rtp"),run:vRun,flash:vFlash,kw:vKw,fm:vFm,doubts:vDoubts,activity:vActivity,swot:vSwot,res:vRes,kotd:()=>vKotd(false),board:vBoard};
 
 // ----- database -----
 async function saveAttempt(){
