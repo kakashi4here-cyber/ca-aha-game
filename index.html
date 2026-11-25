@@ -513,6 +513,55 @@ button.hxc{cursor:pointer}button.hxc:hover{background:rgba(255,255,255,.2)}
 
 .pvb2{padding:10px 14px!important;border-radius:10px!important;font-size:13px;gap:12px}
 .pvb2 button.go{width:auto;margin:0!important;padding:7px 16px!important;border-radius:8px}
+
+/* ---- v7 ---- */
+.ni .chv{margin-left:auto;font-size:16px;color:#8a84a6;transition:transform .2s;font-weight:600}
+.ni.open .chv{transform:rotate(90deg)}
+body.sbc .ni .chv{display:none}
+@media (min-width:900px){
+ body.indash #side .sbu{display:flex;align-items:center;gap:10px;width:100%;margin:0;padding:8px 6px;border-radius:10px;background:none;text-align:left}
+ body.indash #side .sbu:hover{background:#f7f4fd}
+}
+#pmenu.fromside{left:12px;right:auto;top:auto;bottom:72px}
+.cd.part{background:#fff;box-shadow:inset 0 0 0 1.5px #d6c9f0;color:#6a6484}
+.cd.l0{background:#f6f3fb}
+.stg{width:100%;margin-top:12px!important;border-radius:9px;padding:9px 14px!important}
+.tnote{font-size:11.5px;color:var(--mute);margin:10px 0 0!important;line-height:1.45}
+/* intro popup */
+#intro{position:fixed;inset:0;background:rgba(30,20,60,.5);z-index:90;display:flex;align-items:center;justify-content:center;padding:16px}
+#intro[hidden],#bird[hidden]{display:none!important}
+.ibox{background:#fff;border-radius:16px;max-width:400px;width:100%;padding:22px;box-shadow:0 20px 60px rgba(30,20,60,.35)}
+.ihd{display:flex;gap:12px;align-items:center;margin-bottom:14px}.ihd>span{font-size:30px}
+.ihd h3{margin:0;font-size:17px;font-weight:700}.ihd p{margin:2px 0 0;font-size:13px;color:var(--mute)}
+.irow{display:flex;gap:12px;padding:11px 0;border-top:1px solid #efeaf9}
+.irow i{font-style:normal;width:32px;height:32px;border-radius:9px;background:#f1ecfb;display:flex;align-items:center;justify-content:center;flex:none;font-size:16px}
+.irow b{font-size:14px}.irow p{margin:2px 0 0;font-size:13px;color:#5a5478;line-height:1.45}
+.ibox>button.go{width:100%;margin-top:12px;border-radius:9px;padding:11px;text-align:center}
+/* bird's-eye overlay */
+#bird{position:fixed;inset:0;background:rgba(30,20,60,.55);backdrop-filter:blur(3px);z-index:80;display:flex;align-items:flex-start;justify-content:center;padding:28px 16px;overflow-y:auto}
+.bbox{position:relative;background:#fff;border-radius:20px;max-width:940px;width:100%;overflow:hidden;box-shadow:0 24px 70px rgba(30,20,60,.4)}
+.bx{position:absolute;right:14px;top:14px;width:32px;height:32px;margin:0;padding:0;border-radius:50%;background:rgba(255,255,255,.18);color:#fff;text-align:center;z-index:2;font-size:14px}
+.bx:hover{background:rgba(255,255,255,.3)}
+.bh{display:flex;align-items:center;gap:16px;padding:26px 28px 22px;background:linear-gradient(135deg,#3f1d85,#5b2ba8 55%,#7d4fd6);color:#fff;position:relative;overflow:hidden}
+.bh::after{content:"";position:absolute;right:-30px;top:-50px;width:200px;height:200px;border-radius:50%;background:rgba(255,255,255,.08)}
+.bh img{height:58px;width:auto;background:#fff;border-radius:14px;padding:6px;position:relative;z-index:1}
+.bt{font-size:26px;font-weight:700;letter-spacing:-.02em}.bt b{color:#e3d3ff;font-weight:700}
+.bs{font-size:13.5px;color:#e6dbfa;margin-top:2px}
+.bst{display:flex;gap:10px;flex-wrap:wrap;padding:14px 28px;background:#f7f4fd;border-bottom:1px solid var(--bd)}
+.bst span{font-size:13px;color:#4b4470;background:#fff;border:1px solid var(--bd);padding:6px 12px;border-radius:99px}.bst b{color:#5b2ba8}
+.bgr{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:14px;padding:20px 28px}
+.bz{border:1px solid var(--bd);border-radius:14px;padding:14px;background:#fff;transition:box-shadow .2s,border-color .2s}
+.bz:hover{border-color:#cdbdf2;box-shadow:0 6px 20px rgba(91,43,168,.1)}
+.bzh{display:flex;gap:10px;align-items:center;margin-bottom:8px}
+.bzh>span{width:38px;height:38px;border-radius:11px;background:linear-gradient(135deg,#ece6fb,#f6f1ff);display:flex;align-items:center;justify-content:center;font-size:19px;flex:none}
+.bzh b{font-size:14.5px;display:block}.bzh small{font-size:12px;color:var(--mute)}
+.bi{display:flex;align-items:center;gap:9px;width:100%;margin:0;padding:8px 8px;border-radius:8px;background:none;font-size:13.5px;font-weight:500;color:#2a1a55;text-align:left}
+.bi span{width:20px;text-align:center;font-size:14px}.bi i{margin-left:auto;font-style:normal;color:#b3a8d1;font-size:16px}
+.bi:hover{background:#f4effc;color:#5b2ba8}
+.bf{display:flex;gap:10px;justify-content:center;padding:4px 28px 22px;flex-wrap:wrap}
+.bl{width:auto;margin:0;padding:8px 16px;border-radius:99px;background:#f4effc;color:#5b2ba8;font-weight:600;font-size:13px;text-align:center}
+.bl:hover{background:#ebe2fa}
+@media(max-width:600px){.bh{padding:22px 18px}.bgr,.bst,.bf{padding-left:16px;padding-right:16px}}
 </style>
 </head>
 <body>
@@ -623,7 +672,13 @@ button.hxc{cursor:pointer}button.hxc:hover{background:rgba(255,255,255,.2)}
 
 <div id="app" hidden>
  <div id="strk" hidden></div>
- <div id="dtop"><div id="dtitle"></div><div class="dright"><button class="dic" id="dbell" onclick="toast('No new notifications')" aria-label="Notifications"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8a6 6 0 10-12 0c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.7 21a2 2 0 01-3.4 0"/></svg><i class="dot"></i></button><button class="dstreak" id="dstreak" onclick="openStreak(event)" title="Streak calendar">🔥 <b>0</b></button><button class="dlogo" id="dlogo" onclick="PROFILE?toggleProfile(event):showAuth()" aria-label="Profile"><img alt=""></button></div></div>
+ <div id="intro" hidden><div class="ibox" role="dialog" aria-modal="true" aria-labelledby="it"><div class="ihd"><span>🔥</span><div><h3 id="it">How streaks &amp; XP work</h3><p>A 30-second guide to staying consistent.</p></div></div>
+  <div class="irow"><i>⚡</i><div><b>Earn Gyan XP</b><p>Case study +20, topic test +10, paper +50, and +15 bonus for scoring 80% or more.</p></div></div>
+  <div class="irow"><i>🎯</i><div><b>Hit your daily target</b><p>Your target starts at 100 XP. Change it anytime from the streak calendar in the top bar.</p></div></div>
+  <div class="irow"><i>🔥</i><div><b>Build your streak</b><p>Each day you reach the target adds one to your streak. Changing the target restarts it from 0, and darker calendar days mean more XP.</p></div></div>
+  <button class="go" onclick="closeIntro()">Got it, let’s start</button></div></div>
+ <div id="bird" hidden></div>
+ <div id="dtop"><div id="dtitle"></div><div class="dright"><button class="dic" id="dbell" onclick="toast('No new notifications')" aria-label="Notifications"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8a6 6 0 10-12 0c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.7 21a2 2 0 01-3.4 0"/></svg><i class="dot"></i></button><button class="dstreak" id="dstreak" onclick="openStreak(event)" title="Streak calendar">🔥 <b>0</b></button><button class="dlogo" id="dlogo" onclick="openBird(event)" aria-label="ChartedGyan overview" title="ChartedGyan at a glance"><img alt=""></button></div></div>
  <div id="scrim" onclick="toggleNav(false)"></div>
  <aside id="side"></aside>
  <main id="dmain"></main>
@@ -690,8 +745,9 @@ function paintHeader(){
   const b=$("pbtn");
   if(b){let t;b.addEventListener("touchstart",()=>{t=setTimeout(()=>{b.classList.add("holding");setTimeout(()=>b.classList.remove("holding"),1800)},450)},{passive:true});["touchend","touchmove","touchcancel"].forEach(ev=>b.addEventListener(ev,()=>clearTimeout(t),{passive:true}))}
 }
-function toggleProfile(e){
+function toggleProfile(e,side){
   if(e)e.stopPropagation();
+  $("pmenu").classList.toggle("fromside",!!side);$("strk").hidden=true;
   const pb=$("pbtn");if(pb&&pb.classList.contains("holding"))return;
   const m=$("pmenu");
   if(!m.hidden){m.hidden=true;return}
@@ -738,12 +794,18 @@ async function showPractice(){
   if(!PROFILE){openProfile(false);return}
   enterDash();
 }
+function maybeIntro(){
+  if(LOCK||!USER||!PROFILE)return;const k="cg-intro-"+USER.id;
+  if(ls.get(k,false))return;$("intro").hidden=false;
+}
+function closeIntro(){$("intro").hidden=true;if(USER)ls.set("cg-intro-"+USER.id,true)}
+function showIntro(){$("intro").hidden=false}
 function enterDash(){
   applyProfile();paintHeader();
   const uid=USER?USER.id:"preview";let v=ls.get("cg-view-"+uid,"home");
   if(!V[v]||v==="run")v="home";
   try{history.replaceState({cg:1,app:1,base:1,v:v},"",location.pathname);history.pushState({cg:1,app:1,v:v},"")}catch(e){}
-  show(v,null,true);loadHistory();
+  show(v,null,true);loadHistory();setTimeout(maybeIntro,500);
 }
 window.addEventListener("popstate",e=>{
   const st=e.state;
@@ -1016,17 +1078,37 @@ function nameOf(id){
 
 // ----- navigation -----
 const SIDEKIDS={practice:[["📅","Daily Case Studies","cases"],["📝","Topic Tests","topics"]],concept:[["🃏","Flashcards","flash"],["🔑","Keywords","kw"],["ƒₓ","Formulas","fm"],["💡","Keyword of the Day","kotd"],["🧮","Calci Tricks","calci"]],papers:[["📜","Past Year Papers","pyq"],["📝","MTPs","mtp"],["🎯","RTPs","rtp"]],analysis:[["✅","Syllabus Completion","syllabus"],["📈","Activity","activity"],["🙋","Doubts","doubts"],["📊","SWOT Analysis","swot"],["📚","Free Resources","res"],["🏆","Leaderboard","board"]]};
+const secOpen=(k,act)=>D.sopen&&D.sopen[k]!==undefined?D.sopen[k]:k===act;
+function sbClick(k){
+  if(!SIDEKIDS[k]||document.body.classList.contains("sbc")){show(k);return}
+  D.sopen=D.sopen||{};D.sopen[k]=!secOpen(k,activeTab());renderSide();
+}
 function renderSide(){
   const act=activeTab();
   try{
     const lg=document.querySelector(".logo img").src,t=TABS.find(t=>t[0]===act)||TABS[0];
     $("dtitle").textContent=MOTTO;$("dstreak").querySelector("b").textContent=streakN();document.querySelector("#dlogo img").src=lg;
     $("side").innerHTML=`<div class="sbh"><span class="sbb"><img src="${lg}" alt=""><span class="sbn">Charted<b class="gy">Gyan</b></span></span><button class="sbt" onclick="toggleSb()" aria-label="Collapse sidebar">‹</button></div>`
-     +`<div class="sbl">`+TABS.map(x=>`<button class="ni ${x[0]===act?"on":""}" onclick="show('${x[0]}')" title="${x[1]}"><span>${x[2]}</span><em>${x[1]}</em></button>`+(x[0]===act&&SIDEKIDS[x[0]]?`<div class="sk">${SIDEKIDS[x[0]].map(k=>`<button class="si ${D.view===k[2]?"on":""}" onclick="show('${k[2]}')"><span>${k[0]}</span>${k[1]}</button>`).join("")}</div>`:"")).join("")+`</div>`
-     +`<div class="sbf">${PROFILE?`<div class="sbu"><span class="av">${esc(initial())}</span><div class="sbx"><b>@${esc(PROFILE.username||"")}</b><small>${esc(PROFILE.plan||"Basic")} plan</small></div></div>`:`<button class="ni" onclick="showAuth()"><span>🔑</span><em>Login</em></button>`}</div>`;
+     +`<div class="sbl">`+TABS.map(x=>{const kids=SIDEKIDS[x[0]],op=kids&&secOpen(x[0],act);return `<button class="ni ${x[0]===act?"on":""} ${op?"open":""}" onclick="sbClick('${x[0]}')" title="${x[1]}"><span>${x[2]}</span><em>${x[1]}</em>${kids?`<b class="chv">›</b>`:""}</button>`+(op?`<div class="sk">${SIDEKIDS[x[0]].map(k=>`<button class="si ${D.view===k[2]?"on":""}" onclick="show('${k[2]}')"><span>${k[0]}</span>${k[1]}</button>`).join("")}</div>`:"")}).join("")+`</div>`
+     +`<div class="sbf">${PROFILE?`<button class="sbu" onclick="toggleProfile(event,1)" aria-label="View profile"><span class="av">${esc(initial())}</span><div class="sbx"><b>@${esc(PROFILE.username||"")}</b><small>${esc(PROFILE.plan||"Basic")} plan</small></div></button>`:`<button class="ni" onclick="showAuth()"><span>🔑</span><em>Login</em></button>`}</div>`;
   }catch(e){}
   $("tnav").innerHTML=TABS.map(t=>`<button class="${t[0]===act?"on":""}" onclick="show('${t[0]}')"><i>${t[2]}</i><span class="lg">${t[1]}</span><span class="sm">${t[3]}</span></button>`).join("");
 }
+const BIRD=[["📝","Practise","Sharpen skills topic by topic","practice"],["📜","Exam papers","Attempt with a real timer","papers"],["💡","Concepts & games","Revise ideas, fast","concept"],["📈","Progress & support","Know exactly where you stand","analysis"]];
+function openBird(e){
+  if(e)e.stopPropagation();$("pmenu").hidden=true;$("strk").hidden=true;
+  const lg=document.querySelector(".logo img").src,lv=PROFILE?levelText():(D.level==="Foundation"?"CA Foundation":"CA Intermediate");
+  $("bird").innerHTML=`<div class="bbox"><button class="bx" onclick="closeBird()" aria-label="Close">✕</button>
+  <div class="bh"><img src="${lg}" alt=""><div><div class="bt">Charted<b>Gyan</b></div><div class="bs">Your CA journey from above · ${esc(lv)}</div></div></div>
+  <div class="bst"><span>🔥 <b>${streakN()}</b> day streak</span><span>⚡ <b>${xpTotal()}</b> Gyan XP</span><span>🎯 <b>${xpTarget()}</b> XP daily target</span></div>
+  <div class="bgr">${BIRD.map(z=>`<div class="bz"><div class="bzh"><span>${z[0]}</span><div><b>${z[1]}</b><small>${z[2]}</small></div></div>${SIDEKIDS[z[3]].map(k=>`<button class="bi" onclick="birdGo('${k[2]}')"><span>${k[0]}</span>${k[1]}<i>›</i></button>`).join("")}</div>`).join("")}</div>
+  <div class="bf"><button class="bl" onclick="closeBird();showIntro()">How XP &amp; streaks work</button><button class="bl" onclick="birdGo('home')">Back to dashboard</button></div></div>`;
+  $("bird").hidden=false;
+}
+function closeBird(){$("bird").hidden=true}
+function birdGo(v){closeBird();show(v)}
+document.addEventListener("click",e=>{const b=$("bird");if(b&&!b.hidden&&e.target===b)closeBird()});
+document.addEventListener("keydown",e=>{if(e.key==="Escape"){closeBird();const i=$("intro");if(i&&!i.hidden)i.hidden=true}});
 function toggleSb(){const c=!document.body.classList.contains("sbc");document.body.classList.toggle("sbc",c);ls.set("cg-sbc",c)}
 if(ls.get("cg-sbc",false))document.body.classList.add("sbc");
 document.body.appendChild($("pmenu"));
@@ -1053,33 +1135,44 @@ const xpLog=()=>ls.get(xpKey(),{});
 const xpOn=k=>xpLog()[k]||0;
 const xpToday=()=>xpOn(lk());
 const xpTotal=()=>Object.values(xpLog()).reduce((a,b)=>a+b,0);
-function streakN(){const d=new Date();if(!xpOn(lk(d)))d.setDate(d.getDate()-1);let n=0;while(xpOn(lk(d))>0){n++;d.setDate(d.getDate()-1)}return n}
+function streakN(){const st=ls.get(stKey(),""),d=new Date();if(!metOn(lk(d)))d.setDate(d.getDate()-1);let n=0;while(metOn(lk(d))&&(!st||lk(d)>=st)){n++;d.setDate(d.getDate()-1)}return n}
 function awardXp(){
   if(LOCK||!R)return;
   const aw=ls.get("cg-xpawd",{}),id=lk()+"|"+R.id;if(aw[id])return;
   const x=(R.id.startsWith("case:")?20:R.mode==="paper"?50:10)+(R.qs.length&&R.score/R.qs.length>=.8?15:0);
-  aw[id]=1;ls.set("cg-xpawd",aw);
+  aw[id]=1;ls.set("cg-xpawd",aw);{const T=ls.get(tgtKey(),{});T[lk()]=xpTarget();ls.set(tgtKey(),T)}
   const L=xpLog();L[lk()]=(L[lk()]||0)+x;ls.set(xpKey(),L);
   toast("+"+x+" XP earned");renderSide();
 }
-const xpLvl=x=>x<=0?0:x<20?1:x<50?2:x<100?3:x<200?4:5;
+const tgtKey=()=>"cg-xptgt-"+(USER?USER.id:"preview");
+const stKey=()=>"cg-streakstart-"+(USER?USER.id:"preview");
+const tgtOn=k=>ls.get(tgtKey(),{})[k]||xpTarget();
+const metOn=k=>{const x=xpOn(k);return x>0&&x>=tgtOn(k)};
+const xpLvl=(x,t)=>{const r=x/t;return r<1?0:r<1.25?1:r<1.5?2:r<2?3:r<3?4:5};
 let SM=null;
 function openStreak(e){
   if(e)e.stopPropagation();const m=$("strk");
   if(!m.hidden){m.hidden=true;return}
-  $("pmenu").hidden=true;const n=new Date();SM={y:n.getFullYear(),m:n.getMonth()};paintStreak();m.hidden=false;
+  $("pmenu").hidden=true;const n=new Date();SM={y:n.getFullYear(),m:n.getMonth(),pend:xpTarget()};paintStreak();m.hidden=false;
 }
 function stepMonth(d){SM.m+=d;if(SM.m<0){SM.m=11;SM.y--}if(SM.m>11){SM.m=0;SM.y++}paintStreak()}
-function bumpTarget(d){setXpTarget(d);paintStreak()}
+function bumpTarget(d){SM.pend=Math.max(XPMIN,SM.pend+d);paintStreak()}
+function saveTarget(){
+  const d=SM.pend-xpTarget();if(!d)return;
+  setXpTarget(d);ls.set(stKey(),lk());const T=ls.get(tgtKey(),{});T[lk()]=xpTarget();ls.set(tgtKey(),T);
+  renderSide();paintStreak();toast("Target set to "+xpTarget()+" XP. Streak restarted.");
+}
 function paintStreak(){
   const first=new Date(SM.y,SM.m,1).getDay(),days=new Date(SM.y,SM.m+1,0).getDate(),tk=lk();
   let cells="";for(let i=0;i<first;i++)cells+=`<i></i>`;
-  for(let d=1;d<=days;d++){const k=SM.y+"-"+String(SM.m+1).padStart(2,"0")+"-"+String(d).padStart(2,"0"),x=xpOn(k);cells+=`<div class="cd l${xpLvl(x)} ${k===tk?"td":""}" title="${x} XP">${d}</div>`}
+  for(let d=1;d<=days;d++){const k=SM.y+"-"+String(SM.m+1).padStart(2,"0")+"-"+String(d).padStart(2,"0"),x=xpOn(k),met=metOn(k);cells+=`<div class="cd ${met?"l"+xpLvl(x,tgtOn(k)):x>0?"part":"l0"} ${k===tk?"td":""}" title="${x} XP${met?" · target met":""}">${d}</div>`}
   $("strk").innerHTML=`<div class="sk1"><b>🔥 ${streakN()} day streak</b><span>${xpToday()} / ${xpTarget()} XP today</span></div>
   <div class="sk2"><button onclick="stepMonth(-1)" aria-label="Previous month">‹</button><b>${new Date(SM.y,SM.m,1).toLocaleDateString("en-IN",{month:"long",year:"numeric"})}</b><button onclick="stepMonth(1)" aria-label="Next month">›</button></div>
   <div class="cg">${["S","M","T","W","T","F","S"].map(x=>`<em>${x}</em>`).join("")}${cells}</div>
-  <div class="lg2"><span>Less</span><i class="cd l1"></i><i class="cd l2"></i><i class="cd l3"></i><i class="cd l4"></i><i class="cd l5"></i><span>More XP</span></div>
-  <div class="tgt"><div><b>Daily XP target</b><small>Minimum ${XPMIN} XP</small></div><div class="stp"><button onclick="bumpTarget(-50)" aria-label="Decrease target">−</button><b>${xpTarget()}</b><button onclick="bumpTarget(50)" aria-label="Increase target">+</button></div></div>`;
+  <div class="lg2"><span>Target met</span><i class="cd l1"></i><i class="cd l2"></i><i class="cd l3"></i><i class="cd l4"></i><i class="cd l5"></i><span>More XP</span></div>
+  <div class="tgt"><div><b>Daily XP target</b><small>Minimum ${XPMIN} XP</small></div><div class="stp"><button onclick="bumpTarget(-50)" aria-label="Decrease target">−</button><b>${SM.pend}</b><button onclick="bumpTarget(50)" aria-label="Increase target">+</button></div></div>
+  ${SM.pend!==xpTarget()?`<button class="go stg" onclick="saveTarget()">Set ${SM.pend} XP target</button>`:""}
+  <p class="tnote">A day counts when you reach your target. Changing the target restarts your streak from 0, so set it wisely.</p>`;
 }
 document.addEventListener("click",e=>{const m=$("strk");if(m&&!m.hidden&&!e.target.closest("#strk"))m.hidden=true});
 
@@ -1098,7 +1191,7 @@ function vHome(){
   const tp=Math.min(100,Math.round(xpToday()*100/xpTarget()));
   return `${warn}<div class="hx"><div class="hxv">${esc(levelText())}</div><h1>Welcome, ${esc(displayName())}.</h1><div class="hxm">✨ ${MOTTO}</div>
   <div class="hxp"><div class="hxr"><span>Today’s progress</span><b>${xpToday()} / ${xpTarget()} XP</b></div><div class="hxb"><i style="width:${tp}%"></i></div></div>
-  <div class="hxs"><button class="hxc" onclick="openStreak(event)"><span>🔥</span><b>${streakN()}</b><small>day streak · open calendar</small></button><div class="hxc"><span>⚡</span><b>${xpTotal()}</b><small>Gyan XP</small></div></div></div>
+  <div class="hxs"><button class="hxc" onclick="openStreak(event)"><span>🔥</span><b>${streakN()}</b><small>day streak</small></button><div class="hxc"><span>⚡</span><b>${xpTotal()}</b><small>Gyan XP</small></div></div></div>
   ${xpWallet()}
   <div class="card cm"><span class="xptr sm">🏆</span><div><b style="font-size:24px">12,480 XP</b> ${SAMPLE}<br><span style="color:var(--mute)">earned by the ChartedGyan community</span><br><a href="#" onclick="show('board');return false">View leaderboard ↗</a></div></div>
   ${sh("DAILY CASE STUDIES")}<div class="card"><div class="row3"><span>📅 <b>${todayLabel()}</b>: ${esc(c.title)}</span><button class="go sm" onclick="openCase('${c.id}')">Attempt →</button></div><a href="#" onclick="show('cases');return false">View all case studies →</a></div>
