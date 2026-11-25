@@ -362,7 +362,7 @@ button.go{border-radius:99px;font-weight:700;padding:13px 18px}
 /* practice */
 .ptop{display:flex;gap:6px;margin:14px 0 8px;border-bottom:1px solid var(--bd)}
 .ptop button,.ptabs button{width:auto;margin:0;background:none;border-radius:0;padding:10px 14px;font-weight:600;font-size:15px;color:var(--mute);text-align:center;border-bottom:2px solid transparent;margin-bottom:-1px}
-.ptop button.on,.ptabs button.on{color:var(--ink);border-bottom-color:#e8722a;font-weight:700}
+.ptop button.on,.ptabs button.on{color:var(--ink);border-bottom-color:#5b2ba8;font-weight:700}
 .ptabs{display:flex;gap:4px;overflow-x:auto;margin:6px 0 14px;scrollbar-width:none}
 .ptabs button{white-space:nowrap}
 .tlist{background:#fff;border:1px solid var(--bd);border-radius:14px;overflow:hidden}
@@ -370,14 +370,14 @@ button.go{border-radius:99px;font-weight:700;padding:13px 18px}
 .trow{display:flex;align-items:center;gap:14px;padding:14px 18px;border-top:1px solid #efeaf9}
 .trow:first-of-type{border-top:0}
 .tn{flex:1;min-width:0}.tn b{font-weight:600;font-size:15px}.tn small{display:block;color:var(--mute);margin-top:2px;font-size:12.5px}
-.lvd{display:flex;gap:4px}.lvd i{width:8px;height:18px;border-radius:3px;background:#f3dccf}.lvd i.on{background:#e8722a}
-.pbtn{width:auto;margin:0;padding:8px 20px;border-radius:99px;background:#e8722a;color:#fff;font-weight:700;font-size:14px;text-align:center}
-.pbtn:hover{background:#d9631d}
+.lvd{display:flex;gap:4px}.lvd i{width:8px;height:18px;border-radius:3px;background:#e4daf5}.lvd i.on{background:#7d4fd6}
+.pbtn{width:auto;margin:0;padding:8px 20px;border-radius:99px;background:#5b2ba8;color:#fff;font-weight:700;font-size:14px;text-align:center}
+.pbtn:hover{background:#4a2290}
 /* signup wizard */
 body.obwiz #ob{background:#fff;display:flex;align-items:flex-start;justify-content:center;padding:40px 16px}
 body.obwiz .obc{box-shadow:none;max-width:560px;max-height:none;padding:0;background:none;text-align:center}
 .obprog{height:8px;border-radius:99px;background:#ece8f4;max-width:340px;margin:10px auto 70px;overflow:hidden}
-.obprog i{display:block;height:100%;background:#22c55e;border-radius:99px;transition:width .3s}
+.obprog i{display:block;height:100%;background:linear-gradient(90deg,#5b2ba8,#7d4fd6);border-radius:99px;transition:width .3s}
 body.obwiz .obc h2{font-size:32px;font-weight:700;margin:0 0 26px;letter-spacing:-.02em}
 body.obwiz .obc label{text-align:left}
 .obopts{display:grid!important;grid-template-columns:1fr 1fr;gap:12px;margin:0 0 30px}
@@ -385,13 +385,56 @@ body.obwiz .obc label{text-align:left}
 .opt{display:flex;justify-content:space-between;align-items:center;width:100%;margin:0;padding:18px 20px;background:#fff;border:1px solid var(--bd);border-radius:12px;font-size:15.5px;font-weight:500;text-align:left}
 .opt.on{background:#f4f1fa;border-color:#cfc6e6}
 .opt .ck{width:22px;height:22px;border:1.5px solid #c9c3d9;border-radius:6px;flex:none}
-.opt.on .ck{background:#1c1530 url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='M3.5 8.5l3 3 6-7' fill='none' stroke='white' stroke-width='2'/%3E%3C/svg%3E") center/80% no-repeat;border-color:#1c1530}
-.obgo{width:auto!important;display:inline-block;padding:13px 34px!important;background:#f07c35!important;margin:10px 6px 0}
+.opt.on .ck{background:#5b2ba8 url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='M3.5 8.5l3 3 6-7' fill='none' stroke='white' stroke-width='2'/%3E%3C/svg%3E") center/80% no-repeat;border-color:#5b2ba8}
+.obgo{width:auto!important;display:inline-block;padding:13px 34px!important;background:linear-gradient(90deg,#5b2ba8,#7d4fd6)!important;margin:10px 6px 0}
 .obbk{width:auto;display:inline-block;margin:10px 6px 0;border-radius:99px;padding:12px 26px}
 body.obwiz .inp{max-width:420px;display:block;margin:0 auto 12px;padding:15px;font-size:16px}
 body.obwiz #obatw label,body.obwiz #obunw label,body.obwiz #obphw label{display:none}
 body.obwiz .hint{max-width:420px;margin:8px auto 24px;text-align:left}
 body.obwiz #obmsg{margin:0 0 14px}
+
+/* ---- v5: royal-purple only + laptop layout (AfterBoards-style sidebar) ---- */
+#dtop,#dban{display:none}
+#pmenu{position:fixed;right:16px;top:calc(62px + env(safe-area-inset-top,0px));z-index:70}
+@media (min-width:900px){
+ body.indash{--sw:248px}
+ body.indash.sbc{--sw:68px}
+ body.indash .site{display:none}
+ body.indash #side{display:flex!important;flex-direction:column;transform:none;top:0;left:0;bottom:0;width:var(--sw);padding:0;background:#fff;border-right:1px solid var(--bd);box-shadow:none;z-index:40;transition:width .2s}
+ body.indash #app #dtop{display:flex;position:fixed;top:0;left:var(--sw);right:0;height:60px;align-items:center;justify-content:center;background:#fff;border-bottom:1px solid var(--bd);z-index:30;transition:left .2s}
+ body.indash #app #dban{display:flex;position:fixed;top:60px;left:var(--sw);right:0;height:38px;align-items:center;justify-content:center;background:#f4effc;border-bottom:1px solid var(--bd);color:#4b2c8f;font-weight:600;font-size:14px;letter-spacing:.02em;z-index:29;transition:left .2s}
+ #dban button{position:absolute;right:18px;width:auto;margin:0;padding:4px 8px;background:none;color:#6a6484;font-size:13px}
+ body.indash.nobn #dban{display:none!important}
+ #dtitle{font-weight:700;font-size:16px;color:var(--ink)}
+ .dright{position:absolute;right:20px;display:flex;align-items:center;gap:16px}
+ .dic{position:relative;width:auto;margin:0;padding:6px;background:none;color:#4b4470;display:flex;border-radius:50%}
+ .dic:hover{background:#f4effc}
+ .dic .dot{position:absolute;top:2px;right:2px;width:8px;height:8px;border-radius:50%;background:#5b2ba8;border:2px solid #fff}
+ .dstreak{font-weight:600;font-size:15px;color:#2a1a55;display:flex;align-items:center;gap:4px}
+ .dlogo{width:40px;height:40px;margin:0;padding:3px;border-radius:50%;border:1px solid var(--bd);background:#fff;display:flex;align-items:center;justify-content:center}
+ .dlogo:hover{border-color:#7d4fd6}
+ .dlogo img{width:100%;height:100%;object-fit:contain}
+ body.indash #dmain{margin:0 0 0 var(--sw);max-width:none;padding:128px max(40px,calc((100% - 920px)/2)) 80px;transition:margin .2s}
+ .sbh{display:flex;align-items:center;justify-content:space-between;gap:8px;padding:14px 14px 10px;height:60px}
+ .sbb{display:flex;align-items:center;gap:8px;font-size:19px;font-weight:600;letter-spacing:-.02em;white-space:nowrap;overflow:hidden}
+ .sbb img{height:34px;width:auto;flex:none}
+ .sbt{width:28px;height:28px;margin:0;padding:0;border-radius:50%;background:#fff;border:1px solid var(--bd);color:#5b2ba8;text-align:center;font-size:18px;line-height:1;flex:none}
+ body.sbc .sbt{transform:rotate(180deg)}
+ body.sbc .sbn,body.sbc .ni em,body.sbc .sbx{display:none}
+ body.sbc .sbh{padding:14px 0;justify-content:center;position:relative}
+ body.sbc .sbb{display:none}
+ body.sbc .sbt{position:static}
+ .sbl{flex:1;padding:12px 12px;overflow-y:auto}
+ body.indash #side .ni{width:100%;margin:2px 0;padding:11px 12px;border-radius:10px;font-size:15px;font-weight:500;color:#2a1a55;gap:12px;background:none}
+ body.indash #side .ni em{font-style:normal}
+ body.indash #side .ni:hover{background:#f7f4fd}
+ body.indash #side .ni.on{background:#ece6fb;color:#5b2ba8;font-weight:700}
+ body.sbc #side .ni{justify-content:center;padding:11px 0}
+ .sbf{padding:12px;border-top:1px solid var(--bd)}
+ .sbu{display:flex;align-items:center;gap:10px;padding:6px}
+ .sbx b{display:block;font-size:14px;color:#2a1a55}.sbx small{color:var(--mute);font-size:12px}
+ body.sbc .sbu{justify-content:center}
+}
 </style>
 </head>
 <body>
@@ -501,6 +544,8 @@ body.obwiz #obmsg{margin:0 0 14px}
 </section>
 
 <div id="app" hidden>
+ <div id="dtop"><div id="dtitle"></div><div class="dright"><button class="dic" id="dbell" onclick="toast('No new notifications')" aria-label="Notifications"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8a6 6 0 10-12 0c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.7 21a2 2 0 01-3.4 0"/></svg><i class="dot"></i></button><span class="dstreak" title="Day streak">🔥 <b>0</b></span><button class="dlogo" id="dlogo" onclick="PROFILE?toggleProfile(event):showAuth()" aria-label="Profile"><img alt=""></button></div></div>
+ <div id="dban"><span>Be relentless</span><button onclick="document.body.classList.add('nobn')" aria-label="Close banner">✕</button></div>
  <div id="scrim" onclick="toggleNav(false)"></div>
  <aside id="side"></aside>
  <main id="dmain"></main>
@@ -894,8 +939,18 @@ function nameOf(id){
 // ----- navigation -----
 function renderSide(){
   const act=activeTab();
+  try{
+    const lg=document.querySelector(".logo img").src,t=TABS.find(t=>t[0]===act)||TABS[0];
+    $("dtitle").textContent=t[1];document.querySelector("#dlogo img").src=lg;
+    $("side").innerHTML=`<div class="sbh"><span class="sbb"><img src="${lg}" alt=""><span class="sbn">Charted<b class="gy">Gyan</b></span></span><button class="sbt" onclick="toggleSb()" aria-label="Collapse sidebar">‹</button></div>`
+     +`<div class="sbl">`+TABS.map(x=>`<button class="ni ${x[0]===act?"on":""}" onclick="show('${x[0]}')" title="${x[1]}"><span>${x[2]}</span><em>${x[1]}</em></button>`).join("")+`</div>`
+     +`<div class="sbf">${PROFILE?`<div class="sbu"><span class="av">${esc(initial())}</span><div class="sbx"><b>@${esc(PROFILE.username||"")}</b><small>${esc(PROFILE.plan||"Basic")} plan</small></div></div>`:`<button class="ni" onclick="showAuth()"><span>🔑</span><em>Login</em></button>`}</div>`;
+  }catch(e){}
   $("tnav").innerHTML=TABS.map(t=>`<button class="${t[0]===act?"on":""}" onclick="show('${t[0]}')"><i>${t[2]}</i><span class="lg">${t[1]}</span><span class="sm">${t[3]}</span></button>`).join("");
 }
+function toggleSb(){const c=!document.body.classList.contains("sbc");document.body.classList.toggle("sbc",c);ls.set("cg-sbc",c)}
+if(ls.get("cg-sbc",false))document.body.classList.add("sbc");
+document.body.appendChild($("pmenu"));
 function toggleNav(f){D.navOpen=typeof f==="boolean"?f:!D.navOpen;side.classList.toggle("open",D.navOpen);scrim.classList.toggle("on",D.navOpen)}
 function show(v,x,nopush){
   clearInterval(tick);D.view=v;if(x)Object.assign(D,x);$("pmenu").hidden=true;
