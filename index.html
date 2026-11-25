@@ -5,6 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="color-scheme" content="light">
 <title>ChartedGyan – CA prep made easy</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap">
 <style>
 :root{color-scheme:light;--bg:#f8f6fd;--card:#fff;--card2:#efeafb;--text:#1f1a33;--mute:#6a6484;--teal:#5b2ba8;--blue:#6a35c2;--coral:#d9534f;--yellow:#f5b83d;--green:#2f9e44;--p1:#5b2ba8;--p2:#7d4fd6;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
 html{scroll-padding-top:env(safe-area-inset-top,0px);scroll-behavior:smooth}
@@ -328,6 +329,69 @@ details.card summary{cursor:pointer}
 .syl>.sylr:only-child{border-top:0;padding:2px 0}
 .sylr input{width:20px;height:20px;margin:1px 0 0;flex:none;accent-color:#5b2ba8}
 .sylr.all{font-weight:700;color:#5b2ba8;margin-top:10px}
+
+/* ---- v4: polish, AfterBoards-style flows ---- */
+:root{--bd:#e7e3f1;--ink:#1c1530}
+html{-webkit-text-size-adjust:100%}
+body{font-family:"Inter",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;font-size:15px;line-height:1.5;color:var(--ink);-webkit-font-smoothing:antialiased;letter-spacing:-.005em}
+.site{box-shadow:none;border-bottom:1px solid var(--bd);padding:10px 20px}
+.logo{font-size:20px;font-weight:600;letter-spacing:-.02em}
+.dh{font-size:26px;font-weight:700;letter-spacing:-.02em;margin:4px 0 6px}
+.lead{font-size:15px;color:var(--mute)}
+.sh{font-size:12px;font-weight:600;letter-spacing:.08em;margin:28px 2px 10px}
+.card,.rowb,.tile,.stats>div,.mini2>div{box-shadow:none!important;border:1px solid var(--bd)}
+.card{border-radius:14px;padding:20px;margin-bottom:16px}
+.tile{border-radius:14px;padding:20px 8px;font-weight:600;font-size:14px;transition:border-color .15s,background .15s}
+.tile:hover,.rowb:hover{border-color:#7d4fd6;background:#faf8ff}
+.tile .ic{font-size:30px}
+.grid{gap:12px}
+.mini2>div{border-radius:12px;background:#fff}
+#dmain{max-width:880px;padding:26px 20px 80px}
+.tnav button{font-size:14px;font-weight:600;padding:8px 14px}
+button.go{border-radius:99px;font-weight:700;padding:13px 18px}
+.bar{height:8px}
+/* syllabus */
+.chap{background:#fff;border:1px solid var(--bd);border-radius:14px;margin:0 0 18px;overflow:hidden}
+.chh{display:flex;justify-content:space-between;align-items:center;gap:16px;padding:16px 18px;background:#f7f4fd;cursor:pointer}
+.chn{font-weight:700;font-size:15.5px;line-height:1.35;color:var(--ink)}
+.chc{font-size:12.5px;color:var(--mute);margin-top:3px}
+.units{display:block}
+.unit{display:flex;justify-content:space-between;align-items:center;gap:16px;padding:14px 18px;border-top:1px solid #efeaf9;font-size:14.5px;line-height:1.4;cursor:pointer}
+.unit:hover{background:#fbfaff}
+.chap input[type=checkbox]{width:22px;height:22px;flex:none;accent-color:#5b2ba8;margin:0;cursor:pointer}
+/* practice */
+.ptop{display:flex;gap:6px;margin:14px 0 8px;border-bottom:1px solid var(--bd)}
+.ptop button,.ptabs button{width:auto;margin:0;background:none;border-radius:0;padding:10px 14px;font-weight:600;font-size:15px;color:var(--mute);text-align:center;border-bottom:2px solid transparent;margin-bottom:-1px}
+.ptop button.on,.ptabs button.on{color:var(--ink);border-bottom-color:#e8722a;font-weight:700}
+.ptabs{display:flex;gap:4px;overflow-x:auto;margin:6px 0 14px;scrollbar-width:none}
+.ptabs button{white-space:nowrap}
+.tlist{background:#fff;border:1px solid var(--bd);border-radius:14px;overflow:hidden}
+.tlh{padding:14px 18px;font-weight:700;font-size:16px;background:#f7f4fd;border-bottom:1px solid var(--bd)}
+.trow{display:flex;align-items:center;gap:14px;padding:14px 18px;border-top:1px solid #efeaf9}
+.trow:first-of-type{border-top:0}
+.tn{flex:1;min-width:0}.tn b{font-weight:600;font-size:15px}.tn small{display:block;color:var(--mute);margin-top:2px;font-size:12.5px}
+.lvd{display:flex;gap:4px}.lvd i{width:8px;height:18px;border-radius:3px;background:#f3dccf}.lvd i.on{background:#e8722a}
+.pbtn{width:auto;margin:0;padding:8px 20px;border-radius:99px;background:#e8722a;color:#fff;font-weight:700;font-size:14px;text-align:center}
+.pbtn:hover{background:#d9631d}
+/* signup wizard */
+body.obwiz #ob{background:#fff;display:flex;align-items:flex-start;justify-content:center;padding:40px 16px}
+body.obwiz .obc{box-shadow:none;max-width:560px;max-height:none;padding:0;background:none;text-align:center}
+.obprog{height:8px;border-radius:99px;background:#ece8f4;max-width:340px;margin:10px auto 70px;overflow:hidden}
+.obprog i{display:block;height:100%;background:#22c55e;border-radius:99px;transition:width .3s}
+body.obwiz .obc h2{font-size:32px;font-weight:700;margin:0 0 26px;letter-spacing:-.02em}
+body.obwiz .obc label{text-align:left}
+.obopts{display:grid!important;grid-template-columns:1fr 1fr;gap:12px;margin:0 0 30px}
+@media(max-width:520px){.obopts{grid-template-columns:1fr}}
+.opt{display:flex;justify-content:space-between;align-items:center;width:100%;margin:0;padding:18px 20px;background:#fff;border:1px solid var(--bd);border-radius:12px;font-size:15.5px;font-weight:500;text-align:left}
+.opt.on{background:#f4f1fa;border-color:#cfc6e6}
+.opt .ck{width:22px;height:22px;border:1.5px solid #c9c3d9;border-radius:6px;flex:none}
+.opt.on .ck{background:#1c1530 url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='M3.5 8.5l3 3 6-7' fill='none' stroke='white' stroke-width='2'/%3E%3C/svg%3E") center/80% no-repeat;border-color:#1c1530}
+.obgo{width:auto!important;display:inline-block;padding:13px 34px!important;background:#f07c35!important;margin:10px 6px 0}
+.obbk{width:auto;display:inline-block;margin:10px 6px 0;border-radius:99px;padding:12px 26px}
+body.obwiz .inp{max-width:420px;display:block;margin:0 auto 12px;padding:15px;font-size:16px}
+body.obwiz #obatw label,body.obwiz #obunw label,body.obwiz #obphw label{display:none}
+body.obwiz .hint{max-width:420px;margin:8px auto 24px;text-align:left}
+body.obwiz #obmsg{margin:0 0 14px}
 </style>
 </head>
 <body>
@@ -340,22 +404,25 @@ details.card summary{cursor:pointer}
 
 <div id="ob" hidden>
  <div class="obc" role="dialog" aria-modal="true" aria-labelledby="obt">
+  <div class="obprog" hidden><i id="obbar"></i></div>
   <h2 id="obt">Set up your profile</h2>
   <p id="obsub">A few quick details to personalise your practice area.</p>
-  <div id="obfull">
+  <div id="obfull_lvl"><label>Your level</label><div class="chips obopts" id="oblvl"></div></div>
+  <div id="obfull"><div id="obunw">
    <label for="obun">Choose a username</label>
    <input id="obun" class="inp" maxlength="20" placeholder="e.g. gyan_ninja" autocomplete="off" autocapitalize="none" spellcheck="false">
    <span class="hint">3-20 letters, numbers or _. Please don't use your real name: this keeps you anonymous on leaderboards. You can't change it later.</span>
-   <label>Your level</label><div class="chips" id="oblvl"></div>
-  </div>
+  </div></div>
   <div id="oblock" hidden></div>
-  <div id="obgrpw" hidden><label>Which group?</label><div class="chips wrap" id="obgrp"></div></div>
-  <label for="obat">Your attempt</label>
-  <select id="obat" class="inp"></select>
+  <div id="obgrpw" hidden><label>Which group?</label><div class="chips wrap obopts" id="obgrp"></div></div>
+  <div id="obatw"><label for="obat">Your attempt</label>
+  <select id="obat" class="inp"></select></div>
   <div id="obphw"><label for="obph">Phone number</label>
   <input id="obph" class="inp" type="tel" inputmode="numeric" maxlength="14" placeholder="10-digit mobile number" autocomplete="tel"></div>
   <div id="obmsg"></div>
-  <button class="go" id="obsave" onclick="saveProfile()">Save and continue</button>
+  <button class="go obgo" id="obnext" onclick="obNext()">Continue</button>
+  <button class="go obgo" id="obsave" onclick="saveProfile()">Save and continue</button>
+  <button class="ghost obbk" id="obbk" onclick="obBack()">Back</button>
   <button class="ghost" id="obcancel" onclick="closeOb()" hidden>Cancel</button>
  </div>
 </div>
@@ -606,19 +673,47 @@ function attemptOptions(cur){
 }
 function openProfile(edit){
   const b=PROFILE||PARTIAL||{};
-  OB={edit:!!edit&&!!PROFILE,level:b.level||"",grp:b.grp||""};
+  OB={edit:!!edit&&!!PROFILE,level:b.level||"",grp:b.grp||"",step:0};
   $("obun").value=b.username||"";$("obph").value=b.phone||"";
   $("obat").innerHTML=`<option value="">Select your attempt</option>`+attemptOptions(b.attempt).map(a=>`<option ${a===b.attempt?"selected":""}>${esc(a)}</option>`).join("");
   $("obt").textContent=OB.edit?"Edit profile":"Set up your profile";
   $("obsub").textContent=OB.edit?"You can change your group and attempt. Other details are locked.":"A few quick details to personalise your practice area.";
-  $("obfull").hidden=OB.edit;$("obphw").hidden=OB.edit;$("oblock").hidden=!OB.edit;
+  $("obfull").hidden=OB.edit;$("oblock").hidden=!OB.edit;
   if(OB.edit)$("oblock").innerHTML=[["Username","@"+PROFILE.username],["Level",LABEL[PROFILE.level]],["Phone",PROFILE.phone||"–"]].map(r=>`<div class="lockrow"><span>${r[0]} 🔒</span><b>${esc(r[1])}</b></div>`).join("");
   $("pmenu").hidden=true;$("obmsg").textContent="";$("obcancel").hidden=!OB.edit;$("obsave").disabled=false;
   renderOb();$("ob").hidden=false;
 }
-function closeOb(){$("ob").hidden=true}
+function closeOb(){$("ob").hidden=true;document.body.classList.remove("obwiz")}
+function obStep(n){OB.step=n;renderOb()}
+function obNext(){
+  const m=$("obmsg");m.textContent="";const st=OB.step||0;
+  if(st===0&&!OB.level){m.textContent="Please choose your level.";return}
+  if(st===1&&!OB.grp){m.textContent="Please choose a group.";return}
+  if(st===2&&!$("obat").value){m.textContent="Please choose your attempt.";return}
+  if(st===3){const u=($("obun").value||"").trim().toLowerCase();if(!/^[a-z0-9_]{3,20}$/.test(u)){m.textContent="Username must be 3-20 characters: letters, numbers or _.";return}}
+  let nx=st+1;if(nx===1&&OB.level!=="Inter")nx=2;
+  obStep(nx);
+}
+function obBack(){let p=(OB.step||0)-1;if(p===1&&OB.level!=="Inter")p=0;obStep(Math.max(0,p))}
 function renderOb(){
   const lvl=OB.edit?PROFILE.level:OB.level;
+  document.body.classList.toggle("obwiz",!OB.edit);
+  if(!OB.edit){
+    const st=OB.step||0,inter=OB.level==="Inter",total=inter?5:4,pos=(!inter&&st>1)?st-1:st;
+    $("obbar").style.width=(Math.round((pos+1)/total*100))+"%";
+    $("obbar").parentNode.hidden=false;
+    const sec={0:["obfull_lvl"],1:["obgrpw"],2:["obatw"],3:["obunw"],4:["obphw"]};
+    ["obfull_lvl","obgrpw","obatw","obunw","obphw"].forEach(id=>$(id).hidden=!sec[st].includes(id));
+    $("obt").textContent=["Select your level","Select your group","Select your attempt","Choose a username","Your phone number"][st];
+    $("obsub").textContent="";
+    $("obgrpw").querySelector("label").hidden=true;$("obfull_lvl").querySelector("label").hidden=true;
+    $("obsave").hidden=st!==4;$("obnext").hidden=st===4;$("obbk").hidden=st===0;
+    $("oblvl").innerHTML=LEVELS.map(l=>`<button class="opt ${OB.level===l?"on":""}" onclick="OB.level='${l}';renderOb()"><span>${LABEL[l]}</span><i class="ck"></i></button>`).join("");
+    $("obgrp").innerHTML=GROUPS.map(g=>`<button class="opt ${OB.grp===g[0]?"on":""}" onclick="OB.grp='${g[0]}';renderOb()"><span>${g[1]}</span><i class="ck"></i></button>`).join("");
+    return;
+  }
+  $("obbar").parentNode.hidden=true;$("obnext").hidden=true;$("obbk").hidden=true;$("obsave").hidden=false;
+  ["obfull_lvl","obgrpw","obatw","obunw","obphw"].forEach(id=>$(id).hidden=false);$("obfull_lvl").hidden=true;$("obunw").hidden=true;$("obphw").hidden=true;
   $("oblvl").innerHTML=LEVELS.map(l=>`<button class="${OB.level===l?"on":""}" onclick="OB.level='${l}';renderOb()" style="text-align:center">${LABEL[l]}</button>`).join("");
   $("obgrpw").hidden=lvl!=="Inter";
   $("obgrp").innerHTML=GROUPS.map(g=>`<button class="${OB.grp===g[0]?"on":""}" onclick="OB.grp='${g[0]}';renderOb()" style="text-align:center">${g[1]}</button>`).join("");
@@ -854,7 +949,7 @@ function casesBody(){
   return `<p class="lead">Read a short real-life situation, then answer questions on it. ${SAMPLE} Real case studies are added when the data is ready.</p>`
   +dl().cases.map(c=>`<div class="card"><div class="tag">${c.tag}</div><h2>${c.title}</h2><p>${c.qs.length} questions</p><button class="go" onclick="openCase('${c.id}')">Attempt →</button></div>`).join("");
 }
-function vPractice(){return `<h1 class="dh">Practice</h1>${sh("DAILY CASE STUDIES")}${casesBody()}${sh("TOPIC TESTS")}${topicsBody()}`}
+function vPractice(){return `<h1 class="dh">Practice</h1><div class="ptop"><button class="${D.pmode!=="case"?"on":""}" onclick="D.pmode='topic';refresh()">Topic Tests</button><button class="${D.pmode==="case"?"on":""}" onclick="D.pmode='case';refresh()">Case Studies</button></div>${D.pmode==="case"?casesBody():topicsBody()}`}
 const hub=(t,l,a)=>`<h1 class="dh">${t}</h1><p class="lead">${l}</p><div class="grid">${a.map(x=>tile(x[0],x[1],x[2])).join("")}</div>`;
 const vConcept=()=>hub("Concept","Revise ideas with cards, keywords and formulas.",[["🃏","Flashcards","flash"],["🔑","Keywords","kw"],["ƒₓ","Formulas","fm"],["💡","Keyword of the Day","kotd"],["🧮","Calci Tricks","calci"]]);
 const vPapersHub=()=>hub("PYQs / RTP / MTP","Attempt exam-style papers with a timer.",[["📜","Past Year Papers","pyq"],["📝","MTPs","mtp"],["🎯","RTPs","rtp"]]);
@@ -927,23 +1022,21 @@ function vSyllabus(){
   return `<button class="back" onclick="SYL.sub=null;refresh()">← All subjects</button><h1 class="dh">${esc(n)}</h1>
   <div class="card"><b>${p}% complete</b><div class="bar" style="margin:12px 0 0"><i style="width:${p}%"></i></div></div>`
   +chs.map((c,ci)=>{
-    const k=n+"|"+ci,us=c.units;
-    if(!us.length){const d=SYL.done[sylKey(n,ci,-1)];return `<div class="card syl"><label class="sylr"><input type="checkbox" ${d?"checked":""} onchange="sylT(${SYL.sub},${ci},-1)"><span>${esc(c.ch)}</span></label></div>`}
+    const us=c.units;
+    if(!us.length){const d=SYL.done[sylKey(n,ci,-1)];return `<div class="chap"><label class="chh"><div><div class="chn">${esc(c.ch)}</div></div><input type="checkbox" ${d?"checked":""} onchange="sylT(${SYL.sub},${ci},-1)"></label></div>`}
     const nd=us.filter((u,i)=>SYL.done[sylKey(n,ci,i)]).length;
-    return `<details class="card syl" ${SYL.open[k]?"open":""} ontoggle="sylOpen('${k.replace(/'/g,"\\'")}',this)"><summary><b>${esc(c.ch)}</b> <span class="sylc">${nd}/${us.length}</span></summary>
-    <label class="sylr all"><input type="checkbox" ${nd===us.length?"checked":""} onchange="sylT(${SYL.sub},${ci},-2)"><span>Mark whole chapter</span></label>
-    ${us.map((u,ui)=>`<label class="sylr"><input type="checkbox" ${SYL.done[sylKey(n,ci,ui)]?"checked":""} onchange="sylT(${SYL.sub},${ci},${ui})"><span>${esc(u)}</span></label>`).join("")}</details>`;
+    return `<div class="chap"><label class="chh"><div><div class="chn">${esc(c.ch)}</div><div class="chc">${nd} of ${us.length} units done</div></div><input type="checkbox" title="Mark whole chapter" ${nd===us.length?"checked":""} onchange="sylT(${SYL.sub},${ci},-2)"></label>
+    <div class="units">${us.map((u,ui)=>`<label class="unit"><span>${esc(u)}</span><input type="checkbox" ${SYL.done[sylKey(n,ci,ui)]?"checked":""} onchange="sylT(${SYL.sub},${ci},${ui})"></label>`).join("")}</div></div>`;
   }).join("");
 }
 function openPaper(kind,l){startRun({id:kind+":"+(D.level+l+D.psub).replace(/\s/g,""),title:`${PTITLE[kind]} · ${l} · ${subs()[Math.min(D.psub||0,subs().length-1)]}`,qs:PQS[D.level],mode:"paper",back:kind,backLabel:PTITLE[kind]})}
 
 // ----- topic tests -----
 function topicsBody(){
-  const L=TOPICS.filter(t=>t.level===D.level);
-  return `<p class="lead">Practise one topic at a time with instant explanations and animated answers.</p>`+subs().map(sj=>{
-    const ts=L.filter(t=>t.subj===sj);
-    return `<div class="sh" style="margin-top:16px">${esc(sj.toUpperCase())}</div>`+(ts.length?ts.map(t=>`<button class="rowb" onclick="openTopic('${t.id}')"><div><b>${t.name}</b><br><small>${t.qs.length} question${t.qs.length>1?"s":""}${t.qs.some(q=>q.scene)?" · animated answer":""} · ${SAMPLE}</small></div><span>→</span></button>`).join(""):`<div class="card"><p style="margin:0">Topics coming soon.</p></div>`);
-  }).join("");
+  const L=TOPICS.filter(t=>t.level===D.level),S=subs(),f=Math.min(D.ptab||0,S.length-1),sj=S[f],ts=L.filter(t=>t.subj===sj);
+  const dots=n=>`<span class="lvd">${[1,2,3,4].map(i=>`<i class="${i<=n?"on":""}"></i>`).join("")}</span>`;
+  return `<div class="ptabs">${S.map((x,i)=>`<button class="${i===f?"on":""}" onclick="D.ptab=${i};refresh()">${esc(x)}</button>`).join("")}</div>`
+  +`<div class="tlist"><div class="tlh">${esc(sj)}</div>`+(ts.length?ts.map(t=>`<div class="trow"><div class="tn"><b>${t.name}</b><small>${t.qs.length} question${t.qs.length>1?"s":""}${t.qs.some(q=>q.scene)?" · animated answer":""}</small></div>${dots(1)}<button class="pbtn" onclick="openTopic('${t.id}')">Practice</button></div>`).join(""):`<div class="trow"><div class="tn"><small>Topics coming soon.</small></div></div>`)+`</div>`;
 }
 function openTopic(id){const t=TOPICS.find(t=>t.id===id);startRun({id:t.id,title:t.name,qs:t.qs,back:"practice",backLabel:"Practice"})}
 
