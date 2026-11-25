@@ -562,6 +562,48 @@ body.sbc .ni .chv{display:none}
 .bl{width:auto;margin:0;padding:8px 16px;border-radius:99px;background:#f4effc;color:#5b2ba8;font-weight:600;font-size:13px;text-align:center}
 .bl:hover{background:#ebe2fa}
 @media(max-width:600px){.bh{padding:22px 18px}.bgr,.bst,.bf{padding-left:16px;padding-right:16px}}
+
+/* ---- v8 ---- */
+.tgb{width:auto;margin:0;padding:7px 14px;border-radius:99px;background:#f1ecfb;color:#5b2ba8;font-weight:700;font-size:13px;text-align:center}
+.tgb:hover{background:#e6dcf8}
+#tgtm{position:fixed;inset:0;background:rgba(30,20,60,.5);z-index:95;display:flex;align-items:center;justify-content:center;padding:16px}
+#tgtm[hidden]{display:none!important}
+.tbox{max-width:420px}
+.twarn{display:flex;gap:12px;align-items:flex-start;background:#fff6e0;border:1px solid #f0d9a0;border-radius:12px;padding:12px 14px;margin-bottom:14px}
+.twarn>span{font-size:22px;line-height:1.2}
+.twarn h3{margin:0;font-size:15px;font-weight:700;color:#5a3d00;line-height:1.35}
+.twarn p{margin:4px 0 0;font-size:12.5px;color:#7a5a00;line-height:1.45}
+.tcur{font-size:13px;color:var(--mute);margin-bottom:10px}.tcur b{color:var(--ink)}
+.tchips{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:12px}
+.tchips button{width:auto;margin:0;padding:8px 14px;border-radius:9px;background:#f4effc;color:#4b2c8f;font-weight:600;font-size:13.5px;text-align:center}
+.tchips button.on{background:#5b2ba8;color:#fff}
+.tlab{display:block;font-size:12.5px;color:var(--mute);margin-bottom:6px}
+.tmsg{color:#b3302b;font-size:12.5px;min-height:18px;margin:2px 0 6px}
+.tbtn{display:flex;gap:10px}
+.tbtn button{margin:0;border-radius:9px;padding:10px 12px;text-align:center;font-weight:600;font-size:13.5px}
+.tbtn .ghost{flex:1}.tbtn .go{flex:1.4}
+/* leaderboard lives in the wallet */
+button.lbb{width:auto;margin:0;display:flex;flex-direction:column;align-items:center;gap:2px;padding:10px 14px;border-radius:12px;cursor:pointer}
+button.lbb small{font-size:10.5px;font-weight:700;color:#7a5a00;letter-spacing:.03em}
+button.lbb:hover{filter:brightness(.97)}
+.xpcm{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;margin-top:12px;padding-top:12px;border-top:1px solid #f0e3b8;font-size:13px;color:#5a5478}
+.xpcm b{color:#7a5a00}.xpcm a{color:#5b2ba8;font-weight:700;text-decoration:none}
+
+/* ---- v9 ---- */
+.dic .dot{display:none}.dic.has .dot{display:block}
+.empty{background:#fff;border:1.5px dashed #d6c9f0;border-radius:14px;padding:34px 20px;text-align:center}
+.empty .ei{font-size:30px;margin-bottom:6px}.empty b{font-size:15px}.empty p{margin:6px auto 0;max-width:340px;color:var(--mute);font-size:13.5px}
+.nlist{padding:4px 16px}
+.nitem{display:flex;gap:12px;padding:13px 0;border-top:1px solid #efeaf9}.nitem:first-child{border-top:0}
+.ni2{width:36px;height:36px;border-radius:10px;background:#f1ecfb;display:flex;align-items:center;justify-content:center;flex:none;font-size:17px}
+.nitem b{font-size:14.5px}.nitem p{margin:2px 0 4px;font-size:13.5px;color:#5a5478;line-height:1.45}.nitem small{color:#8a84a6;font-size:12px}
+.newt{font-style:normal;font-size:10px;font-weight:700;letter-spacing:.06em;background:#5b2ba8;color:#fff;border-radius:99px;padding:2px 7px;margin-left:6px;vertical-align:1px}
+.wait{font-style:normal;background:#fff6e0;color:#7a5a00;border-radius:99px;padding:2px 9px;font-weight:600}
+.nhead{display:flex;justify-content:space-between;align-items:center;margin-bottom:14px}
+.ntabs{display:inline-flex;gap:4px;background:#f1ecfb;border-radius:11px;padding:4px;margin-bottom:14px}
+.ntabs button{width:auto;margin:0;padding:7px 18px;border-radius:8px;background:none;color:#5a5478;font-weight:600;font-size:14px;text-align:center}
+.ntabs button.on{background:#fff;color:#5b2ba8;box-shadow:0 1px 3px rgba(60,30,120,.12)}
+.ntabs i{font-style:normal;background:#5b2ba8;color:#fff;border-radius:99px;font-size:11px;padding:1px 7px;margin-left:4px}
 </style>
 </head>
 <body>
@@ -672,13 +714,19 @@ body.sbc .ni .chv{display:none}
 
 <div id="app" hidden>
  <div id="strk" hidden></div>
+ <div id="tgtm" hidden><div class="ibox tbox" role="dialog" aria-modal="true" aria-labelledby="tgh"><div class="twarn"><span>⚠️</span><div><h3 id="tgh">Changing your XP target 🎯 restarts your streak</h3><p>Your streak goes back to 0 as soon as you save, so choose a daily target you can hit every day.</p></div></div>
+  <div class="tcur">Current target: <b id="tgc"></b></div>
+  <div class="tchips" id="tgch"></div>
+  <label class="tlab" for="tgi">Or enter your own (minimum 100 XP)</label><input id="tgi" class="inp" oninput="tgSel()" type="number" inputmode="numeric" min="100" step="10">
+  <div id="tgm" class="tmsg"></div>
+  <div class="tbtn"><button class="ghost" onclick="closeTarget()">Keep current</button><button class="go" onclick="saveTarget()">Restart with new target</button></div></div></div>
  <div id="intro" hidden><div class="ibox" role="dialog" aria-modal="true" aria-labelledby="it"><div class="ihd"><span>🔥</span><div><h3 id="it">How streaks &amp; XP work</h3><p>A 30-second guide to staying consistent.</p></div></div>
   <div class="irow"><i>⚡</i><div><b>Earn Gyan XP</b><p>Case study +20, topic test +10, paper +50, and +15 bonus for scoring 80% or more.</p></div></div>
   <div class="irow"><i>🎯</i><div><b>Hit your daily target</b><p>Your target starts at 100 XP. Change it anytime from the streak calendar in the top bar.</p></div></div>
   <div class="irow"><i>🔥</i><div><b>Build your streak</b><p>Each day you reach the target adds one to your streak. Changing the target restarts it from 0, and darker calendar days mean more XP.</p></div></div>
   <button class="go" onclick="closeIntro()">Got it, let’s start</button></div></div>
  <div id="bird" hidden></div>
- <div id="dtop"><div id="dtitle"></div><div class="dright"><button class="dic" id="dbell" onclick="toast('No new notifications')" aria-label="Notifications"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8a6 6 0 10-12 0c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.7 21a2 2 0 01-3.4 0"/></svg><i class="dot"></i></button><button class="dstreak" id="dstreak" onclick="openStreak(event)" title="Streak calendar">🔥 <b>0</b></button><button class="dlogo" id="dlogo" onclick="openBird(event)" aria-label="ChartedGyan overview" title="ChartedGyan at a glance"><img alt=""></button></div></div>
+ <div id="dtop"><div id="dtitle"></div><div class="dright"><button class="dic" id="dbell" onclick="show('notif')" aria-label="Notifications"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8a6 6 0 10-12 0c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.7 21a2 2 0 01-3.4 0"/></svg><i class="dot"></i></button><button class="dstreak" id="dstreak" onclick="openStreak(event)" title="Streak calendar">🔥 <b>0</b></button><button class="dlogo" id="dlogo" onclick="openBird(event)" aria-label="ChartedGyan overview" title="ChartedGyan at a glance"><img alt=""></button></div></div>
  <div id="scrim" onclick="toggleNav(false)"></div>
  <aside id="side"></aside>
  <main id="dmain"></main>
@@ -1063,10 +1111,10 @@ const dl=()=>DATA[D.level];
 const SAMPLE=`<span class="badge">SAMPLE</span>`;
 const tile=(ic,lb,v)=>`<button class="tile" onclick="show('${v}')"><span class="ic">${ic}</span><span>${lb}</span></button>`;
 const sh=t=>`<div class="sh">${t}</div>`;
-const TABS=[["home","Dashboard","🏠","Home"],["practice","Practice","📝","Practice"],["concept","Concept","💡","Concept"],["papers","PYQs/RTP/MTP","📜","Papers"],["analysis","Analysis","📈","Analysis"]];
-const GRP={home:"home",doubts:"analysis",res:"analysis",practice:"practice",topics:"practice",cases:"practice",concept:"concept",flash:"concept",kw:"concept",fm:"concept",kotd:"concept",calci:"concept",syllabus:"analysis",papers:"papers",pyq:"papers",mtp:"papers",rtp:"papers",analysis:"analysis",activity:"analysis",swot:"analysis",board:"analysis"};
-const PARENT={topics:"practice",cases:"practice",doubts:"analysis",res:"analysis",pyq:"papers",mtp:"papers",rtp:"papers",flash:"concept",kw:"concept",fm:"concept",kotd:"concept",calci:"concept",syllabus:"analysis",activity:"analysis",swot:"analysis",board:"analysis"};
-const PNAME={practice:"Practice",papers:"PYQs/RTP/MTP",concept:"Concept",analysis:"Analysis",home:"Dashboard"};
+const TABS=[["home","Dashboard","🏠","Home"],["practice","Practice","📝","Practice"],["concept","Concept","💡","Concept"],["papers","PYQs/RTP/MTP","📜","Papers"],["analysis","Analysis","📊","Analysis"],["activity","Activity","📈","Activity"],["doubts","Doubts","🙋","Doubts"],["res","Free Resources","📚","Resources"],["updates","Updates & reminders","🔔","Updates"]];
+const GRP={home:"home",doubts:"doubts",res:"res",practice:"practice",topics:"practice",cases:"practice",concept:"concept",flash:"concept",kw:"concept",fm:"concept",kotd:"concept",calci:"concept",syllabus:"analysis",papers:"papers",pyq:"papers",mtp:"papers",rtp:"papers",analysis:"analysis",activity:"activity",swot:"analysis",board:"home",updates:"updates",news:"updates",newupd:"updates",resp:"updates",notif:"notif"};
+const PARENT={topics:"practice",cases:"practice",pyq:"papers",mtp:"papers",rtp:"papers",flash:"concept",kw:"concept",fm:"concept",kotd:"concept",calci:"concept",syllabus:"analysis",swot:"analysis",news:"updates",newupd:"updates",resp:"updates"};
+const PNAME={updates:"Updates & reminders",practice:"Practice",papers:"PYQs/RTP/MTP",concept:"Concept",analysis:"Analysis",home:"Dashboard"};
 const BK=()=>{const p=PARENT[D.view]||"home";return `<button class="back" onclick="show('${p}')">← ${PNAME[p]}</button>`};
 const activeTab=()=>GRP[D.view==="run"&&R?R.back:D.view]||"home";
 function nameOf(id){
@@ -1077,7 +1125,7 @@ function nameOf(id){
 }
 
 // ----- navigation -----
-const SIDEKIDS={practice:[["📅","Daily Case Studies","cases"],["📝","Topic Tests","topics"]],concept:[["🃏","Flashcards","flash"],["🔑","Keywords","kw"],["ƒₓ","Formulas","fm"],["💡","Keyword of the Day","kotd"],["🧮","Calci Tricks","calci"]],papers:[["📜","Past Year Papers","pyq"],["📝","MTPs","mtp"],["🎯","RTPs","rtp"]],analysis:[["✅","Syllabus Completion","syllabus"],["📈","Activity","activity"],["🙋","Doubts","doubts"],["📊","SWOT Analysis","swot"],["📚","Free Resources","res"],["🏆","Leaderboard","board"]]};
+const SIDEKIDS={practice:[["📅","Daily Case Studies","cases"],["📝","Topic Tests","topics"]],concept:[["🃏","Flashcards","flash"],["🔑","Keywords","kw"],["ƒₓ","Formulas","fm"],["💡","Keyword of the Day","kotd"],["🧮","Calci Tricks","calci"]],papers:[["📜","Past Year Papers","pyq"],["📝","MTPs","mtp"],["🎯","RTPs","rtp"]],analysis:[["✅","Syllabus Completion","syllabus"],["📊","SWOT Analysis","swot"]]};
 const secOpen=(k,act)=>D.sopen&&D.sopen[k]!==undefined?D.sopen[k]:k===act;
 function sbClick(k){
   if(!SIDEKIDS[k]||document.body.classList.contains("sbc")){show(k);return}
@@ -1087,14 +1135,16 @@ function renderSide(){
   const act=activeTab();
   try{
     const lg=document.querySelector(".logo img").src,t=TABS.find(t=>t[0]===act)||TABS[0];
-    $("dtitle").textContent=MOTTO;$("dstreak").querySelector("b").textContent=streakN();document.querySelector("#dlogo img").src=lg;
+    $("dtitle").textContent=MOTTO;$("dstreak").querySelector("b").textContent=streakN();$("dbell").classList.toggle("has",unreadN()>0);document.querySelector("#dlogo img").src=lg;
     $("side").innerHTML=`<div class="sbh"><span class="sbb"><img src="${lg}" alt=""><span class="sbn">Charted<b class="gy">Gyan</b></span></span><button class="sbt" onclick="toggleSb()" aria-label="Collapse sidebar">‹</button></div>`
      +`<div class="sbl">`+TABS.map(x=>{const kids=SIDEKIDS[x[0]],op=kids&&secOpen(x[0],act);return `<button class="ni ${x[0]===act?"on":""} ${op?"open":""}" onclick="sbClick('${x[0]}')" title="${x[1]}"><span>${x[2]}</span><em>${x[1]}</em>${kids?`<b class="chv">›</b>`:""}</button>`+(op?`<div class="sk">${SIDEKIDS[x[0]].map(k=>`<button class="si ${D.view===k[2]?"on":""}" onclick="show('${k[2]}')"><span>${k[0]}</span>${k[1]}</button>`).join("")}</div>`:"")}).join("")+`</div>`
      +`<div class="sbf">${PROFILE?`<button class="sbu" onclick="toggleProfile(event,1)" aria-label="View profile"><span class="av">${esc(initial())}</span><div class="sbx"><b>@${esc(PROFILE.username||"")}</b><small>${esc(PROFILE.plan||"Basic")} plan</small></div></button>`:`<button class="ni" onclick="showAuth()"><span>🔑</span><em>Login</em></button>`}</div>`;
   }catch(e){}
   $("tnav").innerHTML=TABS.map(t=>`<button class="${t[0]===act?"on":""}" onclick="show('${t[0]}')"><i>${t[2]}</i><span class="lg">${t[1]}</span><span class="sm">${t[3]}</span></button>`).join("");
 }
-const BIRD=[["📝","Practise","Sharpen skills topic by topic","practice"],["📜","Exam papers","Attempt with a real timer","papers"],["💡","Concepts & games","Revise ideas, fast","concept"],["📈","Progress & support","Know exactly where you stand","analysis"]];
+const BIRD=[["📝","Practise","Sharpen skills topic by topic","practice"],["📜","Exam papers","Attempt with a real timer","papers"],["💡","Concepts & games","Revise ideas, fast","concept"],["📈","Progress & support","Know exactly where you stand","prog"],["🔔","Updates & reminders","Stay in the loop","updates"]];
+SIDEKIDS.updates=[["📰","News","news"],["🆕","New updates","newupd"],["💬","Response","resp"]];
+SIDEKIDS.prog=[["✅","Syllabus Completion","syllabus"],["📈","Activity","activity"],["🙋","Doubts","doubts"],["📊","SWOT Analysis","swot"],["📚","Free Resources","res"]];
 function openBird(e){
   if(e)e.stopPropagation();$("pmenu").hidden=true;$("strk").hidden=true;
   const lg=document.querySelector(".logo img").src,lv=PROFILE?levelText():(D.level==="Foundation"?"CA Foundation":"CA Intermediate");
@@ -1108,7 +1158,7 @@ function openBird(e){
 function closeBird(){$("bird").hidden=true}
 function birdGo(v){closeBird();show(v)}
 document.addEventListener("click",e=>{const b=$("bird");if(b&&!b.hidden&&e.target===b)closeBird()});
-document.addEventListener("keydown",e=>{if(e.key==="Escape"){closeBird();const i=$("intro");if(i&&!i.hidden)i.hidden=true}});
+document.addEventListener("keydown",e=>{if(e.key==="Escape"){closeBird();closeTarget();const i=$("intro");if(i&&!i.hidden)i.hidden=true}});
 function toggleSb(){const c=!document.body.classList.contains("sbc");document.body.classList.toggle("sbc",c);ls.set("cg-sbc",c)}
 if(ls.get("cg-sbc",false))document.body.classList.add("sbc");
 document.body.appendChild($("pmenu"));
@@ -1156,11 +1206,19 @@ function openStreak(e){
   $("pmenu").hidden=true;const n=new Date();SM={y:n.getFullYear(),m:n.getMonth(),pend:xpTarget()};paintStreak();m.hidden=false;
 }
 function stepMonth(d){SM.m+=d;if(SM.m<0){SM.m=11;SM.y--}if(SM.m>11){SM.m=0;SM.y++}paintStreak()}
-function bumpTarget(d){SM.pend=Math.max(XPMIN,SM.pend+d);paintStreak()}
+function openTarget(){
+  $("strk").hidden=true;$("tgc").textContent=xpTarget()+" XP";
+  $("tgch").innerHTML=[100,150,200,300,500].map(v=>`<button class="${v===xpTarget()?"on":""}" onclick="$('tgi').value=${v};tgSel()">${v}</button>`).join("");
+  $("tgi").value=xpTarget();$("tgm").textContent="";$("tgtm").hidden=false;
+}
+function tgSel(){const v=parseInt($("tgi").value,10);document.querySelectorAll("#tgch button").forEach(b=>b.classList.toggle("on",parseInt(b.textContent,10)===v))}
+function closeTarget(){$("tgtm").hidden=true}
 function saveTarget(){
-  const d=SM.pend-xpTarget();if(!d)return;
-  setXpTarget(d);ls.set(stKey(),lk());const T=ls.get(tgtKey(),{});T[lk()]=xpTarget();ls.set(tgtKey(),T);
-  renderSide();paintStreak();toast("Target set to "+xpTarget()+" XP. Streak restarted.");
+  const v=parseInt($("tgi").value,10),m=$("tgm");
+  if(!isFinite(v)||v<XPMIN){m.textContent="Please enter at least "+XPMIN+" XP.";return}
+  if(v===xpTarget()){closeTarget();return}
+  setXpTarget(v-xpTarget());ls.set(stKey(),lk());const T=ls.get(tgtKey(),{});T[lk()]=xpTarget();ls.set(tgtKey(),T);
+  closeTarget();renderSide();refresh();toast("Target set to "+xpTarget()+" XP. Streak restarted.");
 }
 function paintStreak(){
   const first=new Date(SM.y,SM.m,1).getDay(),days=new Date(SM.y,SM.m+1,0).getDate(),tk=lk();
@@ -1170,11 +1228,11 @@ function paintStreak(){
   <div class="sk2"><button onclick="stepMonth(-1)" aria-label="Previous month">‹</button><b>${new Date(SM.y,SM.m,1).toLocaleDateString("en-IN",{month:"long",year:"numeric"})}</b><button onclick="stepMonth(1)" aria-label="Next month">›</button></div>
   <div class="cg">${["S","M","T","W","T","F","S"].map(x=>`<em>${x}</em>`).join("")}${cells}</div>
   <div class="lg2"><span>Target met</span><i class="cd l1"></i><i class="cd l2"></i><i class="cd l3"></i><i class="cd l4"></i><i class="cd l5"></i><span>More XP</span></div>
-  <div class="tgt"><div><b>Daily XP target</b><small>Minimum ${XPMIN} XP</small></div><div class="stp"><button onclick="bumpTarget(-50)" aria-label="Decrease target">−</button><b>${SM.pend}</b><button onclick="bumpTarget(50)" aria-label="Increase target">+</button></div></div>
-  ${SM.pend!==xpTarget()?`<button class="go stg" onclick="saveTarget()">Set ${SM.pend} XP target</button>`:""}
-  <p class="tnote">A day counts when you reach your target. Changing the target restarts your streak from 0, so set it wisely.</p>`;
+  <div class="tgt"><div><b>Daily XP target</b><small>${xpTarget()} XP per day</small></div><button class="tgb" onclick="openTarget()">🎯 Change</button></div>
+  <p class="tnote">A day counts when you reach your target.</p>`;
 }
-document.addEventListener("click",e=>{const m=$("strk");if(m&&!m.hidden&&!e.target.closest("#strk"))m.hidden=true});
+$("strk").addEventListener("click",e=>e.stopPropagation());
+document.addEventListener("click",e=>{const m=$("strk");if(m&&!m.hidden)m.hidden=true});
 
 // ----- home -----
 const XPMIN=100;
@@ -1182,8 +1240,8 @@ const xpTarget=()=>{const v=parseInt(ls.get("cg-xptarget",XPMIN),10);return isFi
 function setXpTarget(d){const v=Math.max(XPMIN,xpTarget()+d);ls.set("cg-xptarget",v);try{if(sb&&USER)sb.from("profiles").update({xp_target:v}).eq("id",USER.id).then(()=>{},()=>{})}catch(e){}refresh()}
 const XPR=[["Complete Daily Case Study","+20"],["Complete a topic test","+10"],["Score 80%+ in a test","+15"],["Complete a PYQ paper","+50"],["Complete a weekly target","+100"],["Maintain a 7-day streak","+75"]];
 function xpWallet(){
-  return `<div class="xpcard"><div class="xph"><div><div class="xpk">YOUR LEARNING WALLET</div><div class="xpnum">${xpTotal()} <span>XP</span></div><div class="xps">Keep learning. Keep earning.</div></div><div class="xptr">🏆</div></div>
-  <div class="xpt">How you earn Gyan XP</div>${XPR.map(r=>`<div class="xprow"><span>${r[0]}</span><b>${r[1]}</b></div>`).join("")}<p class="xpnote">Illustrative XP values, not final rules.</p></div>`;
+  return `<div class="xpcard"><div class="xph"><div><div class="xpk">YOUR LEARNING WALLET</div><div class="xpnum">${xpTotal()} <span>XP</span></div><div class="xps">Keep learning. Keep earning.</div></div><button class="xptr lbb" onclick="show('board')" aria-label="Open leaderboard" title="Leaderboard">🏆<small>Leaderboard</small></button></div>
+  <div class="xpt">How you earn Gyan XP</div>${XPR.map(r=>`<div class="xprow"><span>${r[0]}</span><b>${r[1]}</b></div>`).join("")}<div class="xpcm"><span>🌍 <b>12,480 XP</b> earned by the ChartedGyan community ${SAMPLE}</span><a href="#" onclick="show('board');return false">View leaderboard ↗</a></div></div>`;
 }
 function vHome(){
   const c=dl().cases[dayIdx()%dl().cases.length];
@@ -1193,7 +1251,6 @@ function vHome(){
   <div class="hxp"><div class="hxr"><span>Today’s progress</span><b>${xpToday()} / ${xpTarget()} XP</b></div><div class="hxb"><i style="width:${tp}%"></i></div></div>
   <div class="hxs"><button class="hxc" onclick="openStreak(event)"><span>🔥</span><b>${streakN()}</b><small>day streak</small></button><div class="hxc"><span>⚡</span><b>${xpTotal()}</b><small>Gyan XP</small></div></div></div>
   ${xpWallet()}
-  <div class="card cm"><span class="xptr sm">🏆</span><div><b style="font-size:24px">12,480 XP</b> ${SAMPLE}<br><span style="color:var(--mute)">earned by the ChartedGyan community</span><br><a href="#" onclick="show('board');return false">View leaderboard ↗</a></div></div>
   ${sh("DAILY CASE STUDIES")}<div class="card"><div class="row3"><span>📅 <b>${todayLabel()}</b>: ${esc(c.title)}</span><button class="go sm" onclick="openCase('${c.id}')">Attempt →</button></div><a href="#" onclick="show('cases');return false">View all case studies →</a></div>
   ${sh("KEYWORD OF THE DAY")}${vKotd(true)}`;
 }
@@ -1225,7 +1282,7 @@ function vCases(){return `${BK()}<h1 class="dh">Daily Case Studies</h1>${casesBo
 const hub=(t,l,a)=>`<h1 class="dh">${t}</h1><p class="lead">${l}</p><div class="grid">${a.map(x=>tile(x[0],x[1],x[2])).join("")}</div>`;
 const vConcept=()=>hub("Concept","Revise ideas with cards, keywords and formulas.",[["🃏","Flashcards","flash"],["🔑","Keywords","kw"],["ƒₓ","Formulas","fm"],["💡","Keyword of the Day","kotd"],["🧮","Calci Tricks","calci"]]);
 const vPapersHub=()=>hub("PYQs / RTP / MTP","Attempt exam-style papers with a timer.",[["📜","Past Year Papers","pyq"],["📝","MTPs","mtp"],["🎯","RTPs","rtp"]]);
-const vAnalysis=()=>hub("Analysis","See how you are doing and where to improve.",[["✅","Syllabus Completion","syllabus"],["📈","Activity","activity"],["🙋","Doubts","doubts"],["📊","SWOT Analysis","swot"],["📚","Free Resources","res"],["🏆","Leaderboard","board"]]);
+const vAnalysis=()=>hub("Analysis","See how you are doing and where to improve.",[["✅","Syllabus Completion","syllabus"],["📊","SWOT Analysis","swot"]]);
 function openCase(id){const c=dl().cases.find(c=>c.id===id);startRun({id:"case:"+id,title:c.title,story:c.story,qs:c.qs,back:"cases",backLabel:"Daily Case Studies"})}
 
 // ----- papers -----
@@ -1474,7 +1531,37 @@ function vBoard(){
   +`<div class="card you"><div class="row3"><span><b>You</b> · ${esc(displayName())}</span><b>0 XP</b></div></div>`;
 }
 
-const V={home:vHome,practice:vPractice,topics:vTopics,cases:vCases,calci:vCalci,syllabus:vSyllabus,concept:vConcept,papers:vPapersHub,analysis:vAnalysis,pyq:()=>vPapers("pyq"),mtp:()=>vPapers("mtp"),rtp:()=>vPapers("rtp"),run:vRun,flash:vFlash,kw:vKw,fm:vFm,doubts:vDoubts,activity:vActivity,swot:vSwot,res:vRes,kotd:()=>vKotd(false),board:vBoard};
+// ----- updates, reminders, notifications -----
+const UPDATES=[
+ {id:"u4",ic:"🧭",t:"Left sidebar on laptop",d:"Jump between Practice, Concept, Papers and Analysis without leaving your page.",dt:"25 Nov 2026"},
+ {id:"u3",ic:"🔥",t:"Streak calendar and XP target",d:"Tap the flame in the top bar to see your month and set a daily XP target.",dt:"25 Nov 2026"},
+ {id:"u2",ic:"📝",t:"Cleaner Topic Tests",d:"Pick a subject tab, then practise any topic from a simple list.",dt:"25 Nov 2026"},
+ {id:"u1",ic:"✅",t:"Syllabus tracker with units",d:"Tick units chapter by chapter and watch your completion grow.",dt:"25 Nov 2026"}];
+const seenN=()=>ls.get("cg-notif-seen",{});
+const unreadN=()=>UPDATES.filter(u=>!seenN()[u.id]).length;
+function markRead(){const o={};UPDATES.forEach(u=>o[u.id]=1);ls.set("cg-notif-seen",o);renderSide();refresh()}
+function setNtab(t){D.ntab=t;refresh()}
+const emptyBox=(ic,t,d)=>`<div class="empty"><div class="ei">${ic}</div><b>${t}</b><p>${d}</p></div>`;
+const vUpdates=()=>hub("Updates & reminders","News, product updates and replies, all in one place.",[["📰","News","news"],["🆕","New updates","newupd"],["💬","Response","resp"],["🔔","Notifications","notif"]]);
+const updList=(mark)=>UPDATES.map(u=>`<div class="nitem"><span class="ni2">${u.ic}</span><div><b>${u.t}${mark&&!seenN()[u.id]?` <em class="newt">NEW</em>`:""}</b><p>${u.d}</p><small>${u.dt}</small></div></div>`).join("");
+function vNews(){return `${BK()}<h1 class="dh">News</h1><p class="lead">Exam notifications, ICAI announcements and important dates.</p>${emptyBox("📰","No news yet","When there is something you should know before your exam, it will show up here.")}`}
+function vNewUpd(){return `${BK()}<h1 class="dh">New updates</h1><p class="lead">What we have added to ChartedGyan recently.</p><div class="card nlist">${updList(false)}</div>`}
+function vResp(){
+  const L=ls.get("cg-doubts",[]);
+  return `${BK()}<h1 class="dh">Response</h1><p class="lead">Replies to your doubts and feedback.</p>`
+  +(L.length?`<div class="card nlist">${L.slice(0,10).map(d=>`<div class="nitem"><span class="ni2">🙋</span><div><b>${esc(d.s||"Doubt")}</b><p>${esc(d.t||"")}</p><small><em class="wait">Awaiting reply</em></small></div></div>`).join("")}</div>`:emptyBox("💬","No responses yet","Ask a question in Doubts and the reply will appear here.")+`<button class="go" style="margin-top:10px" onclick="show('doubts')">Ask a doubt</button>`);
+}
+function vNotif(){
+  const t=D.ntab||"updates",H=D.hist||[],wk=Date.now()-7*864e5;
+  let xp=0,met=0;for(let i=0;i<7;i++){const d=new Date();d.setDate(d.getDate()-i);const k=lk(d);xp+=xpOn(k);if(metOn(k))met++}
+  const hw=H.filter(r=>new Date(r.created_at).getTime()>=wk),avg=hw.length?Math.round(hw.reduce((a,r)=>a+pct(r),0)/hw.length):null;
+  const body=t==="updates"?(`<div class="card nlist">${updList(true)}</div>`)
+   :(`<div class="card"><h2>Your last 7 days</h2><div class="stats"><div><b>${xp}</b>XP earned</div><div><b>${met}</b>target days</div><div><b>${hw.length}</b>attempts</div><div><b>${avg===null?"–":avg+"%"}</b>avg score</div></div><p style="margin-top:12px;color:var(--mute)">${xp||hw.length?"Keep the streak going. Consistency beats intensity.":"Your first report fills in as soon as you practise."}</p></div>`);
+  return `<div class="nhead"><h1 class="dh" style="margin:0">Notifications</h1>${t==="updates"&&unreadN()?`<button class="bl" onclick="markRead()">Mark all as read</button>`:""}</div>
+  <div class="ntabs"><button class="${t==="updates"?"on":""}" onclick="setNtab('updates')">Updates${unreadN()?` <i>${unreadN()}</i>`:""}</button><button class="${t==="reports"?"on":""}" onclick="setNtab('reports')">Reports</button></div>${body}`;
+}
+
+const V={updates:vUpdates,news:vNews,newupd:vNewUpd,resp:vResp,notif:vNotif,home:vHome,practice:vPractice,topics:vTopics,cases:vCases,calci:vCalci,syllabus:vSyllabus,concept:vConcept,papers:vPapersHub,analysis:vAnalysis,pyq:()=>vPapers("pyq"),mtp:()=>vPapers("mtp"),rtp:()=>vPapers("rtp"),run:vRun,flash:vFlash,kw:vKw,fm:vFm,doubts:vDoubts,activity:vActivity,swot:vSwot,res:vRes,kotd:()=>vKotd(false),board:vBoard};
 
 // ----- database -----
 async function saveAttempt(){
