@@ -894,6 +894,52 @@ body.indash.sbc #side>.sbh .sbb{display:none!important}
 body.indash.sbc #side>.sbh .sbt{position:static;transform:rotate(180deg);box-shadow:0 2px 10px rgba(60,30,120,.18)}
 /* top progress line */
 #tbar{position:fixed;left:0;top:0;height:3px;width:0;z-index:300;background:linear-gradient(90deg,#4a2394,#6a45c8,#9b6bff);box-shadow:0 0 10px rgba(106,69,200,.7);border-radius:0 3px 3px 0;pointer-events:none;opacity:0}
+
+.dtop{display:grid;grid-template-columns:1fr;gap:16px;margin-bottom:26px}
+@media(min-width:1000px){.dtop{grid-template-columns:2.2fr 1fr}}
+.hx2{margin:0;display:grid;grid-template-columns:1fr;gap:18px;align-items:center}
+@media(min-width:720px){.hx2{grid-template-columns:1fr auto}}
+.hxbox{display:flex;background:rgba(255,255,255,.13);border:1px solid rgba(255,255,255,.22);border-radius:14px;overflow:hidden}
+.hxst{width:auto;margin:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;padding:18px 26px;color:#fff;background:none;border-radius:0;min-width:110px}
+.hxst+.hxst{border-left:1px solid rgba(255,255,255,.22)}
+button.hxst:hover{background:rgba(255,255,255,.12)}
+.hxst span{font-size:24px;line-height:1}.hxst b{font-size:30px;line-height:1.1;color:#fff}.hxst small{font-size:12px;color:#e6dbfa}
+.wpost{background:#fff;border:1px solid #ece8f6;border-radius:16px;padding:22px;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;box-shadow:0 2px 12px rgba(60,30,120,.06)}
+.wpt{width:60px;height:60px;border-radius:18px;background:#fff1c2;display:flex;align-items:center;justify-content:center;font-size:32px;margin-bottom:10px}
+.wpk{font-size:11.5px;letter-spacing:.12em;font-weight:700;color:#6a6484}
+.wpn{font-size:38px;font-weight:800;color:#c98a00;line-height:1.15;margin-top:4px}.wpn span{font-size:20px}
+.wps{font-weight:700;color:#2a1a55}.wpm{font-size:13px;color:#6a6484;margin:2px 0 8px}
+.wpost a{color:#5b2ba8;font-weight:700;font-size:13.5px;text-decoration:none}
+.d64{display:grid;grid-template-columns:1fr;gap:16px;align-items:stretch}
+@media(min-width:900px){.d64{grid-template-columns:3fr 2fr}}
+.d64>div{display:flex;flex-direction:column}.d64>div>.card{flex:1;margin-bottom:0}
+.wkc{display:flex;flex-direction:column;justify-content:space-between;gap:16px}
+.wkb{display:grid;grid-template-columns:repeat(7,1fr);gap:8px;align-items:end}
+.wkd{display:flex;flex-direction:column;align-items:center;gap:6px}
+.wkt{width:100%;max-width:34px;height:72px;background:#f1ecfb;border-radius:8px;display:flex;align-items:flex-end;overflow:hidden}
+.wkt i{display:block;width:100%;background:linear-gradient(180deg,#7d4fd6,#5b2ba8);border-radius:8px 8px 0 0;min-height:0}
+.wkd small{font-size:11.5px;font-weight:700;color:#8a84a6}.wkd.now small{color:#5b2ba8}
+.wks{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;border-top:1px solid #efeaf9;padding-top:14px}
+.wks div{text-align:center}.wks b{display:block;font-size:20px;color:#2a1a55}.wks small{font-size:12px;color:#6a6484}
+.gapb{height:30px}
+.kf{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
+@media(min-width:640px){.kf{grid-template-columns:repeat(3,1fr)}}
+@media(min-width:1100px){.kf{grid-template-columns:repeat(6,1fr)}}
+.kfi{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;background:#fff;border:1px solid #ece8f6;border-radius:14px;padding:26px 8px;margin:0;box-shadow:0 2px 10px rgba(60,30,120,.05);transition:border-color .15s,transform .15s}
+.kfi:hover{border-color:#cdbdf2;transform:translateY(-2px)}
+.kfi span{font-size:42px;line-height:1}.kfi b{font-size:14.5px;font-weight:700;color:#2a1a55;text-align:center}
+.kgrid{display:grid;grid-template-columns:1fr;gap:16px}
+@media(min-width:900px){.kgrid{grid-template-columns:2fr 3fr}}
+.kgrid>.card{margin-bottom:0}
+.hlp{display:flex;justify-content:space-between;align-items:center;gap:14px;flex-wrap:wrap;margin-top:34px;padding-top:6px}
+.hlq{display:flex;align-items:center;gap:12px;flex-wrap:wrap;color:#6a6484;font-size:14px}
+.hlq button{width:auto;margin:0;display:inline-flex;align-items:center;gap:8px;background:#fff;border:1px solid #e1d9f2;border-radius:10px;padding:9px 14px;font-size:13.5px;font-weight:600;color:#2a1a55}
+.hlq button .ico{width:17px;height:17px}
+.hli{display:flex;gap:10px}
+.hli button{width:42px;height:42px;margin:0;padding:0;border-radius:50%;background:#fff;border:1px solid #e1d9f2;display:flex;align-items:center;justify-content:center}
+.hli button .ico{width:21px;height:21px}
+body.indash #dmain.wide{padding-left:max(32px,calc((100% - 1180px)/2));padding-right:max(32px,calc((100% - 1180px)/2))}
+.kf{margin-bottom:38px}.d64{margin-bottom:6px}.hlp{margin-top:48px!important}
 </style>
 </head>
 <body>
@@ -1498,6 +1544,12 @@ const SBFIND=[["Dashboard","home"],["Chapter Tests","topics"],["Mocks","mocks"],
 const sbSec=v=>{const a=GRP[v==="run"&&R?R.back:v]||"home";return SIDEKIDS[a]&&["practice","concept","papers","analysis"].includes(a)?a:null};
 function sbClick(k){
   const kids=SIDEKIDS[k];
+  if(kids&&!document.body.classList.contains("sbc")){D.sbm=k;renderSide();return}
+  if(kids){D.sbm=null;show(kids[0][2]);return}
+  D.sbm=null;show(k);
+}
+function sbClickOld(k){
+  const kids=SIDEKIDS[k];
   if(!kids||document.body.classList.contains("sbc")){D.sbm=null;show(kids?kids[0][2]:k);return}
   D.sbm=k;show(kids[0][2]);
 }
@@ -1566,6 +1618,7 @@ var ROOM={joined:false,api:null,sub:null,i:0};
 function refresh(top){
   if(ROOM.joined&&D.view==="room")return;
   timers.forEach(clearTimeout);timers=[];
+  dmain.classList.toggle("wide",D.view==="home");
   dmain.innerHTML=(LOCK?pvBanner():"")+V[D.view]();
   if(top)window.scrollTo(0,0);
   if(D.view==="run")afterRun();
@@ -1647,17 +1700,35 @@ function xpWallet(){
   return `<div class="xpcard"><div class="xph"><div><div class="xpk">YOUR LEARNING WALLET</div><div class="xpnum">${xpTotal()} <span>XP</span></div><div class="xps">Keep learning. Keep earning.</div></div><button class="xptr lbb" onclick="show('board')" aria-label="Open leaderboard" title="Leaderboard">🏆<small>Leaderboard</small></button></div>
   <div class="xpt">How you earn Gyan XP</div>${XPR.map(r=>`<div class="xprow"><span>${r[0]}</span><b>${r[1]}</b></div>`).join("")}<div class="xpcm"><span>🌍 <b>12,480 XP</b> earned by the ChartedGyan community ${SAMPLE}</span><a href="#" onclick="show('board');return false">View leaderboard ↗</a></div></div>`;
 }
+
+const CONTACT={wa:"",ig:"",mail:""};   // put your WhatsApp link, Instagram link and email here
+function contactGo(k){const v=CONTACT[k];if(!v){toast("This link will be added soon");return}if(k==="mail")location.href="mailto:"+v;else window.open(v,"_blank","noopener")}
+function weekReport(){
+  const d=new Date(),dow=(d.getDay()+6)%7,days=[];
+  for(let i=0;i<7;i++){const x=new Date(d.getFullYear(),d.getMonth(),d.getDate()-dow+i);days.push({k:lk(x),n:"MTWTFSS"[i],f:i>dow})}
+  const xp=days.map(x=>x.f?0:xpOn(x.k)),mx=Math.max(1,xpTarget(),...xp),tot=xp.reduce((a,b)=>a+b,0),met=days.filter(x=>!x.f&&metOn(x.k)).length;
+  return `${sh("WEEKLY REPORT")}<div class="card wkc"><div class="wkb">${days.map((x,i)=>`<div class="wkd ${x.k===lk()?"now":""}"><div class="wkt"><i style="height:${Math.round(xp[i]*100/mx)}%"></i></div><small>${x.n}</small></div>`).join("")}</div>
+  <div class="wks"><div><b>${tot}</b><small>XP this week</small></div><div><b>${met}/7</b><small>days target met</small></div><div><b>${streakN()}</b><small>day streak</small></div></div></div>`;
+}
+const kfTile=(ic,lb,v)=>`<button class="kfi" onclick="show('${v}')"><span>${ic}</span><b>${lb}</b></button>`;
+const IC_WA='<path d="M3 21l1.65-4.9A9 9 0 1 1 8 19.4z"/><path d="M9 9.5c.4 2.2 2.800 4.600 5.500 5.500l1.500-1.500-2-1-1 .8c-.8-.4-1.600-1.200-2-2l.8-1-1-2z"/>';
+const IC_IG='<rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.500" r="1" fill="currentColor"/>';
+const IC_ML='<rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/>';
+const ic24=p=>`<svg class="ico" viewBox="0 0 24 24" aria-hidden="true">${p}</svg>`;
+const helpStrip=()=>`<div class="hlp"><div class="hlq"><span>Having an issue?</span><button class="pvkeep" onclick="contactGo('mail')">${ic24(IC.cmt)}Contact ChartedGyan</button></div>
+  <div class="hli"><button class="pvkeep" style="color:#1faa59" onclick="contactGo('wa')" aria-label="WhatsApp" title="WhatsApp">${ic24(IC_WA)}</button><button class="pvkeep" style="color:#d6336c" onclick="contactGo('ig')" aria-label="Instagram" title="Instagram">${ic24(IC_IG)}</button><button class="pvkeep" style="color:#5b2ba8" onclick="contactGo('mail')" aria-label="Email" title="Email">${ic24(IC_ML)}</button></div></div>`;
 function vHome(){
   const c=dl().cases[dayIdx()%dl().cases.length];
   const warn=DBWARN?`<div class="card warn"><b>Your profile is saved on this device only.</b><p style="margin:8px 0 0">It could not be saved to the database${DBERR?` (${esc(DBERR)})`:""}. Please run <b>profiles_v2.sql</b> in the Supabase SQL Editor, then open the site again.</p></div>`:"";
   const tp=Math.min(100,Math.round(xpToday()*100/xpTarget()));
-  return `${warn}<div class="hx"><div class="hxv">${esc(levelText())}</div><h1>Welcome, ${esc(displayName())}.</h1><div class="hxm">✨ ${MOTTO}</div>
-  <div class="hxp"><div class="hxr"><span>Today’s progress</span><b>${xpToday()} / ${xpTarget()} XP</b></div><div class="hxb"><i style="width:${tp}%"></i></div></div>
-  <div class="hxs"><button class="hxc" onclick="openStreak(event)"><span>🔥</span><b>${streakN()}</b><small>day streak</small></button><div class="hxc"><span>⚡</span><b>${xpTotal()}</b><small>Gyan XP</small></div></div></div>
-  ${caseCard(c)}
-  ${xpWallet()}
-  ${sh("KEY FEATURES")}<div class="grid">${tile("🃏","Flashcards","flash")}${tile("🔑","Keyword List","kw")}${tile("📚","Free Resources","res")}${tile("🔔","Updates &amp; reminders","updates")}${tile("🙋","Doubts","doubts")}${tile("📈","Activity","activity")}</div>
-  ${sh("KEYWORD OF THE DAY")}${vKotd(true)}`;
+  return `${warn}<div class="dtop"><div class="hx hx2"><div class="hxl"><div class="hxv">${esc(levelText())}</div><h1>Welcome, ${esc(displayName())}.</h1><div class="hxm">✨ ${MOTTO}</div>
+  <div class="hxp"><div class="hxr"><span>Today’s progress</span><b>${xpToday()} / ${xpTarget()} XP</b></div><div class="hxb"><i style="width:${tp}%"></i></div></div></div>
+  <div class="hxbox"><button class="hxst" onclick="openStreak(event)"><span>🔥</span><b>${streakN()}</b><small>day streak</small></button><div class="hxst"><span>⚡</span><b>${xpTotal()}</b><small>Gyan XP</small></div></div></div>
+  <div class="wpost"><div class="wpt">🏆</div><div class="wpk">YOUR LEARNING WALLET</div><div class="wpn">${xpTotal().toLocaleString("en-IN")} <span>XP</span></div><div class="wps">earned by you</div><div class="wpm">Keep learning. Keep earning.</div><a href="#" onclick="show('board');return false">View leaderboard ↗</a></div></div>
+  <div class="d64"><div>${caseCard(c)}</div><div>${weekReport()}</div></div>
+  <div class="gapb"></div>
+  ${sh("KEY FEATURES")}<div class="kf">${kfTile("🃏","Flashcards","flash")}${kfTile("🔑","Keyword List","kw")}${kfTile("📚","Free Resources","res")}${kfTile("🔔","Updates &amp; reminders","updates")}${kfTile("🙋","Doubts","doubts")}${kfTile("📈","Activity","activity")}</div>
+  ${sh("KEYWORD OF THE DAY")}${vKotd(true)}${helpStrip()}`;
 }
 const CALCI={
 Foundation:[
@@ -2136,8 +2207,8 @@ function vKotd(inHome){
    :`<b>🏅 Daily Challenge</b><textarea id="kt" class="inp" rows="3" style="margin-top:12px" placeholder="Write your own sentence or real-life situation using “${K.w}”…"></textarea>
   <button class="go" id="ktb" onclick="saveKotd()">Submit my entry</button><p class="note2">You can submit only once a day, and an entry can’t be edited after submission.</p>`;
   return (inHome?"":`${BK()}<h1 class="dh">Keyword of the Day</h1>`)
-  +`<div class="card"><h2 style="margin-top:0">${K.w}</h2><p style="color:var(--text)">${K.m}</p><p><i>Example:</i> ${K.ex}</p><hr class="hr2">${body}</div>
-  <div class="card"><b>Yesterday’s winners: <u>${W.kw}</u></b> ${SAMPLE}${W.items.map((w,i)=>`<div class="win"><span class="medal">${medals[i]}</span><div><b>${w[0]}</b><br>${w[1]}</div></div>`).join("")}</div>`;
+  +`<div class="kgrid"><div class="card"><h2 style="margin-top:0">${K.w}</h2><p style="color:var(--text)">${K.m}</p><p><i>Example:</i> ${K.ex}</p><hr class="hr2">${body}</div>
+  <div class="card"><b>Yesterday’s winners: <u>${W.kw}</u></b> ${SAMPLE}${W.items.map((w,i)=>`<div class="win"><span class="medal">${medals[i]}</span><div><b>${w[0]}</b><br>${w[1]}</div></div>`).join("")}</div></div>`;
 }
 async function saveKotd(){
   const el=$("kt");if(!el)return;const t=el.value.trim();if(!t){toast("Please write your entry first.");return}
