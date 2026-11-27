@@ -759,6 +759,51 @@ button.lbb:hover{filter:brightness(.97)}
 .cact button{font-size:15px}
 .cpost h3{margin:2px 0 4px}
 .rlist .nitem small.st{display:inline-block;background:#fff1c2;color:#7a5a00;border-radius:99px;padding:2px 9px;font-weight:700}
+
+/* ---- v7: sidebar drill-in, icons, weightage ---- */
+.ico{width:18px;height:18px;flex:none;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.ico.f{fill:currentColor;stroke:none}
+body.indash #side .ni .ico{width:20px;height:20px;color:#5a5478}
+body.indash #side .ni.on .ico{color:#5b2ba8}
+.sbs{padding:0 14px 6px}
+.sbs label{display:flex;align-items:center;gap:8px;border:1px solid var(--bd);background:#fff;border-radius:10px;padding:0 10px;height:38px;color:#8a84a6}
+.sbs input{flex:1;border:0;outline:0;background:none;font:inherit;font-size:13.5px;color:var(--text);min-width:0}
+.sbs kbd{font:600 11px Inter,system-ui,sans-serif;border:1px solid var(--bd);border-radius:6px;padding:1px 6px;color:#8a84a6}
+body.sbc .sbs{display:none}
+.sbback{display:flex;align-items:center;gap:8px;width:100%;margin:0 0 6px;padding:10px 12px;border-radius:10px;background:none;font-size:14.5px;font-weight:700;color:#2a1a55;text-align:left}
+.sbback:hover{background:#f4effc}
+.sbback .ico{width:18px;height:18px}
+.sbback span{flex:1;text-align:center;margin-right:26px}
+.sbsub{display:flex;align-items:center;width:100%;margin:2px 0;padding:11px 14px;border-radius:10px;background:none;font-size:14.5px;font-weight:500;color:#3b3558;text-align:left}
+.sbsub:hover{background:#f4effc}
+.sbsub.on{background:#ece6fb;color:#5b2ba8;font-weight:700}
+.sbres{padding:4px 0}
+.sbres small{display:block;color:#8a84a6;font-size:11px;letter-spacing:.08em;font-weight:700;margin:8px 12px 4px}
+.sbnone{color:#8a84a6;font-size:13.5px;padding:10px 12px}
+/* weightage table */
+.wtw{background:#fff;border:1px solid var(--bd);border-radius:12px;overflow:auto}
+.wt{width:100%;border-collapse:collapse;font-size:13.5px;min-width:720px}
+.wt th{position:sticky;top:0;background:#faf8ff;color:#6a6484;font-size:11.5px;letter-spacing:.06em;text-transform:uppercase;padding:11px 10px;text-align:center;border-bottom:1px solid var(--bd)}
+.wt th:first-child,.wt td:first-child{text-align:left;padding-left:16px;min-width:260px}
+.wt td{padding:11px 10px;border-bottom:1px solid #f1ecfb;text-align:center;color:#3b3558}
+.wt tr:last-child td{border-bottom:0}
+.wt .tot{width:150px;text-align:left;position:relative}
+.wt .tot i{position:absolute;left:0;top:0;bottom:0;background:#f9c9c9}
+.wt .tot b{position:relative;padding-left:8px}
+/* community icon row */
+.cact.ic{align-items:center;gap:2px;margin-top:8px}
+.cact.ic button{display:inline-flex;align-items:center;gap:6px;padding:6px 10px;font-size:13px;font-weight:600;color:#5a5478}
+.cact.ic button .ico{width:18px;height:18px}
+.cact.ic button.up.on{color:#5b2ba8;background:#f1ecfb}
+.cact.ic button.dn.on{color:#d9534f;background:#fdecea}
+.cact.ic button.sv.on{color:#5b2ba8}
+.cact.ic .imp{margin-left:auto;display:inline-flex;align-items:center;gap:6px;color:#8a84a6;font-size:13px;font-weight:600}
+.cact.ic .imp .ico{width:18px;height:18px}
+.abct{width:100%;border-collapse:collapse;font-size:14px;margin-top:10px}
+.abct th,.abct td{padding:9px 10px;border-bottom:1px solid #efeaf9;text-align:left}
+.abct th{color:#6a6484;font-size:12px;text-transform:uppercase;letter-spacing:.06em}
+.abcc{display:inline-block;min-width:24px;text-align:center;border-radius:6px;padding:2px 8px;font-weight:800}
+.abcc.A{background:#fde4e1;color:#b3302b}.abcc.B{background:#fff1c2;color:#7a5a00}.abcc.C{background:#e4f5d8;color:#1d6b2e}
 </style>
 </head>
 <body>
@@ -1289,8 +1334,8 @@ const SAMPLE=`<span class="badge">SAMPLE</span>`;
 const tile=(ic,lb,v)=>`<button class="tile" onclick="show('${v}')"><span class="ic">${ic}</span><span>${lb}</span></button>`;
 const sh=t=>`<div class="sh">${t}</div>`;
 const TABS=[["home","Dashboard","🏠","Home"],["practice","Practice","📝","Practice"],["concept","Concept","💡","Concept"],["papers","PYQs/RTP/MTP","📜","Papers"],["analysis","Analysis","📊","Analysis"],["activity","Activity","📈","Activity"],["doubts","Doubts","🙋","Doubts"],["res","Free Resources","📚","Resources"],["community","Community","💬","Community"],["rooms","Study Rooms","🎥","Rooms"],["updates","Updates & reminders","🔔","Updates"]];
-const GRP={home:"home",doubts:"doubts",res:"res",practice:"practice",topics:"practice",cases:"practice",concept:"concept",flash:"concept",kw:"concept",fm:"concept",kotd:"concept",calci:"concept",syllabus:"analysis",papers:"papers",pyq:"papers",mtp:"papers",rtp:"papers",analysis:"analysis",activity:"activity",swot:"analysis",board:"home",updates:"updates",news:"updates",newupd:"updates",resp:"updates",notif:"notif",community:"community",thread:"community",rooms:"rooms",room:"rooms"};
-const PARENT={topics:"practice",cases:"practice",pyq:"papers",mtp:"papers",rtp:"papers",flash:"concept",kw:"concept",fm:"concept",kotd:"concept",calci:"concept",syllabus:"analysis",swot:"analysis",news:"updates",newupd:"updates",resp:"updates",thread:"community",room:"rooms"};
+const GRP={home:"home",doubts:"doubts",res:"res",practice:"practice",topics:"practice",mocks:"practice",subjt:"practice",cases:"practice",abc:"concept",pattempt:"papers",pexplore:"papers",pweight:"papers",ppdf:"papers",concept:"concept",flash:"concept",kw:"concept",fm:"concept",kotd:"concept",calci:"concept",syllabus:"analysis",papers:"papers",pyq:"papers",mtp:"papers",rtp:"papers",analysis:"analysis",activity:"activity",swot:"analysis",board:"home",updates:"updates",news:"updates",newupd:"updates",resp:"updates",notif:"notif",community:"community",thread:"community",rooms:"rooms",room:"rooms"};
+const PARENT={topics:"practice",mocks:"practice",subjt:"practice",abc:"concept",pattempt:"papers",pexplore:"papers",pweight:"papers",ppdf:"papers",cases:"practice",pyq:"papers",mtp:"papers",rtp:"papers",flash:"concept",kw:"concept",fm:"concept",kotd:"concept",calci:"concept",syllabus:"analysis",swot:"analysis",news:"updates",newupd:"updates",resp:"updates",thread:"community",room:"rooms"};
 const PNAME={rooms:"Study Rooms",community:"Community",updates:"Updates & reminders",practice:"Practice",papers:"PYQs/RTP/MTP",concept:"Concept",analysis:"Analysis",home:"Dashboard"};
 const MOBP={activity:"analysis",doubts:"analysis",res:"analysis",updates:"analysis",community:"analysis",rooms:"analysis"};
 const BK=()=>{const p=PARENT[D.view]||(innerWidth<900&&MOBP[D.view])||"home";return `<button class="back" onclick="show('${p}')">← ${PNAME[p]}</button>`};
@@ -1303,36 +1348,79 @@ function nameOf(id){
 }
 
 // ----- navigation -----
-const SIDEKIDS={practice:[["📅","Daily Case Studies","cases"],["📝","Topic Tests","topics"]],concept:[["ƒₓ","Formulas","fm"],["💡","Keyword of the Day","kotd"],["🧮","Calci Tricks","calci"]],papers:[["📜","Past Year Papers","pyq"],["📝","MTPs","mtp"],["🎯","RTPs","rtp"]],analysis:[["✅","Syllabus Completion","syllabus"],["📊","SWOT Analysis","swot"]]};
-const secOpen=(k,act)=>D.sopen&&D.sopen[k]!==undefined?D.sopen[k]:k===act;
+
+const IC={
+ home:'<path d="M3 11l9-8 9 8"/><path d="M5 10v10h5v-6h4v6h5V10"/>',
+ practice:'<path d="M4 20h4L19 9l-4-4L4 16z"/><path d="M13.5 6.5l4 4"/>',
+ concept:'<path d="M9 18h6"/><path d="M10 21h4"/><path d="M12 3a6 6 0 00-3.5 10.9c.6.5 1 1.2 1 2.1h5c0-.9.4-1.6 1-2.1A6 6 0 0012 3z"/>',
+ papers:'<path d="M7 3h8l4 4v14H7z"/><path d="M15 3v4h4"/><path d="M10 12h6M10 16h6"/>',
+ analysis:'<path d="M4 20V10"/><path d="M10 20V4"/><path d="M16 20v-7"/><path d="M22 20H2"/>',
+ community:'<path d="M20 15a2 2 0 01-2 2H8l-4 4V6a2 2 0 012-2h12a2 2 0 012 2z"/>',
+ rooms:'<rect x="3" y="6" width="13" height="12" rx="2"/><path d="M16 10l5-3v10l-5-3"/>',
+ up:'<path d="M12 4l8 9h-5v7H9v-7H4z"/>',
+ down:'<path d="M12 20l-8-9h5V4h6v7h5z"/>',
+ cmt:'<path d="M20 15a2 2 0 01-2 2H8l-4 4V6a2 2 0 012-2h12a2 2 0 012 2z"/>',
+ save:'<path d="M6 3h12v18l-6-4-6 4z"/>',
+ eye:'<path d="M2 12s4-7 10-7 10 7 10 7-4 7-10 7S2 12 2 12z"/><circle cx="12" cy="12" r="3"/>',
+ search:'<circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/>',
+ back:'<path d="M15 5l-7 7 7 7"/>',
+ fwd:'<path d="M9 5l7 7-7 7"/>'
+};
+const svg=(n,cls)=>`<svg class="ico ${cls||""}" viewBox="0 0 24 24" aria-hidden="true">${IC[n]}</svg>`;
+const SBMAIN=[["home","Dashboard","home"],["practice","Practice","practice"],["concept","Concept","concept"],["papers","PYQs/RTP/MTP","papers"],["analysis","Analysis","analysis"],["community","Community","community"],["rooms","Study Rooms","rooms"]];
+const SIDEKIDS={practice:[["","Chapter Tests","topics"],["","Mocks","mocks"],["","Subject Tests","subjt"],["","Daily Case Studies","cases"]],
+ concept:[["","Formulas","fm"],["","Keyword of the Day","kotd"],["","Calci Tricks","calci"],["","ABC Analysis","abc"]],
+ papers:[["","Attempt","pattempt"],["","Explore","pexplore"],["","Weightage","pweight"],["","PDF","ppdf"]],
+ analysis:[["","Syllabus Completion","syllabus"],["","SWOT Analysis","swot"]]};
+const SBFIND=[["Dashboard","home"],["Chapter Tests","topics"],["Mocks","mocks"],["Subject Tests","subjt"],["Daily Case Studies","cases"],["Formulas","fm"],["Keyword of the Day","kotd"],["Calci Tricks","calci"],["ABC Analysis","abc"],["Flashcards","flash"],["Keyword List","kw"],["Attempt papers","pattempt"],["Explore papers","pexplore"],["Weightage","pweight"],["PDF papers","ppdf"],["Syllabus Completion","syllabus"],["SWOT Analysis","swot"],["Activity","activity"],["Doubts","doubts"],["Free Resources","res"],["Community","community"],["Study Rooms","rooms"],["Updates & reminders","updates"],["Notifications","notif"],["Leaderboard","board"]];
+const sbSec=v=>{const a=GRP[v==="run"&&R?R.back:v]||"home";return SIDEKIDS[a]&&["practice","concept","papers","analysis"].includes(a)?a:null};
 function sbClick(k){
-  if(!SIDEKIDS[k]||document.body.classList.contains("sbc")){show(k);return}
-  D.sopen=D.sopen||{};D.sopen[k]=!secOpen(k,activeTab());renderSide();
+  const kids=SIDEKIDS[k];
+  if(!kids||document.body.classList.contains("sbc")){D.sbm=null;show(kids?kids[0][2]:k);return}
+  D.sbm=k;show(kids[0][2]);
 }
+function sbBack(){D.sbm=null;renderSide()}
+function sbListHTML(act){
+  const sec=document.body.classList.contains("sbc")?null:D.sbm;
+  if(sec&&SIDEKIDS[sec]){
+    const nm=(SBMAIN.find(x=>x[0]===sec)||[0,sec])[1];
+    return `<button class="sbback" onclick="sbBack()">${svg("back")}<span>${nm}</span></button>`+SIDEKIDS[sec].map(k=>`<button class="sbsub ${D.view===k[2]?"on":""}" onclick="show('${k[2]}')">${k[1]}</button>`).join("");
+  }
+  return SBMAIN.map(x=>{const kids=SIDEKIDS[x[0]];return `<button class="ni ${x[0]===act?"on":""}" onclick="sbClick('${x[0]}')" title="${x[1]}">${svg(x[2])}<em>${x[1]}</em>${kids?svg("fwd","chv2"):""}</button>`}).join("");
+}
+function sbFind(q){
+  q=(q||"").trim().toLowerCase();const el=$("sbl");if(!el)return;
+  if(!q){el.innerHTML=sbListHTML(activeTab());return}
+  const r=SBFIND.filter(x=>x[0].toLowerCase().includes(q));
+  el.innerHTML=r.length?`<div class="sbres">${r.map(x=>`<button class="sbsub" onclick="D.sbm=null;show('${x[1]}')">${x[0]}</button>`).join("")}</div>`:`<div class="sbnone">No match found</div>`;
+}
+document.addEventListener("keydown",e=>{if((e.metaKey||e.ctrlKey)&&e.key.toLowerCase()==="k"){const i=$("sbq");if(i){e.preventDefault();document.body.classList.remove("sbc");i.focus()}}});
 function renderSide(){
-  const act=activeTab();
+  const act=activeTab();D.sbm=sbSec(D.view);
   try{
-    const lg=document.querySelector(".logo img").src,t=TABS.find(t=>t[0]===act)||TABS[0];
+    const lg=document.querySelector(".logo img").src;
     $("dtitle").textContent=MOTTO;$("dstreak").querySelector("b").textContent=streakN();$("dbell").classList.toggle("has",unreadN()>0);document.querySelector("#dlogo img").src=lg;
     $("side").innerHTML=`<div class="sbh"><span class="sbb"><img src="${lg}" alt=""><span class="sbn">Charted<b class="gy">Gyan</b></span></span><button class="sbt" onclick="toggleSb()" aria-label="Collapse sidebar">‹</button></div>`
-     +`<div class="sbl">`+TABS.map(x=>{const kids=SIDEKIDS[x[0]],op=kids&&secOpen(x[0],act);return `<button class="ni ${x[0]===act?"on":""} ${op?"open":""}" onclick="sbClick('${x[0]}')" title="${x[1]}"><span>${x[2]}</span><em>${x[1]}</em>${kids?`<b class="chv">›</b>`:""}</button>`+(op?`<div class="sk">${SIDEKIDS[x[0]].map(k=>`<button class="si ${D.view===k[2]?"on":""}" onclick="show('${k[2]}')"><span>${k[0]}</span>${k[1]}</button>`).join("")}</div>`:"")}).join("")+`</div>`
-     +`<div class="sbf">${PROFILE?`<button class="sbu" onclick="toggleProfile(event,1)" aria-label="View profile"><span class="av">${esc(initial())}</span><div class="sbx"><b>@${esc(PROFILE.username||"")}</b><small>${esc(PROFILE.plan||"Basic")} plan</small></div></button>`:`<button class="ni" onclick="showAuth()"><span>🔑</span><em>Login</em></button>`}</div>`;
+     +`<div class="sbs"><label>${svg("search")}<input id="sbq" placeholder="Find…" oninput="sbFind(this.value)" autocomplete="off" aria-label="Find a page"><kbd>Ctrl K</kbd></label></div>`
+     +`<div class="sbl" id="sbl">${sbListHTML(act)}</div>`
+     +`<div class="sbf">${PROFILE?`<button class="sbu" onclick="toggleProfile(event,1)" aria-label="View profile"><span class="av">${esc(initial())}</span><div class="sbx"><b>@${esc(PROFILE.username||"")}</b><small>${esc(PROFILE.plan||"Basic")} plan</small></div></button>`:`<button class="ni" onclick="showAuth()"><em>Login</em></button>`}</div>`;
   }catch(e){}
   const mact=({activity:"analysis",doubts:"analysis",res:"analysis",updates:"analysis",notif:"analysis",news:"analysis",newupd:"analysis",resp:"analysis",community:"analysis",thread:"analysis",rooms:"analysis",room:"analysis"})[act]||act;
   $("tnav").innerHTML=TABS.slice(0,5).map(t=>`<button class="${t[0]===mact?"on":""}" onclick="show('${t[0]}')"><i>${t[2]}</i><span class="lg">${t[1]}</span><span class="sm">${t[3]}</span></button>`).join("");
 }
+
 const BIRD=[["📝","Practise","Sharpen skills topic by topic","practice"],["📜","Exam papers","Attempt with a real timer","papers"],["💡","Concepts & games","Revise ideas, fast","concept"],["📈","Progress & support","Know exactly where you stand","prog"],["💬","Community","Ask, answer, discuss","commz"],["🎥","Study Rooms","Study together on video","roomz"],["🔔","Updates & reminders","Stay in the loop","updates"]];
 SIDEKIDS.roomz=[["🎥","All study rooms","rooms"]];
 SIDEKIDS.commz=[["💬","Community feed","community"]];
 SIDEKIDS.updates=[["📰","News","news"],["🆕","New updates","newupd"],["💬","Response","resp"]];
-SIDEKIDS.prog=[["✅","Syllabus Completion","syllabus"],["📈","Activity","activity"],["📊","SWOT Analysis","swot"]];
+SIDEKIDS.prog=[["","Syllabus Completion","syllabus"],["","SWOT Analysis","swot"]];
 function openBird(e){
   if(e)e.stopPropagation();$("pmenu").hidden=true;$("strk").hidden=true;
   const lg=document.querySelector(".logo img").src,lv=PROFILE?levelText():(D.level==="Foundation"?"CA Foundation":"CA Intermediate");
   $("bird").innerHTML=`<div class="bbox"><button class="bx" onclick="closeBird()" aria-label="Close">✕</button>
   <div class="bh"><img src="${lg}" alt=""><div><div class="bt">Charted<b>Gyan</b></div><div class="bs">Your CA journey from above · ${esc(lv)}</div></div></div>
   <div class="bst"><span>🔥 <b>${streakN()}</b> day streak</span><span>⚡ <b>${xpTotal()}</b> Gyan XP</span><span>🎯 <b>${xpTarget()}</b> XP daily target</span></div>
-  <div class="bgr">${BIRD.map(z=>`<div class="bz"><div class="bzh"><span>${z[0]}</span><div><b>${z[1]}</b><small>${z[2]}</small></div></div>${SIDEKIDS[z[3]].map(k=>`<button class="bi" onclick="birdGo('${k[2]}')"><span>${k[0]}</span>${k[1]}<i>›</i></button>`).join("")}</div>`).join("")}</div>
+  <div class="bgr">${BIRD.map(z=>`<div class="bz"><div class="bzh"><span>${z[0]}</span><div><b>${z[1]}</b><small>${z[2]}</small></div></div>${SIDEKIDS[z[3]].map(k=>`<button class="bi" onclick="birdGo('${k[2]}')"><span>${k[0]||"•"}</span>${k[1]}<i>›</i></button>`).join("")}</div>`).join("")}</div>
   <div class="bf"><button class="bl" onclick="closeBird();showIntro()">How XP &amp; streaks work</button><button class="bl" onclick="birdGo('home')">Back to dashboard</button></div></div>`;
   $("bird").hidden=false;
 }
@@ -1445,7 +1533,7 @@ function vHome(){
   <div class="hxs"><button class="hxc" onclick="openStreak(event)"><span>🔥</span><b>${streakN()}</b><small>day streak</small></button><div class="hxc"><span>⚡</span><b>${xpTotal()}</b><small>Gyan XP</small></div></div></div>
   ${caseCard(c)}
   ${xpWallet()}
-  ${sh("KEY FEATURES")}<div class="grid">${tile("🃏","Flashcards","flash")}${tile("🔑","Keyword List","kw")}${tile("🙋","Doubts","doubts")}${tile("📚","Free Resources","res")}</div>
+  ${sh("KEY FEATURES")}<div class="grid">${tile("🃏","Flashcards","flash")}${tile("🔑","Keyword List","kw")}${tile("📚","Free Resources","res")}${tile("🔔","Updates &amp; reminders","updates")}${tile("🙋","Doubts","doubts")}${tile("📈","Activity","activity")}</div>
   ${sh("KEYWORD OF THE DAY")}${vKotd(true)}`;
 }
 const CALCI={
@@ -1470,8 +1558,8 @@ function casesBody(){
   return `<p class="lead">Read a short real-life situation, then answer questions on it. ${SAMPLE} Real case studies are added when the data is ready.</p>`
   +dl().cases.map(c=>`<div class="card"><div class="tag">${c.tag}</div><h2>${c.title}</h2><p>${c.qs.length} questions</p><button class="go" onclick="openCase('${c.id}')">Attempt →</button></div>`).join("");
 }
-function vPractice(){return hub("Practice","Pick how you want to practise today.",[["📅","Daily Case Studies","cases"],["📝","Topic Tests","topics"]])}
-function vTopics(){return `${BK()}<h1 class="dh">Topic Tests</h1>${topicsBody()}`}
+function vPractice(){return hub("Practice","Make every chapter pakka.",[["📝","Chapter Tests","topics"],["🎯","Mocks","mocks"],["📚","Subject Tests","subjt"],["📅","Daily Case Studies","cases"]])}
+function vTopics(){return `${BK()}<h1 class="dh">Chapter Tests</h1>${topicsBody()}`}
 const CASE_TOPICS={f1:["Accounting","Capital & credit purchase","Profit on sale"],f2:["Quantitative Aptitude","Simple interest","Compound interest"],i1:["Strategic Management","Porter’s Five Forces","Substitutes & supplier power"],i2:["Cost & Management Accounting","Standard costing","Material price variance"]};
 const caseTopics=c=>CASE_TOPICS[c.id]||[c.tag];
 const tchips=(a,cls)=>`<div class="tpc ${cls||""}">${a.map(t=>`<span>${esc(t)}</span>`).join("")}</div>`;
@@ -1491,9 +1579,9 @@ function vCases(){
   ${sh("YESTERDAY")}${row(1)}${sh("EARLIER THIS WEEK")}${[2,3,4,5,6].map(row).join("")}`;
 }
 const hub=(t,l,a)=>`<h1 class="dh">${t}</h1><p class="lead">${l}</p><div class="grid">${a.map(x=>tile(x[0],x[1],x[2])).join("")}</div>`;
-const vConcept=()=>hub("Concept","Revise ideas with cards, keywords and formulas.",[["🃏","Flashcards","flash"],["🔑","Keywords","kw"],["ƒₓ","Formulas","fm"],["💡","Keyword of the Day","kotd"],["🧮","Calci Tricks","calci"]]);
-const vPapersHub=()=>hub("PYQs / RTP / MTP","Attempt exam-style papers with a timer.",[["📜","Past Year Papers","pyq"],["📝","MTPs","mtp"],["🎯","RTPs","rtp"]]);
-const vAnalysis=()=>hub("Analysis","See how you are doing and where to improve.",[["✅","Syllabus Completion","syllabus"],["📊","SWOT Analysis","swot"],["📈","Activity","activity"],["🙋","Doubts","doubts"],["📚","Free Resources","res"],["💬","Community","community"],["🎥","Study Rooms","rooms"],["🔔","Updates & reminders","updates"]]);
+const vConcept=()=>hub("Concept","Revise ideas in one go.",[["ƒₓ","Formulas","fm"],["💡","Keyword of the Day","kotd"],["🧮","Calci Tricks","calci"],["🅰️","ABC Analysis","abc"]]);
+const vPapersHub=()=>hub("PYQs / RTP / MTP","Attempt, explore and download papers.",[["📝","Attempt","pattempt"],["🔎","Explore","pexplore"],["📊","Weightage","pweight"],["📄","PDF","ppdf"]]);
+const vAnalysis=()=>hub("Analysis","See how you are doing and where to improve.",[["✅","Syllabus Completion","syllabus"],["📊","SWOT Analysis","swot"],["💬","Community","community"],["🎥","Study Rooms","rooms"]]);
 function openCase(id,old){const c=dl().cases.find(c=>c.id===id);startRun({id:"case:"+id,title:c.title,story:c.story,qs:c.qs,back:"cases",backLabel:"Daily Case Studies",old:!!old})}
 
 // ----- papers -----
@@ -1568,6 +1656,51 @@ function vSyllabus(){
     return `<div class="chap"><label class="chh"><div><div class="chn">${esc(c.ch)}</div><div class="chc">${nd} of ${us.length} units done</div></div><input type="checkbox" title="Mark whole chapter" ${nd===us.length?"checked":""} onchange="sylT(${SYL.sub},${ci},-2)"></label>
     <div class="units">${us.map((u,ui)=>`<label class="unit"><span>${esc(u)}</span><input type="checkbox" ${SYL.done[sylKey(n,ci,ui)]?"checked":""} onchange="sylT(${SYL.sub},${ci},${ui})"></label>`).join("")}</div></div>`;
   }).join("");
+}
+
+// ----- papers: attempt / explore / weightage / pdf -----
+const PK=[["pyq","PYQs"],["mtp","MTPs"],["rtp","RTPs"]];
+const pkChips=()=>`<div class="ntabs">${PK.map(k=>`<button class="${(D.pk||"pyq")===k[0]?"on":""}" onclick="D.pk='${k[0]}';refresh()">${k[1]}</button>`).join("")}</div>`;
+const subChips=()=>{const sub=subs(),f=Math.min(D.psub||0,sub.length-1);return `<div class="ptabs">${sub.map((x,i)=>`<button class="${i===f?"on":""}" onclick="D.psub=${i};refresh()">${esc(x)}</button>`).join("")}</div>`};
+function vPAttempt(){
+  const kind=D.pk||"pyq",sub=subs(),f=Math.min(D.psub||0,sub.length-1);
+  return `${BK()}<h1 class="dh">Attempt</h1><p class="lead">Solve papers in exam mode with a timer. ${SAMPLE} Sample papers of 3 questions each for now.</p>${pkChips()}${subChips()}
+  ${PAPERS[kind].map(l=>`<div class="card"><div class="row3"><div><b>${PTITLE[kind].replace(/s$/,"")} · ${l}</b><br><span style="color:var(--mute)">${esc(sub[f])} · ${PQS[D.level].length} questions</span></div><button class="go sm" onclick="openPaper('${kind}','${l}')">Attempt →</button></div></div>`).join("")}`;
+}
+function vPExplore(){
+  const sub=subs(),f=Math.min(D.psub||0,sub.length-1),chs=(SYLL[D.level][sub[f]]||[]);
+  return `${BK()}<h1 class="dh">Explore</h1><p class="lead">Browse past questions chapter by chapter.</p>${pkChips()}${subChips()}
+  <div class="tlist"><div class="tlh">${esc(sub[f])}</div>${chs.length?chs.map(c=>`<div class="trow"><div class="tn"><b>${esc(c.ch)}</b><small>Questions will appear here once tagged</small></div><span class="badge">Soon</span></div>`).join(""):`<div class="trow"><div class="tn"><small>Chapters coming soon.</small></div></div>`}</div>`;
+}
+const WSESS=["May 2024","Sep 2024","Jan 2025","May 2025","Sep 2025","Jan 2026","May 2026","Sep 2026"];
+const WEIGHT={};   // WEIGHT[level][subject][chapterIndex]={ "May 2025":3, ... } filled from the database later
+function vPWeight(){
+  const sub=subs(),f=Math.min(D.psub||0,sub.length-1),n=sub[f],chs=(SYLL[D.level][n]||[]);
+  const W=((WEIGHT[D.level]||{})[n])||{};
+  const tot=chs.map((c,i)=>WSESS.reduce((a,s)=>a+((W[i]||{})[s]||0),0)),mx=Math.max(1,...tot);
+  return `${BK()}<h1 class="dh">Weightage</h1><p class="lead">How many questions came from each chapter in every attempt, so you know what to prioritise. ${SAMPLE} Numbers appear once ICAI papers are tagged chapter-wise.</p>${pkChips()}${subChips()}
+  <div class="wtw"><table class="wt"><thead><tr><th>Chapter</th>${WSESS.map(s=>`<th>${s.replace(" 20"," ’")}</th>`).join("")}<th class="tot" style="text-align:left">Total</th></tr></thead><tbody>
+  ${chs.map((c,i)=>`<tr><td>${esc(c.ch)}</td>${WSESS.map(s=>`<td>${((W[i]||{})[s])||""}</td>`).join("")}<td class="tot"><i style="width:${tot[i]*100/mx}%"></i><b>${tot[i]||"–"}</b></td></tr>`).join("")}</tbody></table></div>`;
+}
+function vPPdf(){
+  const kind=D.pk||"pyq",sub=subs(),f=Math.min(D.psub||0,sub.length-1);
+  return `${BK()}<h1 class="dh">PDF</h1><p class="lead">Official ICAI papers and answers, session by session.</p>${pkChips()}${subChips()}${officialCard(kind,sub[f])}`;
+}
+// ----- mocks & subject tests -----
+const vMocks=()=>`${BK()}<h1 class="dh">Mocks</h1><p class="lead">Full-length mock tests in exam conditions.</p>${emptyBox("🎯","Mocks are being prepared","Full-length timed mocks for "+LABEL[D.level]+" will appear here soon.")}`;
+const vSubjT=()=>`${BK()}<h1 class="dh">Subject Tests</h1><p class="lead">One test for the whole subject, to see where you stand.</p>${emptyBox("📚","Subject tests are being prepared","Pick a subject and test yourself across all its chapters. Coming soon.")}`;
+// ----- ABC analysis (concept) -----
+function vAbc(){
+  const rows=[["Item P",50000,"A"],["Item Q",30000,"A"],["Item R",8000,"B"],["Item S",6000,"B"],["Item T",3000,"C"],["Item U",2000,"C"],["Item V",1000,"C"]],tt=100000;let cum=0;
+  return `${BK()}<h1 class="dh">ABC Analysis</h1><p class="lead">A method of inventory control from Cost and Management Accounting: spend the most attention on the few items that carry the most value.</p>
+  <div class="card"><b>The idea</b><p style="margin:8px 0 0;color:var(--text)">Rank items by annual usage value (quantity × price). A small number of items usually makes up most of the value.</p>
+  <table class="abct"><thead><tr><th>Class</th><th>Share of items</th><th>Share of value</th><th>Control</th></tr></thead><tbody>
+  <tr><td><span class="abcc A">A</span></td><td>about 10%</td><td>about 70%</td><td>Tight control, frequent review</td></tr>
+  <tr><td><span class="abcc B">B</span></td><td>about 20%</td><td>about 20%</td><td>Moderate control</td></tr>
+  <tr><td><span class="abcc C">C</span></td><td>about 70%</td><td>about 10%</td><td>Simple, loose control</td></tr></tbody></table><p class="note2">These percentages are typical figures, not fixed rules.</p></div>
+  <div class="card"><b>Worked example ${SAMPLE}</b><table class="abct"><thead><tr><th>Item</th><th>Annual value (₹)</th><th>Cumulative %</th><th>Class</th></tr></thead><tbody>
+  ${rows.map(r=>{cum+=r[1];return `<tr><td>${r[0]}</td><td>${r[1].toLocaleString("en-IN")}</td><td>${Math.round(cum*100/tt)}%</td><td><span class="abcc ${r[2]}">${r[2]}</span></td></tr>`}).join("")}</tbody></table></div>
+  <div class="card"><b>Steps</b><p style="margin:8px 0 0;color:var(--text)">1) Find annual usage value of each item. 2) Sort from highest to lowest. 3) Work out the cumulative percentage. 4) Mark the top group as A, the next as B and the rest as C.</p></div>`;
 }
 function openPaper(kind,l){startRun({id:kind+":"+(D.level+l+D.psub).replace(/\s/g,""),title:`${PTITLE[kind]} · ${l} · ${subs()[Math.min(D.psub||0,subs().length-1)]}`,qs:PQS[D.level],mode:"paper",back:kind,backLabel:PTITLE[kind]})}
 
@@ -1744,6 +1877,18 @@ function expandSel(sel){
   if(b.nodeType===3){let o=r.endOffset,t=b.data;while(o<t.length&&!W.test(t[o]))o++;r.setEnd(b,o)}
   return r;
 }
+function snapSel(sel){
+  const r=expandSel(sel);let t=r.toString().replace(/\s+/g," ").trim();
+  const w=t.split(" ").filter(Boolean);
+  if(w.length>2){
+    if(r.startContainer===r.endContainer&&r.startContainer.nodeType===3){
+      const txt=r.startContainer.data;let i=r.startOffset;
+      for(let k=0;k<2;k++){while(i<txt.length&&/\s/.test(txt[i]))i++;while(i<txt.length&&!/[\s.,;:!?()\[\]{}"“”‘’]/.test(txt[i]))i++}
+      r.setEnd(r.startContainer,i);t=r.toString().replace(/\s+/g," ").trim();
+    }else{sel.removeAllRanges();toast("Select a word or two");return null}
+  }
+  sel.removeAllRanges();sel.addRange(r);return {r,t};
+}
 function closeKwp(){const e=$("kwp");if(e)e.hidden=true;KSEL=null}
 function onSel(e){
   if(e&&e.target&&e.target.closest&&e.target.closest("#kwp"))return;
@@ -1752,8 +1897,8 @@ function onSel(e){
     if(!sel||sel.isCollapsed||!sel.rangeCount){return}
     const n=sel.anchorNode&&(sel.anchorNode.nodeType===3?sel.anchorNode.parentElement:sel.anchorNode);
     if(!n||!n.closest||!n.closest("#dmain")||n.closest("input,textarea,button,select,.pvkeep")||!canPost())return;
-    const r=expandSel(sel),t=r.toString().replace(/\s+/g," ").trim();
-    if(t.length<2||t.length>60||t.split(" ").length>6)return;
+    const sn=snapSel(sel);if(!sn)return;const r=sn.r,t=sn.t;
+    if(t.length<2||t.length>60||t.split(" ").length>2)return;
     const rc=r.getBoundingClientRect();
     KSEL={w:t,m:"",src:(R&&D.view==="run"?R.title:"")||PNAME[PARENT[D.view]||"home"]||""};
     const el=$("kwp");el.hidden=false;
@@ -1968,10 +2113,11 @@ const flairChip=f=>`<span class="flr flr-${f}">${esc(f)}</span>`;
 function postCard(p,d,full){
   const sv=savedMap()[p.id],orig=p.repostOf?findP(d,p.repostOf):null,nc=(p.comments||[]).length,nr=d.posts.filter(x=>x.repostOf===p.id).length+(p.reposts||0);
   const mine=p.uid&&p.uid===meId();
+  const vs=Object.values(p.votes||{}),mv=(p.votes||{})[meId()]||0,upN=(p.base||0)+vs.filter(x=>x===1).length,dnN=vs.filter(x=>x===-1).length,svN=(p.sample?3+(p.id.split("").reduce((a,c)=>a+c.charCodeAt(0),0)%8):0)+(p.saves||0)+(sv?1:0);
   const head=`<div class="cph">${flairChip(p.flair)}<span>@${esc(p.author)} · ${ago(p.t)}</span>${p.sample?SAMPLE:""}</div>`;
   const rp=p.repostOf?`<div class="rpb">🔁 reposted${orig?`:`:""}${orig?`<div class="rpo" onclick="event.stopPropagation();openThread('${orig.id}')">${flairChip(orig.flair)} <b>${esc(orig.title)}</b><small>@${esc(orig.author)}</small></div>`:" (original removed)"}</div>`:"";
-  return `<article class="cpost ${full?"full":""}" ${full?"":`onclick="openThread('${p.id}')"`}>${voteBox(p,"p",p.id)}<div class="cmain">${head}<h3>${esc(p.title)}</h3>${full&&p.body?`<p class="cbd">${esc(p.body)}</p>`:""}${full?qBlock(p.q,true):""}${rp}
-  <div class="cact"><button onclick="event.stopPropagation();openThread('${p.id}')" title="Answers" aria-label="Answers">💬 ${nc}</button><button onclick="event.stopPropagation();openRepost('${p.id}')" title="Repost" aria-label="Repost">🔁${nr?" "+nr:""}</button><button onclick="event.stopPropagation();sharePost('${p.id}')" title="Share" aria-label="Share">↗</button><button class="${sv?"on":""}" onclick="event.stopPropagation();toggleSave('${p.id}')" title="${sv?"Saved":"Save"}" aria-label="Save">${sv?"🔖":"📑"}</button>${mine?`<button onclick="event.stopPropagation();delPost('${p.id}')" title="Delete" aria-label="Delete">🗑</button>`:""}<span class="imp" title="Impressions" aria-label="Impressions">👁 ${fmtN(p.imp||0)}</span></div></div></article>`;
+  return `<article class="cpost ${full?"full":""}" ${full?"":`onclick="openThread('${p.id}')"`}><div class="cmain">${head}<h3>${esc(p.title)}</h3>${full&&p.body?`<p class="cbd">${esc(p.body)}</p>`:""}${full?qBlock(p.q,true):""}${rp}
+  <div class="cact ic"><button class="up ${mv===1?"on":""}" onclick="event.stopPropagation();votePost('${p.id}',1)" title="Upvote" aria-label="Upvote">${svg("up","f")}<span>${upN}</span></button><button class="dn ${mv===-1?"on":""}" onclick="event.stopPropagation();votePost('${p.id}',-1)" title="Downvote" aria-label="Downvote">${svg("down","f")}<span>${dnN}</span></button><button onclick="event.stopPropagation();openThread('${p.id}')" title="Comments" aria-label="Comments">${svg("cmt")}<span>${nc}</span></button><button class="sv ${sv?"on":""}" onclick="event.stopPropagation();toggleSave('${p.id}')" title="${sv?"Saved":"Save"}" aria-label="Save">${svg("save",sv?"f":"")}<span>${svN}</span></button>${full?`<button onclick="event.stopPropagation();openRepost('${p.id}')">🔁 Repost${nr?" · "+nr:""}</button><button onclick="event.stopPropagation();sharePost('${p.id}')">↗ Share</button>`:""}${mine?`<button onclick="event.stopPropagation();delPost('${p.id}')" title="Delete" aria-label="Delete">🗑</button>`:""}<span class="imp" title="Impressions" aria-label="Impressions">${svg("eye")}<span>${fmtN(p.imp||0)}</span></span></div></div></article>`;
 }
 const fmtN=n=>n>=1000?(n/1000).toFixed(n>=10000?0:1).replace(/\.0$/,"")+"k":String(n);
 const IMPSEEN=new Set();
@@ -2093,7 +2239,7 @@ function joinNow(){
 function leaveRoom(){try{ROOM.api&&ROOM.api.dispose()}catch(e){}ROOM.api=null;ROOM.joined=false;show("rooms")}
 function previewAt(v){showPreview();show(v)}
 
-const V={rooms:vRooms,room:vRoom,community:vCommunity,thread:vThread,updates:vUpdates,news:vNews,newupd:vNewUpd,resp:vResp,notif:vNotif,home:vHome,practice:vPractice,topics:vTopics,cases:vCases,calci:vCalci,syllabus:vSyllabus,concept:vConcept,papers:vPapersHub,analysis:vAnalysis,pyq:()=>vPapers("pyq"),mtp:()=>vPapers("mtp"),rtp:()=>vPapers("rtp"),run:vRun,flash:vFlash,kw:vKw,fm:vFm,doubts:vDoubts,activity:vActivity,swot:vSwot,res:vRes,kotd:()=>vKotd(false),board:vBoard};
+const V={pattempt:vPAttempt,pexplore:vPExplore,pweight:vPWeight,ppdf:vPPdf,mocks:vMocks,subjt:vSubjT,abc:vAbc,rooms:vRooms,room:vRoom,community:vCommunity,thread:vThread,updates:vUpdates,news:vNews,newupd:vNewUpd,resp:vResp,notif:vNotif,home:vHome,practice:vPractice,topics:vTopics,cases:vCases,calci:vCalci,syllabus:vSyllabus,concept:vConcept,papers:vPapersHub,analysis:vAnalysis,pyq:()=>{D.pk="pyq";return vPAttempt()},mtp:()=>{D.pk="mtp";return vPAttempt()},rtp:()=>{D.pk="rtp";return vPAttempt()},run:vRun,flash:vFlash,kw:vKw,fm:vFm,doubts:vDoubts,activity:vActivity,swot:vSwot,res:vRes,kotd:()=>vKotd(false),board:vBoard};
 
 // ----- database -----
 async function saveAttempt(){
