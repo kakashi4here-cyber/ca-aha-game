@@ -636,22 +636,93 @@ button.lbb:hover{filter:brightness(.97)}
  .hero .eyebrow{margin-bottom:12px}
 }
 
-/* landing sections, laptop: centred and even */
-@media(min-width:900px){
- .sec{padding-left:20px;padding-right:20px}
- .sec>.rv{max-width:920px;margin-left:auto;margin-right:auto;text-align:center}
- .sec>.rv>p{margin-left:auto;margin-right:auto;max-width:38em}
- .sec>.rv>button.go{display:block;margin-left:auto;margin-right:auto}
- .sec>.rv>*:not(.lab):not(h2):not(p):not(button){text-align:left}
- .sec>.rv>.mock,.sec>.rv>.mini{max-width:560px;margin-left:auto;margin-right:auto}
- .sec>.rv>.mini{justify-content:space-between}
-}
+#cmp,#rpm{position:fixed;inset:0;background:rgba(30,20,60,.5);z-index:92;display:flex;align-items:flex-start;justify-content:center;padding:40px 16px;overflow-y:auto}
+#cmp[hidden],#rpm[hidden]{display:none!important}
+#lgm{position:fixed;inset:0;background:rgba(30,20,60,.5);z-index:95;display:flex;align-items:center;justify-content:center;padding:16px}
+#lgm[hidden]{display:none!important}
+.lgb{text-align:center;max-width:360px}
+.lgi{font-size:34px;margin-bottom:4px}.lgb h3{margin:0 0 6px;font-size:18px}.lgb p{margin:0 0 16px;font-size:13.5px;color:#5a5478;line-height:1.5}
+.lgbt{display:flex;gap:10px}.lgbt button{flex:1;margin:0;padding:10px 12px;border-radius:9px;text-align:center;font-weight:600;font-size:14px}
 
-@media(min-width:900px){
- .faq{padding-left:20px;padding-right:20px}
- .faq>.rv{max-width:820px;margin-left:auto;margin-right:auto}
- .faq>.rv>.lab,.faq>.rv>h2{text-align:center}
-}
+/* ---- community ---- */
+.chead{display:flex;justify-content:space-between;align-items:flex-start;gap:12px;margin-bottom:14px;flex-wrap:wrap}
+.chead>button.go{width:auto;margin:0;padding:9px 18px;border-radius:9px}
+.cbar{display:flex;gap:10px;align-items:center;flex-wrap:wrap;margin-bottom:10px}
+.cs{flex:1;min-width:160px;margin:0!important;padding:9px 12px!important;border-radius:9px!important;background:#fff}
+.ntabs.sm{margin:0}.ntabs.sm button{padding:6px 12px;font-size:13px}
+.cfl2{margin-bottom:12px;align-items:center}
+.cfl2 button{width:auto;margin:0;padding:6px 13px;border-radius:99px;font-size:13px;background:#fff;border:1px solid var(--bd);color:#4b4470;font-weight:600}
+.cfl2 button.on{background:#5b2ba8;border-color:#5b2ba8;color:#fff}
+.clv{font-size:13px;color:#5a5478;margin-left:auto;display:flex;align-items:center;gap:6px;cursor:pointer}.clv input{width:auto;margin:0;accent-color:#5b2ba8}
+.cpost{display:flex;gap:12px;background:#fff;border:1px solid var(--bd);border-radius:12px;padding:12px 14px 12px 10px;margin-bottom:10px;cursor:pointer;transition:border-color .15s,box-shadow .15s}
+.cpost:hover{border-color:#cdbdf2;box-shadow:0 4px 14px rgba(91,43,168,.08)}.cpost.full{cursor:default}.cpost.full:hover{box-shadow:none;border-color:var(--bd)}
+.cvote{display:flex;flex-direction:column;align-items:center;gap:2px;width:34px;flex:none}
+.cvote b{font-size:13.5px;color:#2a1a55}
+.cvote button{width:28px;height:26px;margin:0;padding:0;background:none;border-radius:7px;color:#8a84a6;font-size:13px;text-align:center}
+.cvote button:hover{background:#f1ecfb;color:#5b2ba8}.cvote button.on{color:#5b2ba8;background:#ece6fb}.cvote button.dn{color:#c2410c;background:#fdeee3}
+.cmain{flex:1;min-width:0}
+.cph{display:flex;align-items:center;gap:8px;flex-wrap:wrap;font-size:12px;color:var(--mute);margin-bottom:4px}
+.cmain h3{margin:0 0 4px;font-size:16px;line-height:1.35;color:#1c1530}
+.cbd{margin:0 0 8px;font-size:14px;color:#4b4470;line-height:1.5;white-space:pre-wrap}
+.flr{font-size:10.5px;font-weight:700;letter-spacing:.05em;border-radius:6px;padding:2px 8px;text-transform:uppercase}
+.flr-Doubt{background:#ece6fb;color:#4b2c8f}.flr-Discussion{background:#e4eefb;color:#1d4f91}.flr-Resource{background:#e3f6ec;color:#0f6b3c}.flr-Tip{background:#fff3d6;color:#7a5200}
+.qblock{background:#f7f4fd;border:1px solid #e6dcf8;border-left:3px solid #7d4fd6;border-radius:9px;padding:9px 12px;margin:6px 0 8px}
+.qbt{font-size:11.5px;font-weight:700;color:#5b2ba8;margin-bottom:3px}.qblock p{margin:0;font-size:13.5px;color:#2a1a55}.qblock ol{margin:6px 0 0 20px;padding:0;font-size:13px;color:#4b4470;list-style:upper-alpha}
+.rpb{font-size:12.5px;color:#5a5478;margin:4px 0 8px}
+.rpo{display:block;margin-top:6px;border:1px solid var(--bd);border-radius:9px;padding:8px 10px;background:#fbfaff;cursor:pointer}.rpo.static{cursor:default;margin:0 0 10px}.rpo small{display:block;color:var(--mute)}
+.cact{display:flex;gap:4px;flex-wrap:wrap;margin-top:4px}
+.cact button{width:auto;margin:0;padding:5px 10px;border-radius:8px;background:none;color:#5a5478;font-size:12.5px;font-weight:600;text-align:center}
+.cact button:hover{background:#f4effc;color:#5b2ba8}.cact button.on{color:#5b2ba8}.cact.sm button{font-size:12px;padding:3px 8px}
+.cnote{font-size:12px;color:var(--mute);text-align:center;margin:14px 0 0}
+.cwr textarea,.rbox textarea{display:block;width:100%;font-family:inherit}
+.cwr textarea{min-height:90px;margin-bottom:8px}.cwr button.go{width:auto;padding:9px 20px;border-radius:9px}
+.cm{display:flex;gap:10px;background:#fff;border:1px solid var(--bd);border-radius:12px;padding:10px 12px 10px 8px;margin-bottom:8px}
+.cm.best{border-color:#9fd8b8;background:#f6fcf8}.cm.rep{margin:8px 0 0;background:#fbfaff}
+.cmb{flex:1;min-width:0}.cmh{display:flex;gap:8px;align-items:center;font-size:12.5px;color:var(--mute)}.cmh b{color:#2a1a55}
+.cmb p{margin:3px 0 2px;font-size:14px;line-height:1.5;color:#2a1a55;white-space:pre-wrap}
+.bst{font-style:normal;font-size:11px;font-weight:700;color:#0f7a43;background:#e3f6ec;border-radius:99px;padding:2px 9px}
+.rbox textarea{min-height:64px;margin:6px 0}.rbt{display:flex;gap:8px;justify-content:flex-end}.rbt button{width:auto;margin:0;padding:7px 16px;border-radius:8px;font-size:13px}
+.askq{margin:10px 0 4px;background:#f4effc!important;color:#5b2ba8!important;border:1px dashed #cdbdf2!important;border-radius:9px;font-weight:600;font-size:13.5px;padding:9px 14px;text-align:center}
+.askq.sm{display:inline-block;width:auto;margin:6px 0 0;padding:5px 12px;font-size:12.5px}
+.cmpb{max-width:560px;width:100%}.cmph{display:flex;justify-content:space-between;align-items:center;margin-bottom:12px}.cmph h3{margin:0;font-size:17px}
+.cflp{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:10px}
+.cflp button{width:auto;margin:0;padding:6px 14px;border-radius:99px;font-size:13px;font-weight:600;background:#fff;border:1px solid var(--bd);color:#4b4470;text-align:center}
+.cflp button.on{background:#5b2ba8;border-color:#5b2ba8;color:#fff}
+.cmpb .inp{margin-bottom:10px}.cmpb textarea.inp{min-height:110px}
+.cmpf{display:flex;justify-content:space-between;align-items:center;gap:10px}.cmpf small{color:#b42318;font-size:12.5px}
+.cmpf>div{display:flex;gap:8px}.cmpf button{width:auto;margin:0;padding:9px 20px;border-radius:9px;text-align:center}
+@media(max-width:600px){.cpost{padding:10px}.cvote{width:30px}.clv{margin-left:0}}
+
+/* ---- study rooms + landing mocks ---- */
+.rfeat{display:flex;gap:8px;flex-wrap:wrap;margin:0 0 14px}
+.rfeat span{font-size:12.5px;font-weight:600;color:#4b2c8f;background:#f1ecfb;border:1px solid #e1d6f6;border-radius:99px;padding:5px 12px}
+.rgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:10px;margin-bottom:14px}
+.rcard{display:flex;align-items:center;gap:12px;background:#fff;border:1px solid var(--bd);border-radius:12px;padding:12px 14px;transition:border-color .15s,box-shadow .15s}
+.rcard:hover{border-color:#cdbdf2;box-shadow:0 4px 14px rgba(91,43,168,.08)}
+.rem{width:44px;height:44px;border-radius:12px;background:linear-gradient(135deg,#ece6fb,#f6f1ff);display:flex;align-items:center;justify-content:center;font-size:22px;flex:none}.rem.big{width:60px;height:60px;font-size:30px;margin-bottom:8px}
+.rbody{flex:1;min-width:0}.rbody b{display:block;font-size:14.5px}.rbody small{color:var(--mute);font-size:12px;line-height:1.35;display:block}
+.rcard .go.sm{width:auto;margin:0;padding:7px 14px;border-radius:9px;font-size:13px}
+.rrules ul,.rtips{margin:6px 0 0;padding-left:18px;color:#4b4470;font-size:13.5px;line-height:1.7}.rtips{list-style:none;padding:0}
+.rpre{max-width:520px}.rpre>button.go{width:auto;padding:10px 26px;border-radius:9px;margin-top:6px}
+.rhd{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;margin-bottom:10px}
+.rhd b{font-size:16px;display:block}.rhd small{color:var(--mute);font-size:12.5px}
+.rha{display:flex;gap:8px;align-items:center}.rha .go,.rha .ghost{width:auto;margin:0;padding:8px 16px;border-radius:9px;font-size:13px;text-decoration:none;text-align:center}
+.jcall{height:calc(100vh - 210px);min-height:460px;background:#1c1530;border-radius:14px;overflow:hidden;position:relative}
+.jload{color:#e6dbfa;text-align:center;padding:60px 20px}.jload p{color:#bfb3dc;margin:6px 0 14px}
+@media(max-width:899px){.jcall{height:70vh}}
+.s6c{background:#e0f0f3}.s7c{background:#f1e9fc}
+.cmock{display:flex;gap:12px;background:#fff;border-radius:18px;padding:14px;box-shadow:0 6px 20px rgba(60,30,120,.15);margin-top:18px;text-align:left}
+.cmv{display:flex;flex-direction:column;align-items:center;gap:2px;color:#7d4fd6;font-size:12px}.cmv b{color:#2a1a55;font-size:14px}.cmv i{font-style:normal}
+.cmf{font-size:10px;font-weight:700;letter-spacing:.06em;background:#ece6fb;color:#4b2c8f;border-radius:6px;padding:2px 8px}
+.cmt{font-weight:700;font-size:15px;margin:6px 0;color:#1c1530}.cmm{font-size:12.5px;color:#6a6484}.cmb2{color:#0f7a43;font-weight:700}
+.rmock{background:#1c1530;border-radius:18px;padding:12px;box-shadow:0 6px 20px rgba(60,30,120,.25);margin-top:18px}
+.rtiles{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+.rtiles>div{background:linear-gradient(135deg,#3b2a73,#5b3fb0);border-radius:12px;aspect-ratio:4/3;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px;color:#fff}
+.rtiles>div span{font-size:26px}.rtiles small{font-size:10.5px;color:#d9c9f7}
+.rbar{display:flex;justify-content:center;gap:10px;margin-top:10px}.rbar i{font-style:normal;background:rgba(255,255,255,.12);color:#fff;border-radius:99px;padding:7px 12px;font-size:14px}.rbar i.rl{background:#e5484d;font-size:12.5px;font-weight:700}
+
+.rtiles>div{aspect-ratio:16/10}
+@media(min-width:900px){.rmock{max-width:640px}.cmock{max-width:640px}}
 </style>
 </head>
 <body>
@@ -735,6 +806,13 @@ button.lbb:hover{filter:brightness(.97)}
   <button class="go" style="width:auto" onclick="showPractice()">Start practising</button>
   <div class="gtiles"><div><span>🃏</span>Flashcards</div><div><span>🔑</span>Keywords</div><div><span>ƒₓ</span>Formulas</div></div>
   <div class="flip"><div class="fin"><div class="ff">Accounting equation</div><div class="fb2">Assets = Liabilities + Capital</div></div></div></div></section>
+ <section class="sec s6c"><div class="rv"><div class="lab">Connect</div><h2>Community</h2><p>Ask doubts, answer other students, upvote the best explanations and share any practice question as a thread.</p>
+  <button class="go" style="width:auto" onclick="previewAt('community')">Explore the community</button>
+  <div class="cmock"><div class="cmv"><i>▲</i><b>12</b><i>▼</i></div><div><span class="cmf">DOUBT</span><div class="cmt">Why is Capital credited when the owner puts cash into the business?</div><div class="cmm">💬 2 answers · 🔁 2 reposts · <span class="cmb2">✓ Best answer</span></div></div></div></div></section>
+ <section class="sec s7c"><div class="rv"><div class="lab">Study together</div><h2>Live study rooms</h2><p>Never study alone. Join a room for your subject and study on video with other students, with voice, screen share and chat.</p>
+  <button class="go" style="width:auto" onclick="previewAt('rooms')">See study rooms</button>
+  <div class="rmock"><div class="rtiles"><div><span>👩‍🎓</span><small>@ca_aspirant</small></div><div><span>🧑‍💻</span><small>@numbers_ninja</small></div><div><span>👨‍🎓</span><small>@law_lover</small></div><div><span>👩‍💻</span><small>@study_streak</small></div><div><span>🧑‍🎓</span><small>@cost_cracker</small></div><div><span>🖥</span><small>Screen share</small></div></div>
+  <div class="rbar"><i>🎤</i><i>🎥</i><i>🖥</i><i>💬</i><i>✋</i><i class="rl">Leave</i></div></div></div></section>
  <section class="faq" id="faq"><div class="rv"><div class="lab" style="font-size:13px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#5b2ba8">FAQ</div><h2>Frequently Asked Questions</h2>
   <details name="faq"><summary>What is ChartedGyan, and what is it for?</summary><div class="ans">ChartedGyan is a learning and practice platform designed for CA students. It helps students revise concepts, test their knowledge through interactive quizzes, and understand topics through instant explanations. Our aim is to make learning engaging, accessible, and consistent.</div></details>
   <details name="faq"><summary>Why should I choose ChartedGyan as my learning companion?</summary><div class="ans">ChartedGyan boosts your learning and revision by transforming theory-heavy courses like CA, CS, and CMA into fun, interactive, and engaging experiences. It makes concepts easier to revise, improves retention, and turns learning into something you actually look forward to.</div></details>
@@ -768,6 +846,13 @@ button.lbb:hover{filter:brightness(.97)}
   <label class="tlab" for="tgi">Or enter your own (minimum 100 XP)</label><input id="tgi" class="inp" oninput="tgSel()" type="number" inputmode="numeric" min="100" step="10">
   <div id="tgm" class="tmsg"></div>
   <div class="tbtn"><button class="ghost" onclick="closeTarget()">Keep current</button><button class="go" onclick="saveTarget()">Restart with new target</button></div></div></div>
+ <div id="cmp" hidden><div class="ibox cmpb" role="dialog" aria-modal="true" aria-labelledby="cmpht"><div class="cmph"><h3 id="cmpht">Create a post</h3><button class="nx" onclick="closeComposer()" aria-label="Close">✕</button></div>
+  <div class="cflp" id="cmpfl"></div><input id="cmpt" class="inp" maxlength="140" placeholder="Title: be specific so others can help"><div id="cmpq"></div>
+  <textarea id="cmpb" class="inp" maxlength="2000" placeholder="Add details. What have you tried so far?"></textarea>
+  <div class="cmpf"><small id="cmpm"></small><div><button class="ghost" onclick="closeComposer()">Cancel</button><button class="go" onclick="submitPost()">Post</button></div></div></div></div>
+ <div id="rpm" hidden><div class="ibox cmpb"><div class="cmph"><h3>Repost</h3><button class="nx" onclick="closeRepost()" aria-label="Close">✕</button></div><div class="rpo static"><b id="rpt"></b></div>
+  <textarea id="rpn" class="inp" maxlength="1000" placeholder="Add your thoughts (optional)"></textarea><div class="cmpf"><small></small><div><button class="ghost" onclick="closeRepost()">Cancel</button><button class="go" onclick="doRepost()">Repost</button></div></div></div></div>
+ <div id="lgm" hidden><div class="ibox lgb" role="dialog" aria-modal="true" aria-labelledby="lgt"><div class="lgi">👋</div><h3 id="lgt">Log out of ChartedGyan?</h3><p>Your progress is saved. You will need to sign in with Google again next time.</p><div class="lgbt"><button class="ghost" onclick="closeLogout()">Stay logged in</button><button class="go" onclick="logout()">Yes, log out</button></div></div></div>
  <div id="intro" hidden><div class="ibox" role="dialog" aria-modal="true" aria-labelledby="it"><div class="ihd"><span>🔥</span><div><h3 id="it">How streaks &amp; XP work</h3><p>A 30-second guide to staying consistent.</p></div></div>
   <div class="irow"><i>⚡</i><div><b>Earn Gyan XP</b><p>Case study +20, topic test +10, paper +50, and +15 bonus for scoring 80% or more.</p></div></div>
   <div class="irow"><i>🎯</i><div><b>Hit your daily target</b><p>Your target starts at 100 XP. Change it anytime from the streak calendar in the top bar.</p></div></div>
@@ -853,7 +938,7 @@ function toggleProfile(e,side){
   const rows=[["Username","@"+(PROFILE.username||"")],["Level",LABEL[D.level]],D.level==="Inter"?["Group",GL[D.group||"Both"]]:null,["Attempt",PROFILE.attempt||"–"],["Plan",plan+(plan==="Basic"?" (free)":"")],["Email",email||"–"],["Phone",PROFILE.phone||"–"]].filter(Boolean);
   m.innerHTML=`<div class="pn">View profile</div><div class="ph2"><span class="av">${esc(initial())}</span><div class="pu">@${esc(PROFILE.username||"")}</div></div>`
    +rows.map(r=>`<div class="pr"><span>${r[0]}</span><b>${esc(r[1])}</b></div>`).join("")
-   +`<button onclick="openProfile(true)">Edit profile</button><button class="go" onclick="logout()">Logout</button>`;
+   +`<button onclick="openProfile(true)">Edit profile</button><button class="go" onclick="askLogout()">Logout</button>`;
   m.hidden=false;
 }
 document.addEventListener("click",e=>{const m=$("pmenu");if(m&&!m.hidden&&!e.target.closest("#pmenu"))m.hidden=true});
@@ -1042,7 +1127,9 @@ async function login(){
     if(r&&r.error&&m)m.textContent="Google login failed: "+r.error.message;
   }catch(e){if(m)m.textContent="Google login failed: "+String(e.message||e)}
 }
-async function logout(){
+function askLogout(){$("pmenu").hidden=true;$("lgm").hidden=false}
+function closeLogout(){$("lgm").hidden=true}
+async function logout(){closeLogout();
   PREVIEW=false;USER=null;HIST=[];PROFILE=null;closeOb();$("pmenu").hidden=true;
   try{localStorage.removeItem("cg-user")}catch(e){}
   if(sb){try{await sb.auth.signOut()}catch(e){}}
@@ -1159,11 +1246,11 @@ const dl=()=>DATA[D.level];
 const SAMPLE=`<span class="badge">SAMPLE</span>`;
 const tile=(ic,lb,v)=>`<button class="tile" onclick="show('${v}')"><span class="ic">${ic}</span><span>${lb}</span></button>`;
 const sh=t=>`<div class="sh">${t}</div>`;
-const TABS=[["home","Dashboard","🏠","Home"],["practice","Practice","📝","Practice"],["concept","Concept","💡","Concept"],["papers","PYQs/RTP/MTP","📜","Papers"],["analysis","Analysis","📊","Analysis"],["activity","Activity","📈","Activity"],["doubts","Doubts","🙋","Doubts"],["res","Free Resources","📚","Resources"],["updates","Updates & reminders","🔔","Updates"]];
-const GRP={home:"home",doubts:"doubts",res:"res",practice:"practice",topics:"practice",cases:"practice",concept:"concept",flash:"concept",kw:"concept",fm:"concept",kotd:"concept",calci:"concept",syllabus:"analysis",papers:"papers",pyq:"papers",mtp:"papers",rtp:"papers",analysis:"analysis",activity:"activity",swot:"analysis",board:"home",updates:"updates",news:"updates",newupd:"updates",resp:"updates",notif:"notif"};
-const PARENT={topics:"practice",cases:"practice",pyq:"papers",mtp:"papers",rtp:"papers",flash:"concept",kw:"concept",fm:"concept",kotd:"concept",calci:"concept",syllabus:"analysis",swot:"analysis",news:"updates",newupd:"updates",resp:"updates"};
-const PNAME={updates:"Updates & reminders",practice:"Practice",papers:"PYQs/RTP/MTP",concept:"Concept",analysis:"Analysis",home:"Dashboard"};
-const MOBP={activity:"analysis",doubts:"analysis",res:"analysis",updates:"analysis"};
+const TABS=[["home","Dashboard","🏠","Home"],["practice","Practice","📝","Practice"],["concept","Concept","💡","Concept"],["papers","PYQs/RTP/MTP","📜","Papers"],["analysis","Analysis","📊","Analysis"],["activity","Activity","📈","Activity"],["doubts","Doubts","🙋","Doubts"],["res","Free Resources","📚","Resources"],["community","Community","💬","Community"],["rooms","Study Rooms","🎥","Rooms"],["updates","Updates & reminders","🔔","Updates"]];
+const GRP={home:"home",doubts:"doubts",res:"res",practice:"practice",topics:"practice",cases:"practice",concept:"concept",flash:"concept",kw:"concept",fm:"concept",kotd:"concept",calci:"concept",syllabus:"analysis",papers:"papers",pyq:"papers",mtp:"papers",rtp:"papers",analysis:"analysis",activity:"activity",swot:"analysis",board:"home",updates:"updates",news:"updates",newupd:"updates",resp:"updates",notif:"notif",community:"community",thread:"community",rooms:"rooms",room:"rooms"};
+const PARENT={topics:"practice",cases:"practice",pyq:"papers",mtp:"papers",rtp:"papers",flash:"concept",kw:"concept",fm:"concept",kotd:"concept",calci:"concept",syllabus:"analysis",swot:"analysis",news:"updates",newupd:"updates",resp:"updates",thread:"community",room:"rooms"};
+const PNAME={rooms:"Study Rooms",community:"Community",updates:"Updates & reminders",practice:"Practice",papers:"PYQs/RTP/MTP",concept:"Concept",analysis:"Analysis",home:"Dashboard"};
+const MOBP={activity:"analysis",doubts:"analysis",res:"analysis",updates:"analysis",community:"analysis",rooms:"analysis"};
 const BK=()=>{const p=PARENT[D.view]||(innerWidth<900&&MOBP[D.view])||"home";return `<button class="back" onclick="show('${p}')">← ${PNAME[p]}</button>`};
 const activeTab=()=>GRP[D.view==="run"&&R?R.back:D.view]||"home";
 function nameOf(id){
@@ -1189,10 +1276,12 @@ function renderSide(){
      +`<div class="sbl">`+TABS.map(x=>{const kids=SIDEKIDS[x[0]],op=kids&&secOpen(x[0],act);return `<button class="ni ${x[0]===act?"on":""} ${op?"open":""}" onclick="sbClick('${x[0]}')" title="${x[1]}"><span>${x[2]}</span><em>${x[1]}</em>${kids?`<b class="chv">›</b>`:""}</button>`+(op?`<div class="sk">${SIDEKIDS[x[0]].map(k=>`<button class="si ${D.view===k[2]?"on":""}" onclick="show('${k[2]}')"><span>${k[0]}</span>${k[1]}</button>`).join("")}</div>`:"")}).join("")+`</div>`
      +`<div class="sbf">${PROFILE?`<button class="sbu" onclick="toggleProfile(event,1)" aria-label="View profile"><span class="av">${esc(initial())}</span><div class="sbx"><b>@${esc(PROFILE.username||"")}</b><small>${esc(PROFILE.plan||"Basic")} plan</small></div></button>`:`<button class="ni" onclick="showAuth()"><span>🔑</span><em>Login</em></button>`}</div>`;
   }catch(e){}
-  const mact=({activity:"analysis",doubts:"analysis",res:"analysis",updates:"analysis",notif:"analysis",news:"analysis",newupd:"analysis",resp:"analysis"})[act]||act;
+  const mact=({activity:"analysis",doubts:"analysis",res:"analysis",updates:"analysis",notif:"analysis",news:"analysis",newupd:"analysis",resp:"analysis",community:"analysis",thread:"analysis",rooms:"analysis",room:"analysis"})[act]||act;
   $("tnav").innerHTML=TABS.slice(0,5).map(t=>`<button class="${t[0]===mact?"on":""}" onclick="show('${t[0]}')"><i>${t[2]}</i><span class="lg">${t[1]}</span><span class="sm">${t[3]}</span></button>`).join("");
 }
-const BIRD=[["📝","Practise","Sharpen skills topic by topic","practice"],["📜","Exam papers","Attempt with a real timer","papers"],["💡","Concepts & games","Revise ideas, fast","concept"],["📈","Progress & support","Know exactly where you stand","prog"],["🔔","Updates & reminders","Stay in the loop","updates"]];
+const BIRD=[["📝","Practise","Sharpen skills topic by topic","practice"],["📜","Exam papers","Attempt with a real timer","papers"],["💡","Concepts & games","Revise ideas, fast","concept"],["📈","Progress & support","Know exactly where you stand","prog"],["💬","Community","Ask, answer, discuss","commz"],["🎥","Study Rooms","Study together on video","roomz"],["🔔","Updates & reminders","Stay in the loop","updates"]];
+SIDEKIDS.roomz=[["🎥","All study rooms","rooms"]];
+SIDEKIDS.commz=[["💬","Community feed","community"]];
 SIDEKIDS.updates=[["📰","News","news"],["🆕","New updates","newupd"],["💬","Response","resp"]];
 SIDEKIDS.prog=[["✅","Syllabus Completion","syllabus"],["📈","Activity","activity"],["🙋","Doubts","doubts"],["📊","SWOT Analysis","swot"],["📚","Free Resources","res"]];
 function openBird(e){
@@ -1214,12 +1303,15 @@ if(ls.get("cg-sbc",false))document.body.classList.add("sbc");
 document.body.appendChild($("pmenu"));
 function toggleNav(f){D.navOpen=typeof f==="boolean"?f:!D.navOpen;side.classList.toggle("open",D.navOpen);scrim.classList.toggle("on",D.navOpen)}
 function show(v,x,nopush){
+  if(ROOM.joined&&v!=="room"){if(!confirm("Leave the study room?"))return;try{ROOM.api&&ROOM.api.dispose()}catch(e){}ROOM.api=null;ROOM.joined=false}
   clearInterval(tick);D.view=v;if(x)Object.assign(D,x);$("pmenu").hidden=true;$("strk").hidden=true;
   if(!nopush){try{history.pushState({cg:1,app:1,v:v},"")}catch(e){}}
   if(v!=="run")ls.set("cg-view-"+(USER?USER.id:"preview"),v);
   renderSide();refresh(true);
 }
+var ROOM={joined:false,api:null,sub:null,i:0};
 function refresh(top){
+  if(ROOM.joined&&D.view==="room")return;
   timers.forEach(clearTimeout);timers=[];
   dmain.innerHTML=(LOCK?pvBanner():"")+V[D.view]();
   if(top)window.scrollTo(0,0);
@@ -1358,7 +1450,7 @@ function vCases(){
 const hub=(t,l,a)=>`<h1 class="dh">${t}</h1><p class="lead">${l}</p><div class="grid">${a.map(x=>tile(x[0],x[1],x[2])).join("")}</div>`;
 const vConcept=()=>hub("Concept","Revise ideas with cards, keywords and formulas.",[["🃏","Flashcards","flash"],["🔑","Keywords","kw"],["ƒₓ","Formulas","fm"],["💡","Keyword of the Day","kotd"],["🧮","Calci Tricks","calci"]]);
 const vPapersHub=()=>hub("PYQs / RTP / MTP","Attempt exam-style papers with a timer.",[["📜","Past Year Papers","pyq"],["📝","MTPs","mtp"],["🎯","RTPs","rtp"]]);
-const vAnalysis=()=>hub("Analysis","See how you are doing and where to improve.",[["✅","Syllabus Completion","syllabus"],["📊","SWOT Analysis","swot"],["📈","Activity","activity"],["🙋","Doubts","doubts"],["📚","Free Resources","res"],["🔔","Updates & reminders","updates"]]);
+const vAnalysis=()=>hub("Analysis","See how you are doing and where to improve.",[["✅","Syllabus Completion","syllabus"],["📊","SWOT Analysis","swot"],["📈","Activity","activity"],["🙋","Doubts","doubts"],["📚","Free Resources","res"],["💬","Community","community"],["🎥","Study Rooms","rooms"],["🔔","Updates & reminders","updates"]]);
 function openCase(id,old){const c=dl().cases.find(c=>c.id===id);startRun({id:"case:"+id,title:c.title,story:c.story,qs:c.qs,back:"cases",backLabel:"Daily Case Studies",old:!!old})}
 
 // ----- papers -----
@@ -1457,6 +1549,7 @@ function vQuiz(){
   <div class="card"><h2>${q.q}</h2>
   ${q.o.map((o,k)=>`<button ${done?"disabled":""} class="${done?(k===q.a?"ok":(k===R.picked?"bad":"")):""}" onclick="qa(${k})">${A(k)}. ${o}</button>`).join("")}
   ${done?`<div class="fb ${R.picked===q.a?"":"no"}">${R.picked===q.a?"✅ Correct! ":"Not quite. "}${q.why}</div>`:""}
+  <button class="askq" onclick="askQ(R.i)">💬 Ask the community about this question</button>
   ${done&&q.scene?`<div class="stage" id="stage"></div><button onclick="playScene()" style="text-align:center">↻ Replay animation</button>`:""}
   ${done?`<button class="go" onclick="qn()">${last?"See result":"Next question →"}</button>`:""}</div>`;
 }
@@ -1469,6 +1562,7 @@ function vPaper(){
   <div class="pal">${R.qs.map((_,k)=>`<button class="${R.ans[k]!=null?"dn":""} ${k===R.i?"cur":""}" onclick="pj(${k})">${k+1}</button>`).join("")}</div>
   <h2>${q.q}</h2>${q.o.map((o,k)=>`<button class="${sel===k?"sel":""}" onclick="pa(${k})">${A(k)}. ${o}</button>`).join("")}
   <div class="row2"><button ${R.i===0?"disabled":""} onclick="pj(R.i-1)" style="text-align:center">← Previous</button><button ${R.i===R.qs.length-1?"disabled":""} onclick="pj(R.i+1)" style="text-align:center">Next →</button></div>
+  <button class="askq" onclick="askQ(R.i)">💬 Ask the community about this question</button>
   <button class="go" onclick="finishRun()">Submit paper</button></div>`;
 }
 function pa(k){R.ans[R.i]=k;refresh()}
@@ -1480,7 +1574,7 @@ function finishRun(){
 }
 function vResult(){
   const n=R.qs.length;
-  const rev=R.mode==="paper"?`<div class="card"><div class="tag">Review</div>`+R.qs.map((q,k)=>`<p style="color:var(--text)"><b>${k+1}. ${q.q}</b><br>Your answer: ${R.ans[k]!=null?q.o[R.ans[k]]:"Not answered"} ${R.ans[k]===q.a?"✅":"❌"}<br>Correct: ${q.o[q.a]}<br><span style="color:var(--mute)">${q.why}</span></p>`).join("")+`</div>`:"";
+  const rev=R.mode==="paper"?`<div class="card"><div class="tag">Review</div>`+R.qs.map((q,k)=>`<p style="color:var(--text)"><b>${k+1}. ${q.q}</b><br>Your answer: ${R.ans[k]!=null?q.o[R.ans[k]]:"Not answered"} ${R.ans[k]===q.a?"✅":"❌"}<br>Correct: ${q.o[q.a]}<br><span style="color:var(--mute)">${q.why}</span><br><button class="askq sm" onclick="askQ(${k})">💬 Ask the community</button></p>`).join("")+`</div>`:"";
   return `<div class="card"><div class="tag">Result</div><h1>${R.score} / ${n}</h1><p>${R.score===n?"Perfect! You’ve got it.":"Good effort. Try again to lock it in."}</p>
   <button class="go" onclick="startRun(R)">Try again</button><button onclick="leaveRun()" style="text-align:center">Back to ${esc(R.backLabel)}</button></div>${rev}`;
 }
@@ -1609,6 +1703,8 @@ function vBoard(){
 
 // ----- updates, reminders, notifications -----
 const UPDATES=[
+ {id:"u6",ic:"🎥",t:"Study Rooms",d:"Join a live video room for your subject and study together with other students.",dt:"27 Nov 2026"},
+ {id:"u5",ic:"💬",t:"Community",d:"Ask doubts, answer other students, upvote and repost. You can also share any practice question as a thread.",dt:"27 Nov 2026"},
  {id:"u4",ic:"🧭",t:"Left sidebar on laptop",d:"Jump between Practice, Concept, Papers and Analysis without leaving your page.",dt:"25 Nov 2026"},
  {id:"u3",ic:"🔥",t:"Streak calendar and XP target",d:"Tap the flame in the top bar to see your month and set a daily XP target.",dt:"25 Nov 2026"},
  {id:"u2",ic:"📝",t:"Cleaner Topic Tests",d:"Pick a subject tab, then practise any topic from a simple list.",dt:"25 Nov 2026"},
@@ -1639,7 +1735,175 @@ function vNotif(){
   <div class="ntabs"><button class="pvkeep ${t==="updates"?"on":""}" onclick="setNtab('updates')">Updates${unreadN()?` <i>${unreadN()}</i>`:""}</button><button class="pvkeep ${t==="reports"?"on":""}" onclick="setNtab('reports')">Reports</button></div>${body}`;
 }
 
-const V={updates:vUpdates,news:vNews,newupd:vNewUpd,resp:vResp,notif:vNotif,home:vHome,practice:vPractice,topics:vTopics,cases:vCases,calci:vCalci,syllabus:vSyllabus,concept:vConcept,papers:vPapersHub,analysis:vAnalysis,pyq:()=>vPapers("pyq"),mtp:()=>vPapers("mtp"),rtp:()=>vPapers("rtp"),run:vRun,flash:vFlash,kw:vKw,fm:vFm,doubts:vDoubts,activity:vActivity,swot:vSwot,res:vRes,kotd:()=>vKotd(false),board:vBoard};
+
+// ----- community -----
+const CK="cg-comm-v1",CSV="cg-comm-saved";
+const plain=t=>String(t==null?"":t).replace(/<[^>]*>/g," ").replace(/\s+/g," ").trim();
+const ago=t=>{const m=Math.floor((Date.now()-t)/6e4);if(m<1)return"just now";if(m<60)return m+"m ago";const h=Math.floor(m/60);if(h<24)return h+"h ago";return Math.floor(h/24)+"d ago"};
+const canPost=()=>!!(USER&&PROFILE&&!LOCK);
+const meId=()=>USER?USER.id:"guest";
+const meName=()=>PROFILE&&PROFILE.username?PROFILE.username:"guest";
+const FLAIRS=["Doubt","Discussion","Resource","Tip"];
+function seedPosts(){
+  const H=36e5,n=Date.now(),C=(id,a,b,t,v,par)=>({id,author:a,body:b,t:n-t*H,base:v,votes:{},parent:par||null});
+  return [
+   {id:"s1",sample:1,level:"Foundation",flair:"Doubt",author:"ca_aspirant",t:n-5*H,base:12,votes:{},reposts:2,title:"Why is Capital credited when the owner puts cash into the business?",body:"I understand Cash goes up, but I keep getting confused about why Capital is a credit. Can someone explain it simply?",comments:[
+     C("s1a","numbers_ninja","Think of Capital as money the business owes back to the owner, so it is a liability. Liabilities increase with a credit. Cash is an asset, so it is debited.",4,9),
+     C("s1b","law_lover","Remember the equation: Assets = Liabilities + Capital. Cash (asset) rises, so Capital on the other side must rise too, and that is a credit.",3,5)],best:"s1a"},
+   {id:"s2",sample:1,level:"Foundation",flair:"Doubt",author:"mocktest_maniac",t:n-20*H,base:7,votes:{},reposts:0,title:"Quick way to remember the difference between simple and compound interest?",body:"I mix up the two in exams. Any trick that works?",comments:[
+     C("s2a","numbers_ninja","Simple interest is the same every year because it is charged only on the original amount. Compound interest is charged on the amount plus earlier interest, so it grows. For 2 years, CI minus SI = P × (r/100)². For ₹10,000 at 10%, that is ₹100.",18,11)],best:null},
+   {id:"s3",sample:1,level:"Foundation",flair:"Tip",author:"study_streak",t:n-30*H,base:15,votes:{},reposts:3,title:"A study block that actually works: 25 minutes, then 5 questions",body:"Study one topic for 25 minutes, close the book, then solve 5 questions on it without looking. It shows you what you really remember.",comments:[
+     C("s3a","ca_aspirant","Tried this today and the self-test part is the real game changer.",10,3)],best:null},
+   {id:"s4",sample:1,level:"Foundation",flair:"Discussion",author:"law_lover",t:n-48*H,base:4,votes:{},reposts:0,title:"Which subject is giving you the most trouble right now?",body:"Let us see where everyone is stuck. Mine is Quantitative Aptitude, especially ratios.",comments:[
+     C("s4a","mocktest_maniac","Accounting for me, mainly rectifying entries.",40,2)],best:null},
+   {id:"s5",sample:1,level:"Inter",flair:"Doubt",author:"variance_vic",t:n-8*H,base:9,votes:{},reposts:1,title:"Material price variance: how do I know if it is adverse or favourable?",body:"Mehta Traders bought 100 kg at ₹55 against a standard of ₹50. I got −500 but I am not sure what the sign means.",comments:[
+     C("s5a","cost_cracker","MPV = (SP − AP) × AQ = (50 − 55) × 100 = −₹500. A negative result means you paid more than the standard, so it is adverse.",6,8)],best:"s5a"},
+   {id:"s6",sample:1,level:"Inter",flair:"Discussion",author:"strategy_sam",t:n-26*H,base:6,votes:{},reposts:0,title:"How do you remember Porter’s Five Forces?",body:"I always forget one of them in the exam.",comments:[
+     C("s6a","cost_cracker","Rivalry, New entrants, Substitutes, Buyers, Suppliers. I just say it in that order every time.",22,4)],best:null},
+   {id:"s7",sample:1,level:"Inter",flair:"Tip",author:"pyq_pro",t:n-60*H,base:11,votes:{},reposts:2,title:"Do past papers topic by topic, not year by year",body:"Grouping past questions by topic shows which ideas the examiners love to repeat.",comments:[],best:null}
+  ];
+}
+function cdb(){let d=ls.get(CK,null);if(!d||!d.posts){d={posts:seedPosts()};ls.set(CK,d)}return d}
+const csave=d=>ls.set(CK,d);
+const pscore=o=>(o.base||0)+Object.values(o.votes||{}).reduce((a,b)=>a+b,0);
+const findP=(d,id)=>d.posts.find(p=>p.id===id);
+const nid=()=>"p"+Date.now().toString(36)+Math.random().toString(36).slice(2,6);
+const savedMap=()=>ls.get(CSV,{});
+function needLogin(){if(canPost())return false;toast("Log in to join the conversation");return true}
+function hot(p){return pscore(p)/Math.pow((Date.now()-p.t)/36e5+2,1.3)}
+function voteBox(o,kind,pid,cid){
+  const mine=(o.votes||{})[meId()]||0,fn=kind==="p"?`votePost('${pid}',`:`voteC('${pid}','${cid}',`;
+  return `<div class="cvote"><button class="${mine===1?"on":""}" onclick="event.stopPropagation();${fn}1)" aria-label="Upvote">▲</button><b>${pscore(o)}</b><button class="${mine===-1?"dn":""}" onclick="event.stopPropagation();${fn}-1)" aria-label="Downvote">▼</button></div>`;
+}
+function votePost(id,v){if(needLogin())return;const d=cdb(),p=findP(d,id);p.votes=p.votes||{};p.votes[meId()]=p.votes[meId()]===v?0:v;csave(d);refresh()}
+function voteC(id,cid,v){if(needLogin())return;const d=cdb(),c=findP(d,id).comments.find(c=>c.id===cid);c.votes=c.votes||{};c.votes[meId()]=c.votes[meId()]===v?0:v;csave(d);refresh()}
+function toggleSave(id){if(needLogin())return;const m=savedMap();if(m[id])delete m[id];else m[id]=1;ls.set(CSV,m);toast(m[id]?"Saved":"Removed from saved");refresh()}
+function sharePost(id){const d=cdb(),p=findP(d,id),t=p.title+" — ChartedGyan Community\n"+location.origin+location.pathname;
+  if(navigator.clipboard&&navigator.clipboard.writeText)navigator.clipboard.writeText(t).then(()=>toast("Copied to share"),()=>toast("Could not copy"));else toast("Copy not supported here")}
+function delPost(id){if(!confirm("Delete this post?"))return;const d=cdb();d.posts=d.posts.filter(p=>p.id!==id&&p.repostOf!==id);csave(d);toast("Post deleted");if(D.view==="thread")show("community");else refresh()}
+function openThread(id){D.cdraft="";D.reply=null;show("thread",{tid:id})}
+const qBlock=(q,full)=>q?`<div class="qblock"><div class="qbt">❓ Question${q.src?` · ${esc(q.src)}`:""}</div><p>${esc(full?q.t:clip(q.t,200))}</p>${full&&q.o&&q.o.length?`<ol>${q.o.map(o=>`<li>${esc(o)}</li>`).join("")}</ol>`:""}</div>`:"";
+const flairChip=f=>`<span class="flr flr-${f}">${esc(f)}</span>`;
+function postCard(p,d,full){
+  const sv=savedMap()[p.id],orig=p.repostOf?findP(d,p.repostOf):null,nc=(p.comments||[]).length,nr=d.posts.filter(x=>x.repostOf===p.id).length+(p.reposts||0);
+  const mine=p.uid&&p.uid===meId();
+  const head=`<div class="cph">${flairChip(p.flair)}<span>@${esc(p.author)}${p.level?` · ${esc(p.level==="Inter"?"CA Inter":"CA Foundation")}`:""} · ${ago(p.t)}</span>${p.sample?SAMPLE:""}</div>`;
+  const rp=p.repostOf?`<div class="rpb">🔁 reposted${orig?`:`:""}${orig?`<div class="rpo" onclick="event.stopPropagation();openThread('${orig.id}')">${flairChip(orig.flair)} <b>${esc(orig.title)}</b><small>@${esc(orig.author)}</small></div>`:" (original removed)"}</div>`:"";
+  return `<article class="cpost ${full?"full":""}" ${full?"":`onclick="openThread('${p.id}')"`}>${voteBox(p,"p",p.id)}<div class="cmain">${head}<h3>${esc(p.title)}</h3>${p.body?`<p class="cbd">${esc(full?p.body:clip(p.body,240))}</p>`:""}${qBlock(p.q,full)}${rp}
+  <div class="cact"><button onclick="event.stopPropagation();openThread('${p.id}')">💬 ${nc} ${nc===1?"answer":"answers"}</button><button onclick="event.stopPropagation();openRepost('${p.id}')">🔁 Repost${nr?` · ${nr}`:""}</button><button onclick="event.stopPropagation();sharePost('${p.id}')">↗ Share</button><button class="${sv?"on":""}" onclick="event.stopPropagation();toggleSave('${p.id}')">${sv?"🔖 Saved":"🔖 Save"}</button>${mine?`<button onclick="event.stopPropagation();delPost('${p.id}')">🗑 Delete</button>`:""}</div></div></article>`;
+}
+function vCommunity(){
+  const d=cdb(),lv=D.level,q=(D.cq||"").toLowerCase(),sort=D.csort||"hot",fl=D.cflair||"All",sv=savedMap();
+  let P=d.posts.filter(p=>D.clvall||p.level===lv);
+  if(fl==="Saved")P=P.filter(p=>sv[p.id]);else if(fl!=="All")P=P.filter(p=>p.flair===fl);
+  if(q)P=P.filter(p=>(p.title+" "+(p.body||"")).toLowerCase().includes(q));
+  P.sort(sort==="new"?(a,b)=>b.t-a.t:sort==="top"?(a,b)=>pscore(b)-pscore(a):(a,b)=>hot(b)-hot(a));
+  return `<div class="chead"><div><h1 class="dh" style="margin:0">Community</h1><p class="lead" style="margin:2px 0 0">Ask, answer and learn with other CA students.</p></div><button class="go pvkeep" onclick="openComposer({})">✍ Create post</button></div>
+  <div class="cbar"><input class="cs" placeholder="Search posts" value="${esc(D.cq||"")}" onchange="D.cq=this.value;refresh()" aria-label="Search posts"><div class="ntabs sm">${[["hot","🔥 Hot"],["new","🆕 New"],["top","⭐ Top"]].map(x=>`<button class="pvkeep ${sort===x[0]?"on":""}" onclick="D.csort='${x[0]}';refresh()">${x[1]}</button>`).join("")}</div></div>
+  <div class="chips wrap cfl2">${["All",...FLAIRS,"Saved"].map(f=>`<button class="pvkeep ${fl===f?"on":""}" onclick="D.cflair='${f}';refresh()">${f}</button>`).join("")}<label class="clv"><input type="checkbox" ${D.clvall?"checked":""} onchange="D.clvall=this.checked;refresh()"> All levels</label></div>
+  ${P.length?P.map(p=>postCard(p,d,false)).join(""):emptyBox("💬",fl==="Saved"?"Nothing saved yet":"No posts here yet","Be the first to ask a question or start a discussion.")}
+  <p class="cnote">${SAMPLE} Posts marked sample are placeholders. Posts you create are stored on this device until the community database is connected.</p>`;
+}
+function commentHTML(p,c,all,depth){
+  const kids=all.filter(x=>x.parent===c.id).sort((a,b)=>pscore(b)-pscore(a)||a.t-b.t),mine=c.uid&&c.uid===meId(),isOwner=p.uid&&p.uid===meId(),best=p.best===c.id;
+  return `<div class="cm ${best?"best":""} ${depth?"rep":""}">${voteBox(c,"c",p.id,c.id)}<div class="cmb"><div class="cmh"><b>@${esc(c.author)}</b><span>${ago(c.t)}</span>${best?`<em class="bst">✓ Best answer</em>`:""}</div><p>${esc(c.body)}</p>
+   <div class="cact sm">${depth?"":`<button onclick="D.reply='${c.id}';D.rdraft='';refresh()">↩ Reply</button>`}${isOwner&&!depth?`<button onclick="markBest('${p.id}','${c.id}')">${best?"Unmark best":"✓ Mark best answer"}</button>`:""}${mine?`<button onclick="delComment('${p.id}','${c.id}')">🗑 Delete</button>`:""}</div>
+   ${D.reply===c.id?`<div class="rbox"><textarea class="inp" maxlength="1500" placeholder="Write a reply" oninput="D.rdraft=this.value">${esc(D.rdraft||"")}</textarea><div class="rbt"><button class="ghost" onclick="D.reply=null;refresh()">Cancel</button><button class="go" onclick="addComment('${p.id}','${c.id}')">Reply</button></div></div>`:""}
+   ${kids.map(k=>commentHTML(p,k,all,1)).join("")}</div></div>`;
+}
+function vThread(){
+  const d=cdb(),p=findP(d,D.tid);
+  if(!p)return `${BK()}${emptyBox("🧵","This thread is no longer available","It may have been deleted.")}`;
+  const all=p.comments||[],top=all.filter(c=>!c.parent).sort((a,b)=>(b.id===p.best)-(a.id===p.best)||pscore(b)-pscore(a)||a.t-b.t);
+  return `${BK()}${postCard(p,d,true)}
+  <div class="card cwr"><h2>Your answer</h2>${canPost()?`<textarea class="inp" maxlength="1500" placeholder="Share what you know. Be kind and clear." oninput="D.cdraft=this.value">${esc(D.cdraft||"")}</textarea><button class="go" onclick="addComment('${p.id}')">Post answer</button>`:`<p style="margin:0;color:var(--mute)">Log in to answer and join the thread.</p>`}</div>
+  <div class="sh">${all.length} ${all.length===1?"ANSWER":"ANSWERS"}</div>
+  ${top.length?top.map(c=>commentHTML(p,c,all,0)).join(""):emptyBox("🧵","No answers yet","Be the first to help.")}`;
+}
+function addComment(pid,parent){
+  if(needLogin())return;const d=cdb(),p=findP(d,pid),txt=(parent?D.rdraft:D.cdraft||"").trim();
+  if(txt.length<2){toast("Write something first");return}
+  p.comments=p.comments||[];p.comments.push({id:nid(),uid:meId(),author:meName(),body:txt.slice(0,1500),t:Date.now(),base:0,votes:{},parent:parent||null});
+  csave(d);if(parent){D.reply=null;D.rdraft=""}else D.cdraft="";toast("Posted");refresh()
+}
+function delComment(pid,cid){if(!confirm("Delete this comment?"))return;const d=cdb(),p=findP(d,pid);p.comments=p.comments.filter(c=>c.id!==cid&&c.parent!==cid);if(p.best===cid)p.best=null;csave(d);refresh()}
+function markBest(pid,cid){const d=cdb(),p=findP(d,pid);p.best=p.best===cid?null:cid;csave(d);refresh()}
+// composer
+let CM={flair:"Doubt",q:null,from:null};
+function openComposer(o){
+  if(needLogin())return;
+  CM={flair:o.flair||"Doubt",q:o.q||null,from:o.from||null};
+  $("cmpt").value=o.title||"";$("cmpb").value=o.body||"";$("cmpm").textContent="";
+  $("cmpq").innerHTML=CM.q?qBlock(CM.q,true):"";paintFlairs();$("cmp").hidden=false;setTimeout(()=>$("cmpt").focus(),50);
+}
+function paintFlairs(){$("cmpfl").innerHTML=FLAIRS.map(f=>`<button class="${CM.flair===f?"on":""}" onclick="CM.flair='${f}';paintFlairs()">${f}</button>`).join("")}
+function closeComposer(){$("cmp").hidden=true}
+function submitPost(){
+  const t=$("cmpt").value.trim(),b=$("cmpb").value.trim();
+  if(t.length<8){$("cmpm").textContent="Add a clear title (at least 8 characters).";return}
+  const d=cdb(),p={id:nid(),uid:meId(),author:meName(),level:D.level,flair:CM.flair,title:t.slice(0,140),body:b.slice(0,2000),q:CM.q,t:Date.now(),base:0,votes:{},reposts:0,comments:[],best:null};
+  d.posts.unshift(p);csave(d);closeComposer();
+  if(CM.from==="run"){toast("Shared to the Community ✓")}else{toast("Posted");openThread(p.id)}
+}
+function askQ(k){
+  const q=R.qs[k];if(!q)return;
+  openComposer({flair:"Doubt",title:"Doubt: "+clip(plain(q.q),100),body:"",q:{t:plain(q.q),o:q.o.map(plain),src:R.title},from:"run"});
+}
+// repost
+let RP=null;
+function openRepost(id){if(needLogin())return;RP=id;const p=findP(cdb(),id);$("rpt").textContent=p.title;$("rpn").value="";$("rpm").hidden=false}
+function closeRepost(){$("rpm").hidden=true}
+function doRepost(){
+  const d=cdb(),o=findP(d,RP);if(!o)return;
+  d.posts.unshift({id:nid(),uid:meId(),author:meName(),level:o.level,flair:o.flair,title:"Repost: "+o.title.slice(0,120),body:$("rpn").value.trim().slice(0,1000),repostOf:o.id,t:Date.now(),base:0,votes:{},reposts:0,comments:[],best:null});
+  csave(d);closeRepost();toast("Reposted");D.csort="new";D.cflair="All";show("community")
+}
+
+
+// ----- study rooms -----
+const ROOM_DOMAIN="meet.jit.si"; // swap for your own Jitsi / JaaS domain when you go live
+const ROOMEMO=["📒","⚖️","➗","📈","🧮","📊","🧾","🔍"];
+const slugR=t=>String(t).toLowerCase().replace(/[^a-z0-9]+/g,"-").replace(/^-|-$/g,"");
+const roomList=()=>[...subs(),"Open lounge"];
+const roomEmo=i=>i>=subs().length?"☕":ROOMEMO[i%ROOMEMO.length];
+const roomSlug=n=>"chartedgyan-"+(D.level==="Foundation"?"found":"inter")+"-"+slugR(n);
+function vRooms(){
+  const L=roomList();
+  return `<div class="chead"><div><h1 class="dh" style="margin:0">Study Rooms</h1><p class="lead" style="margin:2px 0 0">Never study alone. Pick your subject and study together on video.</p></div></div>
+  <div class="rfeat">${[["🎥","Video"],["🎤","Voice"],["🖥","Share screen"],["💬","Chat"],["✋","Raise hand"],["👥","Participants"]].map(x=>`<span>${x[0]} ${x[1]}</span>`).join("")}</div>
+  <div class="rgrid">${L.map((n,i)=>`<div class="rcard"><div class="rem">${roomEmo(i)}</div><div class="rbody"><b>${esc(n)}</b><small>${i>=subs().length?"Take a break, chat or study quietly together.":"Study "+esc(n)+" with other students."}</small></div><button class="go sm" onclick="enterRoom(${i})">Join room</button></div>`).join("")}</div>
+  <div class="card rrules"><h2>Room rules</h2><ul><li>Be kind and respectful. Everyone is here to learn.</li><li>Your mic and camera start off. Turn them on only if you want to.</li><li>Do not share personal details, and do not record other students.</li><li>Leave anytime with the Leave room button.</li></ul></div>`;
+}
+function enterRoom(i){if(needLogin())return;ROOM.i=i;ROOM.sub=roomList()[i];show("room")}
+function vRoom(){
+  const n=ROOM.sub||roomList()[0],e=roomEmo(ROOM.i||0);
+  return `${BK()}<div class="card rpre"><div class="rem big">${e}</div><h2>${esc(n)} room</h2><p>You are about to join a live video room with other ChartedGyan students.</p>
+  <ul class="rtips"><li>🎤 Your mic starts muted</li><li>🎥 Your camera starts off</li><li>🖥 You can share your screen and use the chat</li><li>✋ Raise your hand to ask a question</li></ul>
+  <button class="go" onclick="joinNow()">Join now</button><p class="cnote" style="text-align:left;margin-top:10px">The room opens a secure video call. Your browser will ask for camera and microphone permission.</p></div>`;
+}
+function loadJitsi(){
+  if(window.JitsiMeetExternalAPI)return Promise.resolve();
+  return new Promise((res,rej)=>{const sc=document.createElement("script");sc.src="https://"+ROOM_DOMAIN+"/external_api.js";sc.onload=res;sc.onerror=rej;document.head.appendChild(sc)});
+}
+function joinNow(){
+  if(needLogin())return;
+  const n=ROOM.sub,rn=roomSlug(n),e=roomEmo(ROOM.i||0);ROOM.joined=true;
+  dmain.innerHTML=`<div class="rhd"><div><b>${e} ${esc(n)} room</b><small>Be kind. Your mic and camera start off.</small></div><div class="rha"><a class="ghost" target="_blank" rel="noopener" href="https://${ROOM_DOMAIN}/${rn}">Open in new tab ↗</a><button class="go" onclick="leaveRoom()">Leave room</button></div></div><div id="jcall" class="jcall"><div class="jload">Connecting to the room…</div></div>`;
+  loadJitsi().then(()=>{
+    if(!ROOM.joined)return;const box=$("jcall");box.innerHTML="";
+    ROOM.api=new JitsiMeetExternalAPI(ROOM_DOMAIN,{roomName:rn,parentNode:box,width:"100%",height:"100%",
+      userInfo:{displayName:"@"+meName()},
+      configOverwrite:{subject:n+" · ChartedGyan",prejoinPageEnabled:false,startWithAudioMuted:true,startWithVideoMuted:true,disableDeepLinking:true,disableInviteFunctions:true,toolbarButtons:["microphone","camera","desktop","chat","raisehand","participants-pane","tileview","fullscreen","settings","hangup"]},
+      interfaceConfigOverwrite:{SHOW_JITSI_WATERMARK:false,SHOW_BRAND_WATERMARK:false,MOBILE_APP_PROMO:false}});
+    ROOM.api.addListener("readyToClose",leaveRoom);
+  }).catch(()=>{
+    if(!ROOM.joined)return;$("jcall").innerHTML=`<div class="jload"><b>The room could not load inside the page.</b><p>No problem. Open it in a new tab instead.</p><a class="go" style="display:inline-block;width:auto;padding:9px 20px;border-radius:9px;text-decoration:none;text-align:center" target="_blank" rel="noopener" href="https://${ROOM_DOMAIN}/${rn}">Open study room ↗</a></div>`;
+  });
+}
+function leaveRoom(){try{ROOM.api&&ROOM.api.dispose()}catch(e){}ROOM.api=null;ROOM.joined=false;show("rooms")}
+function previewAt(v){showPreview();show(v)}
+
+const V={rooms:vRooms,room:vRoom,community:vCommunity,thread:vThread,updates:vUpdates,news:vNews,newupd:vNewUpd,resp:vResp,notif:vNotif,home:vHome,practice:vPractice,topics:vTopics,cases:vCases,calci:vCalci,syllabus:vSyllabus,concept:vConcept,papers:vPapersHub,analysis:vAnalysis,pyq:()=>vPapers("pyq"),mtp:()=>vPapers("mtp"),rtp:()=>vPapers("rtp"),run:vRun,flash:vFlash,kw:vKw,fm:vFm,doubts:vDoubts,activity:vActivity,swot:vSwot,res:vRes,kotd:()=>vKotd(false),board:vBoard};
 
 // ----- database -----
 async function saveAttempt(){
