@@ -804,6 +804,18 @@ body.sbc .sbs{display:none}
 .abct th{color:#6a6484;font-size:12px;text-transform:uppercase;letter-spacing:.06em}
 .abcc{display:inline-block;min-width:24px;text-align:center;border-radius:6px;padding:2px 8px;font-weight:800}
 .abcc.A{background:#fde4e1;color:#b3302b}.abcc.B{background:#fff1c2;color:#7a5a00}.abcc.C{background:#e4f5d8;color:#1d6b2e}
+
+body.indash #side .ni{font-size:13px;padding:8px 11px;gap:10px;font-weight:500}
+body.indash #side .ni span{font-size:16px;width:22px}
+body.indash #side .ni .chv{font-size:15px}
+.sbback{font-size:13px;padding:8px 11px}
+.sbback b{font-size:20px;line-height:1;width:22px;text-align:center;color:#5b2ba8}
+.sbback span{text-align:left;margin:0}
+.sbsub{font-size:12.5px;padding:8px 11px;gap:10px}
+.sbsub i{font-style:normal;width:22px;text-align:center;font-size:14px}
+.sbs input{font-size:12.5px}
+.sbs label{height:34px}
+body.sbc .sbsub i{width:auto}
 </style>
 </head>
 <body>
@@ -1367,11 +1379,11 @@ const IC={
  fwd:'<path d="M9 5l7 7-7 7"/>'
 };
 const svg=(n,cls)=>`<svg class="ico ${cls||""}" viewBox="0 0 24 24" aria-hidden="true">${IC[n]}</svg>`;
-const SBMAIN=[["home","Dashboard","home"],["practice","Practice","practice"],["concept","Concept","concept"],["papers","PYQs/RTP/MTP","papers"],["analysis","Analysis","analysis"],["community","Community","community"],["rooms","Study Rooms","rooms"]];
-const SIDEKIDS={practice:[["","Chapter Tests","topics"],["","Mocks","mocks"],["","Subject Tests","subjt"],["","Daily Case Studies","cases"]],
- concept:[["","Formulas","fm"],["","Keyword of the Day","kotd"],["","Calci Tricks","calci"],["","ABC Analysis","abc"]],
- papers:[["","Attempt","pattempt"],["","Explore","pexplore"],["","Weightage","pweight"],["","PDF","ppdf"]],
- analysis:[["","Syllabus Completion","syllabus"],["","SWOT Analysis","swot"]]};
+const SBMAIN=[["home","Dashboard","🏠"],["practice","Practice","📝"],["concept","Concept","💡"],["papers","PYQs/RTP/MTP","📜"],["analysis","Analysis","📈"],["community","Community","💬"],["rooms","Study Rooms","🎥"]];
+const SIDEKIDS={practice:[["📝","Chapter Tests","topics"],["🎯","Mocks","mocks"],["📚","Subject Tests","subjt"],["📅","Daily Case Studies","cases"]],
+ concept:[["ƒₓ","Formulas","fm"],["💡","Keyword of the Day","kotd"],["🧮","Calci Tricks","calci"],["🅰️","ABC Analysis","abc"]],
+ papers:[["📝","Attempt","pattempt"],["🔎","Explore","pexplore"],["📊","Weightage","pweight"],["📄","PDF","ppdf"]],
+ analysis:[["✅","Syllabus Completion","syllabus"],["📊","SWOT Analysis","swot"]]};
 const SBFIND=[["Dashboard","home"],["Chapter Tests","topics"],["Mocks","mocks"],["Subject Tests","subjt"],["Daily Case Studies","cases"],["Formulas","fm"],["Keyword of the Day","kotd"],["Calci Tricks","calci"],["ABC Analysis","abc"],["Flashcards","flash"],["Keyword List","kw"],["Attempt papers","pattempt"],["Explore papers","pexplore"],["Weightage","pweight"],["PDF papers","ppdf"],["Syllabus Completion","syllabus"],["SWOT Analysis","swot"],["Activity","activity"],["Doubts","doubts"],["Free Resources","res"],["Community","community"],["Study Rooms","rooms"],["Updates & reminders","updates"],["Notifications","notif"],["Leaderboard","board"]];
 const sbSec=v=>{const a=GRP[v==="run"&&R?R.back:v]||"home";return SIDEKIDS[a]&&["practice","concept","papers","analysis"].includes(a)?a:null};
 function sbClick(k){
@@ -1384,9 +1396,9 @@ function sbListHTML(act){
   const sec=document.body.classList.contains("sbc")?null:D.sbm;
   if(sec&&SIDEKIDS[sec]){
     const nm=(SBMAIN.find(x=>x[0]===sec)||[0,sec])[1];
-    return `<button class="sbback" onclick="sbBack()">${svg("back")}<span>${nm}</span></button>`+SIDEKIDS[sec].map(k=>`<button class="sbsub ${D.view===k[2]?"on":""}" onclick="show('${k[2]}')">${k[1]}</button>`).join("");
+    return `<button class="sbback" onclick="sbBack()"><b>‹</b><span>${nm}</span></button>`+SIDEKIDS[sec].map(k=>`<button class="sbsub ${D.view===k[2]?"on":""}" onclick="show('${k[2]}')"><i>${k[0]}</i>${k[1]}</button>`).join("");
   }
-  return SBMAIN.map(x=>{const kids=SIDEKIDS[x[0]];return `<button class="ni ${x[0]===act?"on":""}" onclick="sbClick('${x[0]}')" title="${x[1]}">${svg(x[2])}<em>${x[1]}</em>${kids?svg("fwd","chv2"):""}</button>`}).join("");
+  return SBMAIN.map(x=>{const kids=SIDEKIDS[x[0]];return `<button class="ni ${x[0]===act?"on":""}" onclick="sbClick('${x[0]}')" title="${x[1]}"><span>${x[2]}</span><em>${x[1]}</em>${kids?`<b class="chv">›</b>`:""}</button>`}).join("");
 }
 function sbFind(q){
   q=(q||"").trim().toLowerCase();const el=$("sbl");if(!el)return;
@@ -1396,7 +1408,7 @@ function sbFind(q){
 }
 document.addEventListener("keydown",e=>{if((e.metaKey||e.ctrlKey)&&e.key.toLowerCase()==="k"){const i=$("sbq");if(i){e.preventDefault();document.body.classList.remove("sbc");i.focus()}}});
 function renderSide(){
-  const act=activeTab();D.sbm=sbSec(D.view);
+  const act=activeTab();if(D.sbm===undefined)D.sbm=sbSec(D.view);
   try{
     const lg=document.querySelector(".logo img").src;
     $("dtitle").textContent=MOTTO;$("dstreak").querySelector("b").textContent=streakN();$("dbell").classList.toggle("has",unreadN()>0);document.querySelector("#dlogo img").src=lg;
@@ -1413,7 +1425,7 @@ const BIRD=[["📝","Practise","Sharpen skills topic by topic","practice"],["�
 SIDEKIDS.roomz=[["🎥","All study rooms","rooms"]];
 SIDEKIDS.commz=[["💬","Community feed","community"]];
 SIDEKIDS.updates=[["📰","News","news"],["🆕","New updates","newupd"],["💬","Response","resp"]];
-SIDEKIDS.prog=[["","Syllabus Completion","syllabus"],["","SWOT Analysis","swot"]];
+SIDEKIDS.prog=[["✅","Syllabus Completion","syllabus"],["📊","SWOT Analysis","swot"]];
 function openBird(e){
   if(e)e.stopPropagation();$("pmenu").hidden=true;$("strk").hidden=true;
   const lg=document.querySelector(".logo img").src,lv=PROFILE?levelText():(D.level==="Foundation"?"CA Foundation":"CA Intermediate");
@@ -1434,7 +1446,7 @@ document.body.appendChild($("pmenu"));
 function toggleNav(f){D.navOpen=typeof f==="boolean"?f:!D.navOpen;side.classList.toggle("open",D.navOpen);scrim.classList.toggle("on",D.navOpen)}
 function show(v,x,nopush){
   if(ROOM.joined&&v!=="room"){if(!confirm("Leave the study room?"))return;try{ROOM.api&&ROOM.api.dispose()}catch(e){}ROOM.api=null;ROOM.joined=false}
-  clearInterval(tick);D.view=v;if(x)Object.assign(D,x);$("pmenu").hidden=true;$("strk").hidden=true;
+  clearInterval(tick);D.view=v;D.sbm=sbSec(v);if(x)Object.assign(D,x);$("pmenu").hidden=true;$("strk").hidden=true;
   if(!nopush){try{history.pushState({cg:1,app:1,v:v},"")}catch(e){}}
   if(v!=="run")ls.set("cg-view-"+(USER?USER.id:"preview"),v);
   renderSide();refresh(true);
