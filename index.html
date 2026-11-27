@@ -723,6 +723,42 @@ button.lbb:hover{filter:brightness(.97)}
 
 .rtiles>div{aspect-ratio:16/10}
 @media(min-width:900px){.rmock{max-width:640px}.cmock{max-width:640px}}
+
+/* ---- v5 ---- */
+.rpb2{display:flex;gap:8px;flex-wrap:wrap}
+.rpb2 .askq{flex:1 1 auto}
+.rptb{background:#fff5f4!important;color:#b3302b!important;border:1px dashed #f0b9b4!important}
+#rpq{position:fixed;inset:0;z-index:48;background:rgba(30,20,60,.5);display:flex;align-items:center;justify-content:center;padding:16px}
+#rpq .chips button{flex:none;padding:8px 14px;border-radius:99px;background:#f1ecfb}
+#rpq .chips button.on{background:#5b2ba8;color:#fff}
+.fcw{position:relative}
+.finfo{position:absolute;top:12px;right:12px;z-index:3}
+.finfo>button{width:28px;height:28px;border-radius:50%;padding:0;margin:0;background:#fff;color:#5b2ba8;font-weight:800;font-size:15px;font-family:Georgia,serif;font-style:italic;box-shadow:0 0 0 1.5px #cdbdf2 inset;text-align:center}
+.finfo .tip{position:absolute;right:0;top:36px;width:min(300px,78vw);background:#2a1a55;color:#fff;border-radius:12px;padding:14px;font-size:13px;line-height:1.5;opacity:0;visibility:hidden;transition:.15s;box-shadow:0 12px 30px rgba(30,20,60,.35)}
+.finfo:hover .tip,.finfo.open .tip,.finfo:focus-within .tip{opacity:1;visibility:visible}
+.finfo .tip b{display:block;margin-bottom:6px}
+.finfo .tip ul{margin:8px 0 0;padding-left:18px}
+.fstat{display:flex;gap:10px;flex-wrap:wrap;margin:12px 0}
+.fstat span{background:#f1ecfb;color:#5b2ba8;border-radius:99px;padding:5px 12px;font-size:12.5px;font-weight:700}
+.kwl{display:flex;justify-content:space-between;gap:14px;align-items:flex-start}
+.kwl h3{margin:0 0 4px;font-size:17px}
+.kwl p{margin:0 0 6px;color:var(--text)}
+.kwl small{color:var(--mute)}
+.kwx{width:auto;margin:0;padding:6px 10px;background:none;color:#8a84a6;font-size:16px}
+#kwp{position:fixed;z-index:60;width:min(320px,calc(100vw - 24px));background:#fff;border-radius:14px;padding:14px;box-shadow:0 14px 44px rgba(40,20,90,.34);border:1px solid #e4dcf6}
+#kwp .kt{font-weight:800;color:#2a1a55;margin-bottom:6px;word-break:break-word}
+#kwp .km{font-size:13.5px;color:#4b4470;line-height:1.5;min-height:40px;max-height:150px;overflow:auto;margin-bottom:10px}
+#kwp .kb{display:flex;gap:8px}
+#kwp .kb button{margin:0;padding:9px 12px;font-size:13.5px;text-align:center}
+.kfeat h2{margin:0 0 4px}
+.dsb{position:relative}
+.dsb .inp{padding:14px 16px;font-size:15.5px;margin:0}
+.dsr{margin-top:14px}
+.sch{display:flex;gap:10px;flex-wrap:wrap;margin:12px 0}
+.cact .imp{margin-left:auto;display:inline-flex;align-items:center;gap:5px;color:#8a84a6;font-size:12.5px;font-weight:600;padding:5px 8px}
+.cact button{font-size:15px}
+.cpost h3{margin:2px 0 4px}
+.rlist .nitem small.st{display:inline-block;background:#fff1c2;color:#7a5a00;border-radius:99px;padding:2px 9px;font-weight:700}
 </style>
 </head>
 <body>
@@ -858,6 +894,12 @@ button.lbb:hover{filter:brightness(.97)}
   <div class="irow"><i>🎯</i><div><b>Hit your daily target</b><p>Your target starts at 100 XP. Change it anytime from the streak calendar in the top bar.</p></div></div>
   <div class="irow"><i>🔥</i><div><b>Build your streak</b><p>Each day you reach the target adds one to your streak. Changing the target restarts it from 0, and darker calendar days mean more XP.</p></div></div>
   <button class="go" onclick="closeIntro()">Got it, let’s start</button></div></div>
+ <div id="rpq" hidden><div class="ibox cmpb" role="dialog" aria-modal="true" aria-labelledby="rpqt"><div class="cmph"><h3 id="rpqt">Report this question</h3><button class="nx" onclick="closeReport()" aria-label="Close">✕</button></div>
+  <div class="rpo static"><b id="rpqq"></b></div>
+  <div class="chips wrap" id="rpqr"></div>
+  <textarea id="rpqn" class="inp" maxlength="800" placeholder="Tell us what is wrong (optional)"></textarea>
+  <div class="cmpf"><small id="rpqm"></small><div><button class="ghost" onclick="closeReport()">Cancel</button><button class="go" onclick="sendReport()">Send report</button></div></div></div></div>
+ <div id="kwp" hidden></div>
  <div id="bird" hidden></div>
  <div id="dtop"><div id="dtitle"></div><div class="dright"><button class="dic" id="dbell" onclick="openNotif()" aria-label="Notifications"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8a6 6 0 10-12 0c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.7 21a2 2 0 01-3.4 0"/></svg><i class="dot"></i></button><button class="dstreak" id="dstreak" onclick="openStreak(event)" title="Streak calendar">🔥 <b>0</b></button><button class="dlogo" id="dlogo" onclick="openBird(event)" aria-label="ChartedGyan overview" title="ChartedGyan at a glance"><img alt=""></button></div></div>
  <div id="scrim" onclick="toggleNav(false)"></div>
@@ -1261,7 +1303,7 @@ function nameOf(id){
 }
 
 // ----- navigation -----
-const SIDEKIDS={practice:[["📅","Daily Case Studies","cases"],["📝","Topic Tests","topics"]],concept:[["🃏","Flashcards","flash"],["🔑","Keywords","kw"],["ƒₓ","Formulas","fm"],["💡","Keyword of the Day","kotd"],["🧮","Calci Tricks","calci"]],papers:[["📜","Past Year Papers","pyq"],["📝","MTPs","mtp"],["🎯","RTPs","rtp"]],analysis:[["✅","Syllabus Completion","syllabus"],["📊","SWOT Analysis","swot"]]};
+const SIDEKIDS={practice:[["📅","Daily Case Studies","cases"],["📝","Topic Tests","topics"]],concept:[["ƒₓ","Formulas","fm"],["💡","Keyword of the Day","kotd"],["🧮","Calci Tricks","calci"]],papers:[["📜","Past Year Papers","pyq"],["📝","MTPs","mtp"],["🎯","RTPs","rtp"]],analysis:[["✅","Syllabus Completion","syllabus"],["📊","SWOT Analysis","swot"]]};
 const secOpen=(k,act)=>D.sopen&&D.sopen[k]!==undefined?D.sopen[k]:k===act;
 function sbClick(k){
   if(!SIDEKIDS[k]||document.body.classList.contains("sbc")){show(k);return}
@@ -1283,7 +1325,7 @@ const BIRD=[["📝","Practise","Sharpen skills topic by topic","practice"],["�
 SIDEKIDS.roomz=[["🎥","All study rooms","rooms"]];
 SIDEKIDS.commz=[["💬","Community feed","community"]];
 SIDEKIDS.updates=[["📰","News","news"],["🆕","New updates","newupd"],["💬","Response","resp"]];
-SIDEKIDS.prog=[["✅","Syllabus Completion","syllabus"],["📈","Activity","activity"],["🙋","Doubts","doubts"],["📊","SWOT Analysis","swot"],["📚","Free Resources","res"]];
+SIDEKIDS.prog=[["✅","Syllabus Completion","syllabus"],["📈","Activity","activity"],["📊","SWOT Analysis","swot"]];
 function openBird(e){
   if(e)e.stopPropagation();$("pmenu").hidden=true;$("strk").hidden=true;
   const lg=document.querySelector(".logo img").src,lv=PROFILE?levelText():(D.level==="Foundation"?"CA Foundation":"CA Intermediate");
@@ -1403,6 +1445,7 @@ function vHome(){
   <div class="hxs"><button class="hxc" onclick="openStreak(event)"><span>🔥</span><b>${streakN()}</b><small>day streak</small></button><div class="hxc"><span>⚡</span><b>${xpTotal()}</b><small>Gyan XP</small></div></div></div>
   ${caseCard(c)}
   ${xpWallet()}
+  ${sh("KEY FEATURES")}<div class="grid">${tile("🃏","Flashcards","flash")}${tile("🔑","Keyword List","kw")}${tile("🙋","Doubts","doubts")}${tile("📚","Free Resources","res")}</div>
   ${sh("KEYWORD OF THE DAY")}${vKotd(true)}`;
 }
 const CALCI={
@@ -1549,7 +1592,7 @@ function vQuiz(){
   <div class="card"><h2>${q.q}</h2>
   ${q.o.map((o,k)=>`<button ${done?"disabled":""} class="${done?(k===q.a?"ok":(k===R.picked?"bad":"")):""}" onclick="qa(${k})">${A(k)}. ${o}</button>`).join("")}
   ${done?`<div class="fb ${R.picked===q.a?"":"no"}">${R.picked===q.a?"✅ Correct! ":"Not quite. "}${q.why}</div>`:""}
-  <button class="askq" onclick="askQ(R.i)">💬 Ask the community about this question</button>
+  <div class="rpb2"><button class="askq" onclick="askQ(R.i)">💬 Ask the community</button><button class="askq rptb" onclick="openReport(R.i)">🚩 Report this question</button></div>
   ${done&&q.scene?`<div class="stage" id="stage"></div><button onclick="playScene()" style="text-align:center">↻ Replay animation</button>`:""}
   ${done?`<button class="go" onclick="qn()">${last?"See result":"Next question →"}</button>`:""}</div>`;
 }
@@ -1562,7 +1605,7 @@ function vPaper(){
   <div class="pal">${R.qs.map((_,k)=>`<button class="${R.ans[k]!=null?"dn":""} ${k===R.i?"cur":""}" onclick="pj(${k})">${k+1}</button>`).join("")}</div>
   <h2>${q.q}</h2>${q.o.map((o,k)=>`<button class="${sel===k?"sel":""}" onclick="pa(${k})">${A(k)}. ${o}</button>`).join("")}
   <div class="row2"><button ${R.i===0?"disabled":""} onclick="pj(R.i-1)" style="text-align:center">← Previous</button><button ${R.i===R.qs.length-1?"disabled":""} onclick="pj(R.i+1)" style="text-align:center">Next →</button></div>
-  <button class="askq" onclick="askQ(R.i)">💬 Ask the community about this question</button>
+  <div class="rpb2"><button class="askq" onclick="askQ(R.i)">💬 Ask the community</button><button class="askq rptb" onclick="openReport(R.i)">🚩 Report this question</button></div>
   <button class="go" onclick="finishRun()">Submit paper</button></div>`;
 }
 function pa(k){R.ans[R.i]=k;refresh()}
@@ -1598,56 +1641,197 @@ function playScene(){
 
 // ----- flashcards -----
 const rvKey=()=>"cg-rev-"+D.level;
-const mkFlash=mode=>({mode,idx:mode==="rev"?ls.get(rvKey(),[]).slice():dl().cards.map((_,i)=>i),i:0,flip:false,rem:0,rv:0});
+
+// ----- reports & feedback -----
+const RPKEY="cg-reports",FBKEY="cg-feedback";
+const RREASONS=["Wrong answer","Unclear question","Typo or spelling","Out of syllabus","Other"];
+let RPT=null;
+function openReport(k){
+  if(!canPost()){toast("Log in to report a question");return}
+  const q=R.qs[k];if(!q)return;
+  RPT={q:plain(q.q).slice(0,300),src:R.title,reason:""};
+  $("rpqq").textContent=clip(RPT.q,160);$("rpqn").value="";$("rpqm").textContent="";paintReasons();$("rpq").hidden=false;
+}
+function paintReasons(){$("rpqr").innerHTML=RREASONS.map(r=>`<button class="${RPT.reason===r?"on":""}" onclick="RPT.reason='${r}';paintReasons()">${r}</button>`).join("")}
+function closeReport(){$("rpq").hidden=true}
+function sendReport(){
+  if(!RPT.reason){$("rpqm").textContent="Please pick a reason.";return}
+  const L=ls.get(RPKEY,[]);
+  const o={id:nid(),q:RPT.q,src:RPT.src,reason:RPT.reason,note:$("rpqn").value.trim().slice(0,800),t:Date.now(),status:"Received"};
+  L.unshift(o);ls.set(RPKEY,L);closeReport();toast("Report sent. Thank you!");
+  if(sb&&USER)try{sb.from("reports").insert({user_id:USER.id,kind:"question",question:o.q,source:o.src,reason:o.reason,note:o.note}).then(()=>{},()=>{})}catch(e){}
+}
+function sendFeedback(){
+  const t=($("fbt")||{}).value;if(!t||t.trim().length<5){toast("Write a few words first");return}
+  const L=ls.get(FBKEY,[]);L.unshift({id:nid(),t:t.trim().slice(0,1000),when:Date.now(),status:"Received"});ls.set(FBKEY,L);
+  if(sb&&USER)try{sb.from("reports").insert({user_id:USER.id,kind:"feedback",note:t.trim().slice(0,1000)}).then(()=>{},()=>{})}catch(e){}
+  toast("Feedback sent. Thank you!");refresh();
+}
+function reportsBody(){
+  const R1=ls.get(RPKEY,[]),F1=ls.get(FBKEY,[]);
+  const rr=R1.length?`<div class="card nlist rlist">${R1.map(r=>`<div class="nitem"><span class="ni2">🚩</span><div><b>${esc(r.reason)}</b><p>${esc(clip(r.q,140))}</p>${r.note?`<p><i>${esc(r.note)}</i></p>`:""}<small>${ago(r.t)} · ${esc(r.src||"")} · <small class="st">${esc(r.status)}</small></small></div></div>`).join("")}</div>`:`<div class="card"><p style="margin:0">You haven’t reported anything yet.</p></div>`;
+  const ff=F1.length?`<div class="card nlist rlist">${F1.map(f=>`<div class="nitem"><span class="ni2">💬</span><div><p style="margin:0;color:var(--text)">${esc(f.t)}</p><small>${ago(f.when)} · <small class="st">${esc(f.status)}</small></small></div></div>`).join("")}</div>`:`<div class="card"><p style="margin:0">You haven’t given any feedback yet.</p></div>`;
+  return `${sh("YOUR REPORTS")}${rr}${sh("YOUR FEEDBACK")}${ff}
+  <div class="card"><b>Send feedback</b><textarea id="fbt" class="inp" rows="3" maxlength="1000" style="margin-top:10px" placeholder="What can we improve?"></textarea><button class="go" onclick="sendFeedback()">Send feedback</button></div>`;
+}
+
+// ----- flashcards with spaced revision -----
+const FC_GAPS=[1,3,7,14,26,45];
+const fcKey=()=>"cg-fc-"+D.level+"-"+(USER?USER.id:"preview");
+const fcSt=()=>ls.get(fcKey(),{});
+const dkey=(k,n)=>{const [y,m,d]=k.split("-").map(Number);const t=new Date(y,m-1,d);t.setDate(t.getDate()+n);return lk(t)};
+function fcDue(i,st){const c=st[i];if(!c)return true;return c.mastered?false:c.due<=lk()}
+function mkFlash(mode){
+  const st=fcSt(),all=dl().cards.map((_,i)=>i);
+  const idx=mode==="due"?all.filter(i=>fcDue(i,st)):all;
+  return {mode,idx,i:0,flip:false,rem:0,rv:0,tip:false};
+}
+const FC_INFO=`<b>How flashcards work</b>Tap the card to flip it, then tell us honestly if you remembered.<ul><li><b style="display:inline">I remember:</b> the card comes back on day 1, 3, 7, 14, 26 and 45, counted from the day you first remembered it.</li><li><b style="display:inline">Don’t remember:</b> it comes back every day until you remember it.</li></ul>Open “Due today” each day to see which cards are waiting.`;
 function vFlash(){
-  if(!F)F=mkFlash("learn");
-  const all=dl().cards,rvN=ls.get(rvKey(),[]).length;
-  const tabs=`<div class="chips"><button class="${F.mode==="learn"?"on":""}" onclick="F=mkFlash('learn');refresh()" style="text-align:center">All cards (${all.length})</button><button class="${F.mode==="rev"?"on":""}" onclick="F=mkFlash('rev');refresh()" style="text-align:center">Revision deck (${rvN})</button></div>`;
+  if(!F)F=mkFlash("due");
+  const all=dl().cards,st=fcSt(),dueN=all.filter((_,i)=>fcDue(i,st)).length,mastN=Object.values(st).filter(c=>c.mastered).length;
+  const tabs=`<div class="chips"><button class="${F.mode==="due"?"on":""}" onclick="F=mkFlash('due');refresh()" style="text-align:center">Due today (${dueN})</button><button class="${F.mode==="all"?"on":""}" onclick="F=mkFlash('all');refresh()" style="text-align:center">All cards (${all.length})</button></div>`;
   let body;
-  if(!F.idx.length)body=`<div class="card"><p>${F.mode==="rev"?"Your revision deck is empty. Cards you mark “Revise later” are saved here.":"No cards yet."}</p></div>`;
-  else if(F.i>=F.idx.length)body=`<div class="card"><div class="tag">Done</div><h1>${F.rem} remembered</h1><p>${F.rv} card${F.rv===1?"":"s"} added to your revision deck.</p><button class="go" onclick="F=mkFlash('${F.mode}');refresh()">Go again</button></div>`;
-  else{const c=all[F.idx[F.i]];
+  if(!F.idx.length)body=`<div class="card"><p style="margin:0">${F.mode==="due"?"Nothing is due today. Come back tomorrow, or open All cards to practise more.":"No cards yet."}</p></div>`;
+  else if(F.i>=F.idx.length)body=`<div class="card"><div class="tag">Done</div><h1>${F.rem} remembered</h1><p>${F.rv?F.rv+" card"+(F.rv===1?"":"s")+" will come back tomorrow.":"Great work. Your next revisions are scheduled automatically."}</p><button class="go" onclick="F=mkFlash('${F.mode}');refresh()">Go again</button></div>`;
+  else{const ci=F.idx[F.i],c=all[ci],cs=st[ci];
     body=`<div class="tag">Card ${F.i+1} of ${F.idx.length}</div><div class="bar"><i style="width:${F.i/F.idx.length*100}%"></i></div>
-    <div class="fcard" onclick="F.flip=!F.flip;refresh()">${F.flip?c.b:c.f}</div><p class="note2">${F.flip?"Did you remember it?":"Tap the card to see the answer"}</p>
-    ${F.flip?`<div class="row2"><button class="ok" onclick="mark(true)" style="text-align:center">✅ Remembered</button><button class="bad" onclick="mark(false)" style="text-align:center">🔁 Revise later</button></div>`:""}`;}
-  return `${BK()}<h1 class="dh">Flashcards</h1><p class="lead">Flip each card, then mark if you remembered it. Cards to revise are saved in your revision deck on this device. ${SAMPLE}</p>${tabs}${body}`;
+    <div class="fcw"><div class="finfo ${F.tip?"open":""}"><button onclick="F.tip=!F.tip;refresh()" aria-label="How flashcards work" title="How flashcards work">i</button><div class="tip">${FC_INFO}</div></div>
+    <div class="fcard" onclick="F.flip=!F.flip;refresh()">${F.flip?c.b:c.f}</div></div>
+    <p class="note2">${F.flip?"Did you remember it?":"Tap the card to see the answer"}${cs&&!cs.mastered?` · Revision ${Math.min(cs.step+1,FC_GAPS.length)} of ${FC_GAPS.length}`:""}</p>
+    ${F.flip?`<div class="row2"><button class="ok" onclick="mark(true)" style="text-align:center">✅ I remember</button><button class="bad" onclick="mark(false)" style="text-align:center">🔁 Don’t remember</button></div>`:""}`;}
+  return `${BK()}<h1 class="dh">Flashcards</h1><p class="lead">Smart revision: cards you remember return on day 1, 3, 7, 14, 26 and 45. Cards you forget return daily. ${SAMPLE}</p><div class="fstat"><span>📅 ${dueN} due today</span><span>🏁 ${mastN} completed</span></div>${tabs}${body}`;
 }
 function mark(ok){
-  const cur=F.idx[F.i];let rv=ls.get(rvKey(),[]);
-  if(ok){rv=rv.filter(x=>x!==cur);F.rem++}else{if(!rv.includes(cur))rv.push(cur);F.rv++}
-  ls.set(rvKey(),rv);F.i++;F.flip=false;refresh();
+  const cur=F.idx[F.i],st=fcSt(),today=lk();
+  let c=st[cur];
+  if(ok){
+    if(!c||c.reset){c={start:today,step:0}}
+    else c.step=(c.step||0)+1;
+    if(!c.start)c.start=today;
+    if(c.step>=FC_GAPS.length){c.mastered=true;c.due=null}
+    else{c.due=dkey(c.start,FC_GAPS[c.step]);if(c.due<=today)c.due=dkey(today,1)}
+    delete c.reset;F.rem++;
+  }else{c={start:null,step:0,reset:true,due:dkey(today,1)};F.rv++}
+  st[cur]=c;ls.set(fcKey(),st);F.i++;F.flip=false;F.tip=false;refresh();
 }
 
-// ----- keywords -----
+// ----- my keywords (saved from anywhere on the site) -----
+const kwKey=()=>"cg-mykw-"+D.level+"-"+(USER?USER.id:"preview");
+const myKw=()=>ls.get(kwKey(),[]);
 function vKw(){
-  const K=dl().kw;
-  return `${BK()}<h1 class="dh">Keywords</h1><p class="lead">Important CA keywords with meanings and examples. ${SAMPLE}</p>
-  <button class="go" onclick="startKw()">Start keyword practice</button><div style="height:12px"></div>
-  ${K.map(k=>`<details class="card"><summary><b>${k.w}</b></summary><p style="color:var(--text)">${k.m}</p><p><i>Example:</i> ${k.ex}</p></details>`).join("")}`;
+  const L=myKw(),q=(D.kwq||"").toLowerCase(),sh2=L.filter(k=>!q||(k.w+" "+k.m).toLowerCase().includes(q));
+  return `${BK()}<h1 class="dh">Keyword List</h1><p class="lead">Every keyword you save lands here, ready for quick revision.</p>
+  <div class="card kfeat"><b>How to save a keyword</b><p style="margin:6px 0 0">Select a word or phrase in any question, case study or page. A small box appears with its meaning. Tap <b>Save to my list</b>.</p></div>
+  ${L.length?`<input class="inp" placeholder="Search your keywords" value="${esc(D.kwq||"")}" onchange="D.kwq=this.value;refresh()" aria-label="Search your keywords">
+  <div class="sh">${L.length} SAVED KEYWORD${L.length===1?"":"S"}</div>
+  ${sh2.length?sh2.map(k=>`<div class="card"><div class="kwl"><div><h3>${esc(k.w)}</h3><p>${esc(k.m)}</p><small>${k.src?"From: "+esc(k.src)+" · ":""}${ago(k.t)}</small></div><button class="kwx pvkeep" onclick="delKw('${k.id}')" aria-label="Remove keyword" title="Remove">✕</button></div></div>`).join(""):`<div class="card"><p style="margin:0">No keyword matches your search.</p></div>`}
+  ${L.length>=3?`<button class="go" onclick="startKw()">Quick revision quiz (${L.length})</button>`:""}`
+  :emptyBox("🔑","No saved keywords yet","Select any word in a question or case study and save it here. Your list will grow as you study.")}`;
 }
+function delKw(id){ls.set(kwKey(),myKw().filter(k=>k.id!==id));refresh()}
 function startKw(){
-  const K=dl().kw;
-  const qs=K.map((k,i)=>{const oth=K.filter((_,j)=>j!==i),o=[oth[i%oth.length].m,oth[(i+1)%oth.length].m];o.splice(i%3,0,k.m);return{q:`What does “${k.w}” mean?`,o,a:i%3,why:`${k.m} Example: ${k.ex}`}});
-  startRun({id:"kw:"+D.level,title:"Keyword practice",qs,back:"kw",backLabel:"Keywords"});
+  const K=myKw();if(K.length<3)return;
+  const qs=K.map((k,i)=>{const oth=K.filter((_,j)=>j!==i),o=[oth[i%oth.length].m,oth[(i+1)%oth.length].m];o.splice(i%3,0,k.m);return{q:`What does “${esc(k.w)}” mean?`,o,a:i%3,why:k.m}});
+  startRun({id:"kw:"+D.level,title:"Keyword revision",qs,back:"kw",backLabel:"Keyword List"});
 }
+// selection popover
+let KSEL=null;
+function expandSel(sel){
+  const r=sel.getRangeAt(0).cloneRange(),W=/[\s.,;:!?()\[\]{}"“”‘’]/;
+  const a=r.startContainer,b=r.endContainer;
+  if(a.nodeType===3){let o=r.startOffset,t=a.data;while(o>0&&!W.test(t[o-1]))o--;r.setStart(a,o)}
+  if(b.nodeType===3){let o=r.endOffset,t=b.data;while(o<t.length&&!W.test(t[o]))o++;r.setEnd(b,o)}
+  return r;
+}
+function closeKwp(){const e=$("kwp");if(e)e.hidden=true;KSEL=null}
+function onSel(e){
+  if(e&&e.target&&e.target.closest&&e.target.closest("#kwp"))return;
+  setTimeout(()=>{
+    const sel=window.getSelection();
+    if(!sel||sel.isCollapsed||!sel.rangeCount){return}
+    const n=sel.anchorNode&&(sel.anchorNode.nodeType===3?sel.anchorNode.parentElement:sel.anchorNode);
+    if(!n||!n.closest||!n.closest("#dmain")||n.closest("input,textarea,button,select,.pvkeep")||!canPost())return;
+    const r=expandSel(sel),t=r.toString().replace(/\s+/g," ").trim();
+    if(t.length<2||t.length>60||t.split(" ").length>6)return;
+    const rc=r.getBoundingClientRect();
+    KSEL={w:t,m:"",src:(R&&D.view==="run"?R.title:"")||PNAME[PARENT[D.view]||"home"]||""};
+    const el=$("kwp");el.hidden=false;
+    el.innerHTML=`<div class="kt">${esc(t)}</div><div class="km" id="kwm">Looking up the meaning…</div><div class="kb"><button class="go" id="kws" onclick="saveKwSel()" disabled>Save to my list</button><button class="ghost" onclick="closeKwp()">Close</button></div>`;
+    const w=Math.min(320,innerWidth-24);let x=Math.max(12,Math.min(innerWidth-w-12,rc.left+rc.width/2-w/2)),y=rc.bottom+10;
+    if(y+210>innerHeight)y=Math.max(12,rc.top-210);
+    el.style.left=x+"px";el.style.top=y+"px";
+    lookup(t).then(m=>{if(!KSEL||KSEL.w!==t)return;KSEL.m=m;$("kwm").textContent=m||"Meaning not found. You can still save it.";$("kws").disabled=false});
+  },10);
+}
+async function lookup(t){
+  const w=t.trim();
+  const own=[...DATA.Foundation.kw,...DATA.Inter.kw].find(k=>k.w.toLowerCase()===w.toLowerCase());
+  if(own)return own.m;
+  try{
+    if(!/\s/.test(w)){
+      const r=await fetch("https://api.dictionaryapi.dev/api/v2/entries/en/"+encodeURIComponent(w.toLowerCase()));
+      if(r.ok){const j=await r.json(),d=j[0]&&j[0].meanings&&j[0].meanings[0]&&j[0].meanings[0].definitions&&j[0].meanings[0].definitions[0];if(d&&d.definition)return d.definition}
+    }
+  }catch(e){}
+  try{
+    const r=await fetch("https://en.wikipedia.org/api/rest_v1/page/summary/"+encodeURIComponent(w.replace(/\s+/g,"_")));
+    if(r.ok){const j=await r.json();if(j.extract)return clip(j.extract,260)}
+  }catch(e){}
+  return "";
+}
+function saveKwSel(){
+  if(!KSEL)return;const L=myKw();
+  if(L.some(k=>k.w.toLowerCase()===KSEL.w.toLowerCase())){toast("Already in your list");closeKwp();return}
+  L.unshift({id:nid(),w:KSEL.w,m:KSEL.m||"No meaning added yet.",src:KSEL.src,t:Date.now()});ls.set(kwKey(),L);
+  toast("Saved to Keyword List ✓");closeKwp();try{getSelection().removeAllRanges()}catch(e){}
+}
+document.addEventListener("mouseup",onSel);document.addEventListener("touchend",onSel);
+document.addEventListener("mousedown",e=>{if(!e.target.closest("#kwp"))closeKwp()});
 
 // ----- formulas -----
+const FORM={
+"Accountancy":[
+ ["Accounting equation","Assets = Liabilities + Capital"],["Straight-line depreciation","(Cost − Scrap value) ÷ Useful life"],["Written-down value depreciation","Depreciation = Opening book value × Rate %"],["Gross profit","Net sales − Cost of goods sold"],["Net profit","Gross profit + Other incomes − Indirect expenses"],["Closing capital","Opening capital + Additions + Profit − Drawings − Losses"],["Interest on capital","Capital × Rate × Time ÷ 100"],["Interest on drawings (equal amounts, monthly start)","Total drawings × Rate ÷ 100 × 6.5/12"],["Goodwill: average profit method","Average profit × Number of years’ purchase"],["Goodwill: super profit method","Super profit × Years’ purchase, where Super profit = Average profit − Normal profit"],["Capitalisation of average profit","Average profit × 100/Normal rate of return − Net assets"],["Sacrificing ratio","Old share − New share"],["Gaining ratio","New share − Old share"],["New profit ratio","Old ratio − Sacrificed share (or + gained share)"],["Bank reconciliation (cash book start)","Balance as per cash book ± items not yet in the passbook = Balance as per passbook"]],
+"Quantitative Aptitude":[
+ ["Percentage change","(New − Old) ÷ Old × 100"],["Simple interest","SI = P × R × T ÷ 100"],["Compound amount","A = P × (1 + r)ⁿ"],["Effective rate of interest","E = (1 + i/m)ᵐ − 1"],["Present value of an amount","P = A ÷ (1 + r)ⁿ"],["Future value of an annuity","FV = C × [(1 + r)ⁿ − 1] ÷ r"],["Present value of an annuity","PV = C × [1 − (1 + r)⁻ⁿ] ÷ r"],["Perpetuity (present value)","PV = C ÷ r"],["Nth term of an AP","aₙ = a + (n − 1)d"],["Sum of n terms of an AP","Sₙ = n/2 × [2a + (n − 1)d]"],["Nth term of a GP","aₙ = a·rⁿ⁻¹"],["Sum of n terms of a GP","Sₙ = a(rⁿ − 1) ÷ (r − 1), for r > 1"],["Permutations","ⁿPᵣ = n! ÷ (n − r)!"],["Combinations","ⁿCᵣ = n! ÷ [r!(n − r)!]"],["Probability","P(A) = Favourable cases ÷ Total cases"],["Addition theorem","P(A ∪ B) = P(A) + P(B) − P(A ∩ B)"],["Arithmetic mean","x̄ = Σx ÷ n"],["Variance","σ² = Σ(x − x̄)² ÷ n"],["Standard deviation","σ = √Variance"],["Coefficient of variation","CV = (σ ÷ x̄) × 100"],["Karl Pearson’s correlation","r = Cov(x, y) ÷ (σx · σy)"],["Spearman’s rank correlation","R = 1 − 6Σd² ÷ [n(n² − 1)]"],["Laspeyres price index","(Σp₁q₀ ÷ Σp₀q₀) × 100"],["Paasche price index","(Σp₁q₁ ÷ Σp₀q₁) × 100"],["Fisher’s ideal index","√(Laspeyres × Paasche)"]],
+"Business Economics":[
+ ["Price elasticity of demand","Ed = % change in quantity demanded ÷ % change in price"],["Total revenue","TR = Price × Quantity"],["Average revenue","AR = TR ÷ Q"],["Marginal revenue","MR = ΔTR ÷ ΔQ"],["Total cost","TC = TFC + TVC"],["Average cost","AC = TC ÷ Q"],["Marginal cost","MC = ΔTC ÷ ΔQ"],["Profit","Profit = TR − TC"],["Income elasticity of demand","Ey = % change in quantity ÷ % change in income"],["Cross elasticity of demand","Exy = % change in demand for X ÷ % change in price of Y"],["Multiplier","k = 1 ÷ (1 − MPC) = 1 ÷ MPS"],["GDP (expenditure method)","GDP = C + I + G + (X − M)"]],
+"Cost & Management Accounting":[
+ ["Economic order quantity","EOQ = √(2 × A × O ÷ C)"],["Re-order level","Maximum consumption × Maximum re-order period"],["Minimum stock level","ROL − (Normal consumption × Normal re-order period)"],["Maximum stock level","ROL + ROQ − (Minimum consumption × Minimum re-order period)"],["Average stock level","(Minimum + Maximum) ÷ 2"],["Material price variance","(SP − AP) × AQ"],["Material usage variance","(SQ − AQ) × SP"],["Labour rate variance","(SR − AR) × Actual hours"],["Labour efficiency variance","(SH − AH) × SR"],["Overhead absorption rate","Budgeted overheads ÷ Budgeted base (hours/units)"],["Contribution","Sales − Variable cost"],["P/V ratio","Contribution ÷ Sales × 100"],["Break-even point (units)","Fixed cost ÷ Contribution per unit"],["Break-even point (₹)","Fixed cost ÷ P/V ratio"],["Margin of safety","Actual sales − Break-even sales"],["Equivalent units","Units completed × % completion"],["Activity cost driver rate","Cost pool ÷ Total cost-driver units"]],
+"Financial Management & Strategic Management":[
+ ["Current ratio","Current assets ÷ Current liabilities"],["Quick ratio","(Current assets − Inventory) ÷ Current liabilities"],["Debt-equity ratio","Debt ÷ Equity"],["Return on equity","Profit after tax ÷ Shareholders’ equity × 100"],["Earnings per share","(PAT − Preference dividend) ÷ Number of equity shares"],["Cost of equity (CAPM)","Ke = Rf + β × (Rm − Rf)"],["Cost of equity (dividend growth)","Ke = D₁ ÷ P₀ + g"],["Cost of debt (after tax)","Kd = I × (1 − t) ÷ Net proceeds"],["WACC","(E/V) × Ke + (D/V) × Kd × (1 − t)"],["Operating leverage","DOL = Contribution ÷ EBIT"],["Financial leverage","DFL = EBIT ÷ EBT"],["Combined leverage","DCL = DOL × DFL"],["Net present value","NPV = Σ[CFt ÷ (1 + r)ᵗ] − Initial investment"],["Profitability index","PI = PV of inflows ÷ PV of outflows"],["Payback period","Initial investment ÷ Annual cash inflow"],["Accounting rate of return","Average profit ÷ Average investment × 100"],["Operating cycle","RM days + WIP days + FG days + Debtor days"],["Cash conversion cycle","Operating cycle − Creditor days"]],
+"Advanced Accounting":[
+ ["Inventory valuation (AS 2)","Lower of cost and net realisable value"],["Net realisable value","Estimated selling price − Costs of completion − Selling costs"],["Capitalisation rate (AS 16)","Weighted average of borrowing costs on general borrowings"],["Earnings per share (AS 20)","(Net profit after tax − Preference dividend) ÷ Weighted average equity shares"],["Goodwill/capital reserve on consolidation","Cost of investment − Parent’s share in equity of subsidiary at acquisition"],["Minority interest","Minority % × Net assets of subsidiary"],["Mean of shares (weighted)","Σ(Shares × Months outstanding) ÷ 12"]],
+"Taxation":[
+ ["HRA exemption (least of)","1) Actual HRA received 2) Rent paid − 10% of salary 3) 50% of salary (metro) or 40% (non-metro)"],["Presumptive income, section 44AD","8% of turnover (6% for digital receipts)"],["Presumptive income, section 44ADA","50% of gross receipts"],["Depreciation (WDV)","Opening WDV × Rate %"],["Gross total income","Sum of the five heads of income"],["Total income","Gross total income − Chapter VI-A deductions"],["GST payable","Output tax − Input tax credit"],["Tax invoice value","Taxable value + CGST + SGST (or IGST)"]],
+"Auditing & Ethics":[["Audit risk","Audit risk = Inherent risk × Control risk × Detection risk"]],
+"Business Laws":[],"Corporate & Other Laws":[]};
 function vFm(){
-  return `${BK()}<h1 class="dh">Formulas</h1><p class="lead">Subject-wise formulas for quick revision. ${SAMPLE}</p>`
-  +dl().fm.map(g=>`<div class="sh">${g.s.toUpperCase()}</div>`+g.items.map(it=>`<div class="card"><b>${it.n}</b><div class="formula">${it.f}</div></div>`).join("")).join("");
+  const S=subs(),i=Math.min(D.fsub||0,S.length-1),n=S[i],q=(D.fq||"").toLowerCase();
+  const L=(FORM[n]||[]).filter(x=>!q||(x[0]+" "+x[1]).toLowerCase().includes(q));
+  return `${BK()}<h1 class="dh">Formulas</h1><p class="lead">Subject-wise formulas for quick revision. ${SAMPLE} Compiled from standard ICAI-level textbook formulas, so cross-check with your Study Material.</p>
+  <div class="chips wrap">${S.map((s,k)=>`<button class="${k===i?"on":""}" onclick="D.fsub=${k};refresh()">${s}</button>`).join("")}</div>
+  <input class="inp" placeholder="Search formulas" value="${esc(D.fq||"")}" onchange="D.fq=this.value;refresh()" aria-label="Search formulas">
+  ${L.length?L.map(it=>`<div class="card"><b>${it[0]}</b><div class="formula">${it[1]}</div></div>`).join(""):`<div class="card"><p style="margin:0">${(FORM[n]||[]).length?"No formula matches your search.":"This subject is mostly theory and has no standard formulas."}</p></div>`}`;
 }
 
-// ----- doubts -----
+// ----- doubts: search, then ask -----
+function myDoubtPosts(){return cdb().posts.filter(p=>p.uid&&p.uid===meId()&&p.flair==="Doubt")}
 function vDoubts(){
-  const L=ls.get("cg-doubts",[]);
-  return `${BK()}<h1 class="dh">Doubts</h1><p class="lead">Ask what you are stuck on. In this version, doubts are saved on this device. Mentor replies will come later.</p>
-  <div class="card"><select id="dsub" class="inp">${subs().map(s=>`<option>${s}</option>`).join("")}</select><textarea id="dtxt" class="inp" rows="4" placeholder="Type your doubt here…"></textarea><button class="go" onclick="addDoubt()">Submit doubt</button></div>
-  ${L.length?sh("YOUR DOUBTS")+L.map(d=>`<div class="card"><div class="tag">${esc(d.s)} · ${esc(d.d)}</div><p style="color:var(--text)">${esc(d.t)}</p><span class="badge">Pending</span></div>`).join(""):""}`;
+  const q=(D.dq||"").trim().toLowerCase(),d=cdb();
+  const hits=q.length<3?[]:d.posts.filter(p=>p.level===D.level&&p.flair==="Doubt"&&(p.title+" "+(p.body||"")).toLowerCase().split(/\s+/).length&&q.split(/\s+/).filter(w=>w.length>2).some(w=>(p.title+" "+(p.body||"")).toLowerCase().includes(w))).slice(0,6);
+  const mine=myDoubtPosts();
+  return `${BK()}<h1 class="dh">Doubts</h1><p class="lead">Type anything you are stuck on. We search past doubts first, and you can ask a new one if nothing helps.</p>
+  <div class="dsb"><input id="dq" class="inp" placeholder="Search or ask a doubt, e.g. why is Capital credited?" value="${esc(D.dq||"")}" oninput="D.dq=this.value;clearTimeout(window._dqt);window._dqt=setTimeout(()=>{refresh();const e=$('dq');if(e){e.focus();e.setSelectionRange(e.value.length,e.value.length)}},350)" onkeydown="if(event.key==='Enter')askDoubt()"></div>
+  ${q.length>=3?`<div class="dsr">${hits.length?`<div class="sh" style="margin-top:20px">SIMILAR DOUBTS</div>`+hits.map(p=>postCard(p,d,false)).join(""):`<div class="card"><p style="margin:0">No similar doubt found yet.</p></div>`}<button class="go" onclick="askDoubt()">Ask this as a new doubt</button></div>`:""}
+  ${mine.length?`<div class="sh">YOUR DOUBTS</div>`+mine.map(p=>`<div class="card rowb" style="cursor:pointer" onclick="openThread('${p.id}')"><div><b>${esc(p.title)}</b><div style="color:var(--mute);font-size:13px;margin-top:4px">${(p.comments||[]).length} answer${(p.comments||[]).length===1?"":"s"} · ${ago(p.t)}</div></div><span>›</span></div>`).join(""):""}`;
 }
-function addDoubt(){
-  const t=$("dtxt").value.trim();if(!t)return;
-  const L=ls.get("cg-doubts",[]);L.unshift({s:$("dsub").value,t,d:todayLabel()});ls.set("cg-doubts",L);refresh();
+function askDoubt(){
+  const t=($("dq")||{}).value||D.dq||"";if(t.trim().length<8){toast("Type your doubt in a few words");return}
+  openComposer({flair:"Doubt",title:t.trim().slice(0,140),body:""});
 }
+function addDoubt(){askDoubt()}
 
 // ----- activity & SWOT (from your saved results) -----
 function pct(r){return r.total?Math.round(r.score/r.total*100):0}
@@ -1726,11 +1910,8 @@ function vResp(){
   +(L.length?`<div class="card nlist">${L.slice(0,10).map(d=>`<div class="nitem"><span class="ni2">🙋</span><div><b>${esc(d.s||"Doubt")}</b><p>${esc(d.t||"")}</p><small><em class="wait">Awaiting reply</em></small></div></div>`).join("")}</div>`:emptyBox("💬","No responses yet","Ask a question in Doubts and the reply will appear here.")+`<button class="go" style="margin-top:10px" onclick="show('doubts')">Ask a doubt</button>`);
 }
 function vNotif(){
-  const t=D.ntab||"updates",H=D.hist||[],wk=Date.now()-7*864e5;
-  let xp=0,met=0;for(let i=0;i<7;i++){const d=new Date();d.setDate(d.getDate()-i);const k=lk(d);xp+=xpOn(k);if(metOn(k))met++}
-  const hw=H.filter(r=>new Date(r.created_at).getTime()>=wk),avg=hw.length?Math.round(hw.reduce((a,r)=>a+pct(r),0)/hw.length):null;
-  const body=t==="updates"?(`<div class="card nlist">${updList(true)}</div>`)
-   :(`<div class="card"><h2>Your last 7 days</h2><div class="stats"><div><b>${xp}</b>XP earned</div><div><b>${met}</b>target days</div><div><b>${hw.length}</b>attempts</div><div><b>${avg===null?"–":avg+"%"}</b>avg score</div></div><p style="margin-top:12px;color:var(--mute)">${xp||hw.length?"Keep the streak going. Consistency beats intensity.":"Your first report fills in as soon as you practise."}</p></div>`);
+  const t=D.ntab||"updates";
+  const body=t==="updates"?(`<div class="card nlist">${updList(true)}</div>`):reportsBody();
   return `<div class="nhead"><h1 class="dh" style="margin:0">Notifications</h1><div class="nact">${t==="updates"&&unreadN()?`<button class="bl pvkeep" onclick="markRead()">Mark all as read</button>`:""}<button class="nx pvkeep" onclick="closeNotif()" aria-label="Close notifications" title="Close">✕</button></div></div>
   <div class="ntabs"><button class="pvkeep ${t==="updates"?"on":""}" onclick="setNtab('updates')">Updates${unreadN()?` <i>${unreadN()}</i>`:""}</button><button class="pvkeep ${t==="reports"?"on":""}" onclick="setNtab('reports')">Reports</button></div>${body}`;
 }
@@ -1787,10 +1968,18 @@ const flairChip=f=>`<span class="flr flr-${f}">${esc(f)}</span>`;
 function postCard(p,d,full){
   const sv=savedMap()[p.id],orig=p.repostOf?findP(d,p.repostOf):null,nc=(p.comments||[]).length,nr=d.posts.filter(x=>x.repostOf===p.id).length+(p.reposts||0);
   const mine=p.uid&&p.uid===meId();
-  const head=`<div class="cph">${flairChip(p.flair)}<span>@${esc(p.author)}${p.level?` · ${esc(p.level==="Inter"?"CA Inter":"CA Foundation")}`:""} · ${ago(p.t)}</span>${p.sample?SAMPLE:""}</div>`;
+  const head=`<div class="cph">${flairChip(p.flair)}<span>@${esc(p.author)} · ${ago(p.t)}</span>${p.sample?SAMPLE:""}</div>`;
   const rp=p.repostOf?`<div class="rpb">🔁 reposted${orig?`:`:""}${orig?`<div class="rpo" onclick="event.stopPropagation();openThread('${orig.id}')">${flairChip(orig.flair)} <b>${esc(orig.title)}</b><small>@${esc(orig.author)}</small></div>`:" (original removed)"}</div>`:"";
-  return `<article class="cpost ${full?"full":""}" ${full?"":`onclick="openThread('${p.id}')"`}>${voteBox(p,"p",p.id)}<div class="cmain">${head}<h3>${esc(p.title)}</h3>${p.body?`<p class="cbd">${esc(full?p.body:clip(p.body,240))}</p>`:""}${qBlock(p.q,full)}${rp}
-  <div class="cact"><button onclick="event.stopPropagation();openThread('${p.id}')">💬 ${nc} ${nc===1?"answer":"answers"}</button><button onclick="event.stopPropagation();openRepost('${p.id}')">🔁 Repost${nr?` · ${nr}`:""}</button><button onclick="event.stopPropagation();sharePost('${p.id}')">↗ Share</button><button class="${sv?"on":""}" onclick="event.stopPropagation();toggleSave('${p.id}')">${sv?"🔖 Saved":"🔖 Save"}</button>${mine?`<button onclick="event.stopPropagation();delPost('${p.id}')">🗑 Delete</button>`:""}</div></div></article>`;
+  return `<article class="cpost ${full?"full":""}" ${full?"":`onclick="openThread('${p.id}')"`}>${voteBox(p,"p",p.id)}<div class="cmain">${head}<h3>${esc(p.title)}</h3>${full&&p.body?`<p class="cbd">${esc(p.body)}</p>`:""}${full?qBlock(p.q,true):""}${rp}
+  <div class="cact"><button onclick="event.stopPropagation();openThread('${p.id}')" title="Answers" aria-label="Answers">💬 ${nc}</button><button onclick="event.stopPropagation();openRepost('${p.id}')" title="Repost" aria-label="Repost">🔁${nr?" "+nr:""}</button><button onclick="event.stopPropagation();sharePost('${p.id}')" title="Share" aria-label="Share">↗</button><button class="${sv?"on":""}" onclick="event.stopPropagation();toggleSave('${p.id}')" title="${sv?"Saved":"Save"}" aria-label="Save">${sv?"🔖":"📑"}</button>${mine?`<button onclick="event.stopPropagation();delPost('${p.id}')" title="Delete" aria-label="Delete">🗑</button>`:""}<span class="imp" title="Impressions" aria-label="Impressions">👁 ${fmtN(p.imp||0)}</span></div></div></article>`;
+}
+const fmtN=n=>n>=1000?(n/1000).toFixed(n>=10000?0:1).replace(/\.0$/,"")+"k":String(n);
+const IMPSEEN=new Set();
+function countImpressions(P,d){
+  let ch=false;
+  P.forEach(p=>{if(p.imp===undefined){p.imp=30+(p.id.split("").reduce((a,c)=>a+c.charCodeAt(0),0)%170);ch=true}
+    if(!IMPSEEN.has(p.id)){IMPSEEN.add(p.id);p.imp++;ch=true}});
+  if(ch)csave(d);
 }
 function vCommunity(){
   const d=cdb(),lv=D.level,q=(D.cq||"").toLowerCase(),sort=D.csort||"hot",fl=D.cflair||"All",sv=savedMap();
@@ -1798,6 +1987,7 @@ function vCommunity(){
   if(fl==="Saved")P=P.filter(p=>sv[p.id]);else if(fl!=="All")P=P.filter(p=>p.flair===fl);
   if(q)P=P.filter(p=>(p.title+" "+(p.body||"")).toLowerCase().includes(q));
   P.sort(sort==="new"?(a,b)=>b.t-a.t:sort==="top"?(a,b)=>pscore(b)-pscore(a):(a,b)=>hot(b)-hot(a));
+  countImpressions(P,d);
   return `<div class="chead"><div><h1 class="dh" style="margin:0">Community</h1><p class="lead" style="margin:2px 0 0">Ask, answer and learn with other CA students.</p></div><button class="go pvkeep" onclick="openComposer({})">✍ Create post</button></div>
   <div class="cbar"><input class="cs" placeholder="Search posts" value="${esc(D.cq||"")}" onchange="D.cq=this.value;refresh()" aria-label="Search posts"><div class="ntabs sm">${[["hot","🔥 Hot"],["new","🆕 New"],["top","⭐ Top"]].map(x=>`<button class="pvkeep ${sort===x[0]?"on":""}" onclick="D.csort='${x[0]}';refresh()">${x[1]}</button>`).join("")}</div></div>
   <div class="chips wrap cfl2">${["All",...FLAIRS,"Saved"].map(f=>`<button class="pvkeep ${fl===f?"on":""}" onclick="D.cflair='${f}';refresh()">${f}</button>`).join("")}<label class="clv"><input type="checkbox" ${D.clvall?"checked":""} onchange="D.clvall=this.checked;refresh()"> All levels</label></div>
