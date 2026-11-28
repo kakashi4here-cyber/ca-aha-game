@@ -940,6 +940,18 @@ button.hxst:hover{background:rgba(255,255,255,.12)}
 .hli button .ico{width:21px;height:21px}
 body.indash #dmain.wide{padding-left:max(32px,calc((100% - 1180px)/2));padding-right:max(32px,calc((100% - 1180px)/2))}
 .kf{margin-bottom:38px}.d64{margin-bottom:6px}.hlp{margin-top:48px!important}
+
+.kfi span{height:56px;display:flex;align-items:center;justify-content:center}.kfi span svg{width:56px;height:56px;filter:drop-shadow(0 4px 6px rgba(60,30,120,.18))}
+.wpt{background:none!important;width:76px!important;height:76px!important}.wpt svg{width:76px;height:76px;filter:drop-shadow(0 5px 8px rgba(120,70,0,.25))}
+.hlt{font-weight:700;color:#2a1a55;font-size:14px;margin-right:6px;align-self:center}
+.hli{align-items:center}
+.contact{padding:64px 20px;background:linear-gradient(180deg,#f4effc,#fff);text-align:center}
+.contact .lab{font-size:13px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#5b2ba8}
+.contact h2{font-size:30px;margin:8px 0 8px;color:#241a45}.contact p{color:#4b4470;margin:0 0 24px}
+.cts{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+.cts button{width:auto;margin:0;display:flex;align-items:center;gap:10px;background:#fff;border:1px solid #e1d9f2;border-radius:14px;padding:14px 24px;box-shadow:0 4px 14px rgba(60,30,120,.08);transition:transform .15s}
+.cts button:hover{transform:translateY(-2px)}
+.cts .ico{width:24px;height:24px}.cts b{color:#2a1a55;font-size:15px}
 </style>
 </head>
 <body>
@@ -1007,13 +1019,10 @@ body.indash #dmain.wide{padding-left:max(32px,calc((100% - 1180px)/2));padding-r
    <div class="xpcard"><div class="xph"><div><div class="xpk">YOUR LEARNING WALLET</div><div class="xpnum"><b data-to="2450">0</b> <span>XP</span></div><div class="xps">Keep learning. Keep earning.</div></div><div class="xptrophy">🏆</div></div>
    <div class="xpt">How students earn XP</div><div class="xprow"><span>Complete Daily Case Study</span><b>+20</b></div><div class="xprow"><span>Complete a topic test</span><b>+10</b></div><div class="xprow"><span>Score 80%+ in a test</span><b>+15</b></div><div class="xprow"><span>Complete a PYQ paper</span><b>+50</b></div><div class="xprow"><span>Complete a weekly target</span><b>+100</b></div><div class="xprow"><span>Maintain a 7-day streak</span><b>+75</b></div><p class="xpnote">Illustrative XP values, not final rules.</p></div></div>
   <button class="go" style="width:auto" onclick="showAuth()">Start earning XP</button></div></section>
-   <section class="fx f1"><div class="in col"><div class="tx rv c"><div class="lab">Made for every stage</div><h2>From day one to the last <span class="hl">1.5 days</span></h2>
-   <p>ChartedGyan does not replace your classes. It makes what you learn stick.</p></div>
-   <div class="stg rv"><div><span>🌱</span><b>Just starting</b><p>Build the habit with a case study and a few questions every day.</p></div><div><span>📈</span><b>Mid-preparation</b><p>Finish chapters, test them and track your syllabus.</p></div><div><span>⏳</span><b>Last 1.5 days</b><p>Revise concepts, formulas and past papers in one go.</p></div></div></div></section>
-<section class="fx f2" id="hl"><div class="in"><div class="tx rv"><div class="lab">Practice</div><h2>Make every chapter <span class="hl">pakka</span></h2>
+   <section class="fx f2" id="hl"><div class="in"><div class="tx rv"><div class="lab">Practice</div><h2>Make every chapter <span class="hl">pakka</span></h2>
    <p>Chapter-wise tests for every subject of CA Foundation and Intermediate, with an instant explanation after each question. Add a Daily Case Study to turn theory into real situations.</p>
    <ul class="ticks"><li>Chapter tests, mocks and subject tests</li><li>One fresh case study every day</li><li>Animated answers for hard ideas</li></ul>
-   <button class="go" style="width:auto" onclick="showAuth()">Start practising</button></div>
+   <button class="go" style="width:auto" onclick="showPreview()">Take a quick look</button></div>
    <div class="vz rv"><div class="vcard"><div class="vtabs"><span class="on">Accountancy</span><span>Business Laws</span><span>Quant</span></div>
     <div class="vq">Which account is credited when the owner puts cash into the business?</div>
     <div class="vo">A. Cash</div><div class="vo ok">B. Capital ✓</div><div class="vo">C. Sales</div>
@@ -1022,14 +1031,14 @@ body.indash #dmain.wide{padding-left:max(32px,calc((100% - 1180px)/2));padding-r
 <section class="fx f3"><div class="in rev"><div class="tx rv"><div class="lab">Concept</div><h2>Revise a subject in <span class="hl">one go</span></h2>
    <p>Flashcards that come back on exactly the right day, keywords you save with one tap while studying, and formulas and calculator tricks in one place.</p>
    <ul class="ticks"><li>Spaced flashcards on day 1, 3, 7, 14, 26 and 45</li><li>Select any word in a question and save it to your keyword list</li><li>Subject-wise formulas, Casio calculator tricks and ABC analysis</li></ul>
-   <button class="go" style="width:auto" onclick="showAuth()">Try the concept section</button></div>
+   <button class="go" style="width:auto" onclick="showPreview()">Take a quick look</button></div>
    <div class="vz rv"><div class="vcard"><div class="vfc"><i>i</i><div class="fa">Accounting equation</div><div class="fb3">Assets = Liabilities + Capital</div></div>
     <div class="vsch"><span>Day 1</span><span>Day 3</span><span>Day 7</span><span>Day 14</span><span>Day 26</span><span>Day 45</span></div></div>
     <div class="vcard vsm"><div class="vsel">The firm’s <mark>core competence</mark> gave it an edge.</div><div class="vpop"><b>core competence</b><small>A unique strength that gives a firm an edge over rivals.</small><button class="go">Save to my list</button></div></div></div></div></section>
 <section class="fx f4"><div class="in"><div class="tx rv"><div class="lab">PYQs · MTPs · RTPs</div><h2>Papers, the <span class="hl">ICAI</span> way</h2>
    <p>Attempt papers in exam mode, see which chapters the examiners repeat, and open the official ICAI papers and suggested answers for every attempt.</p>
    <ul class="ticks"><li>Attempt papers with a timer</li><li>Chapter-wise weightage across attempts</li><li>Official ICAI PDFs, session by session</li></ul>
-   <button class="go" style="width:auto" onclick="showPreview();show('pweight')">See a preview</button></div>
+   <button class="go" style="width:auto" onclick="showPreview()">Take a quick look</button></div>
    <div class="vz rv"><div class="vcard"><div class="vtabs"><span class="on">PYQs</span><span>MTPs</span><span>RTPs</span></div>
     <div class="vwt"><div class="wr wh"><span>Chapter</span><span>May ’25</span><span>Sep ’25</span><span>Total</span></div>
      <div class="wr"><span>Material Cost</span><span>3</span><span>4</span><span class="wb"><i style="width:90%"></i><b>7</b></span></div>
@@ -1039,7 +1048,7 @@ body.indash #dmain.wide{padding-left:max(32px,calc((100% - 1180px)/2));padding-r
 <section class="fx f5"><div class="in rev"><div class="tx rv"><div class="lab">Analysis</div><h2>Know exactly where you <span class="hl">stand</span></h2>
    <p>Tick off chapters and units from the ICAI Study Material as you finish them, and let the SWOT view show your strong and weak areas.</p>
    <ul class="ticks"><li>Syllabus tracker with chapters and units</li><li>Subject-wise progress at a glance</li><li>SWOT analysis from your own results</li></ul>
-   <button class="go" style="width:auto" onclick="showAuth()">Track my syllabus</button></div>
+   <button class="go" style="width:auto" onclick="showPreview()">Take a quick look</button></div>
    <div class="vz rv"><div class="vcard"><div class="vpg"><div><span>Advanced Accounting</span><b>72%</b></div><i><u style="width:72%"></u></i></div>
     <div class="vpg"><div><span>Corporate &amp; Other Laws</span><b>45%</b></div><i><u style="width:45%"></u></i></div>
     <div class="vpg"><div><span>Taxation</span><b>18%</b></div><i><u style="width:18%"></u></i></div>
@@ -1047,14 +1056,9 @@ body.indash #dmain.wide{padding-left:max(32px,calc((100% - 1180px)/2));padding-r
 <section class="fx f6"><div class="in"><div class="tx rv"><div class="lab">Community</div><h2>Ask. Answer. <span class="hl">Learn together.</span></h2>
    <p>Post a doubt, get answers from students at your level, upvote the best explanation and share any question from a test as a thread.</p>
    <ul class="ticks"><li>Reddit-style doubts and discussions</li><li>Only students from your level</li><li>Stay anonymous with your own username</li></ul>
-   <button class="go" style="width:auto" onclick="previewAt('community')">Explore the community</button></div>
+   <button class="go" style="width:auto" onclick="showPreview()">Take a quick look</button></div>
    <div class="vz rv"><div class="vcard"><div class="cpm"><span class="vpill">DOUBT</span> <small>@ca_aspirant · 5h ago</small><h4>Why is Capital credited when the owner puts cash into the business?</h4>
     <div class="cir"><span><svg viewBox="0 0 24 24" width="17" height="17" fill="currentColor" stroke="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4l8 9h-5v7H9v-7H4z"/></svg> 12</span><span><svg viewBox="0 0 24 24" width="17" height="17" fill="currentColor" stroke="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20l-8-9h5V4h6v7h5z"/></svg> 0</span><span><svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 15a2 2 0 01-2 2H8l-4 4V6a2 2 0 012-2h12a2 2 0 012 2z"/></svg> 2</span><span><svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3h12v18l-6-4-6 4z"/></svg> 5</span><span class="ri"><svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12s4-7 10-7 10 7 10 7-4 7-10 7S2 12 2 12z"/><circle cx="12" cy="12" r="3"/></svg> 199</span></div></div></div></div></div></section>
-<section class="fx f7"><div class="in rev"><div class="tx rv"><div class="lab">Study together</div><h2>Never <span class="hl">study alone</span></h2>
-   <p>Join a live room for your subject and study on video with other students, with voice, screen share and chat.</p>
-   <button class="go" style="width:auto" onclick="previewAt('rooms')">See study rooms</button></div>
-   <div class="vz rv"><div class="rmock"><div class="rtiles"><div><span>👩‍🎓</span><small>@ca_aspirant</small></div><div><span>🧑‍💻</span><small>@numbers_ninja</small></div><div><span>👨‍🎓</span><small>@law_lover</small></div><div><span>👩‍💻</span><small>@study_streak</small></div><div><span>🧑‍🎓</span><small>@cost_cracker</small></div><div><span>🖥</span><small>Screen share</small></div></div>
-  <div class="rbar"><i>🎤</i><i>🎥</i><i>🖥</i><i>💬</i><i>✋</i><i class="rl">Leave</i></div></div></div></div></section>
 <section class="fx fcta"><div class="in col"><div class="tx rv c"><h2>Ready to start?</h2><p>Pick your level and begin in under a minute. It is free.</p>
    <div class="cbtn"><button class="go" onclick="showAuth()">CA Foundation</button><button class="go" onclick="showAuth()">CA Intermediate</button></div></div></div></section>
  <section class="faq" id="faq"><div class="rv"><div class="lab" style="font-size:13px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#5b2ba8">FAQ</div><h2>Frequently Asked Questions</h2>
@@ -1067,6 +1071,10 @@ body.indash #dmain.wide{padding-left:max(32px,calc((100% - 1180px)/2));padding-r
   <details name="faq"><summary>Does ChartedGyan teach the subjects?</summary><div class="ans"><p>No, and it is not trying to. Your classes and ICAI Study Material teach. ChartedGyan makes you strong through the Practice section, where you test yourself until a topic is solid, and the Concept section, where you can revise a subject in one go with flashcards, keywords, formulas and calculator tricks.</p></div></details>
   <details name="faq"><summary>What is Gyan XP?</summary><div class="ans"><p>Gyan XP is ChartedGyan’s learning currency. You earn XP for study habits that matter, such as finishing the Daily Case Study, completing topic tests, scoring 80% or more, attempting past papers, hitting weekly targets and keeping a 7-day streak.</p><p>Your XP collects in your learning wallet and counts towards the leaderboard. The values shown on the site are illustrative, and the final earning rules will be announced soon.</p></div></details>
  </div></section>
+<section class="contact"><div class="rv"><div class="lab">Contact us</div><h2>We’d love to hear from you</h2><p>Questions, feedback or ideas? Reach us on any of these.</p>
+  <div class="cts"><button onclick="contactGo('wa')"><svg class="ico" style="color:#1faa59" viewBox="0 0 24 24"><path d="M3 21l1.65-4.9A9 9 0 1 1 8 19.4z"/><path d="M9 9.5c.4 2.2 2.8 4.6 5.5 5.5l1.5-1.5-2-1-1 .8c-.8-.4-1.6-1.2-2-2l.8-1-1-2z"/></svg><b>WhatsApp</b></button>
+  <button onclick="contactGo('ig')"><svg class="ico" style="color:#d6336c" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg><b>Instagram</b></button>
+  <button onclick="contactGo('mail')"><svg class="ico" style="color:#5b2ba8" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg><b>Email</b></button></div></div></section>
  <footer class="foot">Made with ♥ · ChartedGyan © 2026 · <a href="privacy.html" style="color:#5b2ba8">Privacy Policy</a></footer>
 </main>
 
@@ -1502,8 +1510,8 @@ const SAMPLE=`<span class="badge">SAMPLE</span>`;
 const tile=(ic,lb,v)=>`<button class="tile" onclick="show('${v}')"><span class="ic">${ic}</span><span>${lb}</span></button>`;
 const sh=t=>`<div class="sh">${t}</div>`;
 const TABS=[["home","Dashboard","🏠","Home"],["practice","Practice","📝","Practice"],["concept","Concept","💡","Concept"],["papers","PYQs/RTP/MTP","📜","Papers"],["analysis","Analysis","📊","Analysis"],["activity","Activity","📈","Activity"],["doubts","Doubts","🙋","Doubts"],["res","Free Resources","📚","Resources"],["community","Community","💬","Community"],["rooms","Study Rooms","🎥","Rooms"],["updates","Updates & reminders","🔔","Updates"]];
-const GRP={home:"home",doubts:"doubts",res:"res",practice:"practice",topics:"practice",mocks:"practice",subjt:"practice",cases:"practice",abc:"concept",pattempt:"papers",pexplore:"papers",pweight:"papers",ppdf:"papers",concept:"concept",flash:"concept",kw:"concept",fm:"concept",kotd:"concept",calci:"concept",syllabus:"analysis",papers:"papers",pyq:"papers",mtp:"papers",rtp:"papers",analysis:"analysis",activity:"activity",swot:"analysis",board:"home",updates:"updates",news:"updates",newupd:"updates",resp:"updates",notif:"notif",community:"community",thread:"community",rooms:"rooms",room:"rooms"};
-const PARENT={topics:"practice",mocks:"practice",subjt:"practice",abc:"concept",pattempt:"papers",pexplore:"papers",pweight:"papers",ppdf:"papers",cases:"practice",pyq:"papers",mtp:"papers",rtp:"papers",flash:"concept",kw:"concept",fm:"concept",kotd:"concept",calci:"concept",syllabus:"analysis",swot:"analysis",news:"updates",newupd:"updates",resp:"updates",thread:"community",room:"rooms"};
+const GRP={home:"home",doubts:"doubts",res:"res",practice:"practice",topics:"practice",ldr:"practice",notes:"concept",mocks:"practice",subjt:"practice",cases:"practice",abc:"concept",pattempt:"papers",pexplore:"papers",pweight:"papers",ppdf:"papers",concept:"concept",flash:"concept",kw:"concept",fm:"concept",kotd:"concept",calci:"concept",syllabus:"analysis",papers:"papers",pyq:"papers",mtp:"papers",rtp:"papers",analysis:"analysis",activity:"activity",swot:"analysis",board:"home",updates:"updates",news:"updates",newupd:"updates",resp:"updates",notif:"notif",community:"community",thread:"community",rooms:"rooms",room:"rooms"};
+const PARENT={topics:"practice",ldr:"practice",notes:"concept",mocks:"practice",subjt:"practice",abc:"concept",pattempt:"papers",pexplore:"papers",pweight:"papers",ppdf:"papers",cases:"practice",pyq:"papers",mtp:"papers",rtp:"papers",flash:"concept",kw:"concept",fm:"concept",kotd:"concept",calci:"concept",syllabus:"analysis",swot:"analysis",news:"updates",newupd:"updates",resp:"updates",thread:"community",room:"rooms"};
 const PNAME={rooms:"Study Rooms",community:"Community",updates:"Updates & reminders",practice:"Practice",papers:"PYQs/RTP/MTP",concept:"Concept",analysis:"Analysis",home:"Dashboard"};
 const MOBP={activity:"analysis",doubts:"analysis",res:"analysis",updates:"analysis",community:"analysis",rooms:"analysis"};
 const BK=()=>{const p=PARENT[D.view]||(innerWidth<900&&MOBP[D.view])||"home";return `<button class="back" onclick="show('${p}')">← ${PNAME[p]}</button>`};
@@ -1536,11 +1544,11 @@ const IC={
 };
 const svg=(n,cls)=>`<svg class="ico ${cls||""}" viewBox="0 0 24 24" aria-hidden="true">${IC[n]}</svg>`;
 const SBMAIN=[["home","Dashboard","🏠"],["practice","Practice","📝"],["concept","Concept","💡"],["papers","PYQs/RTP/MTP","📜"],["analysis","Analysis","📈"],["community","Community","💬"],["rooms","Study Rooms","🎥"]];
-const SIDEKIDS={practice:[["📝","Chapter Tests","topics"],["🎯","Mocks","mocks"],["📚","Subject Tests","subjt"],["📅","Daily Case Studies","cases"]],
- concept:[["ƒₓ","Formulas","fm"],["💡","Keyword of the Day","kotd"],["🧮","Calci Tricks","calci"],["🅰️","ABC Analysis","abc"]],
+const SIDEKIDS={practice:[["📝","Chapter Tests","topics"],["🧩","LDR Questions","ldr"],["🎯","Mocks","mocks"],["📚","Subject Tests","subjt"],["📅","Daily Case Studies","cases"]],
+ concept:[["✍️","Handwritten Notes","notes"],["ƒₓ","Formulas","fm"],["🧮","Calci Tricks","calci"],["🅰️","ABC Analysis","abc"]],
  papers:[["📝","Attempt","pattempt"],["🔎","Explore","pexplore"],["📊","Weightage","pweight"],["📄","PDF","ppdf"]],
  analysis:[["✅","Syllabus Completion","syllabus"],["📊","SWOT Analysis","swot"]]};
-const SBFIND=[["Dashboard","home"],["Chapter Tests","topics"],["Mocks","mocks"],["Subject Tests","subjt"],["Daily Case Studies","cases"],["Formulas","fm"],["Keyword of the Day","kotd"],["Calci Tricks","calci"],["ABC Analysis","abc"],["Flashcards","flash"],["Keyword List","kw"],["Attempt papers","pattempt"],["Explore papers","pexplore"],["Weightage","pweight"],["PDF papers","ppdf"],["Syllabus Completion","syllabus"],["SWOT Analysis","swot"],["Activity","activity"],["Doubts","doubts"],["Free Resources","res"],["Community","community"],["Study Rooms","rooms"],["Updates & reminders","updates"],["Notifications","notif"],["Leaderboard","board"]];
+const SBFIND=[["Dashboard","home"],["Chapter Tests","topics"],["Mocks","mocks"],["Subject Tests","subjt"],["Daily Case Studies","cases"],["Formulas","fm"],["Handwritten Notes","notes"],["LDR Questions","ldr"],["Calci Tricks","calci"],["ABC Analysis","abc"],["Flashcards","flash"],["Keyword List","kw"],["Attempt papers","pattempt"],["Explore papers","pexplore"],["Weightage","pweight"],["PDF papers","ppdf"],["Syllabus Completion","syllabus"],["SWOT Analysis","swot"],["Activity","activity"],["Doubts","doubts"],["Free Resources","res"],["Community","community"],["Study Rooms","rooms"],["Updates & reminders","updates"],["Notifications","notif"],["Leaderboard","board"]];
 const sbSec=v=>{const a=GRP[v==="run"&&R?R.back:v]||"home";return SIDEKIDS[a]&&["practice","concept","papers","analysis"].includes(a)?a:null};
 function sbClick(k){
   const kids=SIDEKIDS[k];
@@ -1701,6 +1709,7 @@ function xpWallet(){
   <div class="xpt">How you earn Gyan XP</div>${XPR.map(r=>`<div class="xprow"><span>${r[0]}</span><b>${r[1]}</b></div>`).join("")}<div class="xpcm"><span>🌍 <b>12,480 XP</b> earned by the ChartedGyan community ${SAMPLE}</span><a href="#" onclick="show('board');return false">View leaderboard ↗</a></div></div>`;
 }
 
+const COMMUNITY_XP=12480;   // sample number, replace with the real total later
 const CONTACT={wa:"",ig:"",mail:""};   // put your WhatsApp link, Instagram link and email here
 function contactGo(k){const v=CONTACT[k];if(!v){toast("This link will be added soon");return}if(k==="mail")location.href="mailto:"+v;else window.open(v,"_blank","noopener")}
 function weekReport(){
@@ -1710,13 +1719,14 @@ function weekReport(){
   return `${sh("WEEKLY REPORT")}<div class="card wkc"><div class="wkb">${days.map((x,i)=>`<div class="wkd ${x.k===lk()?"now":""}"><div class="wkt"><i style="height:${Math.round(xp[i]*100/mx)}%"></i></div><small>${x.n}</small></div>`).join("")}</div>
   <div class="wks"><div><b>${tot}</b><small>XP this week</small></div><div><b>${met}/7</b><small>days target met</small></div><div><b>${streakN()}</b><small>day streak</small></div></div></div>`;
 }
+const I3={"flash": "<svg viewBox=\"0 0 64 64\" aria-hidden=\"true\"><defs><linearGradient id=\"fa\" x1=\"0\" y1=\"0\" x2=\"1\" y2=\"1\"><stop offset=\"0\" stop-color=\"#9b7bf0\"/><stop offset=\"1\" stop-color=\"#4a2394\"/></linearGradient><linearGradient id=\"fb\" x1=\"0\" y1=\"0\" x2=\"1\" y2=\"1\"><stop offset=\"0\" stop-color=\"#ffe08a\"/><stop offset=\"1\" stop-color=\"#f08c14\"/></linearGradient></defs><ellipse cx=\"32\" cy=\"58\" rx=\"21\" ry=\"3.8\" fill=\"#2a1a55\" opacity=\".16\"/><rect x=\"12\" y=\"9\" width=\"30\" height=\"42\" rx=\"6\" transform=\"rotate(-11 27 30)\" fill=\"url(#fb)\"/><rect x=\"20\" y=\"11\" width=\"31\" height=\"42\" rx=\"6\" transform=\"rotate(8 35 32)\" fill=\"url(#fa)\"/><rect x=\"20.5\" y=\"11.5\" width=\"30\" height=\"41\" rx=\"5.5\" transform=\"rotate(8 35 32)\" fill=\"none\" stroke=\"#fff\" stroke-opacity=\".4\"/><path d=\"M29 26h15M29 33h15M29 40h9\" stroke=\"#fff\" stroke-width=\"3.2\" stroke-linecap=\"round\" transform=\"rotate(8 35 32)\"/><path d=\"M24 14q12-4 25 3\" stroke=\"#fff\" stroke-opacity=\".55\" stroke-width=\"2\" fill=\"none\" stroke-linecap=\"round\"/></svg>", "kw": "<svg viewBox=\"0 0 64 64\" aria-hidden=\"true\"><defs><linearGradient id=\"ka\" x1=\"0\" y1=\"0\" x2=\"1\" y2=\"1\"><stop offset=\"0\" stop-color=\"#fff0a8\"/><stop offset=\"1\" stop-color=\"#e89a10\"/></linearGradient><linearGradient id=\"kb\" x1=\"0\" y1=\"0\" x2=\"1\" y2=\"0\"><stop offset=\"0\" stop-color=\"#ffd75e\"/><stop offset=\"1\" stop-color=\"#b9740a\"/></linearGradient></defs><ellipse cx=\"32\" cy=\"58\" rx=\"21\" ry=\"3.8\" fill=\"#2a1a55\" opacity=\".16\"/><g transform=\"rotate(-38 32 32)\"><rect x=\"30\" y=\"28\" width=\"30\" height=\"9\" rx=\"4\" fill=\"url(#kb)\"/><rect x=\"48\" y=\"36\" width=\"5\" height=\"8\" rx=\"1.5\" fill=\"url(#kb)\"/><rect x=\"55\" y=\"36\" width=\"5\" height=\"6\" rx=\"1.5\" fill=\"url(#kb)\"/><circle cx=\"20\" cy=\"32\" r=\"15\" fill=\"url(#ka)\"/><circle cx=\"20\" cy=\"32\" r=\"6.5\" fill=\"#fff8e0\"/><circle cx=\"20\" cy=\"32\" r=\"6.5\" fill=\"none\" stroke=\"#c98a10\" stroke-opacity=\".55\" stroke-width=\"1.5\"/><path d=\"M9 26q4-9 14-9\" stroke=\"#fff\" stroke-opacity=\".75\" stroke-width=\"2.4\" fill=\"none\" stroke-linecap=\"round\"/></g></svg>", "res": "<svg viewBox=\"0 0 64 64\" aria-hidden=\"true\"><defs><linearGradient id=\"ba\" x1=\"0\" y1=\"0\" x2=\"1\" y2=\"0\"><stop offset=\"0\" stop-color=\"#9b7bf0\"/><stop offset=\"1\" stop-color=\"#4a2394\"/></linearGradient><linearGradient id=\"bb\" x1=\"0\" y1=\"0\" x2=\"1\" y2=\"0\"><stop offset=\"0\" stop-color=\"#5fd0c4\"/><stop offset=\"1\" stop-color=\"#1b8f86\"/></linearGradient><linearGradient id=\"bc\" x1=\"0\" y1=\"0\" x2=\"1\" y2=\"0\"><stop offset=\"0\" stop-color=\"#ffb36b\"/><stop offset=\"1\" stop-color=\"#e05a2b\"/></linearGradient></defs><ellipse cx=\"32\" cy=\"58\" rx=\"21\" ry=\"3.8\" fill=\"#2a1a55\" opacity=\".16\"/><rect x=\"8\" y=\"40\" width=\"48\" height=\"13\" rx=\"3\" fill=\"url(#bc)\"/><rect x=\"12\" y=\"43\" width=\"42\" height=\"2.5\" rx=\"1\" fill=\"#fff\" opacity=\".7\"/><rect x=\"11\" y=\"26\" width=\"44\" height=\"13\" rx=\"3\" fill=\"url(#bb)\"/><rect x=\"15\" y=\"29\" width=\"38\" height=\"2.5\" rx=\"1\" fill=\"#fff\" opacity=\".7\"/><rect x=\"8\" y=\"12\" width=\"46\" height=\"13\" rx=\"3\" fill=\"url(#ba)\" transform=\"rotate(-4 31 18)\"/><rect x=\"12\" y=\"15\" width=\"40\" height=\"2.5\" rx=\"1\" fill=\"#fff\" opacity=\".7\" transform=\"rotate(-4 31 18)\"/></svg>", "upd": "<svg viewBox=\"0 0 64 64\" aria-hidden=\"true\"><defs><linearGradient id=\"ua\" x1=\"0\" y1=\"0\" x2=\"1\" y2=\"1\"><stop offset=\"0\" stop-color=\"#ffe27a\"/><stop offset=\"1\" stop-color=\"#e08a0c\"/></linearGradient></defs><ellipse cx=\"32\" cy=\"58\" rx=\"21\" ry=\"3.8\" fill=\"#2a1a55\" opacity=\".16\"/><path d=\"M32 8c-9 0-15 7-15 16v9l-5 8h40l-5-8v-9c0-9-6-16-15-16z\" fill=\"url(#ua)\"/><path d=\"M22 20q3-8 10-8\" stroke=\"#fff\" stroke-opacity=\".7\" stroke-width=\"3\" fill=\"none\" stroke-linecap=\"round\"/><path d=\"M26 46a6 6 0 0012 0z\" fill=\"#b9740a\"/><circle cx=\"32\" cy=\"7.500\" r=\"3.200\" fill=\"#f0a21a\"/><circle cx=\"47\" cy=\"13\" r=\"6.500\" fill=\"#ff4d4d\"/><circle cx=\"45\" cy=\"11\" r=\"2\" fill=\"#fff\" opacity=\".6\"/></svg>", "doubt": "<svg viewBox=\"0 0 64 64\" aria-hidden=\"true\"><defs><linearGradient id=\"da\" x1=\"0\" y1=\"0\" x2=\"1\" y2=\"1\"><stop offset=\"0\" stop-color=\"#a98bf5\"/><stop offset=\"1\" stop-color=\"#4a2394\"/></linearGradient></defs><ellipse cx=\"32\" cy=\"58\" rx=\"21\" ry=\"3.8\" fill=\"#2a1a55\" opacity=\".16\"/><path d=\"M12 12h40a6 6 0 016 6v21a6 6 0 01-6 6H34l-12 10V45h-10a6 6 0 01-6-6V18a6 6 0 016-6z\" transform=\"translate(-2 -2)\" fill=\"url(#da)\"/><path d=\"M12 16q3-3 10-3h20\" stroke=\"#fff\" stroke-opacity=\".5\" stroke-width=\"2.4\" fill=\"none\" stroke-linecap=\"round\"/><text x=\"30\" y=\"40\" text-anchor=\"middle\" font-family=\"Inter,Arial,sans-serif\" font-weight=\"800\" font-size=\"28\" fill=\"#fff\">?</text></svg>", "act": "<svg viewBox=\"0 0 64 64\" aria-hidden=\"true\"><defs><linearGradient id=\"aa\" x1=\"0\" y1=\"0\" x2=\"0\" y2=\"1\"><stop offset=\"0\" stop-color=\"#7fe0d4\"/><stop offset=\"1\" stop-color=\"#1b8f86\"/></linearGradient><linearGradient id=\"ab\" x1=\"0\" y1=\"0\" x2=\"0\" y2=\"1\"><stop offset=\"0\" stop-color=\"#b39bf7\"/><stop offset=\"1\" stop-color=\"#5b2ba8\"/></linearGradient><linearGradient id=\"ac\" x1=\"0\" y1=\"0\" x2=\"0\" y2=\"1\"><stop offset=\"0\" stop-color=\"#ffc27a\"/><stop offset=\"1\" stop-color=\"#e0561f\"/></linearGradient></defs><ellipse cx=\"32\" cy=\"58\" rx=\"21\" ry=\"3.8\" fill=\"#2a1a55\" opacity=\".16\"/><rect x=\"8\" y=\"34\" width=\"12\" height=\"20\" rx=\"3\" fill=\"url(#aa)\"/><rect x=\"26\" y=\"24\" width=\"12\" height=\"30\" rx=\"3\" fill=\"url(#ab)\"/><rect x=\"44\" y=\"12\" width=\"12\" height=\"42\" rx=\"3\" fill=\"url(#ac)\"/><rect x=\"9\" y=\"35\" width=\"3\" height=\"16\" rx=\"1.500\" fill=\"#fff\" opacity=\".45\"/><rect x=\"27\" y=\"25\" width=\"3\" height=\"26\" rx=\"1.500\" fill=\"#fff\" opacity=\".45\"/><rect x=\"45\" y=\"13\" width=\"3\" height=\"38\" rx=\"1.500\" fill=\"#fff\" opacity=\".45\"/><path d=\"M9 28l16-10 12 5 18-15\" stroke=\"#ffd04d\" stroke-width=\"3.500\" fill=\"none\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/></svg>", "trophy": "<svg viewBox=\"0 0 64 64\" aria-hidden=\"true\"><defs><linearGradient id=\"ta\" x1=\"0\" y1=\"0\" x2=\"1\" y2=\"1\"><stop offset=\"0\" stop-color=\"#fff0a0\"/><stop offset=\"1\" stop-color=\"#e69a0c\"/></linearGradient><linearGradient id=\"tb\" x1=\"0\" y1=\"0\" x2=\"0\" y2=\"1\"><stop offset=\"0\" stop-color=\"#d99a2b\"/><stop offset=\"1\" stop-color=\"#8a520a\"/></linearGradient></defs><ellipse cx=\"32\" cy=\"58\" rx=\"21\" ry=\"3.8\" fill=\"#2a1a55\" opacity=\".16\"/><path d=\"M17 14H8c0 11 4 17 11 19\" fill=\"none\" stroke=\"url(#ta)\" stroke-width=\"5\" stroke-linecap=\"round\"/><path d=\"M47 14h9c0 11-4 17-11 19\" fill=\"none\" stroke=\"url(#ta)\" stroke-width=\"5\" stroke-linecap=\"round\"/><path d=\"M16 8h32v14c0 11-7 18-16 18S16 33 16 22z\" fill=\"url(#ta)\"/><path d=\"M22 12v10c0 7 3 12 8 14\" stroke=\"#fff\" stroke-opacity=\".6\" stroke-width=\"3\" fill=\"none\" stroke-linecap=\"round\"/><rect x=\"28\" y=\"38\" width=\"8\" height=\"10\" fill=\"url(#tb)\"/><rect x=\"20\" y=\"47\" width=\"24\" height=\"8\" rx=\"3\" fill=\"url(#tb)\"/><path d=\"M32 15l2.500 5 5.500.8-4 3.900 1 5.500-5-2.700-5 2.700 1-5.500-4-3.900 5.500-.8z\" fill=\"#fff\" opacity=\".85\"/></svg>"};
 const kfTile=(ic,lb,v)=>`<button class="kfi" onclick="show('${v}')"><span>${ic}</span><b>${lb}</b></button>`;
 const IC_WA='<path d="M3 21l1.65-4.9A9 9 0 1 1 8 19.4z"/><path d="M9 9.5c.4 2.2 2.800 4.600 5.500 5.500l1.500-1.500-2-1-1 .8c-.8-.4-1.600-1.200-2-2l.8-1-1-2z"/>';
 const IC_IG='<rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.500" r="1" fill="currentColor"/>';
 const IC_ML='<rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/>';
 const ic24=p=>`<svg class="ico" viewBox="0 0 24 24" aria-hidden="true">${p}</svg>`;
-const helpStrip=()=>`<div class="hlp"><div class="hlq"><span>Having an issue?</span><button class="pvkeep" onclick="contactGo('mail')">${ic24(IC.cmt)}Contact ChartedGyan</button></div>
-  <div class="hli"><button class="pvkeep" style="color:#1faa59" onclick="contactGo('wa')" aria-label="WhatsApp" title="WhatsApp">${ic24(IC_WA)}</button><button class="pvkeep" style="color:#d6336c" onclick="contactGo('ig')" aria-label="Instagram" title="Instagram">${ic24(IC_IG)}</button><button class="pvkeep" style="color:#5b2ba8" onclick="contactGo('mail')" aria-label="Email" title="Email">${ic24(IC_ML)}</button></div></div>`;
+const helpStrip=()=>`<div class="hlp"><div class="hlq"><span>Having an issue?</span></div>
+  <div class="hli"><span class="hlt">Contact us:</span><button class="pvkeep" style="color:#1faa59" onclick="contactGo('wa')" aria-label="WhatsApp" title="WhatsApp">${ic24(IC_WA)}</button><button class="pvkeep" style="color:#d6336c" onclick="contactGo('ig')" aria-label="Instagram" title="Instagram">${ic24(IC_IG)}</button><button class="pvkeep" style="color:#5b2ba8" onclick="contactGo('mail')" aria-label="Email" title="Email">${ic24(IC_ML)}</button></div></div>`;
 function vHome(){
   const c=dl().cases[dayIdx()%dl().cases.length];
   const warn=DBWARN?`<div class="card warn"><b>Your profile is saved on this device only.</b><p style="margin:8px 0 0">It could not be saved to the database${DBERR?` (${esc(DBERR)})`:""}. Please run <b>profiles_v2.sql</b> in the Supabase SQL Editor, then open the site again.</p></div>`:"";
@@ -1724,10 +1734,10 @@ function vHome(){
   return `${warn}<div class="dtop"><div class="hx hx2"><div class="hxl"><div class="hxv">${esc(levelText())}</div><h1>Welcome, ${esc(displayName())}.</h1><div class="hxm">✨ ${MOTTO}</div>
   <div class="hxp"><div class="hxr"><span>Today’s progress</span><b>${xpToday()} / ${xpTarget()} XP</b></div><div class="hxb"><i style="width:${tp}%"></i></div></div></div>
   <div class="hxbox"><button class="hxst" onclick="openStreak(event)"><span>🔥</span><b>${streakN()}</b><small>day streak</small></button><div class="hxst"><span>⚡</span><b>${xpTotal()}</b><small>Gyan XP</small></div></div></div>
-  <div class="wpost"><div class="wpt">🏆</div><div class="wpk">YOUR LEARNING WALLET</div><div class="wpn">${xpTotal().toLocaleString("en-IN")} <span>XP</span></div><div class="wps">earned by you</div><div class="wpm">Keep learning. Keep earning.</div><a href="#" onclick="show('board');return false">View leaderboard ↗</a></div></div>
+  <div class="wpost"><div class="wpt">${I3.trophy}</div><div class="wpk">CHARTEDGYAN COMMUNITY</div><div class="wpn">${COMMUNITY_XP.toLocaleString("en-IN")} <span>XP</span></div><div class="wps">earned by the community</div><div class="wpm">${SAMPLE}</div><a href="#" onclick="show('board');return false">View leaderboard ↗</a></div></div>
   <div class="d64"><div>${caseCard(c)}</div><div>${weekReport()}</div></div>
   <div class="gapb"></div>
-  ${sh("KEY FEATURES")}<div class="kf">${kfTile("🃏","Flashcards","flash")}${kfTile("🔑","Keyword List","kw")}${kfTile("📚","Free Resources","res")}${kfTile("🔔","Updates &amp; reminders","updates")}${kfTile("🙋","Doubts","doubts")}${kfTile("📈","Activity","activity")}</div>
+  ${sh("KEY FEATURES")}<div class="kf">${kfTile(I3.flash,"Flashcards","flash")}${kfTile(I3.kw,"Keyword List","kw")}${kfTile(I3.res,"Free Resources","res")}${kfTile(I3.upd,"Updates &amp; reminders","updates")}${kfTile(I3.doubt,"Doubts","doubts")}${kfTile(I3.act,"Activity","activity")}</div>
   ${sh("KEYWORD OF THE DAY")}${vKotd(true)}${helpStrip()}`;
 }
 const CALCI={
@@ -1752,7 +1762,7 @@ function casesBody(){
   return `<p class="lead">Read a short real-life situation, then answer questions on it. ${SAMPLE} Real case studies are added when the data is ready.</p>`
   +dl().cases.map(c=>`<div class="card"><div class="tag">${c.tag}</div><h2>${c.title}</h2><p>${c.qs.length} questions</p><button class="go" onclick="openCase('${c.id}')">Attempt →</button></div>`).join("");
 }
-function vPractice(){return hub("Practice","Make every chapter pakka.",[["📝","Chapter Tests","topics"],["🎯","Mocks","mocks"],["📚","Subject Tests","subjt"],["📅","Daily Case Studies","cases"]])}
+function vPractice(){return hub("Practice","Make every chapter pakka.",[["📝","Chapter Tests","topics"],["🧩","LDR Questions","ldr"],["🎯","Mocks","mocks"],["📚","Subject Tests","subjt"],["📅","Daily Case Studies","cases"]])}
 function vTopics(){return `${BK()}<h1 class="dh">Chapter Tests</h1>${topicsBody()}`}
 const CASE_TOPICS={f1:["Accounting","Capital & credit purchase","Profit on sale"],f2:["Quantitative Aptitude","Simple interest","Compound interest"],i1:["Strategic Management","Porter’s Five Forces","Substitutes & supplier power"],i2:["Cost & Management Accounting","Standard costing","Material price variance"]};
 const caseTopics=c=>CASE_TOPICS[c.id]||[c.tag];
@@ -1773,7 +1783,7 @@ function vCases(){
   ${sh("YESTERDAY")}${row(1)}${sh("EARLIER THIS WEEK")}${[2,3,4,5,6].map(row).join("")}`;
 }
 const hub=(t,l,a)=>`<h1 class="dh">${t}</h1><p class="lead">${l}</p><div class="grid">${a.map(x=>tile(x[0],x[1],x[2])).join("")}</div>`;
-const vConcept=()=>hub("Concept","Revise ideas in one go.",[["ƒₓ","Formulas","fm"],["💡","Keyword of the Day","kotd"],["🧮","Calci Tricks","calci"],["🅰️","ABC Analysis","abc"]]);
+const vConcept=()=>hub("Concept","Revise ideas in one go.",[["✍️","Handwritten Notes","notes"],["ƒₓ","Formulas","fm"],["🧮","Calci Tricks","calci"],["🅰️","ABC Analysis","abc"]]);
 const vPapersHub=()=>hub("PYQs / RTP / MTP","Attempt, explore and download papers.",[["📝","Attempt","pattempt"],["🔎","Explore","pexplore"],["📊","Weightage","pweight"],["📄","PDF","ppdf"]]);
 const vAnalysis=()=>hub("Analysis","See how you are doing and where to improve.",[["✅","Syllabus Completion","syllabus"],["📊","SWOT Analysis","swot"],["💬","Community","community"],["🎥","Study Rooms","rooms"]]);
 function openCase(id,old){const c=dl().cases.find(c=>c.id===id);startRun({id:"case:"+id,title:c.title,story:c.story,qs:c.qs,back:"cases",backLabel:"Daily Case Studies",old:!!old})}
@@ -1881,6 +1891,13 @@ function vPPdf(){
   return `${BK()}<h1 class="dh">PDF</h1><p class="lead">Official ICAI papers and answers, session by session.</p>${pkChips()}${subChips()}${officialCard(kind,sub[f])}`;
 }
 // ----- mocks & subject tests -----
+const vLdr=()=>`${BK()}<h1 class="dh">LDR Questions</h1><p class="lead">Logical and data reasoning sets to sharpen your speed and accuracy.</p>${emptyBox("🧩","LDR sets are being prepared","Practice sets for "+LABEL[D.level]+" will appear here soon.")}`;
+const NOTES={};   // NOTES[level][subject][chapterIndex]="https://...pdf" filled from the database later
+function vNotes(){
+  const sub=subs(),f=Math.min(D.psub||0,sub.length-1),n=sub[f],chs=(SYLL[D.level][n]||[]),M=((NOTES[D.level]||{})[n])||{};
+  return `${BK()}<h1 class="dh">Handwritten Notes</h1><p class="lead">Chapter-wise handwritten notes for quick revision.</p>${subChips()}
+  <div class="tlist"><div class="tlh">${esc(n)}</div>${chs.length?chs.map((c,i)=>`<div class="trow"><div class="tn"><b>${esc(c.ch)}</b></div>${M[i]?`<a class="olink" href="${M[i]}" target="_blank" rel="noopener noreferrer">PDF ↗</a>`:`<span class="badge">PDF soon</span>`}</div>`).join(""):`<div class="trow"><div class="tn"><small>Chapters coming soon.</small></div></div>`}</div>`;
+}
 const vMocks=()=>`${BK()}<h1 class="dh">Mocks</h1><p class="lead">Full-length mock tests in exam conditions.</p>${emptyBox("🎯","Mocks are being prepared","Full-length timed mocks for "+LABEL[D.level]+" will appear here soon.")}`;
 const vSubjT=()=>`${BK()}<h1 class="dh">Subject Tests</h1><p class="lead">One test for the whole subject, to see where you stand.</p>${emptyBox("📚","Subject tests are being prepared","Pick a subject and test yourself across all its chapters. Coming soon.")}`;
 // ----- ABC analysis (concept) -----
@@ -2433,7 +2450,7 @@ function joinNow(){
 function leaveRoom(){try{ROOM.api&&ROOM.api.dispose()}catch(e){}ROOM.api=null;ROOM.joined=false;show("rooms")}
 function previewAt(v){showPreview();show(v)}
 
-const V={pattempt:vPAttempt,pexplore:vPExplore,pweight:vPWeight,ppdf:vPPdf,mocks:vMocks,subjt:vSubjT,abc:vAbc,rooms:vRooms,room:vRoom,community:vCommunity,thread:vThread,updates:vUpdates,news:vNews,newupd:vNewUpd,resp:vResp,notif:vNotif,home:vHome,practice:vPractice,topics:vTopics,cases:vCases,calci:vCalci,syllabus:vSyllabus,concept:vConcept,papers:vPapersHub,analysis:vAnalysis,pyq:()=>{D.pk="pyq";return vPAttempt()},mtp:()=>{D.pk="mtp";return vPAttempt()},rtp:()=>{D.pk="rtp";return vPAttempt()},run:vRun,flash:vFlash,kw:vKw,fm:vFm,doubts:vDoubts,activity:vActivity,swot:vSwot,res:vRes,kotd:()=>vKotd(false),board:vBoard};
+const V={ldr:vLdr,notes:vNotes,pattempt:vPAttempt,pexplore:vPExplore,pweight:vPWeight,ppdf:vPPdf,mocks:vMocks,subjt:vSubjT,abc:vAbc,rooms:vRooms,room:vRoom,community:vCommunity,thread:vThread,updates:vUpdates,news:vNews,newupd:vNewUpd,resp:vResp,notif:vNotif,home:vHome,practice:vPractice,topics:vTopics,cases:vCases,calci:vCalci,syllabus:vSyllabus,concept:vConcept,papers:vPapersHub,analysis:vAnalysis,pyq:()=>{D.pk="pyq";return vPAttempt()},mtp:()=>{D.pk="mtp";return vPAttempt()},rtp:()=>{D.pk="rtp";return vPAttempt()},run:vRun,flash:vFlash,kw:vKw,fm:vFm,doubts:vDoubts,activity:vActivity,swot:vSwot,res:vRes,kotd:()=>vKotd(false),board:vBoard};
 
 // ----- database -----
 async function saveAttempt(){
